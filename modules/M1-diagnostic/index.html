@@ -611,7 +611,7 @@
     </div>
     <div class="btn-row">
       <span style="font-size:12px; color: var(--gray);">Plateforme Certi-NC · Financée France 2030 NC</span>
-      <button class="btn btn-primary" onclick="goNext()">Commencer le diagnostic →</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()">Commencer le diagnostic →</button>
     </div>
   </div></div>
 
@@ -2577,7 +2577,7 @@ function renderIntro() {
     </div>
     <div class="btn-row">
       <span style="font-size:12px; color: var(--gray);">Plateforme Certi-NC · Financée France 2030 NC</span>
-      <button class="btn btn-primary" onclick="goNext()">Commencer le diagnostic →</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()">Commencer le diagnostic →</button>
     </div>
   </div>`;
 }
@@ -2603,8 +2603,8 @@ function renderProfile() {
       `).join('')}
     </div>
     <div class="btn-row">
-      <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
-      <button class="btn btn-primary" onclick="goNext()" ${!state.profile ? 'disabled' : ''}>Suivant →</button>
+      <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()" ${!state.profile ? 'disabled' : ''}>Suivant →</button>
     </div>
   </div>`;
 }
@@ -2631,7 +2631,7 @@ function renderCertification() {
           </div>`).join('')}
       </div>
       <div class="btn-row">
-        <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
+        <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
       </div>
     </div>`;
   }
@@ -2666,7 +2666,7 @@ function renderCertification() {
   return `
   <div class="card">
     <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
-      <button onclick="clearSector()" style="background:var(--bg);border:1px solid var(--gray-light);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--teal);cursor:pointer;">← Changer de secteur</button>
+      <button type="button" onclick="clearSector()" style="background:var(--bg);border:1px solid var(--gray-light);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:600;color:var(--teal);cursor:pointer;">← Changer de secteur</button>
       <span style="font-size:18px;">${sector.emoji}</span>
       <span style="font-size:15px;font-weight:700;color:var(--navy);">${sector.label}</span>
     </div>
@@ -2714,8 +2714,8 @@ function renderCertification() {
     </div>` : ''}
 
     <div class="btn-row">
-      <button class="btn btn-gray" onclick="clearSector()">← Secteurs</button>
-      <button class="btn btn-primary" onclick="goNext()" ${!state.selectedCert ? 'disabled' : ''}>Valider →</button>
+      <button type="button" class="btn btn-gray" onclick="clearSector()">← Secteurs</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()" ${!state.selectedCert ? 'disabled' : ''}>Valider →</button>
     </div>
   </div>`;
 }
@@ -2785,8 +2785,8 @@ function renderExperience() {
     </div>
 
     <div class="btn-row">
-      <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
-      <button class="btn btn-primary" onclick="goNext()" ${!state.workInField || !state.educationLevel ? 'disabled' : ''}>Passer à l\'auto-évaluation →</button>
+      <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()" ${!state.workInField || !state.educationLevel ? 'disabled' : ''}>Passer à l\'auto-évaluation →</button>
     </div>
   </div>`;
 }
@@ -2886,7 +2886,7 @@ function renderAssessment() {
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
           ${suggestions.map(s => `
-            <button onclick="selectCert('${s.id}')" style="text-align:left;background:white;border:1px solid var(--teal);border-radius:8px;padding:8px 12px;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <button type="button" onclick="selectCert('${s.id}')" style="text-align:left;background:white;border:1px solid var(--teal);border-radius:8px;padding:8px 12px;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;align-items:center;gap:8px;">
               <span style="font-size:13px;color:var(--navy);font-weight:500;">${s.intitule}</span>
               <span style="font-size:11px;color:var(--teal);white-space:nowrap;font-weight:600;">Niv.${s.niveau} · ${s.type} →</span>
             </button>`).join('')}
@@ -2905,8 +2905,8 @@ function renderAssessment() {
       ${renvoi_html}
       ${nc_sugg_html}
       <div class="btn-row" style="margin-top:20px;">
-        <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
-        <button class="btn btn-primary" onclick="state.currentStep=2; render();">🔍 Choisir une autre certification NC</button>
+        <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
+        <button type="button" class="btn btn-primary" onclick="state.currentStep=2; render();">🔍 Choisir une autre certification NC</button>
       </div>
     </div>`;
   }
@@ -2934,8 +2934,8 @@ function renderAssessment() {
         <strong>🔜 Prochaine étape :</strong> Les organismes de formation et la DTEFP intègrent progressivement les référentiels de compétences de l\'ensemble des certifications du RCP-NC. Toutes les certifications actives seront disponibles d\'ici le <strong>déploiement complet du LMS (Phase 3)</strong>.
       </div>
       <div class="btn-row">
-        <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
-        <button class="btn btn-primary" onclick="skipToResults()">Obtenir une orientation indicative →</button>
+        <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
+        <button type="button" class="btn btn-primary" onclick="skipToResults()">Obtenir une orientation indicative →</button>
       </div>
     </div>`;
   }
@@ -2986,9 +2986,9 @@ function renderAssessment() {
                 return `<div class="skill-item">
                   <div class="skill-name">${skill.name}</div>
                   <div class="skill-scale">
-                    <button class="skill-btn sk-mastered ${state.answers[k] === 'mastered' ? 'active' : ''}" onclick="setAnswer('${k}', 'mastered')">✅ Maîtrisée</button>
-                    <button class="skill-btn sk-partial ${state.answers[k] === 'partial' ? 'active' : ''}" onclick="setAnswer('${k}', 'partial')">⚠️ Partielle</button>
-                    <button class="skill-btn sk-not ${state.answers[k] === 'not_mastered' ? 'active' : ''}" onclick="setAnswer('${k}', 'not_mastered')">❌ Non acquise</button>
+                    <button type="button" class="skill-btn sk-mastered ${state.answers[k] === 'mastered' ? 'active' : ''}" onclick="setAnswer('${k}', 'mastered')">✅ Maîtrisée</button>
+                    <button type="button" class="skill-btn sk-partial ${state.answers[k] === 'partial' ? 'active' : ''}" onclick="setAnswer('${k}', 'partial')">⚠️ Partielle</button>
+                    <button type="button" class="skill-btn sk-not ${state.answers[k] === 'not_mastered' ? 'active' : ''}" onclick="setAnswer('${k}', 'not_mastered')">❌ Non acquise</button>
                   </div>
                 </div>`;
               }).join('')}
@@ -3000,15 +3000,15 @@ function renderAssessment() {
             <div class="activity-name">🔸 ${act.name}</div>
             <div class="activity-desc">${act.desc}</div>
             <div class="mastery-scale">
-              <button class="mastery-btn mastered ${state.answers[act.id] === 'mastered' ? 'active' : ''}"
+              <button type="button" class="mastery-btn mastered ${state.answers[act.id] === 'mastered' ? 'active' : ''}"
                 onclick="setAnswer('${act.id}', 'mastered')">
                 ✅ Je maîtrise<br>complètement
               </button>
-              <button class="mastery-btn partial ${state.answers[act.id] === 'partial' ? 'active' : ''}"
+              <button type="button" class="mastery-btn partial ${state.answers[act.id] === 'partial' ? 'active' : ''}"
                 onclick="setAnswer('${act.id}', 'partial')">
                 🔶 Je maîtrise<br>partiellement
               </button>
-              <button class="mastery-btn not-mastered ${state.answers[act.id] === 'not_mastered' ? 'active' : ''}"
+              <button type="button" class="mastery-btn not-mastered ${state.answers[act.id] === 'not_mastered' ? 'active' : ''}"
                 onclick="setAnswer('${act.id}', 'not_mastered')">
                 ❌ Je ne maîtrise<br>pas encore
               </button>
@@ -3019,8 +3019,8 @@ function renderAssessment() {
       </div>`).join('')}
 
     <div class="btn-row">
-      <button class="btn btn-gray" onclick="goPrev()">← Retour</button>
-      <button class="btn btn-primary" onclick="goNext()" ${answered < total ? 'disabled' : ''}>
+      <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()" ${answered < total ? 'disabled' : ''}>
         ${answered < total ? `Évaluez encore ${total - answered} ${itemLabel}` : 'Voir mes résultats →'}
       </button>
     </div>
@@ -3288,10 +3288,10 @@ function renderResults() {
         Un conseiller vous contactera sous 10 jours ouvrés.
       </div>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="btn btn-primary" onclick="downloadDossier()">💾 Télécharger mon dossier d'orientation</button>
-        <button class="btn btn-secondary" onclick="restartDiagnostic()">🔄 Refaire le diagnostic</button>
-        ${['vae','complement','hybride'].includes(orientation) ? `<button class="btn btn-primary" onclick="goToM2()">📖 Continuer vers Module M2 (VAE) →</button>` : ''}
-        <button class="btn btn-navy" onclick="alert('Fonctionnalité disponible en version complète du LMS')">📂 Mon espace apprenant</button>
+        <button type="button" class="btn btn-primary" onclick="downloadDossier()">💾 Télécharger mon dossier d'orientation</button>
+        <button type="button" class="btn btn-secondary" onclick="restartDiagnostic()">🔄 Refaire le diagnostic</button>
+        ${['vae','complement','hybride'].includes(orientation) ? `<button type="button" class="btn btn-primary" onclick="goToM2()">📖 Continuer vers Module M2 (VAE) →</button>` : ''}
+        <button type="button" class="btn btn-navy" onclick="alert('Fonctionnalité disponible en version complète du LMS')">📂 Mon espace apprenant</button>
       </div>
     </div>
   </div>
