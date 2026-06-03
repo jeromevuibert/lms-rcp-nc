@@ -1,0 +1,109 @@
+/* ==========================================================================
+   LMS RCP-NC · composants partagés
+   À utiliser par le hub (index.html racine), M3 et M4.
+   Dépend de tokens.css — inclure les deux, dans cet ordre.
+   --------------------------------------------------------------------------
+   Version : 2026-04-25 · étape 3 roadmap atelier
+   ========================================================================== */
+
+/* --- Layout -------------------------------------------------------------- */
+.container{max-width:var(--w-container);margin:0 auto;padding:var(--gap-xl) 20px 64px}
+
+/* --- Header hub --------------------------------------------------------- */
+header.hub{border-bottom:3px solid var(--gold);padding:var(--gap-lg) 0 22px;margin-bottom:var(--gap-xl)}
+header.hub .brand{display:flex;align-items:center;gap:var(--gap-md);flex-wrap:wrap}
+header.hub .mark{
+  width:44px;height:44px;border-radius:8px;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;letter-spacing:.5px;font-size:13px;
+}
+header.hub h1{font-size:var(--fs-h1);margin:0;color:var(--navy);font-weight:700}
+header.hub .sub{color:var(--muted);font-size:var(--fs-sm);margin-top:4px}
+header.hub .meta{margin-top:var(--gap-md);display:flex;gap:var(--gap-lg);flex-wrap:wrap;font-size:13px;color:var(--muted)}
+header.hub .meta strong{color:var(--ink);font-weight:600}
+
+/* --- Titre de section --------------------------------------------------- */
+h2.section{
+  font-size:var(--fs-section);text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted);margin:32px 0 var(--gap-md);font-weight:600;
+}
+
+/* --- Grille modules ----------------------------------------------------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap-md)}
+
+/* --- Carte module ------------------------------------------------------- */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-lg) var(--gap-lg) var(--gap-md);
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:var(--gap-sm);
+  text-decoration:none;color:var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.card:hover{transform:translateY(-1px);box-shadow:var(--shadow-lift)}
+.card.disabled{opacity:.65;pointer-events:none;cursor:not-allowed}
+.card h3{margin:0;font-size:var(--fs-h3);color:var(--navy);font-weight:700}
+.card p{margin:0;color:var(--muted);font-size:var(--fs-sm);flex-grow:1}
+
+.card .tag{
+  display:inline-flex;align-items:center;gap:var(--gap-xs);
+  font-size:var(--fs-tag);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);
+}
+.card .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+
+/* Variantes sémantiques */
+.card.m1 .tag .dot{background:var(--success)}
+.card.m2 .tag .dot{background:var(--warning)}
+.card.m3 .tag .dot,.card.m4 .tag .dot{background:var(--info)}
+.card.sas .tag .dot{background:var(--gold)}
+
+.card .foot{
+  margin-top:4px;padding-top:var(--gap-sm);border-top:1px dashed var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:var(--fs-xs);color:var(--muted);
+}
+.card .foot .arrow{color:var(--teal);font-weight:600}
+.card.disabled .foot .arrow{color:var(--muted)}
+
+/* --- Cartes ressources (liste liens) ------------------------------------ */
+.res{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:6px 2px;box-shadow:var(--shadow);
+}
+.res a{
+  display:flex;align-items:center;gap:var(--gap-md);padding:12px var(--gap-lg);
+  text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);
+  font-size:15px;
+}
+.res a:last-child{border-bottom:none}
+.res a:hover{background:var(--bg-subtle)}
+.res .ico{
+  width:30px;height:30px;border-radius:var(--radius-sm);background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--teal);
+  border:1px solid var(--line);flex-shrink:0;
+}
+.res .lbl{flex-grow:1}
+.res .lbl small{display:block;color:var(--muted);font-size:var(--fs-xs);margin-top:2px}
+.res .ext{color:var(--muted);font-size:var(--fs-xs)}
+
+/* --- Bannière chantier (roadmap atelier) -------------------------------- */
+.chantier{
+  margin-top:34px;padding:var(--gap-lg) 20px;
+  border-radius:var(--radius);
+  background:var(--chantier-bg);border:1px solid var(--chantier-border);
+  color:var(--chantier-ink);font-size:var(--fs-sm);
+}
+.chantier strong{color:var(--chantier-strong)}
+.chantier ul{margin:8px 0 0;padding-left:20px}
+.chantier li{margin-bottom:3px}
+
+/* --- Footer ------------------------------------------------------------- */
+footer{
+  margin-top:48px;padding-top:var(--gap-lg);border-top:1px solid var(--line);
+  color:var(--muted);font-size:var(--fs-xs);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--gap-sm);
+}
+footer a{color:var(--teal);text-decoration:none}

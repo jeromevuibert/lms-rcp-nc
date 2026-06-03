@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="LMS RCP-NC — Module M3 AFEST — Carnet de bord trio Apprenant/Expert métier/Architecte de parcours.">
+<title>M3 · AFEST · Carnet de bord — LMS RCP-NC</title>
+<link rel="stylesheet" href="../../shared/css/tokens.css">
+<link rel="stylesheet" href="../../shared/css/components.css">
+<style>
+/* ===========================================================
+   M3 · styles spécifiques (en plus du socle partagé)
+   =========================================================== */
+
+/* Sélecteur de rôle (3 onglets) */
+.role-switch{display:flex;gap:0;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:4px;box-shadow:var(--shadow);
+  margin:var(--gap-md) 0;flex-wrap:wrap}
+.role-switch button{flex:1;min-width:140px;padding:10px 14px;border:none;background:transparent;
+  border-radius:var(--radius-sm);cursor:pointer;font-family:var(--font);font-size:var(--fs-sm);
+  font-weight:600;color:var(--muted);transition:background .12s, color .12s;
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.role-switch button:hover{background:var(--bg-subtle)}
+.role-switch button.active{background:var(--navy);color:#fff}
+.role-switch button .ic{font-size:18px;line-height:1}
+
+/* Bandeau identification */
+.identity{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md) var(--gap-lg);margin-bottom:var(--gap-md);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--gap-sm);
+  box-shadow:var(--shadow)}
+.identity .who{font-weight:600;color:var(--navy);font-size:15px}
+.identity .what{color:var(--muted);font-size:var(--fs-sm)}
+.identity select{padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:var(--bg-subtle);font-family:var(--font);font-size:var(--fs-sm);color:var(--ink);cursor:pointer}
+
+/* Vues — masquage */
+.view{display:none}
+.view.active{display:block}
+
+/* Tableau de bord CPU (apprenant) */
+.cpu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap-md);margin-bottom:var(--gap-lg)}
+.cpu-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md);box-shadow:var(--shadow)}
+.cpu-card .cpu-titre{font-weight:600;color:var(--navy);font-size:var(--fs-sm);margin-bottom:8px;line-height:1.3}
+.cpu-card .cpu-bar{height:8px;background:var(--bg);border-radius:4px;overflow:hidden;margin:8px 0 4px}
+.cpu-card .cpu-bar-fill{height:100%;background:var(--success);transition:width .3s}
+.cpu-card .cpu-bar-fill.partiel{background:var(--warning)}
+.cpu-card .cpu-bar-fill.vide{background:var(--line)}
+.cpu-card .cpu-stats{font-size:var(--fs-xs);color:var(--muted)}
+
+/* Liste situations / OR */
+.situ-list{display:flex;flex-direction:column;gap:var(--gap-sm);margin-bottom:var(--gap-lg)}
+.situ{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--info);
+  border-radius:var(--radius);padding:var(--gap-md);box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:var(--gap-md);flex-wrap:wrap}
+.situ.afaire{border-left-color:var(--muted)}
+.situ.encours{border-left-color:var(--info)}
+.situ.faite{border-left-color:var(--warning)}
+.situ.validee{border-left-color:var(--success)}
+.situ.classee{border-left-color:var(--line);opacity:.7}
+.situ .corps{flex:1;min-width:280px}
+.situ .corps h4{margin:0 0 4px;color:var(--navy);font-size:15px;font-weight:600}
+.situ .meta{font-size:var(--fs-xs);color:var(--muted);margin-bottom:6px}
+.situ .meta .stt{display:inline-block;padding:2px 8px;border-radius:10px;font-weight:600;
+  font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-right:8px}
+.situ .stt.afaire{background:#eee;color:var(--muted)}
+.situ .stt.encours{background:#e3f1f4;color:var(--info)}
+.situ .stt.faite{background:#fdeed1;color:#8a5a16}
+.situ .stt.validee{background:#dff0e2;color:var(--success)}
+.situ .stt.classee{background:#f0ede2;color:var(--muted)}
+.situ .desc{font-size:var(--fs-sm);color:var(--ink)}
+.situ .actions{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+
+/* Boutons */
+.btn{padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--card);
+  font-family:var(--font);font-size:var(--fs-sm);color:var(--ink);cursor:pointer;font-weight:500;
+  transition:background .12s, border-color .12s}
+.btn:hover{background:var(--bg-subtle)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.primary:hover{background:#15616f}
+.btn.success{background:var(--success);border-color:var(--success);color:#fff}
+.btn.success:hover{background:#235e2f}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.warning{background:var(--warning);border-color:var(--warning);color:#fff}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* Formulaire saisie / validation (modal-ish) */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-lg);margin-bottom:var(--gap-lg);box-shadow:var(--shadow-lift);display:none}
+.panel.open{display:block}
+.panel h3{margin:0 0 var(--gap-md);color:var(--navy);font-size:var(--fs-h3)}
+.panel .ferme{float:right;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;padding:0 4px}
+.panel .ferme:hover{color:var(--danger)}
+.panel .grp{margin-bottom:var(--gap-md)}
+.panel label{display:block;font-weight:600;color:var(--ink);font-size:var(--fs-sm);margin-bottom:4px}
+.panel label .aide{font-weight:400;color:var(--muted);font-size:var(--fs-xs);margin-left:6px}
+.panel .lecture{padding:8px 12px;background:var(--bg-subtle);border-radius:var(--radius-sm);
+  border:1px solid var(--line);font-size:var(--fs-sm);color:var(--ink)}
+.panel input[type=text],.panel input[type=number],.panel textarea,.panel select{
+  width:100%;padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  font-family:var(--font);font-size:var(--fs-sm);background:#fff;color:var(--ink);
+  resize:vertical}
+.panel textarea{min-height:60px;line-height:1.45}
+.panel .deux{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-md)}
+@media (max-width:600px){.panel .deux{grid-template-columns:1fr}}
+.panel .actions{display:flex;gap:var(--gap-sm);justify-content:flex-end;flex-wrap:wrap;margin-top:var(--gap-lg);padding-top:var(--gap-md);border-top:1px solid var(--line)}
+
+/* Auto-évaluation par compétence */
+.eval-cpu{margin-bottom:8px}
+.eval-cpu .lib{font-size:var(--fs-sm);color:var(--ink);margin-bottom:4px}
+.eval-stars{display:flex;gap:6px;flex-wrap:wrap}
+.eval-stars button{padding:6px 14px;border:1px solid var(--line);background:var(--card);border-radius:var(--radius-sm);
+  cursor:pointer;font-family:var(--font);font-size:var(--fs-sm);color:var(--muted)}
+.eval-stars button:hover{background:var(--bg-subtle)}
+.eval-stars button.choisi{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600}
+
+/* Photos jointes */
+.photos{display:flex;gap:var(--gap-sm);flex-wrap:wrap;margin-top:8px}
+.photo-mock{width:90px;height:90px;background:linear-gradient(135deg,#cfd8e2,#a0adb9);
+  border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
+  font-size:28px;color:#fff;border:1px solid var(--line);position:relative}
+.photo-mock .x{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;
+  background:var(--danger);color:#fff;border:none;font-size:13px;cursor:pointer;line-height:1;font-weight:700}
+.photo-add{width:90px;height:90px;border:2px dashed var(--line);border-radius:var(--radius-sm);
+  background:transparent;color:var(--muted);cursor:pointer;font-size:var(--fs-xs);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:6px}
+.photo-add:hover{border-color:var(--teal);color:var(--teal)}
+
+/* Vue architecte — table */
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:var(--gap-lg)}
+.tbl th,.tbl td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:var(--fs-sm)}
+.tbl th{background:var(--bg-subtle);color:var(--muted);font-weight:600;text-transform:uppercase;
+  letter-spacing:.05em;font-size:var(--fs-xs)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:var(--bg-subtle)}
+.progress-mini{display:inline-flex;align-items:center;gap:6px}
+.progress-mini .b{width:80px;height:6px;background:var(--bg);border-radius:3px;overflow:hidden}
+.progress-mini .b i{display:block;height:100%;background:var(--success)}
+
+/* Conflit sync */
+.conflit{background:var(--card);border:1px solid var(--warning);border-radius:var(--radius);
+  padding:var(--gap-md);margin-bottom:var(--gap-md);box-shadow:var(--shadow)}
+.conflit h4{margin:0 0 4px;color:#8a5a16;font-size:var(--fs-sm);font-weight:700}
+.conflit .help{color:var(--muted);font-size:var(--fs-xs);margin-bottom:var(--gap-md)}
+.conflit .deux{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-md);margin-bottom:var(--gap-sm)}
+@media (max-width:600px){.conflit .deux{grid-template-columns:1fr}}
+.conflit .vers{background:var(--bg-subtle);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:var(--gap-sm);font-size:var(--fs-sm)}
+.conflit .vers .qui{font-weight:700;color:var(--navy);font-size:var(--fs-xs);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:6px}
+.conflit .vers .quand{color:var(--muted);font-size:11px;margin-bottom:6px}
+
+/* Notice / messages */
+.notice{padding:var(--gap-md);border-radius:var(--radius-sm);font-size:var(--fs-sm);margin-bottom:var(--gap-md)}
+.notice.info{background:#e3f1f4;color:#0e525e;border:1px solid #b8dde4}
+.notice.warn{background:var(--chantier-bg);color:var(--chantier-strong);border:1px solid var(--chantier-border)}
+.notice.empty{background:var(--bg-subtle);color:var(--muted);text-align:center;border:1px dashed var(--line);padding:var(--gap-xl)}
+
+/* Footer reset */
+.reset-zone{margin-top:var(--gap-xl);padding:var(--gap-md);text-align:center;color:var(--muted);font-size:var(--fs-xs)}
+.reset-zone button{margin-left:8px;background:transparent;border:1px solid var(--line);
+  padding:4px 10px;border-radius:var(--radius-sm);font-size:var(--fs-xs);color:var(--muted);cursor:pointer}
+.reset-zone button:hover{color:var(--danger);border-color:var(--danger)}
+
+/* Barre d'echange de dossier (export / import — dette D7) */
+.dossier-bar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md) var(--gap-lg);margin:var(--gap-md) 0;box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:center;gap:var(--gap-md);flex-wrap:wrap}
+.dossier-bar .db-txt{display:flex;flex-direction:column;gap:2px;min-width:240px;flex:1}
+.dossier-bar .db-txt strong{color:var(--navy);font-size:var(--fs-sm)}
+.dossier-bar .db-txt span{color:var(--muted);font-size:var(--fs-xs);line-height:1.4}
+.dossier-bar .db-actions{display:flex;gap:var(--gap-sm);flex-wrap:wrap}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hub">
+  <div class="brand">
+    <div class="mark">M3</div>
+    <div>
+      <h1>Module M3 · AFEST · Carnet de bord</h1>
+      <div class="sub">Action de Formation En Situation de Travail — coordination Apprenant / Expert métier / Architecte de parcours</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span><strong>Statut :</strong> prototype démo v1 (27/04/2026)</span>
+    <span><strong>Cible :</strong> parcours hybride 20-69 % (sortie M1)</span>
+    <span><strong>Cadre :</strong> AFEST informelle au 27/04/2026 — codification livre V Code travail NC en préparation</span>
+    <span><a href="../../index.html">↩ retour au hub</a></span>
+  </div>
+</header>
+
+<div class="role-switch" id="roleSwitch">
+  <button data-role="apprenant" class="active"><span class="ic">👤</span><span>Vue apprenant</span></button>
+  <button data-role="expert"><span class="ic">🛠️</span><span>Vue expert métier</span></button>
+  <button data-role="architecte"><span class="ic">📋</span><span>Vue architecte de parcours</span></button>
+</div>
+
+
+<!-- ============================================================
+     BARRE D'ECHANGE DE DOSSIER — export / import (dette D7)
+     ============================================================ -->
+<div class="dossier-bar">
+  <div class="db-txt">
+    <strong>Dossier de parcours</strong>
+    <span>Importer un dossier amont (M1 ou SAS) ou un dossier M3 déjà commencé · exporter le suivi AFEST de l'apprenant courant vers M4.</span>
+  </div>
+  <div class="db-actions">
+    <button class="btn" onclick="document.getElementById('m3-import-file').click()">📥 Importer un dossier</button>
+    <input type="file" id="m3-import-file" accept="application/json,.json" style="display:none">
+    <button class="btn primary" onclick="M3.exporteDossier()">📤 Exporter le dossier AFEST</button>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     VUE APPRENANT
+     ============================================================ -->
+<section class="view active" id="view-apprenant">
+
+  <div class="identity">
+    <div>
+      <div class="who" id="appr-who">—</div>
+      <div class="what" id="appr-what">—</div>
+    </div>
+    <div>
+      <label for="appr-select" style="font-size:var(--fs-xs);color:var(--muted);margin-right:6px">Apprenant :</label>
+      <select id="appr-select"></select>
+    </div>
+  </div>
+
+  <h2 class="section">Mon avancement par compétence</h2>
+  <div class="cpu-grid" id="appr-cpu-grid"></div>
+
+  <h2 class="section">Mes ordres de travail à traiter</h2>
+  <div class="situ-list" id="appr-or-list"></div>
+
+  <!-- Panneau saisie d'une situation -->
+  <div class="panel" id="panel-saisie">
+    <button class="ferme" onclick="M3.fermeSaisie()" aria-label="Fermer">×</button>
+    <h3 id="saisie-titre">Saisir ma situation de travail</h3>
+
+    <div class="grp">
+      <label>Tâche demandée par mon expert métier</label>
+      <div class="lecture" id="saisie-tache-lue"></div>
+    </div>
+
+    <div class="grp">
+      <label>Résultat attendu</label>
+      <div class="lecture" id="saisie-attendu-lu"></div>
+    </div>
+
+    <div class="grp">
+      <label for="saisie-resultat">Mon résultat produit <span class="aide">— ce que j'ai effectivement réalisé</span></label>
+      <textarea id="saisie-resultat" rows="3" placeholder="Décris ce que tu as fait et ce que tu as produit."></textarea>
+    </div>
+
+    <div class="deux">
+      <div class="grp">
+        <label for="saisie-duree">Durée réelle (minutes)</label>
+        <input type="number" id="saisie-duree" min="0" step="15" placeholder="ex. 240">
+      </div>
+      <div class="grp">
+        <label>Photos jointes <span class="aide">— optionnel</span></label>
+        <div class="photos" id="saisie-photos"></div>
+      </div>
+    </div>
+
+    <div class="grp">
+      <label for="saisie-difficultes">Difficultés rencontrées <span class="aide">— ce qui a coincé, ce qui m'a manqué</span></label>
+      <textarea id="saisie-difficultes" rows="2" placeholder="Quelque chose à signaler ?"></textarea>
+    </div>
+
+    <div class="grp">
+      <label>Comment je m'auto-évalue sur les compétences mobilisées <span class="aide">— 1 = je découvre, 2 = j'apprends, 3 = je maîtrise avec aide, 4 = je maîtrise seul(e)</span></label>
+      <div id="saisie-eval"></div>
+    </div>
+
+    <div class="grp">
+      <label>Phase réflexive <span class="aide">— prends le temps de répondre, c'est le cœur de la valeur AFEST</span></label>
+      <div class="grp"><label for="ref1" style="font-weight:400;color:var(--ink)">Qu'est-ce que j'ai appris en faisant cette situation ?</label><textarea id="ref1" rows="2"></textarea></div>
+      <div class="grp"><label for="ref2" style="font-weight:400;color:var(--ink)">Qu'est-ce que je referais différemment ?</label><textarea id="ref2" rows="2"></textarea></div>
+      <div class="grp"><label for="ref3" style="font-weight:400;color:var(--ink)">Quelles ressources m'auraient aidé(e) ?</label><textarea id="ref3" rows="2"></textarea></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="M3.fermeSaisie()">Annuler</button>
+      <button class="btn" onclick="M3.enregistreBrouillon()">Enregistrer comme brouillon</button>
+      <button class="btn primary" onclick="M3.declareFaite()">Déclarer la situation faite</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VUE EXPERT MÉTIER
+     ============================================================ -->
+<section class="view" id="view-expert">
+
+  <div class="identity">
+    <div>
+      <div class="who" id="exp-who">—</div>
+      <div class="what">Tutore et atteste les acquis de l'apprenant en situation de travail</div>
+    </div>
+    <div>
+      <label for="exp-select" style="font-size:var(--fs-xs);color:var(--muted);margin-right:6px">Mes apprenants :</label>
+      <select id="exp-select"></select>
+    </div>
+  </div>
+
+  <h2 class="section">Situations à valider</h2>
+  <div class="situ-list" id="exp-faites-list"></div>
+
+  <h2 class="section">Situations déjà validées récemment</h2>
+  <div class="situ-list" id="exp-validees-list"></div>
+
+  <!-- Panneau examen / validation -->
+  <div class="panel" id="panel-examen">
+    <button class="ferme" onclick="M3.fermeExamen()" aria-label="Fermer">×</button>
+    <h3 id="examen-titre">Examen d'une situation</h3>
+
+    <div class="grp">
+      <label>Tâche que j'avais demandée</label>
+      <div class="lecture" id="examen-tache"></div>
+    </div>
+
+    <div class="grp">
+      <label>Résultat que j'attendais</label>
+      <div class="lecture" id="examen-attendu"></div>
+    </div>
+
+    <div class="grp">
+      <label>Ce que l'apprenant a produit</label>
+      <div class="lecture" id="examen-resultat"></div>
+    </div>
+
+    <div class="deux">
+      <div class="grp">
+        <label>Durée réelle</label>
+        <div class="lecture" id="examen-duree"></div>
+      </div>
+      <div class="grp">
+        <label>Photos jointes</label>
+        <div class="photos" id="examen-photos"></div>
+      </div>
+    </div>
+
+    <div class="grp">
+      <label>Difficultés signalées par l'apprenant</label>
+      <div class="lecture" id="examen-difficultes"></div>
+    </div>
+
+    <div class="grp">
+      <label>Auto-évaluation de l'apprenant</label>
+      <div class="lecture" id="examen-eval"></div>
+    </div>
+
+    <div class="grp">
+      <label>Phase réflexive de l'apprenant</label>
+      <div class="lecture" id="examen-reflexive" style="white-space:pre-wrap"></div>
+    </div>
+
+    <div class="grp">
+      <label for="examen-commentaire">Mon commentaire d'expert métier <span class="aide">— ce que je veux dire à l'apprenant</span></label>
+      <textarea id="examen-commentaire" rows="3" placeholder="Optionnel. Visible par l'apprenant et l'architecte de parcours."></textarea>
+    </div>
+
+    <div class="actions">
+      <button class="btn ghost" onclick="M3.fermeExamen()">Fermer sans décider</button>
+      <button class="btn warning" onclick="M3.demandeRefaire()">Demander à refaire</button>
+      <button class="btn success" onclick="M3.valide()">Valider et attester les acquis</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     VUE ARCHITECTE DE PARCOURS
+     ============================================================ -->
+<section class="view" id="view-architecte">
+
+  <div class="identity">
+    <div>
+      <div class="who">Architecte de parcours — tableau de bord</div>
+      <div class="what">Vue d'ensemble des 4 parcours en AFEST suivis par cet espace</div>
+    </div>
+  </div>
+
+  <h2 class="section">Avancement des apprenants</h2>
+  <table class="tbl" id="arch-table">
+    <thead>
+      <tr>
+        <th>Apprenant</th>
+        <th>Certification visée</th>
+        <th>Expert métier</th>
+        <th>Compétences validées</th>
+        <th>À valider</th>
+        <th>Total situations</th>
+      </tr>
+    </thead>
+    <tbody id="arch-tbody"></tbody>
+  </table>
+
+  <h2 class="section">Conflits de synchronisation à arbitrer</h2>
+  <div id="arch-conflits"></div>
+
+  <h2 class="section">Situations validées prêtes à être classées</h2>
+  <div class="situ-list" id="arch-classables"></div>
+
+</section>
+
+
+<div class="reset-zone">
+  Prototype démo — données stockées localement dans ce navigateur (aucun envoi serveur).
+  <button onclick="M3.resetDemo()">Remettre la démo à l'état initial</button>
+</div>
+
+<footer>
+  <div>LMS RCP-NC · Module M3 AFEST · prototype démo</div>
+  <div>Hors-ligne friendly · faible débit &lt; 512 Kbps · pas de framework</div>
+</footer>
+
+</div><!-- /container -->
+
+
+<script src="../../shared/data/enums.js"></script>
+<script>
+(function(){
+  'use strict';
+
+  // ============================================================
+  // DONNÉES DE DÉMONSTRATION
+  // 4 apprenants, 4 certifications, CPU illustratifs (à reprendre
+  // depuis les référentiels RCP-NC réels en v2).
+  // ============================================================
+  const CERTIFS = {
+    'nc-28': {
+      nom: 'Accompagnatrice de vie (version 2025)',
+      type: 'NC', niveau: 3, cat: 'Services Personnes',
+      cpus: [
+        {id:'c1', nom:'Aider à la mobilité et aux transferts'},
+        {id:'c2', nom:'Assurer l\'hygiène et le confort'},
+        {id:'c3', nom:'Préparer les repas et accompagner la prise'},
+        {id:'c4', nom:'Stimuler les capacités cognitives et sociales'}
+      ]
+    },
+    'tp-03': {
+      nom: 'TP Agent de maintenance du bâtiment',
+      type: 'TP', niveau: 3, cat: 'BTP',
+      cpus: [
+        {id:'c1', nom:'Réaliser les interventions de plomberie courante'},
+        {id:'c2', nom:'Effectuer la maintenance électrique de base'},
+        {id:'c3', nom:'Réaliser les travaux de peinture et finition'},
+        {id:'c4', nom:'Diagnostiquer et réparer les revêtements de sol'}
+      ]
+    },
+    'nc-20': {
+      nom: 'Opérateur sur tombereau dans une exploitation minière (OTEM)',
+      type: 'NC', niveau: 3, cat: 'Industrie Mines',
+      cpus: [
+        {id:'c1', nom:'Préparer et vérifier le tombereau avant prise de poste'},
+        {id:'c2', nom:'Conduire en chargement sur l\'aire de chargement'},
+        {id:'c3', nom:'Conduire en transit (descente et montée de mine)'},
+        {id:'c4', nom:'Décharger et signaler les anomalies en fin de cycle'}
+      ]
+    },
+    'tp-09': {
+      nom: 'TP Commis de cuisine',
+      type: 'TP', niveau: 3, cat: 'Restauration',
+      cpus: [
+        {id:'c1', nom:'Mettre en place le poste de travail'},
+        {id:'c2', nom:'Réaliser les préparations préliminaires'},
+        {id:'c3', nom:'Cuisiner les entrées et entremets simples'},
+        {id:'c4', nom:'Dresser et envoyer les plats'}
+      ]
+    }
+  };
+
+  const APPRENANTS_INITIAL = [
+    {
+      id:'a1', prenom:'Marie', nom:'Wahetra', certifId:'nc-28',
+      expertNom:'Sylvie Pidjot', expertRole:'Responsable de service · EHPAD Païta',
+      situations:[
+        {id:'s1', cpuIds:['c1','c2'], etat:'classee',
+         tache:'Aider Mme R. (88 ans, hémiplégie droite) à passer du lit au fauteuil pour le petit-déjeuner.',
+         attendu:'Transfert sécurisé sans douleur, en respectant la mobilité préservée à gauche. Tenue confortable adaptée.',
+         resultat:'Transfert effectué en deux temps avec utilisation du verticalisateur. Mme R. a participé en s\'appuyant sur sa main valide. Habillée en survêtement (souhait exprimé).',
+         duree:35, difficultes:'Le verticalisateur grinçait, j\'ai demandé à le faire vérifier.',
+         eval:{c1:4, c2:3}, photos:0,
+         reflexive:{r1:'L\'importance de laisser à la personne le temps de participer.', r2:'J\'aurais pu mieux préparer le matériel avant.', r3:'Une fiche pas-à-pas du verticalisateur'},
+         commentaireExpert:'Très bien Marie, attention à toujours vérifier l\'état du matériel en début de poste.',
+         dateCreation:'2026-04-15', dateValidation:'2026-04-16'},
+        {id:'s2', cpuIds:['c3'], etat:'validee',
+         tache:'Préparer le petit-déjeuner de M. T. (régime sans sel, prothèse dentaire, capacités préservées).',
+         attendu:'Plateau adapté au régime, présenté avec choix proposés. Accompagnement sans précipitation.',
+         resultat:'Plateau servi à 7h45. Pain de mie + confiture sans sucre + thé léger. M. T. a pris seul son repas en 25 min.',
+         duree:40, difficultes:'',
+         eval:{c3:3}, photos:1,
+         reflexive:{r1:'Adapter la texture est essentiel.', r2:'Demander ses préférences plus tôt.', r3:''},
+         commentaireExpert:'Bonne autonomie laissée au résident.',
+         dateCreation:'2026-04-20', dateValidation:'2026-04-21'},
+        {id:'s3', cpuIds:['c4','c2'], etat:'faite',
+         tache:'Animer un atelier mémoire avec 4 résidents en salle commune (durée 45 min).',
+         attendu:'Participation des 4 résidents, exercice adapté à chaque niveau, pas de mise en échec.',
+         resultat:'Atelier réalisé. 3 résidents très engagés, le 4e (Mme L.) en retrait. J\'ai adapté en lui proposant un exercice plus simple en parallèle.',
+         duree:55, difficultes:'Mme L. semblait fatiguée, difficile de l\'inclure pleinement.',
+         eval:{c4:3, c2:2}, photos:2,
+         reflexive:{r1:'L\'adaptation en temps réel est possible et utile.', r2:'Vérifier l\'état de fatigue avant de commencer.', r3:'Une banque d\'exercices différenciés'},
+         commentaireExpert:'',
+         dateCreation:'2026-04-25', dateValidation:null},
+        {id:'s4', cpuIds:['c1'], etat:'afaire',
+         tache:'Aider M. K. (Parkinson) à la toilette du matin avec respect de son rythme.',
+         attendu:'Toilette complète, sans précipitation. Repérer les signes de blocage moteur. Stimuler verbalement la participation.',
+         resultat:'', duree:null, difficultes:'',
+         eval:{}, photos:0,
+         reflexive:{r1:'',r2:'',r3:''},
+         commentaireExpert:'',
+         dateCreation:'2026-04-26', dateValidation:null}
+      ]
+    },
+    {
+      id:'a2', prenom:'Jean-Pierre', nom:'Diahou', certifId:'tp-03',
+      expertNom:'Marc Tehio', expertRole:'Chef d\'équipe · entreprise BTP Nouméa',
+      situations:[
+        {id:'s1', cpuIds:['c1'], etat:'validee',
+         tache:'Remplacer le mitigeur de la salle de bain de la villa rue Olry. Couper l\'eau, démonter, poser le nouveau, vérifier l\'étanchéité.',
+         attendu:'Mitigeur fonctionnel, pas de fuite après 30 min de mise en eau. Évacuation des déchets propre.',
+         resultat:'Mitigeur remplacé. Test de fuite sur 45 min, RAS. Ancien mitigeur ramené au dépôt pour recyclage.',
+         duree:90, difficultes:'L\'écrou côté mur était grippé, j\'ai utilisé du dégrippant et attendu 10 min.',
+         eval:{c1:3}, photos:2,
+         reflexive:{r1:'Ne pas forcer sur un écrou grippé.', r2:'Apporter le dégrippant systématiquement.', r3:'Une checklist outillage par type d\'intervention'},
+         commentaireExpert:'Travail propre, bonne réaction sur l\'écrou grippé.',
+         dateCreation:'2026-04-18', dateValidation:'2026-04-19'},
+        {id:'s2', cpuIds:['c2'], etat:'faite',
+         tache:'Diagnostiquer la panne d\'éclairage cuisine appartement 3B. Vérifier disjoncteur, prises, ampoules, câblage.',
+         attendu:'Panne identifiée et localisée. Devis ou réparation immédiate selon nature.',
+         resultat:'Disjoncteur OK. Test ampoule sur autre point : ampoule HS. Remplacement immédiat. Reste à vérifier raccordement plafonnier (faux contact suspect).',
+         duree:45, difficultes:'Pas d\'échelle assez haute pour vérifier le plafonnier.',
+         eval:{c2:2}, photos:1,
+         reflexive:{r1:'Procéder du plus simple au plus complexe.', r2:'Repérer le besoin d\'échelle dès l\'arrivée.', r3:'Une fiche diagnostic standard'},
+         commentaireExpert:'',
+         dateCreation:'2026-04-24', dateValidation:null},
+        {id:'s3', cpuIds:['c3'], etat:'encours',
+         tache:'Repeindre la cage d\'escalier (2 niveaux, 24 m² environ). Préparation supports, sous-couche, peinture finale 2 couches.',
+         attendu:'Finition propre, pas de coulure, nettoyage chantier en fin de journée.',
+         resultat:'', duree:null, difficultes:'',
+         eval:{}, photos:0,
+         reflexive:{r1:'',r2:'',r3:''},
+         commentaireExpert:'',
+         dateCreation:'2026-04-26', dateValidation:null}
+      ]
+    },
+    {
+      id:'a3', prenom:'Léon', nom:'Atti', certifId:'nc-20',
+      expertNom:'Patrick Hnameu', expertRole:'Chef de roulage · site minier Tiébaghi',
+      situations:[
+        {id:'s1', cpuIds:['c1','c2'], etat:'validee',
+         tache:'Prise de poste matinale : tour du tombereau (CAT 777), check-list, démarrage, premier chargement à la pelle 6.',
+         attendu:'Check-list complète sans omission. Approche pelle conforme au plan de circulation. Premier voyage chargé propre.',
+         resultat:'Check-list OK. Niveau gasoil 92%. Pneus contrôlés. Approche pelle au top — communication radio claire avec opérateur pelle.',
+         duree:60, difficultes:'',
+         eval:{c1:4, c2:3}, photos:0,
+         reflexive:{r1:'Le check-list évite les mauvaises surprises.', r2:'Rien de particulier.', r3:''},
+         commentaireExpert:'Bonne montée en autonomie sur la prise de poste.',
+         dateCreation:'2026-04-22', dateValidation:'2026-04-23'},
+        {id:'s2', cpuIds:['c3'], etat:'faite',
+         tache:'Cycle complet de transit chargé : descente piste principale jusqu\'au stockpile, conditions humides après pluie de nuit.',
+         attendu:'Vitesse adaptée à la piste humide. Pas de blocage frein. Distance de sécurité avec véhicule devant.',
+         resultat:'Descente faite. J\'ai senti une légère perte d\'adhérence dans le virage 4, j\'ai relâché et anticipé. Pas d\'incident.',
+         duree:25, difficultes:'Visibilité réduite au virage 4 (brouillard matinal résiduel).',
+         eval:{c3:3}, photos:0,
+         reflexive:{r1:'L\'anticipation prime sur la réaction.', r2:'Annoncer ma position radio plus tôt en visibilité dégradée.', r3:'Procédure de communication radio en visibilité dégradée'},
+         commentaireExpert:'',
+         dateCreation:'2026-04-26', dateValidation:null},
+        {id:'s3', cpuIds:['c4'], etat:'afaire',
+         tache:'Décharger 5 cycles consécutifs au stockpile, enregistrer signalements éventuels (vibrations, usure).',
+         attendu:'Déchargement propre, pas de débord. Si signalement : fiche anomalie remplie en fin de poste.',
+         resultat:'', duree:null, difficultes:'',
+         eval:{}, photos:0,
+         reflexive:{r1:'',r2:'',r3:''},
+         commentaireExpert:'',
+         dateCreation:'2026-04-27', dateValidation:null}
+      ]
+    },
+    {
+      id:'a4', prenom:'Émilie', nom:'Vakié', certifId:'tp-09',
+      expertNom:'Chef Olivier Brial', expertRole:'Chef de cuisine · restaurant Le Roof Nouméa',
+      situations:[
+        {id:'s1', cpuIds:['c1'], etat:'validee',
+         tache:'Mise en place du poste froid avant le service du midi : légumes lavés/découpés, sauces de base, vinaigrettes.',
+         attendu:'Poste prêt à 11h30. Quantités calibrées sur 40 couverts. Ordre et propreté.',
+         resultat:'Poste prêt à 11h25. Tomates concassées 2 kg, brunoise carottes/oignons 800 g, vinaigrette balsamique 50 cl, sauce cocktail 30 cl.',
+         duree:120, difficultes:'',
+         eval:{c1:3}, photos:1,
+         reflexive:{r1:'L\'organisation gagne du temps en service.', r2:'Préparer les contenants à l\'avance.', r3:''},
+         commentaireExpert:'Très bonne mise en place, propre et calibrée.',
+         dateCreation:'2026-04-19', dateValidation:'2026-04-20'},
+        {id:'s2', cpuIds:['c2','c3'], etat:'faite',
+         tache:'Réaliser pour le midi : 12 entrées tartare de thon (rouge local), 8 entrées salade gésiers tièdes.',
+         attendu:'Cuisson gésiers maîtrisée. Tartare bien tranché à la lame, assaisonnement équilibré. Présentation soignée.',
+         resultat:'12 tartares + 8 salades envoyés sans renvoi. Chef a goûté et validé l\'assaisonnement du tartare.',
+         duree:90, difficultes:'Le rouge local était un peu mou, difficile de tailler très fin.',
+         eval:{c2:3, c3:3}, photos:2,
+         reflexive:{r1:'Goûter avant d\'envoyer, toujours.', r2:'Demander un poisson plus ferme la prochaine fois.', r3:'Une fiche présentation par plat avec photo'},
+         commentaireExpert:'',
+         dateCreation:'2026-04-25', dateValidation:null},
+        {id:'s3', cpuIds:['c4'], etat:'encours',
+         tache:'Service du soir : dressage et envoi des plats à 4 mains avec le second.',
+         attendu:'Cadence soutenue, pas d\'erreur d\'envoi, communication claire avec le passe.',
+         resultat:'', duree:null, difficultes:'',
+         eval:{}, photos:0,
+         reflexive:{r1:'',r2:'',r3:''},
+         commentaireExpert:'',
+         dateCreation:'2026-04-27', dateValidation:null}
+      ]
+    }
+  ];
+
+  // Conflits de synchronisation (mock — en démo statique)
+  const CONFLITS_INITIAL = [
+    {
+      id:'conf1', apprenantId:'a2', situationId:'s2',
+      versionA:{
+        qui:'Apprenant Jean-Pierre Diahou',
+        quand:'24/04/2026 16:42 (saisi hors-ligne sur chantier)',
+        contenu:'Disjoncteur OK. Test ampoule sur autre point : ampoule HS. Remplacement immédiat. Reste à vérifier raccordement plafonnier.'
+      },
+      versionB:{
+        qui:'Expert métier Marc Tehio',
+        quand:'24/04/2026 17:15 (saisi au bureau)',
+        contenu:'Diagnostic réalisé par Jean-Pierre. Ampoule HS confirmée et remplacée. Le plafonnier reste à inspecter — j\'ai prévu une intervention vendredi avec lui pour ce point.'
+      }
+    }
+  ];
+
+  // ============================================================
+  // ÉTAT GLOBAL ET PERSISTANCE LOCALE
+  // ============================================================
+  const STORAGE_KEY = 'm3-afest-state-v1';
+
+  let state = chargeEtat();
+
+  function chargeEtat(){
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){
+        const parsed = JSON.parse(raw);
+        if(parsed && parsed.apprenants) return parsed;
+      }
+    } catch(e){ console.warn('localStorage indisponible ou corrompu', e); }
+    return {
+      apprenants: JSON.parse(JSON.stringify(APPRENANTS_INITIAL)),
+      conflits: JSON.parse(JSON.stringify(CONFLITS_INITIAL)),
+      currentRole: 'apprenant',
+      currentApprenantId: 'a1',
+      currentExpertApprenantId: 'a1',
+      saisieEnCours: null,  // {apprenantId, situationId}
+      examenEnCours: null
+    };
+  }
+
+  function sauveEtat(){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch(e){ console.warn('Impossible de sauver dans localStorage', e); }
+  }
+
+  function getApprenant(id){ return state.apprenants.find(a => a.id === id); }
+  function getSituation(apprenant, situationId){ return apprenant.situations.find(s => s.id === situationId); }
+
+  // ============================================================
+  // RENDU — utilitaires
+  // ============================================================
+  const ETATS_LIB = {
+    afaire:'À faire', encours:'En cours', faite:'Faite',
+    validee:'Validée', classee:'Classée'
+  };
+
+  function escapeHtml(s){
+    if(s == null) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function statsApprenant(a){
+    const certif = CERTIFS[a.certifId];
+    const total = a.situations.length;
+    const faite = a.situations.filter(s => s.etat === 'faite').length;
+    const validees = a.situations.filter(s => s.etat === 'validee' || s.etat === 'classee').length;
+    // CPU validés = CPU dont au moins une situation est validée/classée
+    const cpuValides = certif.cpus.filter(cpu =>
+      a.situations.some(s => (s.etat === 'validee' || s.etat === 'classee') && s.cpuIds && s.cpuIds.includes(cpu.id))
+    ).length;
+    return {total, faite, validees, cpuValides, cpuTotal: certif.cpus.length};
+  }
+
+  // ============================================================
+  // SÉLECTEUR DE RÔLE
+  // ============================================================
+  document.querySelectorAll('#roleSwitch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const role = btn.dataset.role;
+      state.currentRole = role;
+      document.querySelectorAll('#roleSwitch button').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + role).classList.add('active');
+      sauveEtat();
+      render();
+    });
+  });
+
+  // ============================================================
+  // RENDU VUE APPRENANT
+  // ============================================================
+  function renderApprenant(){
+    // Sélecteur d'apprenant
+    const sel = document.getElementById('appr-select');
+    sel.innerHTML = state.apprenants.map(a =>
+      `<option value="${a.id}" ${a.id === state.currentApprenantId ? 'selected' : ''}>${escapeHtml(a.prenom + ' ' + a.nom)}</option>`
+    ).join('');
+    sel.onchange = e => { state.currentApprenantId = e.target.value; sauveEtat(); render(); };
+
+    const a = getApprenant(state.currentApprenantId);
+    const certif = CERTIFS[a.certifId];
+
+    document.getElementById('appr-who').textContent = `${a.prenom} ${a.nom}`;
+    document.getElementById('appr-what').textContent =
+      `Je vise : ${certif.nom} · niveau ${certif.niveau} · ${certif.cat} · expert métier : ${a.expertNom} (${a.expertRole})`;
+
+    // CPU avancement
+    const grid = document.getElementById('appr-cpu-grid');
+    grid.innerHTML = certif.cpus.map(cpu => {
+      const sitsCpu = a.situations.filter(s => s.cpuIds && s.cpuIds.includes(cpu.id));
+      const valides = sitsCpu.filter(s => s.etat === 'validee' || s.etat === 'classee').length;
+      const total = sitsCpu.length;
+      let pct = total === 0 ? 0 : Math.round((valides/total)*100);
+      let cls = pct === 100 ? '' : (pct > 0 ? 'partiel' : 'vide');
+      let label = total === 0 ? 'aucune situation rattachée' : `${valides} validée(s) sur ${total}`;
+      return `<div class="cpu-card">
+        <div class="cpu-titre">${escapeHtml(cpu.nom)}</div>
+        <div class="cpu-bar"><div class="cpu-bar-fill ${cls}" style="width:${pct}%"></div></div>
+        <div class="cpu-stats">${label}${total > 0 ? ' — ' + pct + '%' : ''}</div>
+      </div>`;
+    }).join('');
+
+    // Liste OR / situations
+    const list = document.getElementById('appr-or-list');
+    if(a.situations.length === 0){
+      list.innerHTML = '<div class="notice empty">Aucune situation pour le moment. Ton expert métier doit t\'envoyer un ordre de travail.</div>';
+    } else {
+      list.innerHTML = a.situations.map(s => {
+        const cpus = s.cpuIds.map(cid => certif.cpus.find(c => c.id === cid)).filter(Boolean);
+        const cpuLib = cpus.map(c => c.nom).join(' · ');
+        let actions = '';
+        if(s.etat === 'afaire'){
+          actions = `<button class="btn primary" onclick="M3.ouvreSaisie('${s.id}', false)">Démarrer</button>`;
+        } else if(s.etat === 'encours'){
+          actions = `<button class="btn primary" onclick="M3.ouvreSaisie('${s.id}', true)">Continuer</button>`;
+        } else if(s.etat === 'faite'){
+          actions = `<button class="btn ghost" onclick="M3.ouvreSaisie('${s.id}', true)">Relire / modifier</button><span class="meta" style="font-size:11px">en attente de validation</span>`;
+        } else if(s.etat === 'validee' || s.etat === 'classee'){
+          actions = `<button class="btn ghost" onclick="M3.ouvreSaisie('${s.id}', true)">Consulter</button>`;
+        }
+        return `<div class="situ ${s.etat}">
+          <div class="corps">
+            <div class="meta"><span class="stt ${s.etat}">${ETATS_LIB[s.etat]}</span>OR ${escapeHtml(s.id)} · ${escapeHtml(cpuLib)}</div>
+            <h4>${escapeHtml(s.tache)}</h4>
+            <div class="desc"><strong>Résultat attendu :</strong> ${escapeHtml(s.attendu)}</div>
+            ${s.commentaireExpert ? `<div class="desc" style="margin-top:6px;color:var(--info)"><strong>💬 ${escapeHtml(a.expertNom)} :</strong> ${escapeHtml(s.commentaireExpert)}</div>` : ''}
+          </div>
+          <div class="actions">${actions}</div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  // ============================================================
+  // PANNEAU SAISIE
+  // ============================================================
+  let M3 = window.M3 = {};
+
+  M3.ouvreSaisie = function(situationId, modeRelecture){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, situationId);
+    if(!s) return;
+    state.saisieEnCours = {apprenantId: a.id, situationId: s.id};
+    sauveEtat();
+
+    // Si afaire, on passe à encours dès qu'on commence à saisir
+    if(s.etat === 'afaire'){ s.etat = 'encours'; sauveEtat(); }
+
+    document.getElementById('saisie-titre').textContent = modeRelecture ? `Situation ${s.id} — relecture` : `Situation ${s.id} — saisie`;
+    document.getElementById('saisie-tache-lue').textContent = s.tache;
+    document.getElementById('saisie-attendu-lu').textContent = s.attendu;
+    document.getElementById('saisie-resultat').value = s.resultat || '';
+    document.getElementById('saisie-duree').value = s.duree || '';
+    document.getElementById('saisie-difficultes').value = s.difficultes || '';
+    document.getElementById('ref1').value = s.reflexive ? (s.reflexive.r1 || '') : '';
+    document.getElementById('ref2').value = s.reflexive ? (s.reflexive.r2 || '') : '';
+    document.getElementById('ref3').value = s.reflexive ? (s.reflexive.r3 || '') : '';
+
+    // Auto-évaluation par CPU mobilisé
+    const certif = CERTIFS[a.certifId];
+    const evalDiv = document.getElementById('saisie-eval');
+    evalDiv.innerHTML = s.cpuIds.map(cid => {
+      const cpu = certif.cpus.find(c => c.id === cid);
+      if(!cpu) return '';
+      const valeur = (s.eval && s.eval[cid]) || 0;
+      return `<div class="eval-cpu">
+        <div class="lib">${escapeHtml(cpu.nom)}</div>
+        <div class="eval-stars">
+          ${[1,2,3,4].map(n => `<button data-val="${n}" class="${valeur === n ? 'choisi' : ''}" onclick="M3.choisitEval('${cid}', ${n})">${n}</button>`).join('')}
+        </div>
+      </div>`;
+    }).join('');
+
+    // Photos (mock)
+    renderPhotosSaisie();
+
+    // Lecture seule si validée/classée
+    const isReadonly = (s.etat === 'validee' || s.etat === 'classee');
+    document.querySelectorAll('#panel-saisie input, #panel-saisie textarea, #panel-saisie .eval-stars button, #panel-saisie .photo-add')
+      .forEach(el => el.disabled = isReadonly);
+    document.querySelectorAll('#panel-saisie .actions .btn:not(.ghost)').forEach(b => b.style.display = isReadonly ? 'none' : '');
+
+    document.getElementById('panel-saisie').classList.add('open');
+    document.getElementById('panel-saisie').scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+  function renderPhotosSaisie(){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, state.saisieEnCours.situationId);
+    const div = document.getElementById('saisie-photos');
+    let html = '';
+    for(let i = 0; i < (s.photos || 0); i++){
+      html += `<div class="photo-mock">📷<button class="x" onclick="M3.retirePhoto(${i})" title="Retirer">×</button></div>`;
+    }
+    html += `<button class="photo-add" onclick="M3.ajoutePhoto()">+ ajouter une photo</button>`;
+    div.innerHTML = html;
+  }
+
+  M3.ajoutePhoto = function(){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, state.saisieEnCours.situationId);
+    s.photos = (s.photos || 0) + 1;
+    sauveEtat();
+    renderPhotosSaisie();
+  };
+
+  M3.retirePhoto = function(i){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, state.saisieEnCours.situationId);
+    s.photos = Math.max(0, (s.photos || 0) - 1);
+    sauveEtat();
+    renderPhotosSaisie();
+  };
+
+  M3.choisitEval = function(cpuId, valeur){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, state.saisieEnCours.situationId);
+    s.eval = s.eval || {};
+    s.eval[cpuId] = valeur;
+    sauveEtat();
+    // Re-render boutons
+    document.querySelectorAll(`#saisie-eval .eval-cpu`).forEach(div => {
+      const lib = div.querySelector('.lib').textContent;
+      // Match approximatif par lib
+    });
+    // Plus simple : refaire le panneau
+    M3.ouvreSaisie(s.id, true);
+  };
+
+  function collecteSaisie(){
+    const a = getApprenant(state.currentApprenantId);
+    const s = getSituation(a, state.saisieEnCours.situationId);
+    s.resultat = document.getElementById('saisie-resultat').value;
+    s.duree = parseInt(document.getElementById('saisie-duree').value, 10) || null;
+    s.difficultes = document.getElementById('saisie-difficultes').value;
+    s.reflexive = {
+      r1: document.getElementById('ref1').value,
+      r2: document.getElementById('ref2').value,
+      r3: document.getElementById('ref3').value
+    };
+    return s;
+  }
+
+  M3.enregistreBrouillon = function(){
+    const s = collecteSaisie();
+    if(s.etat === 'afaire') s.etat = 'encours';
+    sauveEtat();
+    M3.fermeSaisie();
+    render();
+    flashMessage('Brouillon enregistré.');
+  };
+
+  M3.declareFaite = function(){
+    const s = collecteSaisie();
+    if(!s.resultat || s.resultat.trim() === ''){
+      alert('Tu dois au minimum décrire ton résultat avant de déclarer la situation faite.');
+      return;
+    }
+    s.etat = 'faite';
+    sauveEtat();
+    M3.fermeSaisie();
+    render();
+    flashMessage('Situation déclarée faite. En attente de validation par ton expert métier.');
+  };
+
+  M3.fermeSaisie = function(){
+    document.getElementById('panel-saisie').classList.remove('open');
+    state.saisieEnCours = null;
+    sauveEtat();
+  };
+
+  // ============================================================
+  // RENDU VUE EXPERT MÉTIER
+  // ============================================================
+  function renderExpert(){
+    const sel = document.getElementById('exp-select');
+    sel.innerHTML = state.apprenants.map(a =>
+      `<option value="${a.id}" ${a.id === state.currentExpertApprenantId ? 'selected' : ''}>${escapeHtml(a.prenom + ' ' + a.nom + ' (' + a.expertNom + ')')}</option>`
+    ).join('');
+    sel.onchange = e => { state.currentExpertApprenantId = e.target.value; sauveEtat(); render(); };
+
+    const a = getApprenant(state.currentExpertApprenantId);
+    const certif = CERTIFS[a.certifId];
+    document.getElementById('exp-who').textContent = `${a.expertNom} — ${a.expertRole}`;
+
+    // Situations à valider (état faite)
+    const aValider = a.situations.filter(s => s.etat === 'faite');
+    const listFaites = document.getElementById('exp-faites-list');
+    if(aValider.length === 0){
+      listFaites.innerHTML = '<div class="notice empty">Aucune situation à valider pour le moment.</div>';
+    } else {
+      listFaites.innerHTML = aValider.map(s => renderSituCardExpert(s, a, certif, true)).join('');
+    }
+
+    const validees = a.situations.filter(s => s.etat === 'validee' || s.etat === 'classee');
+    const listValidees = document.getElementById('exp-validees-list');
+    if(validees.length === 0){
+      listValidees.innerHTML = '<div class="notice empty">Aucune situation déjà validée.</div>';
+    } else {
+      listValidees.innerHTML = validees.map(s => renderSituCardExpert(s, a, certif, false)).join('');
+    }
+  }
+
+  function renderSituCardExpert(s, a, certif, aValider){
+    const cpus = s.cpuIds.map(cid => certif.cpus.find(c => c.id === cid)).filter(Boolean);
+    const cpuLib = cpus.map(c => c.nom).join(' · ');
+    const action = aValider
+      ? `<button class="btn primary" onclick="M3.ouvreExamen('${s.id}')">Examiner et décider</button>`
+      : `<button class="btn ghost" onclick="M3.ouvreExamen('${s.id}')">Relire</button>`;
+    return `<div class="situ ${s.etat}">
+      <div class="corps">
+        <div class="meta"><span class="stt ${s.etat}">${ETATS_LIB[s.etat]}</span>OR ${escapeHtml(s.id)} · ${escapeHtml(cpuLib)}</div>
+        <h4>${escapeHtml(s.tache)}</h4>
+        <div class="desc"><strong>Résultat de l'apprenant :</strong> ${escapeHtml(s.resultat || '—')}</div>
+        ${s.difficultes ? `<div class="desc" style="margin-top:4px;color:var(--warning)"><strong>Difficulté signalée :</strong> ${escapeHtml(s.difficultes)}</div>` : ''}
+      </div>
+      <div class="actions">${action}</div>
+    </div>`;
+  }
+
+  M3.ouvreExamen = function(situationId){
+    const a = getApprenant(state.currentExpertApprenantId);
+    const s = getSituation(a, situationId);
+    if(!s) return;
+    const certif = CERTIFS[a.certifId];
+    state.examenEnCours = {apprenantId:a.id, situationId:s.id};
+    sauveEtat();
+
+    document.getElementById('examen-titre').textContent = `Situation ${s.id} de ${a.prenom} ${a.nom} — ${ETATS_LIB[s.etat]}`;
+    document.getElementById('examen-tache').textContent = s.tache;
+    document.getElementById('examen-attendu').textContent = s.attendu;
+    document.getElementById('examen-resultat').textContent = s.resultat || '—';
+    document.getElementById('examen-duree').textContent = s.duree ? (s.duree + ' min') : '—';
+    document.getElementById('examen-difficultes').textContent = s.difficultes || 'aucune signalée';
+    document.getElementById('examen-commentaire').value = s.commentaireExpert || '';
+
+    // Photos (lecture)
+    const ph = document.getElementById('examen-photos');
+    let html = '';
+    for(let i = 0; i < (s.photos || 0); i++){ html += `<div class="photo-mock">📷</div>`; }
+    if(html === '') html = '<span style="color:var(--muted);font-size:var(--fs-xs)">aucune photo jointe</span>';
+    ph.innerHTML = html;
+
+    // Eval lue
+    const evalDiv = document.getElementById('examen-eval');
+    if(!s.eval || Object.keys(s.eval).length === 0){
+      evalDiv.innerHTML = '<span style="color:var(--muted)">non renseignée</span>';
+    } else {
+      evalDiv.innerHTML = Object.entries(s.eval).map(([cid, v]) => {
+        const cpu = certif.cpus.find(c => c.id === cid);
+        if(!cpu) return '';
+        const lib = ['—','je découvre','j\'apprends','je maîtrise avec aide','je maîtrise seul(e)'][v] || '?';
+        return `<div style="margin-bottom:4px"><strong>${escapeHtml(cpu.nom)}</strong> : ${v}/4 — ${lib}</div>`;
+      }).join('');
+    }
+
+    // Réflexive
+    const ref = s.reflexive || {};
+    document.getElementById('examen-reflexive').textContent =
+      `Ce qu'il/elle a appris : ${ref.r1 || '—'}\n\nCe qu'il/elle referait différemment : ${ref.r2 || '—'}\n\nLes ressources qui auraient aidé : ${ref.r3 || '—'}`;
+
+    // Boutons selon état
+    const isFinal = (s.etat === 'validee' || s.etat === 'classee');
+    document.querySelectorAll('#panel-examen .actions .btn').forEach(b => {
+      if(b.classList.contains('ghost')) return;
+      b.style.display = isFinal ? 'none' : '';
+    });
+    document.getElementById('examen-commentaire').disabled = isFinal;
+
+    document.getElementById('panel-examen').classList.add('open');
+    document.getElementById('panel-examen').scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+  M3.valide = function(){
+    const a = getApprenant(state.currentExpertApprenantId);
+    const s = getSituation(a, state.examenEnCours.situationId);
+    s.commentaireExpert = document.getElementById('examen-commentaire').value;
+    s.etat = 'validee';
+    s.dateValidation = new Date().toISOString().slice(0,10);
+    sauveEtat();
+    M3.fermeExamen();
+    render();
+    flashMessage('Situation validée et acquis attestés.');
+  };
+
+  M3.demandeRefaire = function(){
+    const a = getApprenant(state.currentExpertApprenantId);
+    const s = getSituation(a, state.examenEnCours.situationId);
+    s.commentaireExpert = document.getElementById('examen-commentaire').value;
+    if(!s.commentaireExpert || s.commentaireExpert.trim() === ''){
+      alert('Quand on demande à l\'apprenant de refaire, il faut lui expliquer pourquoi dans le commentaire.');
+      return;
+    }
+    s.etat = 'encours';
+    sauveEtat();
+    M3.fermeExamen();
+    render();
+    flashMessage('Situation renvoyée à l\'apprenant pour reprise.');
+  };
+
+  M3.fermeExamen = function(){
+    document.getElementById('panel-examen').classList.remove('open');
+    state.examenEnCours = null;
+    sauveEtat();
+  };
+
+  // ============================================================
+  // RENDU VUE ARCHITECTE
+  // ============================================================
+  function renderArchitecte(){
+    const tb = document.getElementById('arch-tbody');
+    tb.innerHTML = state.apprenants.map(a => {
+      const certif = CERTIFS[a.certifId];
+      const st = statsApprenant(a);
+      const pct = st.cpuTotal ? Math.round((st.cpuValides / st.cpuTotal) * 100) : 0;
+      return `<tr>
+        <td><strong>${escapeHtml(a.prenom + ' ' + a.nom)}</strong></td>
+        <td>${escapeHtml(certif.nom)}<br><small style="color:var(--muted)">${certif.type} · niv.${certif.niveau} · ${certif.cat}</small></td>
+        <td>${escapeHtml(a.expertNom)}<br><small style="color:var(--muted)">${escapeHtml(a.expertRole)}</small></td>
+        <td><div class="progress-mini"><div class="b"><i style="width:${pct}%"></i></div><span>${st.cpuValides}/${st.cpuTotal}</span></div></td>
+        <td>${st.faite > 0 ? `<strong style="color:var(--warning)">${st.faite}</strong>` : '0'}</td>
+        <td>${st.total}</td>
+      </tr>`;
+    }).join('');
+
+    // Conflits
+    const cdiv = document.getElementById('arch-conflits');
+    if(state.conflits.length === 0){
+      cdiv.innerHTML = '<div class="notice empty">Aucun conflit de synchronisation à arbitrer.</div>';
+    } else {
+      cdiv.innerHTML = state.conflits.map(c => {
+        const a = getApprenant(c.apprenantId);
+        return `<div class="conflit">
+          <h4>⚠ Conflit sur situation ${escapeHtml(c.situationId)} de ${escapeHtml(a.prenom + ' ' + a.nom)}</h4>
+          <div class="help">L'apprenant et l'expert ont saisi des informations différentes pendant que l'un des deux était hors-ligne. Choisis la version retenue, ou compose une version finale à partir des deux.</div>
+          <div class="deux">
+            <div class="vers">
+              <div class="qui">${escapeHtml(c.versionA.qui)}</div>
+              <div class="quand">${escapeHtml(c.versionA.quand)}</div>
+              <div>${escapeHtml(c.versionA.contenu)}</div>
+            </div>
+            <div class="vers">
+              <div class="qui">${escapeHtml(c.versionB.qui)}</div>
+              <div class="quand">${escapeHtml(c.versionB.quand)}</div>
+              <div>${escapeHtml(c.versionB.contenu)}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap">
+            <button class="btn" onclick="M3.choixConflit('${c.id}','A')">Garder version apprenant</button>
+            <button class="btn" onclick="M3.choixConflit('${c.id}','B')">Garder version expert</button>
+            <button class="btn primary" onclick="M3.choixConflit('${c.id}','C')">Composer une version finale</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    // Situations à classer
+    const aClasser = [];
+    state.apprenants.forEach(a => {
+      a.situations.filter(s => s.etat === 'validee').forEach(s => aClasser.push({a, s}));
+    });
+    const ldiv = document.getElementById('arch-classables');
+    if(aClasser.length === 0){
+      ldiv.innerHTML = '<div class="notice empty">Aucune situation prête à être classée.</div>';
+    } else {
+      ldiv.innerHTML = aClasser.map(({a, s}) => {
+        const certif = CERTIFS[a.certifId];
+        const cpuLib = s.cpuIds.map(cid => (certif.cpus.find(c => c.id === cid) || {}).nom).filter(Boolean).join(' · ');
+        return `<div class="situ validee">
+          <div class="corps">
+            <div class="meta"><span class="stt validee">Validée</span>${escapeHtml(a.prenom + ' ' + a.nom)} · OR ${escapeHtml(s.id)} · ${escapeHtml(cpuLib)}</div>
+            <h4>${escapeHtml(s.tache)}</h4>
+            <div class="desc">Validée le ${escapeHtml(s.dateValidation || '—')} par ${escapeHtml(a.expertNom)}.</div>
+          </div>
+          <div class="actions">
+            <button class="btn primary" onclick="M3.classe('${a.id}','${s.id}')">Classer (verser au dossier VAE et à M4)</button>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  M3.choixConflit = function(conflitId, choix){
+    const c = state.conflits.find(x => x.id === conflitId);
+    if(!c) return;
+    const libelle = choix === 'A' ? 'version apprenant retenue' : (choix === 'B' ? 'version expert retenue' : 'version composée à valider avec les deux');
+    state.conflits = state.conflits.filter(x => x.id !== conflitId);
+    sauveEtat();
+    render();
+    flashMessage('Conflit résolu : ' + libelle + '.');
+  };
+
+  M3.classe = function(apprenantId, situationId){
+    const a = getApprenant(apprenantId);
+    const s = getSituation(a, situationId);
+    s.etat = 'classee';
+    sauveEtat();
+    render();
+    flashMessage('Situation classée. Versée au dossier VAE (M2) et au suivi 5 ans (M4).');
+  };
+
+  // ============================================================
+  // EXPORT / IMPORT DE DOSSIER — dette D7
+  // Contrat : docs/schema-dossier-parcours_v1.md (rcpnc-dossier-parcours v1)
+  // ============================================================
+
+  function fmtFormat(){ return window.RCPNC_ENUMS ? RCPNC_ENUMS.FORMAT : 'rcpnc-dossier-parcours'; }
+  function fmtVersion(){ return window.RCPNC_ENUMS ? RCPNC_ENUMS.VERSION : 1; }
+
+  // Construit le bloc afest (schema §3.6) pour un apprenant.
+  // Les situations portent les champs du schema + les champs M3 complets
+  // (champs supplementaires toleres) pour permettre un re-import non destructif.
+  function construitAfest(a){
+    var cpuValides = [];
+    (a.situations || []).forEach(function(s){
+      if(s.etat === 'validee' || s.etat === 'classee'){
+        (s.cpuIds || []).forEach(function(cid){
+          if(cpuValides.indexOf(cid) === -1) cpuValides.push(cid);
+        });
+      }
+    });
+    return {
+      certifId: a.certifId,
+      apprenant: { id: a.id, nom: a.nom, prenom: a.prenom },
+      expert: { nom: a.expertNom || '', role: a.expertRole || '' },
+      situations: (a.situations || []).map(function(s){
+        return {
+          // --- champs du schema §3.6 ---
+          id: s.id,
+          intitule: s.tache || '',
+          etat: s.etat,
+          cpuIds: s.cpuIds || [],
+          dateCreation: s.dateCreation || null,
+          dateValidation: s.dateValidation || null,
+          // --- champs M3 complets (re-import non destructif) ---
+          tache: s.tache || '',
+          attendu: s.attendu || '',
+          resultat: s.resultat || '',
+          duree: (s.duree != null ? s.duree : null),
+          difficultes: s.difficultes || '',
+          eval: s.eval || {},
+          photos: s.photos || 0,
+          reflexive: s.reflexive || {r1:'',r2:'',r3:''},
+          commentaireExpert: s.commentaireExpert || ''
+        };
+      }),
+      cpu_valides: cpuValides,
+      derniere_maj: new Date().toISOString()
+    };
+  }
+
+  // Assemble le dossier complet exporte (testable sans telechargement).
+  M3.construitDossierExport = function(){
+    var a = getApprenant(state.currentApprenantId);
+    if(!a) return null;
+    var dossier = {
+      _meta: {
+        format: fmtFormat(),
+        version: fmtVersion(),
+        exportedFrom: 'M3',
+        exportedAt: new Date().toISOString(),
+        phase: 'afest_en_cours'
+      },
+      afest: construitAfest(a)
+    };
+    // Report cumulatif des blocs amont recus a l'import (dossier cumulatif).
+    var amont = a._dossier || {};
+    if(amont.diagnostic)      dossier.diagnostic      = amont.diagnostic;
+    if(amont.candidat_dispos) dossier.candidat_dispos = amont.candidat_dispos;
+    if(amont.validation)      dossier.validation      = amont.validation;
+    if(amont.reassignation)   dossier.reassignation   = amont.reassignation;
+    return dossier;
+  };
+
+  M3.exporteDossier = function(){
+    var a = getApprenant(state.currentApprenantId);
+    if(!a){ alert('Aucun apprenant selectionne — impossible d\'exporter.'); return; }
+    var dossier = M3.construitDossierExport();
+    var blob = new Blob([JSON.stringify(dossier, null, 2)], {type:'application/json'});
+    var url = URL.createObjectURL(blob);
+    var lien = document.createElement('a');
+    lien.href = url;
+    lien.download = 'dossier-parcours-RCPNC.json';
+    document.body.appendChild(lien);
+    lien.click();
+    document.body.removeChild(lien);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+    flashMessage('Dossier AFEST exporte pour ' + a.prenom + ' ' + a.nom + '.');
+  };
+
+  // Extrait les blocs amont a reporter d'un dossier importe.
+  function extraitBlocsAmont(parsed){
+    var d = {};
+    if(parsed.diagnostic)      d.diagnostic      = parsed.diagnostic;
+    if(parsed.candidat_dispos) d.candidat_dispos = parsed.candidat_dispos;
+    if(parsed.validation)      d.validation      = parsed.validation;
+    if(parsed.reassignation)   d.reassignation   = parsed.reassignation;
+    return d;
+  }
+
+  // Enregistrement minimal d'une certification inconnue de CERTIFS,
+  // pour ne pas planter statsApprenant / les rendus (handoff D7).
+  function assureCertif(certId, parsed){
+    if(!certId || CERTIFS[certId]) return;
+    var diag = (parsed && parsed.diagnostic) || {};
+    var cert = diag.cert || {};
+    var cpus = [];
+    if(Array.isArray(diag.cpuScores)){
+      cpus = diag.cpuScores.map(function(c, i){
+        return { id: c.id || ('c' + (i+1)), nom: c.title || c.name || ('Compétence ' + (i+1)) };
+      });
+    }
+    // Dossier M3 sans cpuScores : reconstituer les CPU depuis les situations.
+    if(cpus.length === 0 && parsed && parsed.afest && Array.isArray(parsed.afest.situations)){
+      var vus = {};
+      parsed.afest.situations.forEach(function(s){
+        (s.cpuIds || []).forEach(function(cid){
+          if(!vus[cid]){ vus[cid] = true; cpus.push({ id: cid, nom: 'Compétence ' + cid }); }
+        });
+      });
+    }
+    CERTIFS[certId] = {
+      nom: cert.name || ('Certification ' + certId),
+      type: cert.type || '—',
+      niveau: (cert.level != null ? cert.level : '—'),
+      cat: cert.cat || '—',
+      cpus: cpus
+    };
+  }
+
+  // Place un apprenant dans l'etat (remplace si l'id existe deja).
+  function placeApprenant(apprenant){
+    var i = -1;
+    for(var k = 0; k < state.apprenants.length; k++){
+      if(state.apprenants[k].id === apprenant.id){ i = k; break; }
+    }
+    if(i >= 0) state.apprenants[i] = apprenant;
+    else state.apprenants.push(apprenant);
+    state.currentApprenantId = apprenant.id;
+    state.currentExpertApprenantId = apprenant.id;
+  }
+
+  // Cas 1 — re-import d'un dossier exporte par M3 : restaure l'apprenant.
+  function importeDossierM3(parsed){
+    var af = parsed.afest;
+    if(!af || !af.apprenant){
+      alert('Ce dossier M3 ne contient pas de bloc AFEST exploitable.');
+      return false;
+    }
+    assureCertif(af.certifId, parsed);
+    var situations = (af.situations || []).map(function(s){
+      return {
+        id: s.id,
+        cpuIds: s.cpuIds || [],
+        etat: s.etat || 'afaire',
+        tache: (s.tache != null ? s.tache : (s.intitule || '')),
+        attendu: s.attendu || '',
+        resultat: s.resultat || '',
+        duree: (s.duree != null ? s.duree : null),
+        difficultes: s.difficultes || '',
+        eval: s.eval || {},
+        photos: s.photos || 0,
+        reflexive: s.reflexive || {r1:'',r2:'',r3:''},
+        commentaireExpert: s.commentaireExpert || '',
+        dateCreation: s.dateCreation || null,
+        dateValidation: s.dateValidation || null
+      };
+    });
+    var exp = af.expert || {};
+    placeApprenant({
+      id: af.apprenant.id || ('m3-' + Date.now()),
+      prenom: af.apprenant.prenom || '',
+      nom: af.apprenant.nom || '',
+      certifId: af.certifId,
+      expertNom: exp.nom || 'À désigner',
+      expertRole: exp.role || 'expert métier à affecter',
+      situations: situations,
+      _dossier: extraitBlocsAmont(parsed)
+    });
+    flashMessage('Dossier M3 restaure : ' + (af.apprenant.prenom || '') + ' ' + (af.apprenant.nom || '') + '.');
+    return true;
+  }
+
+  // Cas 2 — dossier amont M1 / SAS : cree un apprenant seede depuis le diagnostic.
+  function importeDossierAmont(parsed){
+    var diag = parsed.diagnostic;
+    if(!diag || !diag.cert || !diag.cert.id){
+      alert('Ce dossier amont ne contient pas de diagnostic exploitable (certification visee absente).');
+      return false;
+    }
+    assureCertif(diag.cert.id, parsed);
+    // Identite : priorite au Livret 1 du conseiller, sinon candidat_dispos.
+    var idt = (parsed.validation && parsed.validation.livret_1_prerempli && parsed.validation.livret_1_prerempli.identite)
+           || parsed.candidat_dispos || {};
+    placeApprenant({
+      id: 'amont-' + Date.now(),
+      prenom: idt.prenom || 'Apprenant',
+      nom: idt.nom || 'importé',
+      certifId: diag.cert.id,
+      expertNom: 'À désigner',
+      expertRole: 'expert métier à affecter',
+      situations: [],
+      _dossier: extraitBlocsAmont(parsed)
+    });
+    flashMessage('Apprenant cree depuis le dossier ' + parsed._meta.exportedFrom +
+                 ' — l\'expert metier doit desormais saisir les situations de travail.');
+    return true;
+  }
+
+  // Aiguillage commun (testable sans FileReader).
+  M3.appliqueDossierImporte = function(parsed){
+    if(!parsed || !parsed._meta || parsed._meta.format !== fmtFormat()){
+      alert('Ce fichier n\'est pas un dossier de parcours RCP-NC.');
+      return false;
+    }
+    var from = parsed._meta.exportedFrom;
+    var ok = false;
+    if(from === 'M3'){
+      ok = importeDossierM3(parsed);
+    } else if(from === 'M1' || from === 'SAS_candidat' || from === 'SAS_conseiller'){
+      ok = importeDossierAmont(parsed);
+    } else {
+      alert('Origine de dossier non prise en charge par M3 : ' + (from || 'inconnue') + '.');
+      return false;
+    }
+    if(ok){
+      sauveEtat();
+      // Bascule sur la vue apprenant pour montrer le dossier importe.
+      state.currentRole = 'apprenant';
+      document.querySelectorAll('#roleSwitch button').forEach(function(b){
+        b.classList.toggle('active', b.dataset.role === 'apprenant');
+      });
+      document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('active'); });
+      document.getElementById('view-apprenant').classList.add('active');
+      render();
+    }
+    return ok;
+  };
+
+  M3.importeDossier = function(file){
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e){
+      var parsed;
+      try { parsed = JSON.parse(e.target.result); }
+      catch(err){ alert('Fichier illisible : ce n\'est pas un dossier JSON valide.'); return; }
+      M3.appliqueDossierImporte(parsed);
+    };
+    reader.onerror = function(){ alert('Impossible de lire le fichier.'); };
+    reader.readAsText(file);
+  };
+
+  // ============================================================
+  // RESET DÉMO
+  // ============================================================
+  M3.resetDemo = function(){
+    if(!confirm('Remettre toute la démo à l\'état initial ? Toutes les modifications locales seront perdues.')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    state = chargeEtat();
+    render();
+    flashMessage('Démo remise à l\'état initial.');
+  };
+
+  // ============================================================
+  // UTIL — flash message éphémère
+  // ============================================================
+  function flashMessage(txt){
+    let el = document.getElementById('flash');
+    if(!el){
+      el = document.createElement('div');
+      el.id = 'flash';
+      el.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 24px;border-radius:8px;box-shadow:var(--shadow-lift);z-index:1000;font-size:14px;max-width:90vw;text-align:center;transition:opacity .3s';
+      document.body.appendChild(el);
+    }
+    el.textContent = txt;
+    el.style.opacity = '1';
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.style.opacity = '0'; }, 2800);
+  }
+
+  // ============================================================
+  // RENDU GLOBAL
+  // ============================================================
+  function render(){
+    if(state.currentRole === 'apprenant') renderApprenant();
+    if(state.currentRole === 'expert') renderExpert();
+    if(state.currentRole === 'architecte') renderArchitecte();
+  }
+
+  // Bind initial role switch
+  document.querySelectorAll('#roleSwitch button').forEach(b => {
+    b.classList.toggle('active', b.dataset.role === state.currentRole);
+  });
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + state.currentRole).classList.add('active');
+
+  // Branche le selecteur de fichier d'import (dette D7).
+  var inputImport = document.getElementById('m3-import-file');
+  if(inputImport){
+    inputImport.addEventListener('change', function(e){
+      var f = e.target.files && e.target.files[0];
+      if(f) M3.importeDossier(f);
+      e.target.value = '';  // autorise un re-import du meme fichier
+    });
+  }
+
+  render();
+
+})();
+</script>
+</body>
+</html>

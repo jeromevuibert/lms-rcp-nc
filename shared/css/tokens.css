@@ -1,0 +1,76 @@
+/* ==========================================================================
+   LMS RCP-NC · design tokens
+   Source de vérité des variables de design partagées par le hub, M3 et M4.
+   M1 et M2 conservent leur CSS inline (règle atelier — ne pas casser l'existant).
+   --------------------------------------------------------------------------
+   Version : 2026-04-25 · étape 3 roadmap atelier
+   ========================================================================== */
+
+:root{
+
+  /* --- Palette principale ------------------------------------------------- */
+  --navy:#1a2e4a;          /* couleur institutionnelle, titres et texte fort */
+  --teal:#1d7a8c;          /* accent interactif (liens, CTA, flèches) */
+  --gold:#c9a227;          /* accent éditorial (bordure header, signature) */
+
+  /* --- Palette sémantique ------------------------------------------------- */
+  --success:#2f7a3d;       /* M1 ✅ opérationnel, validations */
+  --warning:#b8791f;       /* M2 🟡 à stabiliser, alertes souples */
+  --danger:#b5352e;        /* erreurs, suppressions, expirations dures */
+  --info:#1d7a8c;          /* M3 / M4 briefing, annonces neutres */
+
+  /* --- Texte -------------------------------------------------------------- */
+  --ink:#13263d;           /* texte principal */
+  --muted:#5b6b7f;         /* texte secondaire, métadonnées */
+
+  /* --- Fonds -------------------------------------------------------------- */
+  --bg:#f6f4ec;            /* fond de page (crème institutionnel) */
+  --bg-subtle:#fbf9f1;     /* survol cartes ressources */
+  --card:#ffffff;          /* fond des cartes */
+
+  /* --- Lignes et bordures ------------------------------------------------- */
+  --line:#d9d4c2;          /* séparateurs et bordures douces */
+
+  /* --- Chantier (bannière roadmap) --------------------------------------- */
+  --chantier-bg:#fdf8e7;
+  --chantier-border:#ecd682;
+  --chantier-ink:#6a4e10;
+  --chantier-strong:#443207;
+
+  /* --- Formes ------------------------------------------------------------- */
+  --radius:10px;
+  --radius-sm:6px;
+  --radius-lg:14px;
+
+  /* --- Ombres ------------------------------------------------------------- */
+  --shadow:0 1px 3px rgba(19,38,61,.08),0 6px 18px rgba(19,38,61,.06);
+  --shadow-lift:0 2px 5px rgba(19,38,61,.1),0 10px 24px rgba(19,38,61,.08);
+
+  /* --- Espacements -------------------------------------------------------- */
+  --gap-xs:6px;
+  --gap-sm:10px;
+  --gap-md:14px;
+  --gap-lg:18px;
+  --gap-xl:28px;
+
+  /* --- Typographie -------------------------------------------------------- */
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+  --fs-base:16px;
+  --fs-sm:14px;
+  --fs-xs:12px;
+  --fs-tag:11px;
+  --fs-section:13px;
+  --fs-h1:22px;
+  --fs-h3:18px;
+  --lh:1.55;
+
+  /* --- Largeurs et breakpoints ------------------------------------------- */
+  --w-container:1100px;
+}
+
+/* Reset minimal partagé */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink)}
+body{font-family:var(--font);font-size:var(--fs-base);line-height:var(--lh)}
+a{color:var(--teal)}
+code{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;font-size:.92em}

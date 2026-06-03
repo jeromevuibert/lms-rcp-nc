@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LMS RCP-NC — Hub atelier</title>
+<meta name="description" content="Point d'entrée unique des 4 modules du Learning Management System pour le Répertoire des Certifications Professionnelles de Nouvelle-Calédonie.">
+<link rel="stylesheet" href="./shared/css/tokens.css">
+<link rel="stylesheet" href="./shared/css/components.css">
+</head>
+<body>
+<div class="container">
+
+<header class="hub">
+  <div class="brand">
+    <div class="mark">LMS</div>
+    <div>
+      <h1>LMS RCP-NC — Hub atelier</h1>
+      <div class="sub">Learning Management System du Répertoire des Certifications Professionnelles — Nouvelle-Calédonie</div>
+    </div>
+  </div>
+  <div class="meta">
+    <div><strong>Porteur envisagé</strong> · organisme de formation référencé</div>
+    <div><strong>Financement cible</strong> · France 2030 NC</div>
+    <div><strong>Contrainte</strong> · &lt; 512 Kbps</div>
+  </div>
+</header>
+
+<h2 class="section">Les 5 modules</h2>
+<div class="grid">
+
+  <a class="card m1" href="./modules/M1-diagnostic/index.html">
+    <span class="tag"><span class="dot"></span>M1 · opérationnel v3.1</span>
+    <h3>Diagnostic &amp; Orientation</h3>
+    <p>Accès universel, sans prescription. 270 certifications uniques. 5 voies : ≥90% VAE directe · 70-89% Complément · 20-69% Hybride · &lt;20% SPOT (sans qualification) · &lt;20% Conseil RIIFE (avec qualification). Alerte DAVA pour les certifs EN.</p>
+    <div class="foot"><span>prototype applicatif</span><span class="arrow">ouvrir →</span></div>
+  </a>
+
+  <a class="card sas" href="./modules/sas-validation/index.html">
+    <span class="tag"><span class="dot"></span>SAS · squelette V1 (16/05/2026)</span>
+    <h3>SAS de validation</h3>
+    <p>Entretien conseiller pré-recevabilité. 3 rôles (candidat / conseiller PRC ou OF / architecte), 4 phases du dossier (orientation suggérée → en attente d'entretien → parcours validé · à réassigner). Circulation par fichier dossier, mécanique 100 % locale.</p>
+    <div class="foot"><span>prototype applicatif</span><span class="arrow">ouvrir →</span></div>
+  </a>
+
+  <a class="card m2" href="./modules/M2-vae/index.html">
+    <span class="tag"><span class="dot"></span>M2 · opérationnel</span>
+    <h3>Dossier VAE numérique</h3>
+    <p>Livret PAE guidé par blocs CPU. Statuts brouillon → recevable → certifié. Jury présentiel ou visio.</p>
+    <div class="foot"><span>prototype applicatif</span><span class="arrow">ouvrir →</span></div>
+  </a>
+
+  <a class="card m3" href="./modules/M3-afest/index.html">
+    <span class="tag"><span class="dot"></span>M3 · prototype opérationnel</span>
+    <h3>AFEST — carnet de bord</h3>
+    <p>Tuteur expert métier ↔ apprenant ↔ architecte de parcours. Suivi des situations apprenantes en entreprise.</p>
+    <div class="foot"><span>prototype applicatif</span><span class="arrow">ouvrir →</span></div>
+  </a>
+
+  <a class="card m4" href="./modules/M4-cpus/index.html">
+    <span class="tag"><span class="dot"></span>M4 · prototype lot 1 (23/05/2026)</span>
+    <h3>Agrégateur de parcours</h3>
+    <p>Rassemble les dossiers d'un candidat (orientation, VAE, AFEST) et affiche, bloc de compétences par bloc, l'avancement vers la certification. Lot 1 : socle de fusion par candidat + vue candidat.</p>
+    <div class="foot"><span>prototype applicatif</span><span class="arrow">ouvrir →</span></div>
+  </a>
+
+</div>
+
+<div class="chantier">
+  <strong>Chantier — étape 5/5 (M3 livré)</strong>
+  <ul>
+    <li>Étape 1 ✅ Bootstrap arborescence + hub stub.</li>
+    <li>Étape 2 ✅ M1 et M2 migrés dans <code>modules/Mx/index.html</code> (copies hash-vérifiées). Briefings M3 / M4 rédigés.</li>
+    <li>Étape 2 bis ✅ Originaux à plat déplacés vers <code>archive/</code>.</li>
+    <li>Étape 3 ✅ Tokens et composants CSS extraits vers <code>shared/css/</code> ; le hub les consomme désormais par <code>&lt;link&gt;</code>.</li>
+    <li>Étape 4 ✅ Export des 270 certifs uniques → <code>shared/data/certifications.json</code> (sortie du « en dur » dans M1) + schéma de données.</li>
+    <li>Étape 5 ✅ Prototype M3 (AFEST) opérationnel — carnet de bord trio Apprenant / Expert métier / Architecte. M4 (agrégateur de parcours) : lot 1 livré le 23/05/2026 — socle de fusion + vue candidat ; vues conseiller / formateur / collectif aux lots suivants.</li>
+  </ul>
+</div>
+
+<footer>
+  <div>LMS RCP-NC · Jérôme Vuibert · 2026</div>
+  <div><a href="./README.md">README atelier</a></div>
+</footer>
+
+</div>
+</body>
+</html>

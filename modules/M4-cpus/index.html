@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="LMS RCP-NC — Module M4 — Agrégateur de parcours : rassemble les dossiers d'un candidat et affiche l'avancement bloc de compétences par bloc.">
+<title>M4 · Agrégateur de parcours — LMS RCP-NC</title>
+<link rel="stylesheet" href="../../shared/css/tokens.css">
+<link rel="stylesheet" href="../../shared/css/components.css">
+<style>
+/* ===========================================================
+   M4 · styles spécifiques (en plus du socle partagé)
+   Lot 1 — socle de fusion + vue Candidat (mobile-first)
+   =========================================================== */
+
+/* Sélecteur de rôle */
+.role-switch{display:flex;gap:0;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:4px;box-shadow:var(--shadow);
+  margin:var(--gap-md) 0;flex-wrap:wrap}
+.role-switch button{flex:1;min-width:130px;padding:10px 12px;border:none;background:transparent;
+  border-radius:var(--radius-sm);cursor:pointer;font-family:var(--font);font-size:var(--fs-sm);
+  font-weight:600;color:var(--muted);transition:background .12s, color .12s;
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.role-switch button:hover{background:var(--bg-subtle)}
+.role-switch button.active{background:var(--navy);color:#fff}
+.role-switch button .ic{font-size:18px;line-height:1}
+
+/* Barre d'échange de dossier (import) */
+.dossier-bar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md) var(--gap-lg);margin:var(--gap-md) 0;box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:center;gap:var(--gap-md);flex-wrap:wrap}
+.dossier-bar .db-txt{display:flex;flex-direction:column;gap:2px;min-width:240px;flex:1}
+.dossier-bar .db-txt strong{color:var(--navy);font-size:var(--fs-sm)}
+.dossier-bar .db-txt span{color:var(--muted);font-size:var(--fs-xs);line-height:1.4}
+.dossier-bar .db-actions{display:flex;gap:var(--gap-sm);flex-wrap:wrap}
+
+/* Boutons */
+.btn{padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--line);background:var(--card);
+  font-family:var(--font);font-size:var(--fs-sm);color:var(--ink);cursor:pointer;font-weight:500;
+  transition:background .12s, border-color .12s}
+.btn:hover{background:var(--bg-subtle)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.primary:hover{background:#15616f}
+.btn.ghost{background:transparent}
+
+/* Vues */
+.view{display:none}
+.view.active{display:block}
+
+/* Bandeau identification */
+.identity{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md) var(--gap-lg);margin-bottom:var(--gap-md);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--gap-sm);
+  box-shadow:var(--shadow)}
+.identity .who{font-weight:600;color:var(--navy);font-size:15px}
+.identity .what{color:var(--muted);font-size:var(--fs-sm)}
+.identity select{padding:8px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:var(--bg-subtle);font-family:var(--font);font-size:var(--fs-sm);color:var(--ink);cursor:pointer}
+
+/* Fiche candidat — en-tête */
+.fiche{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--navy);
+  border-radius:var(--radius);padding:var(--gap-md) var(--gap-lg);margin-bottom:var(--gap-lg);
+  box-shadow:var(--shadow)}
+.fiche .nom{font-size:var(--fs-h3);color:var(--navy);font-weight:700;margin:0 0 4px}
+.fiche .matricule{font-size:var(--fs-sm);margin-bottom:8px}
+.fiche .matricule code{background:var(--bg);padding:2px 8px;border-radius:var(--radius-sm);
+  border:1px solid var(--line);color:var(--navy);font-weight:600}
+.fiche .matricule.parnom{color:var(--warning)}
+.fiche .src-chips{display:flex;gap:var(--gap-xs);flex-wrap:wrap;margin-top:8px}
+.src-chip{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-xs);
+  background:var(--bg-subtle);border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--muted)}
+.src-chip strong{color:var(--navy)}
+
+/* Bloc certification */
+.cert-block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-lg);margin-bottom:var(--gap-lg);box-shadow:var(--shadow)}
+.cert-block .cert-titre{font-size:var(--fs-h3);color:var(--navy);font-weight:700;margin:0 0 2px}
+.cert-block .cert-meta{color:var(--muted);font-size:var(--fs-xs);margin-bottom:var(--gap-md)}
+
+/* Pastilles résumé */
+.resume-pills{display:flex;gap:var(--gap-sm);flex-wrap:wrap;margin-bottom:var(--gap-md)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:var(--fs-xs);font-weight:600;
+  border-radius:20px;padding:4px 12px;border:1px solid var(--line)}
+.pill .n{font-size:15px;font-weight:700}
+.pill.acquis{background:#dff0e2;color:var(--success);border-color:#bcdcc3}
+.pill.encours{background:#e3f1f4;color:var(--info);border-color:#b8dde4}
+.pill.reste{background:var(--bg-subtle);color:var(--muted)}
+
+/* Note de source de matrice */
+.source-note{font-size:var(--fs-xs);color:var(--muted);background:var(--bg-subtle);
+  border:1px dashed var(--line);border-radius:var(--radius-sm);padding:8px 12px;margin-bottom:var(--gap-md)}
+
+/* Matrice CPU */
+.cpu-list{display:flex;flex-direction:column;gap:var(--gap-sm)}
+.cpu-row{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:var(--radius-sm);
+  padding:var(--gap-md);background:var(--bg-subtle)}
+.cpu-row.acquis{border-left-color:var(--success)}
+.cpu-row.en_cours{border-left-color:var(--info)}
+.cpu-row.non_commence{border-left-color:var(--muted)}
+.cpu-row .cpu-tete{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--gap-sm);flex-wrap:wrap}
+.cpu-row .cpu-titre{font-weight:600;color:var(--navy);font-size:var(--fs-sm);line-height:1.35;flex:1;min-width:180px}
+.etat-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+  border-radius:10px;padding:3px 10px;white-space:nowrap}
+.etat-badge.acquis{background:#dff0e2;color:var(--success)}
+.etat-badge.en_cours{background:#e3f1f4;color:var(--info)}
+.etat-badge.non_commence{background:#ecebe3;color:var(--muted)}
+.cpu-row .pct-diag{font-size:var(--fs-xs);color:var(--muted);margin-top:6px}
+.preuve-list{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+.preuve{font-size:var(--fs-xs);color:var(--ink);background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:6px 10px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.preuve .pv-etat{font-weight:600;color:var(--muted);white-space:nowrap}
+.preuve .pv-etat.validee,.preuve .pv-etat.classee{color:var(--success)}
+.no-preuve{font-size:var(--fs-xs);color:var(--muted);margin-top:6px;font-style:italic}
+
+/* Carte VAE */
+.vae-card{margin-top:var(--gap-md);border:1px solid var(--warning);border-radius:var(--radius-sm);
+  background:var(--chantier-bg);padding:var(--gap-md)}
+.vae-card h4{margin:0 0 4px;color:var(--chantier-strong);font-size:var(--fs-sm)}
+.vae-card .vae-statut{font-weight:700;color:var(--navy)}
+.vae-card .vae-limite{font-size:var(--fs-xs);color:var(--chantier-ink);margin-top:6px}
+
+/* Panneau diagnostic (repliable) */
+.diag-panel{margin-top:var(--gap-md)}
+.diag-panel summary{cursor:pointer;font-size:var(--fs-xs);color:var(--teal);font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em}
+.diag-panel .diag-corps{margin-top:8px;font-size:var(--fs-xs);color:var(--muted)}
+.diag-panel .diag-corps .d-cpu{display:flex;justify-content:space-between;gap:8px;
+  padding:4px 0;border-bottom:1px solid var(--line)}
+.diag-panel .diag-corps .d-cpu:last-child{border-bottom:none}
+
+/* Reste à faire */
+.reste-bloc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--gap-md) var(--gap-lg);box-shadow:var(--shadow)}
+.reste-bloc h3{margin:0 0 var(--gap-sm);color:var(--navy);font-size:var(--fs-sm);
+  text-transform:uppercase;letter-spacing:.08em}
+.reste-bloc ul{margin:0;padding-left:20px;color:var(--ink);font-size:var(--fs-sm)}
+.reste-bloc li{margin-bottom:3px}
+
+/* Notices */
+.notice{padding:var(--gap-md);border-radius:var(--radius-sm);font-size:var(--fs-sm);margin-bottom:var(--gap-md)}
+.notice.info{background:#e3f1f4;color:#0e525e;border:1px solid #b8dde4}
+.notice.empty{background:var(--bg-subtle);color:var(--muted);text-align:center;border:1px dashed var(--line);padding:var(--gap-xl)}
+.notice.placeholder{background:var(--chantier-bg);color:var(--chantier-ink);border:1px solid var(--chantier-border)}
+.notice.placeholder strong{color:var(--chantier-strong)}
+
+/* Zone reset */
+.reset-zone{margin-top:var(--gap-xl);padding:var(--gap-md);text-align:center;color:var(--muted);font-size:var(--fs-xs)}
+.reset-zone button{margin-left:8px;background:transparent;border:1px solid var(--line);
+  padding:4px 10px;border-radius:var(--radius-sm);font-size:var(--fs-xs);color:var(--muted);cursor:pointer}
+.reset-zone button:hover{color:var(--danger);border-color:var(--danger)}
+
+@media (max-width:480px){
+  .container{padding:var(--gap-lg) 14px 56px}
+  .identity{flex-direction:column;align-items:stretch}
+  .identity select{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="hub">
+  <div class="brand">
+    <div class="mark">M4</div>
+    <div>
+      <h1>Module M4 · Agrégateur de parcours</h1>
+      <div class="sub">Rassemble les dossiers d'un candidat (orientation, VAE, AFEST) et affiche, bloc de compétences par bloc, où en est le parcours de certification.</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span><strong>Statut :</strong> prototype lot 1 (23/05/2026) — socle de fusion + vue Candidat</span>
+    <span><strong>Contrat :</strong> rcpnc-dossier-parcours v1 et v2 (matricule)</span>
+    <span><a href="../../index.html">↩ retour au hub</a></span>
+  </div>
+</header>
+
+<div class="role-switch" id="roleSwitch">
+  <button data-role="candidat" class="active"><span class="ic">👤</span><span>Vue candidat</span></button>
+  <button data-role="conseiller"><span class="ic">🧭</span><span>Vue conseiller</span></button>
+  <button data-role="formateur"><span class="ic">🛠️</span><span>Vue formateur</span></button>
+  <button data-role="collectif"><span class="ic">👥</span><span>Vue collectif</span></button>
+</div>
+
+<!-- Barre d'échange : import multi-fichiers -->
+<div class="dossier-bar">
+  <div class="db-txt">
+    <strong>Dossiers de parcours</strong>
+    <span>Importez un ou plusieurs dossiers (M1, SAS, M2, M3). M4 les regroupe automatiquement par candidat — par matricule, ou par nom + prénom à défaut.</span>
+  </div>
+  <div class="db-actions">
+    <button class="btn primary" onclick="document.getElementById('m4-import-file').click()">📥 Importer des dossiers</button>
+    <input type="file" id="m4-import-file" accept="application/json,.json" multiple style="display:none">
+  </div>
+</div>
+
+<!-- ============================================================
+     VUE CANDIDAT
+     ============================================================ -->
+<section class="view active" id="view-candidat">
+
+  <div class="identity">
+    <div>
+      <div class="who">Vue candidat</div>
+      <div class="what">Le parcours de certification consolidé d'un candidat.</div>
+    </div>
+    <div>
+      <label for="cand-select" style="font-size:var(--fs-xs);color:var(--muted);margin-right:6px">Candidat :</label>
+      <select id="cand-select"></select>
+    </div>
+  </div>
+
+  <div id="cand-fiche"></div>
+  <div id="cand-corps"></div>
+
+</section>
+
+<!-- ============================================================
+     VUES CONSEILLER / FORMATEUR / COLLECTIF — placeholders lot 2-3
+     ============================================================ -->
+<section class="view" id="view-conseiller"></section>
+<section class="view" id="view-formateur"></section>
+<section class="view" id="view-collectif"></section>
+
+<div class="reset-zone">
+  Prototype démo — données en mémoire uniquement (aucun envoi serveur, aucune sauvegarde navigateur).
+  <button onclick="M4.resetDemo()">Recharger la démo</button>
+</div>
+
+<footer>
+  <div>LMS RCP-NC · Module M4 · agrégateur de parcours · prototype lot 1</div>
+  <div>Hors-ligne friendly · faible débit &lt; 512 Kbps · pas de framework</div>
+</footer>
+
+</div><!-- /container -->
+
+<script src="../../shared/data/enums.js"></script>
+<script>
+(function(){
+  'use strict';
+
+  // ============================================================
+  // ACCÈS AUX ÉNUMÉRATIONS PARTAGÉES (dette D2)
+  // ============================================================
+  var ENUMS = (typeof window !== 'undefined' && window.RCPNC_ENUMS) ? window.RCPNC_ENUMS : null;
+  function fmtFormat(){ return ENUMS ? ENUMS.FORMAT : 'rcpnc-dossier-parcours'; }
+  function libVoie(v){
+    if(ENUMS && ENUMS.VOIES_M1_LABELS && ENUMS.VOIES_M1_LABELS[v]) return ENUMS.VOIES_M1_LABELS[v];
+    if(ENUMS && ENUMS.ROUTING_LABELS && ENUMS.ROUTING_LABELS[v]) return ENUMS.ROUTING_LABELS[v];
+    return v || '—';
+  }
+  function libEtatSituation(e){
+    if(ENUMS && ENUMS.ETATS_SITUATION_LABELS && ENUMS.ETATS_SITUATION_LABELS[e]) return ENUMS.ETATS_SITUATION_LABELS[e];
+    return e || '—';
+  }
+
+  // ============================================================
+  // DONNÉES DE DÉMONSTRATION — 3 candidats, dossiers v2 (matricule)
+  // Candidat A : 2 dossiers (M3 + M2) même matricule → fusion.
+  // Candidat B : 1 dossier M3. Candidat C : 1 dossier M2.
+  // ============================================================
+  var DEMO_DOSSIERS = [
+    // --- Candidat A — dossier M3 (AFEST) ---
+    {
+      _meta:{format:'rcpnc-dossier-parcours', version:2, exportedFrom:'M3',
+             exportedAt:'2026-05-20T03:10:00.000Z', phase:'afest_en_cours'},
+      candidat:{id:'RCPNC-7K3F-9XQH', nom:'Wahetra', prenom:'Marie'},
+      diagnostic:{
+        cert:{id:'nc-28', name:'Accompagnatrice de vie (version 2025)', type:'NC', level:3},
+        orientation:'hybride', scoreGlobal:54,
+        cpuScores:[
+          {id:'d1', title:'Aide à la mobilité', pct:62},
+          {id:'d2', title:'Hygiène et confort', pct:58},
+          {id:'d3', title:'Préparation des repas', pct:47},
+          {id:'d4', title:'Stimulation cognitive et sociale', pct:40}
+        ],
+        experience:4, profile:'aide à domicile', workInField:'oui',
+        educationLevel:'CAP', date:'2026-04-02', sourceModule:'M1_v3'
+      },
+      validation:{
+        conseiller:{nom:'Tein', prenom:'Hélène', structure:'PRC Nouméa', type:'PRC'},
+        entretien:{date:'2026-04-10', modalite:'visio', compte_rendu:'Parcours hybride retenu.'},
+        routing:'hybride_AFEST_FC',
+        certification_visee:{id:'nc-28', name:'Accompagnatrice de vie (version 2025)', amendee:false, raison_amendement:''},
+        cpu_confirmes:{total:false, cpus:['Aide à la mobilité','Hygiène et confort','Préparation des repas','Stimulation cognitive et sociale']},
+        financement_info_affiche:'demandeur_emploi',
+        livret_1_prerempli:{identite:{nom:'Wahetra', prenom:'Marie', email:'m.wahetra@example.nc', telephone:'77 00 00', statut:'demandeur_emploi'},
+          niveaux:{partie_1_identite:'complet', partie_2_experience:'partiel', partie_3_diplomes:'partiel', partie_4_declaration:'non_prerempli', partie_5_pieces_justif:'non_prerempli'}},
+        valide_le:'2026-04-10'
+      },
+      afest:{
+        certifId:'nc-28',
+        apprenant:{id:'a1', nom:'Wahetra', prenom:'Marie'},
+        cpus:[
+          {id:'c1', nom:'Aider à la mobilité et aux transferts'},
+          {id:'c2', nom:'Assurer l’hygiène et le confort'},
+          {id:'c3', nom:'Préparer les repas et accompagner la prise'},
+          {id:'c4', nom:'Stimuler les capacités cognitives et sociales'}
+        ],
+        situations:[
+          {id:'s1', intitule:'Transfert lit–fauteuil de Mme R. (hémiplégie)', etat:'classee',
+           cpuIds:['c1','c2'], dateCreation:'2026-04-15', dateValidation:'2026-04-16'},
+          {id:'s2', intitule:'Petit-déjeuner adapté de M. T. (régime sans sel)', etat:'validee',
+           cpuIds:['c3'], dateCreation:'2026-04-20', dateValidation:'2026-04-21'},
+          {id:'s3', intitule:'Atelier mémoire avec 4 résidents en salle commune', etat:'faite',
+           cpuIds:['c4','c2'], dateCreation:'2026-04-25', dateValidation:null},
+          {id:'s4', intitule:'Toilette du matin de M. K. (Parkinson)', etat:'afaire',
+           cpuIds:['c1'], dateCreation:'2026-04-26', dateValidation:null}
+        ],
+        cpu_valides:['c1','c2','c3'],
+        derniere_maj:'2026-05-20T03:10:00.000Z'
+      }
+    },
+    // --- Candidat A — dossier M2 (VAE), même matricule, plus récent ---
+    {
+      _meta:{format:'rcpnc-dossier-parcours', version:2, exportedFrom:'M2',
+             exportedAt:'2026-05-22T22:40:00.000Z', phase:'dossier_vae'},
+      candidat:{id:'RCPNC-7K3F-9XQH', nom:'Wahetra', prenom:'Marie'},
+      diagnostic:{
+        cert:{id:'nc-28', name:'Accompagnatrice de vie (version 2025)', type:'NC', level:3},
+        orientation:'hybride', scoreGlobal:54,
+        cpuScores:[
+          {id:'d1', title:'Aide à la mobilité', pct:62},
+          {id:'d2', title:'Hygiène et confort', pct:58},
+          {id:'d3', title:'Préparation des repas', pct:47},
+          {id:'d4', title:'Stimulation cognitive et sociale', pct:40}
+        ],
+        experience:4, profile:'aide à domicile', workInField:'oui',
+        educationLevel:'CAP', date:'2026-04-02', sourceModule:'M1_v3'
+      },
+      dossierVAE:{
+        statut:'recevable', etape:2, certificationId:'nc-28',
+        dateCreation:'2026-04-28T00:00:00.000Z', dateMAJ:'2026-05-22T22:40:00.000Z',
+        livret1:{identite:{nom:'Wahetra', prenom:'Marie', dateNaissance:'1989-03-12',
+          lieuNaissance:'Koné', adresse:'12 rue des Flamboyants', codePostal:'98800',
+          commune:'Nouméa', telephone:'77 00 00', email:'m.wahetra@example.nc',
+          nationalite:'française', situationFamiliale:'célibataire'},
+          experiences:[{poste:'Aide à domicile', annees:4}], diplomes:[{intitule:'CAP', annee:2009}],
+          declarationHonneur1:true, declarationPieces:false}
+      }
+    },
+    // --- Candidat B — dossier M3 (AFEST) ---
+    {
+      _meta:{format:'rcpnc-dossier-parcours', version:2, exportedFrom:'M3',
+             exportedAt:'2026-05-19T08:00:00.000Z', phase:'afest_en_cours'},
+      candidat:{id:'RCPNC-4M8T-2WPR', nom:'Diahou', prenom:'Jean-Pierre'},
+      diagnostic:{
+        cert:{id:'tp-03', name:'TP Agent de maintenance du bâtiment', type:'TP', level:3},
+        orientation:'hybride', scoreGlobal:61,
+        cpuScores:[
+          {id:'d1', title:'Plomberie courante', pct:70},
+          {id:'d2', title:'Maintenance électrique', pct:55},
+          {id:'d3', title:'Peinture et finition', pct:60}
+        ],
+        experience:6, profile:'ouvrier polyvalent', workInField:'oui',
+        educationLevel:'BEP', date:'2026-04-05', sourceModule:'M1_v3'
+      },
+      validation:{
+        conseiller:{nom:'Goro', prenom:'Patrick', structure:'OF', type:'OF'},
+        entretien:{date:'2026-04-12', modalite:'presentiel', compte_rendu:'AFEST + formation courte.'},
+        routing:'hybride_AFEST_FC',
+        certification_visee:{id:'tp-03', name:'TP Agent de maintenance du bâtiment', amendee:false, raison_amendement:''},
+        cpu_confirmes:{total:false, cpus:['Plomberie courante','Maintenance électrique de base','Peinture et finition','Revêtements de sol']},
+        financement_info_affiche:'salarie',
+        livret_1_prerempli:{identite:{nom:'Diahou', prenom:'Jean-Pierre', email:'jp.diahou@example.nc', telephone:'78 11 22', statut:'salarie'},
+          niveaux:{partie_1_identite:'complet', partie_2_experience:'complet', partie_3_diplomes:'partiel', partie_4_declaration:'non_prerempli', partie_5_pieces_justif:'non_prerempli'}},
+        valide_le:'2026-04-12'
+      },
+      afest:{
+        certifId:'tp-03',
+        apprenant:{id:'a2', nom:'Diahou', prenom:'Jean-Pierre'},
+        cpus:[
+          {id:'c1', nom:'Réaliser les interventions de plomberie courante'},
+          {id:'c2', nom:'Effectuer la maintenance électrique de base'},
+          {id:'c3', nom:'Réaliser les travaux de peinture et finition'},
+          {id:'c4', nom:'Diagnostiquer et réparer les revêtements de sol'}
+        ],
+        situations:[
+          {id:'s1', intitule:'Remplacement du mitigeur — villa rue Olry', etat:'validee',
+           cpuIds:['c1'], dateCreation:'2026-04-18', dateValidation:'2026-04-19'},
+          {id:'s2', intitule:'Diagnostic panne éclairage — appartement 3B', etat:'faite',
+           cpuIds:['c2'], dateCreation:'2026-04-24', dateValidation:null},
+          {id:'s3', intitule:'Peinture de la cage d’escalier (2 niveaux)', etat:'encours',
+           cpuIds:['c3'], dateCreation:'2026-04-26', dateValidation:null}
+        ],
+        cpu_valides:['c1'],
+        derniere_maj:'2026-05-19T08:00:00.000Z'
+      }
+    },
+    // --- Candidat C — dossier M2 (VAE) ---
+    {
+      _meta:{format:'rcpnc-dossier-parcours', version:2, exportedFrom:'M2',
+             exportedAt:'2026-05-21T01:15:00.000Z', phase:'dossier_vae'},
+      candidat:{id:'RCPNC-2H6D-8VRN', nom:'Vakié', prenom:'Émilie'},
+      diagnostic:{
+        cert:{id:'tp-09', name:'TP Commis de cuisine', type:'TP', level:3},
+        orientation:'vae', scoreGlobal:72,
+        cpuScores:[
+          {id:'d1', title:'Mise en place du poste', pct:78},
+          {id:'d2', title:'Préparations préliminaires', pct:74},
+          {id:'d3', title:'Cuisson des entrées', pct:66},
+          {id:'d4', title:'Dressage et envoi', pct:70}
+        ],
+        experience:7, profile:'employée de restauration', workInField:'oui',
+        educationLevel:'sans diplôme', date:'2026-04-03', sourceModule:'M1_v3'
+      },
+      validation:{
+        conseiller:{nom:'Tein', prenom:'Hélène', structure:'PRC Nouméa', type:'PRC'},
+        entretien:{date:'2026-04-09', modalite:'telephone', compte_rendu:'VAE directe, expérience solide.'},
+        routing:'VAE_directe',
+        certification_visee:{id:'tp-09', name:'TP Commis de cuisine', amendee:false, raison_amendement:''},
+        cpu_confirmes:{total:true, cpus:['Mettre en place le poste de travail','Réaliser les préparations préliminaires','Cuisiner les entrées et entremets simples','Dresser et envoyer les plats']},
+        financement_info_affiche:'salarie',
+        livret_1_prerempli:{identite:{nom:'Vakié', prenom:'Émilie', email:'e.vakie@example.nc', telephone:'79 33 44', statut:'salarie'},
+          niveaux:{partie_1_identite:'complet', partie_2_experience:'complet', partie_3_diplomes:'complet', partie_4_declaration:'partiel', partie_5_pieces_justif:'partiel'}},
+        valide_le:'2026-04-09'
+      },
+      dossierVAE:{
+        statut:'recevable', etape:2, certificationId:'tp-09',
+        dateCreation:'2026-04-15T00:00:00.000Z', dateMAJ:'2026-05-21T01:15:00.000Z',
+        livret1:{identite:{nom:'Vakié', prenom:'Émilie', dateNaissance:'1985-09-30',
+          lieuNaissance:'Nouméa', adresse:'5 lotissement du Mont-Coffyn', codePostal:'98800',
+          commune:'Nouméa', telephone:'79 33 44', email:'e.vakie@example.nc',
+          nationalite:'française', situationFamiliale:'mariée'},
+          experiences:[{poste:'Employée de restauration', annees:7}], diplomes:[],
+          declarationHonneur1:true, declarationPieces:true}
+      }
+    }
+  ];
+
+  // ============================================================
+  // ÉTAT (en mémoire — pas de localStorage, R16)
+  // ============================================================
+  var state = {
+    dossiers: clone(DEMO_DOSSIERS),
+    currentRole: 'candidat',
+    currentCandidatCle: null
+  };
+
+  function clone(o){ return JSON.parse(JSON.stringify(o)); }
+
+  // ============================================================
+  // UTILITAIRES
+  // ============================================================
+  function escapeHtml(s){
+    if(s == null) return '';
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function normalise(s){
+    return String(s == null ? '' : s)
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .trim().replace(/\s+/g, ' ');
+  }
+
+  function fmtDate(iso){
+    if(!iso) return '—';
+    var d = String(iso).slice(0,10).split('-');
+    if(d.length !== 3) return String(iso);
+    return d[2] + '/' + d[1] + '/' + d[0];
+  }
+
+  // ============================================================
+  // MOTEUR DE FUSION — coeur du lot 1
+  // ============================================================
+
+  // Un dossier est valide s'il porte l'enveloppe _meta au bon format.
+  function estDossierValide(p){
+    return !!(p && p._meta && p._meta.format === fmtFormat());
+  }
+
+  // Identité lisible : première source disponible.
+  function identiteDe(p){
+    var c = p.candidat;
+    if(c && (c.nom || c.prenom)) return {nom:c.nom||'', prenom:c.prenom||''};
+    var v = p.validation && p.validation.livret_1_prerempli && p.validation.livret_1_prerempli.identite;
+    if(v && (v.nom || v.prenom)) return {nom:v.nom||'', prenom:v.prenom||''};
+    var d = p.candidat_dispos;
+    if(d && (d.nom || d.prenom)) return {nom:d.nom||'', prenom:d.prenom||''};
+    var l = p.dossierVAE && p.dossierVAE.livret1 && p.dossierVAE.livret1.identite;
+    if(l && (l.nom || l.prenom)) return {nom:l.nom||'', prenom:l.prenom||''};
+    var a = p.afest && p.afest.apprenant;
+    if(a && (a.nom || a.prenom)) return {nom:a.nom||'', prenom:a.prenom||''};
+    return {nom:'', prenom:''};
+  }
+
+  // Clé de candidat : matricule prioritaire, repli nom+prénom normalisés.
+  function cleCandidat(p){
+    var c = p.candidat;
+    if(c && c.id){ return {cle:'id:' + c.id, parMatricule:true}; }
+    var id = identiteDe(p);
+    return {cle:'nom:' + normalise(id.nom + '|' + id.prenom), parMatricule:false};
+  }
+
+  var BLOCS = ['candidat','diagnostic','candidat_dispos','validation','reassignation','dossierVAE','afest'];
+
+  // Regroupe une liste de dossiers bruts en candidats consolidés.
+  function consolide(dossiers){
+    var groupes = {};
+    var ordre = [];
+    (dossiers || []).forEach(function(p){
+      if(!estDossierValide(p)) return;
+      var k = cleCandidat(p);
+      var cand = groupes[k.cle];
+      if(!cand){
+        cand = groupes[k.cle] = {
+          cle:k.cle, parMatricule:k.parMatricule,
+          matricule:(p.candidat && p.candidat.id) || null,
+          nom:'', prenom:'',
+          blocs:{}, sources:[]
+        };
+        ordre.push(k.cle);
+      }
+      var id = identiteDe(p);
+      if(!cand.nom && id.nom) cand.nom = id.nom;
+      if(!cand.prenom && id.prenom) cand.prenom = id.prenom;
+      if(!cand.matricule && p.candidat && p.candidat.id) cand.matricule = p.candidat.id;
+
+      var at = (p._meta && p._meta.exportedAt) || '';
+      cand.sources.push({
+        from:(p._meta && p._meta.exportedFrom) || '?',
+        phase:(p._meta && p._meta.phase) || '',
+        at:at,
+        version:(p._meta && p._meta.version) || 1
+      });
+      // Union des blocs : en cas de conflit, le plus récent (exportedAt) gagne.
+      BLOCS.forEach(function(b){
+        if(p[b] == null) return;
+        var ex = cand.blocs[b];
+        if(!ex || at >= ex.at){ cand.blocs[b] = {data:p[b], at:at, from:(p._meta && p._meta.exportedFrom) || '?'}; }
+      });
+    });
+    return ordre.map(function(k){ return groupes[k]; });
+  }
+
+  // ============================================================
+  // MODÈLE CPU INTERNE — construit la matrice d'un parcours
+  // ============================================================
+
+  // Matrice CPU d'une certification. Une seule source pilote la matrice,
+  // par ordre de priorité : preuves AFEST > CPU confirmés conseiller > auto-diagnostic M1.
+  function construitMatrice(certId, diagnostic, validation, afest){
+    // Source 1 — AFEST : seules vraies preuves de compétence.
+    if(afest && Array.isArray(afest.situations) &&
+       (afest.certifId === certId || certId === 'cert-inconnue')){
+      var labels = {};
+      (afest.cpus || []).forEach(function(c){ if(c && c.id) labels[c.id] = c.nom || c.id; });
+      var ordre = [];
+      afest.situations.forEach(function(s){
+        (s.cpuIds || []).forEach(function(cid){ if(ordre.indexOf(cid) === -1) ordre.push(cid); });
+      });
+      (afest.cpus || []).forEach(function(c){ if(c && c.id && ordre.indexOf(c.id) === -1) ordre.push(c.id); });
+      var cpusA = ordre.map(function(cid, i){
+        var sits = afest.situations.filter(function(s){ return (s.cpuIds || []).indexOf(cid) !== -1; });
+        var acquis = sits.some(function(s){ return s.etat === 'validee' || s.etat === 'classee'; });
+        var etat = acquis ? 'acquis' : (sits.length > 0 ? 'en_cours' : 'non_commence');
+        return {
+          cle:cid,
+          titre:labels[cid] || ('Bloc de compétences ' + (i+1)),
+          etat:etat,
+          pctDiag:null,
+          preuves:sits.map(function(s){
+            return {intitule:s.intitule || ('Situation ' + s.id), etat:s.etat,
+                    date:s.dateValidation || s.dateCreation || null};
+          })
+        };
+      });
+      return {source:'afest', cpus:cpusA};
+    }
+    // Source 2 — CPU confirmés par le conseiller (visés, sans preuve encore).
+    if(validation && validation.cpu_confirmes && Array.isArray(validation.cpu_confirmes.cpus) &&
+       validation.cpu_confirmes.cpus.length){
+      var cpusV = validation.cpu_confirmes.cpus.map(function(lab, i){
+        return {cle:'vc' + i, titre:String(lab), etat:'non_commence', pctDiag:null, preuves:[]};
+      });
+      return {source:'validation', cpus:cpusV};
+    }
+    // Source 3 — auto-diagnostic M1.
+    if(diagnostic && Array.isArray(diagnostic.cpuScores) && diagnostic.cpuScores.length){
+      var cpusD = diagnostic.cpuScores.map(function(c, i){
+        var pct = (c.pct != null) ? c.pct : (c.score != null ? c.score : null);
+        return {cle:c.id || ('dg' + i), titre:c.title || c.name || ('Compétence ' + (i+1)),
+                etat:'non_commence', pctDiag:pct, preuves:[]};
+      });
+      return {source:'diagnostic', cpus:cpusD};
+    }
+    return {source:'aucune', cpus:[]};
+  }
+
+  function resumeMatrice(matrice){
+    var r = {acquis:0, enCours:0, nonCommence:0, total:matrice.cpus.length};
+    matrice.cpus.forEach(function(c){
+      if(c.etat === 'acquis') r.acquis++;
+      else if(c.etat === 'en_cours') r.enCours++;
+      else r.nonCommence++;
+    });
+    return r;
+  }
+
+  // Construit le parcours dérivé d'un candidat consolidé.
+  function deriveParcours(cand){
+    var b = cand.blocs;
+    var diagnostic = b.diagnostic ? b.diagnostic.data : null;
+    var validation = b.validation ? b.validation.data : null;
+    var afest = b.afest ? b.afest.data : null;
+    var vae = b.dossierVAE ? b.dossierVAE.data : null;
+
+    var certs = {};
+    var ordreCert = [];
+    function ajouteCert(id, nom, type, niveau){
+      if(!id) return;
+      if(!certs[id]){
+        certs[id] = {id:id, nom:nom || id, type:type || '', niveau:(niveau != null ? niveau : '')};
+        ordreCert.push(id);
+      } else {
+        var c = certs[id];
+        if(nom && (!c.nom || c.nom === id)) c.nom = nom;
+        if(type && !c.type) c.type = type;
+        if(niveau != null && c.niveau === '') c.niveau = niveau;
+      }
+    }
+    if(diagnostic && diagnostic.cert)
+      ajouteCert(diagnostic.cert.id, diagnostic.cert.name, diagnostic.cert.type, diagnostic.cert.level);
+    if(validation && validation.certification_visee)
+      ajouteCert(validation.certification_visee.id, validation.certification_visee.name);
+    if(afest && afest.certifId) ajouteCert(afest.certifId);
+    if(vae && vae.certificationId) ajouteCert(vae.certificationId);
+
+    if(ordreCert.length === 0 && (afest || vae || diagnostic)){
+      ajouteCert('cert-inconnue', 'Certification non précisée');
+    }
+
+    var certifications = ordreCert.map(function(cid){
+      var c = certs[cid];
+      var matrice = construitMatrice(cid, diagnostic, validation, afest);
+      var vaeCard = null;
+      if(vae && (!vae.certificationId || vae.certificationId === cid || ordreCert.length === 1)){
+        vaeCard = {statut:vae.statut || '—', etape:(vae.etape != null ? vae.etape : null)};
+      }
+      var orientation = diagnostic ? diagnostic.orientation : (validation ? validation.routing : null);
+      return {
+        id:c.id, nom:c.nom, type:c.type, niveau:c.niveau,
+        orientation:orientation,
+        matrice:matrice,
+        resume:resumeMatrice(matrice),
+        vae:vaeCard,
+        cpuScoresDiag:(diagnostic && Array.isArray(diagnostic.cpuScores)) ? diagnostic.cpuScores : null
+      };
+    });
+    return {certifications:certifications};
+  }
+
+  // ============================================================
+  // RENDU — VUE CANDIDAT
+  // ============================================================
+  var SOURCE_NOTE = {
+    afest:'Matrice fondée sur les preuves AFEST (situations de travail validées par l’expert métier).',
+    validation:'Matrice fondée sur les blocs de compétences confirmés par le conseiller — preuves à apporter.',
+    diagnostic:'Matrice fondée sur l’auto-diagnostic M1 — point de départ déclaratif, sans preuve.',
+    aucune:'Aucun bloc de compétences identifié dans les dossiers de ce candidat.'
+  };
+  var ETAT_LIB = {acquis:'Acquis', en_cours:'En cours', non_commence:'À engager'};
+  var VAE_LIB = {brouillon:'Dossier en cours de constitution', recevable:'Recevabilité prononcée', certifie:'Certification obtenue'};
+
+  function renderCandidat(){
+    var candidats = consolide(state.dossiers);
+    M4._candidats = candidats;
+
+    var sel = document.getElementById('cand-select');
+    var fiche = document.getElementById('cand-fiche');
+    var corps = document.getElementById('cand-corps');
+
+    if(candidats.length === 0){
+      sel.innerHTML = '';
+      fiche.innerHTML = '';
+      corps.innerHTML = '<div class="notice empty">Aucun dossier chargé. Importez des dossiers de parcours pour afficher un parcours candidat.</div>';
+      return;
+    }
+
+    if(!state.currentCandidatCle || !candidats.some(function(c){ return c.cle === state.currentCandidatCle; })){
+      state.currentCandidatCle = candidats[0].cle;
+    }
+    sel.innerHTML = candidats.map(function(c){
+      var nom = ((c.prenom || '') + ' ' + (c.nom || '')).trim() || '(candidat sans nom)';
+      return '<option value="' + escapeHtml(c.cle) + '"' +
+             (c.cle === state.currentCandidatCle ? ' selected' : '') + '>' + escapeHtml(nom) + '</option>';
+    }).join('');
+    sel.onchange = function(e){ state.currentCandidatCle = e.target.value; render(); };
+
+    var cand = candidats.filter(function(c){ return c.cle === state.currentCandidatCle; })[0];
+
+    // --- Fiche candidat ---
+    var nomComplet = ((cand.prenom || '') + ' ' + (cand.nom || '')).trim() || '(candidat sans nom)';
+    var matHtml;
+    if(cand.matricule){
+      matHtml = '<div class="matricule">Matricule : <code>' + escapeHtml(cand.matricule) + '</code></div>';
+    } else {
+      matHtml = '<div class="matricule parnom">⚠ Pas de matricule — candidat apparié par nom + prénom (dossier antérieur au format v2).</div>';
+    }
+    var chips = cand.sources.map(function(s){
+      return '<span class="src-chip"><strong>' + escapeHtml(s.from) + '</strong>' +
+             (s.at ? ' · ' + fmtDate(s.at) : '') + ' · v' + escapeHtml(s.version) + '</span>';
+    }).join('');
+    fiche.innerHTML =
+      '<div class="fiche">' +
+        '<div class="nom">' + escapeHtml(nomComplet) + '</div>' +
+        matHtml +
+        '<div style="font-size:var(--fs-xs);color:var(--muted)">' + cand.sources.length +
+          ' dossier(s) regroupé(s) ' + (cand.parMatricule ? 'par matricule' : 'par nom + prénom') + ' :</div>' +
+        '<div class="src-chips">' + chips + '</div>' +
+      '</div>';
+
+    // --- Corps : certifications ---
+    var par = deriveParcours(cand);
+    if(par.certifications.length === 0){
+      corps.innerHTML = '<div class="notice info">Ce candidat n’a aucune certification identifiable dans ses dossiers.</div>';
+      return;
+    }
+    corps.innerHTML = par.certifications.map(renderCertBlock).join('') + renderReste(par);
+  }
+
+  function renderCertBlock(cert){
+    var meta = [];
+    if(cert.type) meta.push(escapeHtml(cert.type));
+    if(cert.niveau !== '' && cert.niveau != null) meta.push('niveau ' + escapeHtml(cert.niveau));
+    if(cert.orientation) meta.push('voie : ' + escapeHtml(libVoie(cert.orientation)));
+
+    var r = cert.resume;
+    var pills =
+      '<span class="pill acquis"><span class="n">' + r.acquis + '</span> acquis</span>' +
+      '<span class="pill encours"><span class="n">' + r.enCours + '</span> en cours</span>' +
+      '<span class="pill reste"><span class="n">' + r.nonCommence + '</span> à engager</span>';
+
+    var matriceHtml;
+    if(cert.matrice.cpus.length === 0){
+      matriceHtml = '<div class="no-preuve">' + escapeHtml(SOURCE_NOTE.aucune) + '</div>';
+    } else {
+      matriceHtml =
+        '<div class="source-note">' + escapeHtml(SOURCE_NOTE[cert.matrice.source] || '') + '</div>' +
+        '<div class="cpu-list">' + cert.matrice.cpus.map(renderCpuRow).join('') + '</div>';
+    }
+
+    var vaeHtml = '';
+    if(cert.vae){
+      vaeHtml =
+        '<div class="vae-card">' +
+          '<h4>Validation des Acquis de l’Expérience (M2)</h4>' +
+          '<div>État : <span class="vae-statut">' + escapeHtml(VAE_LIB[cert.vae.statut] || cert.vae.statut) + '</span>' +
+            (cert.vae.etape != null ? ' · étape ' + escapeHtml(cert.vae.etape) : '') + '</div>' +
+          '<div class="vae-limite">⚠ Le détail par bloc de compétences n’est pas disponible pour la VAE : ' +
+            'le dossier M2 suit la VAE par Livrets, pas bloc par bloc (évolution M2 prévue — cadrage M4 §3.4).</div>' +
+        '</div>';
+    }
+
+    var diagHtml = '';
+    if(cert.cpuScoresDiag && cert.matrice.source !== 'diagnostic'){
+      diagHtml =
+        '<details class="diag-panel"><summary>Point de départ — auto-diagnostic M1</summary>' +
+          '<div class="diag-corps">' +
+          cert.cpuScoresDiag.map(function(c){
+            var pct = (c.pct != null) ? c.pct : (c.score != null ? c.score : null);
+            return '<div class="d-cpu"><span>' + escapeHtml(c.title || c.name || 'Compétence') + '</span>' +
+                   '<span>' + (pct != null ? escapeHtml(pct) + ' %' : '—') + '</span></div>';
+          }).join('') +
+          '</div></details>';
+    }
+
+    return '<div class="cert-block">' +
+      '<div class="cert-titre">' + escapeHtml(cert.nom) + '</div>' +
+      '<div class="cert-meta">' + meta.join(' · ') + '</div>' +
+      '<div class="resume-pills">' + pills + '</div>' +
+      matriceHtml + vaeHtml + diagHtml +
+    '</div>';
+  }
+
+  function renderCpuRow(cpu){
+    var preuves;
+    if(cpu.preuves.length > 0){
+      preuves = '<div class="preuve-list">' + cpu.preuves.map(function(p){
+        return '<div class="preuve"><span>' + escapeHtml(p.intitule) + '</span>' +
+               '<span class="pv-etat ' + escapeHtml(p.etat) + '">' + escapeHtml(libEtatSituation(p.etat)) +
+               (p.date ? ' · ' + fmtDate(p.date) : '') + '</span></div>';
+      }).join('') + '</div>';
+    } else {
+      preuves = '<div class="no-preuve">Aucune preuve enregistrée pour ce bloc.</div>';
+    }
+    var pct = (cpu.pctDiag != null)
+      ? '<div class="pct-diag">Auto-diagnostic M1 : ' + escapeHtml(cpu.pctDiag) + ' %</div>' : '';
+    return '<div class="cpu-row ' + escapeHtml(cpu.etat) + '">' +
+      '<div class="cpu-tete">' +
+        '<div class="cpu-titre">' + escapeHtml(cpu.titre) + '</div>' +
+        '<span class="etat-badge ' + escapeHtml(cpu.etat) + '">' + escapeHtml(ETAT_LIB[cpu.etat] || cpu.etat) + '</span>' +
+      '</div>' + pct + preuves +
+    '</div>';
+  }
+
+  function renderReste(par){
+    var manquants = [];
+    par.certifications.forEach(function(cert){
+      cert.matrice.cpus.forEach(function(cpu){
+        if(cpu.etat !== 'acquis') manquants.push(cpu.titre);
+      });
+    });
+    if(manquants.length === 0){
+      return '<div class="reste-bloc"><h3>Ce qui reste</h3>' +
+        '<div style="font-size:var(--fs-sm);color:var(--success)">Tous les blocs de compétences identifiés sont acquis. 🎉</div></div>';
+    }
+    return '<div class="reste-bloc"><h3>Ce qui reste — ' + manquants.length + ' bloc(s)</h3><ul>' +
+      manquants.map(function(t){ return '<li>' + escapeHtml(t) + '</li>'; }).join('') + '</ul></div>';
+  }
+
+  // ============================================================
+  // RENDU — VUES PLACEHOLDER (lot 2-3)
+  // ============================================================
+  function renderPlaceholder(role){
+    var conf = {
+      conseiller:{titre:'Vue conseiller', lot:'lot 2',
+        txt:'Portefeuille de N candidats avec leur taux d’avancement, clic vers la vue candidat.'},
+      formateur:{titre:'Vue formateur / expert métier', lot:'lot 3',
+        txt:'Lecture des preuves AFEST : quelles situations couvrent quels blocs, ce qui manque pour compléter un bloc.'},
+      collectif:{titre:'Vue collectif', lot:'lot 3',
+        txt:'Pilotage d’une cohorte : matrice candidats × blocs de compétences (VAE collective, AFEST collectif, formation courte vers l’emploi).'}
+    }[role];
+    var el = document.getElementById('view-' + role);
+    el.innerHTML =
+      '<div class="notice placeholder">' +
+        '<strong>' + escapeHtml(conf.titre) + ' — prévue au ' + escapeHtml(conf.lot) + ' de la construction de M4.</strong><br>' +
+        escapeHtml(conf.txt) + '<br><br>' +
+        'Le moteur de fusion qui alimentera cette vue est déjà en place (lot 1) : ' +
+        'il regroupe les dossiers par candidat et calcule la matrice des blocs de compétences. ' +
+        'Cette vue n’est qu’une présentation différente du même moteur.' +
+      '</div>';
+  }
+
+  // ============================================================
+  // SÉLECTEUR DE RÔLE
+  // ============================================================
+  function appliqueRole(role){
+    state.currentRole = role;
+    var boutons = document.querySelectorAll('#roleSwitch button');
+    for(var i = 0; i < boutons.length; i++){
+      boutons[i].classList.toggle('active', boutons[i].getAttribute('data-role') === role);
+    }
+    var vues = document.querySelectorAll('.view');
+    for(var j = 0; j < vues.length; j++){ vues[j].classList.remove('active'); }
+    var cible = document.getElementById('view-' + role);
+    if(cible) cible.classList.add('active');
+    render();
+  }
+
+  // ============================================================
+  // RENDU GLOBAL
+  // ============================================================
+  function render(){
+    if(state.currentRole === 'candidat') renderCandidat();
+    else renderPlaceholder(state.currentRole);
+  }
+
+  // ============================================================
+  // IMPORT DE DOSSIERS — multi-fichiers
+  // ============================================================
+  var M4 = {};
+  window.M4 = M4;
+
+  // Ajoute une liste d'objets dossier déjà parsés. Testable sans FileReader.
+  // Retourne {ajoutes, rejetes}.
+  M4.appliqueDossiers = function(tableau){
+    var ajoutes = 0, rejetes = 0;
+    (tableau || []).forEach(function(p){
+      if(estDossierValide(p)){ state.dossiers.push(p); ajoutes++; }
+      else rejetes++;
+    });
+    if(ajoutes > 0){
+      // bascule sur le dernier candidat ajouté pour le rendre visible
+      var cs = consolide(state.dossiers);
+      if(cs.length) state.currentCandidatCle = cs[cs.length - 1].cle;
+    }
+    render();
+    return {ajoutes:ajoutes, rejetes:rejetes};
+  };
+
+  // Import depuis une FileList (plusieurs fichiers JSON).
+  M4.importeFichiers = function(fileList){
+    var fichiers = [];
+    for(var i = 0; i < fileList.length; i++){ fichiers.push(fileList[i]); }
+    if(fichiers.length === 0) return;
+    var resultats = [];
+    var restants = fichiers.length;
+    fichiers.forEach(function(file){
+      var reader = new FileReader();
+      reader.onload = function(e){
+        try { resultats.push(JSON.parse(e.target.result)); }
+        catch(err){ resultats.push(null); }
+        if(--restants === 0) finalise();
+      };
+      reader.onerror = function(){
+        resultats.push(null);
+        if(--restants === 0) finalise();
+      };
+      reader.readAsText(file);
+    });
+    function finalise(){
+      var valides = resultats.filter(function(p){ return estDossierValide(p); });
+      var rejetes = resultats.length - valides.length;
+      var res = M4.appliqueDossiers(valides);
+      var msg = res.ajoutes + ' dossier(s) importé(s).';
+      if(rejetes > 0) msg += ' ' + rejetes + ' fichier(s) ignoré(s) (format non reconnu).';
+      flashMessage(msg);
+    }
+  };
+
+  M4.resetDemo = function(){
+    state.dossiers = clone(DEMO_DOSSIERS);
+    state.currentCandidatCle = null;
+    render();
+    flashMessage('Démo rechargée.');
+  };
+
+  // Exposé pour les tests et l'inspection.
+  M4.consolide = consolide;
+  M4.deriveParcours = deriveParcours;
+  M4.construitMatrice = construitMatrice;
+  M4._state = state;
+
+  // ============================================================
+  // FLASH MESSAGE
+  // ============================================================
+  function flashMessage(txt){
+    var el = document.getElementById('flash');
+    if(!el){
+      el = document.createElement('div');
+      el.id = 'flash';
+      el.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);' +
+        'background:var(--navy);color:#fff;padding:12px 24px;border-radius:8px;' +
+        'box-shadow:var(--shadow-lift);z-index:1000;font-size:14px;max-width:90vw;' +
+        'text-align:center;transition:opacity .3s';
+      document.body.appendChild(el);
+    }
+    el.textContent = txt;
+    el.style.opacity = '1';
+    clearTimeout(el._t);
+    el._t = setTimeout(function(){ el.style.opacity = '0'; }, 2800);
+  }
+
+  // ============================================================
+  // BRANCHEMENTS INITIAUX
+  // ============================================================
+  var boutonsRole = document.querySelectorAll('#roleSwitch button');
+  for(var i = 0; i < boutonsRole.length; i++){
+    (function(btn){
+      btn.addEventListener('click', function(){ appliqueRole(btn.getAttribute('data-role')); });
+    })(boutonsRole[i]);
+  }
+
+  var inputImport = document.getElementById('m4-import-file');
+  if(inputImport){
+    inputImport.addEventListener('change', function(e){
+      if(e.target.files && e.target.files.length) M4.importeFichiers(e.target.files);
+      e.target.value = '';
+    });
+  }
+
+  render();
+
+})();
+</script>
+</body>
+</html>

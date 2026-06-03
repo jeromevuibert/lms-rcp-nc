@@ -1,0 +1,764 @@
+{
+  "Agriculture": {
+    "suggestions_nc": [],
+    "certificateur_special": "DAFE NC",
+    "renvoi_dava": false,
+    "nb_suggestions": 0,
+    "note": "Diplômes agricoles CAPA/Bac pro/BTSA → DAFE NC. Les brevets de pêche (gens de mer) sont maintenant en Transport Logistique → DAM NC."
+  },
+  "Transport Logistique": {
+    "suggestions_nc": [
+      {
+        "id": "nc-01",
+        "intitule": "Matelot de pêche",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-46",
+        "intitule": "Conducteur de transport en commun de personnes (version 2019)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-47",
+        "intitule": "Capitaine de navire ≤ 10 m (options pêche côtière ou transport passagers)",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-48",
+        "intitule": "Conducteur de transport routier de marchandises",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "tp-12",
+        "intitule": "TP Technicien en logistique d'entreposage",
+        "niveau": 4,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 5,
+    "dam_nc_ids": [
+      "etat-16",
+      "etat-17",
+      "etat-18",
+      "etat-19",
+      "etat-20",
+      "etat-21",
+      "etat-22",
+      "etat-23",
+      "etat-24",
+      "etat-25",
+      "etat-26",
+      "etat-27",
+      "etat-28",
+      "etat-29",
+      "etat-30",
+      "etat-31",
+      "etat-32",
+      "etat-33",
+      "etat-36",
+      "etat-37",
+      "etat-38",
+      "etat-39",
+      "etat-40",
+      "etat-41",
+      "etat-42",
+      "etat-43",
+      "etat-44",
+      "etat-45",
+      "etat-46",
+      "etat-47",
+      "etat-48",
+      "etat-49"
+    ],
+    "nb_dam_nc": 32,
+    "note_certificateurs": "Brevets gens de mer (etat-16 à etat-49 maritimes) → DAM NC (dam.gouv.nc). Diplômes logistique terrestre (CAP, BAC PRO, BTS) → DAVA. NC maritimes (nc-01, nc-47) → DFPC."
+  },
+  "BTP": {
+    "suggestions_nc": [
+      {
+        "id": "nc-04",
+        "intitule": "Installateur en sanitaire et énergies renouvelables",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-05",
+        "intitule": "Poseur en systèmes photovoltaïques",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "tp-02",
+        "intitule": "TP Charpentier bois",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-03",
+        "intitule": "TP Agent de maintenance du bâtiment",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-06",
+        "intitule": "TP Menuisier aluminium",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-08",
+        "intitule": "TP Métallier",
+        "niveau": 3,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 6
+  },
+  "Numérique": {
+    "suggestions_nc": [
+      {
+        "id": "nc-03",
+        "intitule": "Médiateur numérique",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "tp-01",
+        "intitule": "TP Concepteur designer UI et webdesign",
+        "niveau": 6,
+        "type": "TP"
+      },
+      {
+        "id": "tp-17",
+        "intitule": "TP Technicien d'assistance en informatique",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "tp-21",
+        "intitule": "TP Développeur web et web mobile",
+        "niveau": 5,
+        "type": "TP"
+      },
+      {
+        "id": "tp-22",
+        "intitule": "TP Technicien supérieur systèmes et réseaux",
+        "niveau": 5,
+        "type": "TP"
+      },
+      {
+        "id": "tp-26",
+        "intitule": "TP Technicien supérieur en automatique et informatique industrielle",
+        "niveau": 5,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 6
+  },
+  "Restauration": {
+    "suggestions_nc": [
+      {
+        "id": "tp-09",
+        "intitule": "TP Commis de cuisine",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-10",
+        "intitule": "TP Serveur en restauration",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "nc-06",
+        "intitule": "Guide de randonnée palmée subaquatique",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-07",
+        "intitule": "Accompagnateur de canyonisme",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-08",
+        "intitule": "Accompagnateur initiateur vélo",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-09",
+        "intitule": "Moniteur de canoë kayak, Va'a et disciplines associées",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-10",
+        "intitule": "Moniteur d'arts martiaux option Judo-Jujitsu, Karaté ou Aïkido",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-11",
+        "intitule": "Accompagnateur de sortie équestre",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-12",
+        "intitule": "Accompagnateur de sortie pédestre",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-13",
+        "intitule": "Animateur tout public",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-14",
+        "intitule": "Intervenant artistique et culturel",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-15",
+        "intitule": "Guide de randonnée équestre",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-16",
+        "intitule": "Guide de randonnée pédestre",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-17",
+        "intitule": "Exploitant de petite structure touristique",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "tp-18",
+        "intitule": "TP Réceptionniste en hôtellerie",
+        "niveau": 4,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 15
+  },
+  "Santé": {
+    "suggestions_nc": [
+      {
+        "id": "nc-24",
+        "intitule": "Aide-soignant (version 2019)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-25",
+        "intitule": "Auxiliaire de puériculture",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-26",
+        "intitule": "Ambulancier (version 2024)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-27",
+        "intitule": "Assistante dentaire (version 2022)",
+        "niveau": 4,
+        "type": "NC"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 4
+  },
+  "Commerce Vente": {
+    "suggestions_nc": [
+      {
+        "id": "tp-04",
+        "intitule": "TP Employé de commerce en magasin",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-16",
+        "intitule": "TP Conseiller de vente",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "nc-42",
+        "intitule": "Agent de traitement de valeurs",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-43",
+        "intitule": "Encadrant d'équipe",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-44",
+        "intitule": "Assistant médico-socio-administratif",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-45",
+        "intitule": "Manager de proximité dans le secteur public",
+        "niveau": 5,
+        "type": "NC"
+      },
+      {
+        "id": "tp-23",
+        "intitule": "TP Responsable de petite et moyenne structure",
+        "niveau": 5,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 7
+  },
+  "Industrie Mines": {
+    "suggestions_nc": [
+      {
+        "id": "nc-18",
+        "intitule": "Opérateur sur chargeuse et bouteur dans une exploitation minière (OCBEM)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-19",
+        "intitule": "Opérateur sur pelle hydraulique dans une exploitation minière (OPHEM)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-20",
+        "intitule": "Opérateur sur tombereau dans une exploitation minière (OTEM)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-21",
+        "intitule": "Opérateur sur camion de roulage de descente de mine (OCRDM)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "tp-11",
+        "intitule": "TP Électromécanicien en maintenance industrielle",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-14",
+        "intitule": "TP Technicien de maintenance industrielle",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "tp-24",
+        "intitule": "TP Technicien supérieur en production industrielle",
+        "niveau": 5,
+        "type": "TP"
+      },
+      {
+        "id": "nc-22",
+        "intitule": "Agent de maintenance des automates bancaires",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "tp-05",
+        "intitule": "TP Conducteur d'installations et de machines automatisées",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-07",
+        "intitule": "TP Mécanicien de maintenance automobile",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-13",
+        "intitule": "TP Technicien en chaudronnerie",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "tp-19",
+        "intitule": "TP Technicien de maintenance d'engins et matériels de chantier",
+        "niveau": 4,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 12
+  },
+  "Installation Maintenance": {
+    "suggestions_nc": [
+      {
+        "id": "nc-22",
+        "intitule": "Agent de maintenance des automates bancaires",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "tp-05",
+        "intitule": "TP Conducteur d'installations et de machines automatisées",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-07",
+        "intitule": "TP Mécanicien de maintenance automobile",
+        "niveau": 3,
+        "type": "TP"
+      },
+      {
+        "id": "tp-13",
+        "intitule": "TP Technicien en chaudronnerie",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "tp-19",
+        "intitule": "TP Technicien de maintenance d'engins et matériels de chantier",
+        "niveau": 4,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 5
+  },
+  "Tourisme Sport Loisirs": {
+    "suggestions_nc": [
+      {
+        "id": "nc-06",
+        "intitule": "Guide de randonnée palmée subaquatique",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-07",
+        "intitule": "Accompagnateur de canyonisme",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-08",
+        "intitule": "Accompagnateur initiateur vélo",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-09",
+        "intitule": "Moniteur de canoë kayak, Va'a et disciplines associées",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-10",
+        "intitule": "Moniteur d'arts martiaux option Judo-Jujitsu, Karaté ou Aïkido",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-11",
+        "intitule": "Accompagnateur de sortie équestre",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-12",
+        "intitule": "Accompagnateur de sortie pédestre",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-13",
+        "intitule": "Animateur tout public",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-14",
+        "intitule": "Intervenant artistique et culturel",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-15",
+        "intitule": "Guide de randonnée équestre",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-16",
+        "intitule": "Guide de randonnée pédestre",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-17",
+        "intitule": "Exploitant de petite structure touristique",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "tp-18",
+        "intitule": "TP Réceptionniste en hôtellerie",
+        "niveau": 4,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 13
+  },
+  "Banque Assurance": {
+    "suggestions_nc": [
+      {
+        "id": "nc-02",
+        "intitule": "Conseiller en assurance",
+        "niveau": 5,
+        "type": "NC"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 1
+  },
+  "Support Entreprise": {
+    "suggestions_nc": [
+      {
+        "id": "nc-42",
+        "intitule": "Agent de traitement de valeurs",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-43",
+        "intitule": "Encadrant d'équipe",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-44",
+        "intitule": "Assistant médico-socio-administratif",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-45",
+        "intitule": "Manager de proximité dans le secteur public",
+        "niveau": 5,
+        "type": "NC"
+      },
+      {
+        "id": "tp-23",
+        "intitule": "TP Responsable de petite et moyenne structure",
+        "niveau": 5,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 5
+  },
+  "Administratif RH": {
+    "suggestions_nc": [
+      {
+        "id": "tp-15",
+        "intitule": "TP Secrétaire assistante",
+        "niveau": 4,
+        "type": "TP"
+      },
+      {
+        "id": "tp-20",
+        "intitule": "TP Assistant ressources humaines",
+        "niveau": 5,
+        "type": "TP"
+      },
+      {
+        "id": "tp-25",
+        "intitule": "TP Assistant de direction",
+        "niveau": 5,
+        "type": "TP"
+      },
+      {
+        "id": "nc-42",
+        "intitule": "Agent de traitement de valeurs",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-43",
+        "intitule": "Encadrant d'équipe",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-44",
+        "intitule": "Assistant médico-socio-administratif",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-45",
+        "intitule": "Manager de proximité dans le secteur public",
+        "niveau": 5,
+        "type": "NC"
+      },
+      {
+        "id": "tp-23",
+        "intitule": "TP Responsable de petite et moyenne structure",
+        "niveau": 5,
+        "type": "TP"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 8
+  },
+  "Services Personnes": {
+    "suggestions_nc": [
+      {
+        "id": "nc-28",
+        "intitule": "Accompagnatrice de vie (version 2025)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-29",
+        "intitule": "Auxiliaire d'autonomie (version 2025)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-34",
+        "intitule": "Moniteur éducateur",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-40",
+        "intitule": "Éducateur en milieu scolaire",
+        "niveau": 5,
+        "type": "NC"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 4
+  },
+  "Artisanat": {
+    "suggestions_nc": [],
+    "certificateur_special": null,
+    "renvoi_dava": true,
+    "nb_suggestions": 0
+  },
+  "Compétences clés": {
+    "suggestions_nc": [
+      {
+        "id": "nc-23",
+        "intitule": "Certificat de compétences essentielles (CCE)",
+        "niveau": 1,
+        "type": "NC"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 1,
+    "note": "Compétences transversales certifiées (lecture, numérique, calcul, etc.). Équivalent local du CléA métropolitain. Routage RCP-NC."
+  },
+  "Études supérieures": {
+    "suggestions_nc": [],
+    "certificateur_special": null,
+    "renvoi_dava": true,
+    "nb_suggestions": 0,
+    "note": "Diplômes universitaires généralistes (Licences, Masters, DAEU, Capacité droit) sans secteur métier dédié. Routage DAVA."
+  },
+  "Autres": {
+    "suggestions_nc": [],
+    "certificateur_special": null,
+    "renvoi_dava": true,
+    "nb_suggestions": 0
+  },
+  "Sécurité Surveillance": {
+    "suggestions_nc": [
+      {
+        "id": "nc-30",
+        "intitule": "Agent de sécurité privé qualifié (version 2024)",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-31",
+        "intitule": "Convoyeur de valeurs",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-32",
+        "intitule": "Agent de sécurité renforcée armé",
+        "niveau": 3,
+        "type": "NC"
+      },
+      {
+        "id": "nc-33",
+        "intitule": "Agent de sûreté aéroportuaire",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-36",
+        "intitule": "Opérateur en centre de télésurveillance",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-37",
+        "intitule": "Opérateur en centre de vidéo-protection",
+        "niveau": 4,
+        "type": "NC"
+      },
+      {
+        "id": "nc-41",
+        "intitule": "Dirigeant d'entreprise de sécurité privée",
+        "niveau": 5,
+        "type": "NC"
+      }
+    ],
+    "certificateur_special": null,
+    "renvoi_dava": false,
+    "nb_suggestions": 7
+  }
+}

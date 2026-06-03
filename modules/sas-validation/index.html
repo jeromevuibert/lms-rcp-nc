@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS RCP-NC — SAS de validation</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-light: #2a4070;
+    --teal: #1d7a8c;
+    --teal-light: #2a9bb0;
+    --teal-bg: #e8f5f8;
+    --teal-bg-hover: #f0f8fa;
+    --gold: #c9a227;
+    --gold-light: #e8c55a;
+    --bg: #f4f7fa;
+    --white: #ffffff;
+    --gray-light: #e8edf2;
+    --gray: #8a9ab0;
+    --text: #2c3e50;
+    --success: #27ae60;
+    --success-bg: #e6f7ec;
+    --warning: #f39c12;
+    --warning-bg: #fff4e0;
+    --danger: #e74c3c;
+    --danger-bg: #fde8e6;
+    --info: #2980b9;
+    --info-bg: #e6f1fa;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 4px 20px rgba(26,46,74,0.10);
+    --shadow-sm: 0 2px 8px rgba(26,46,74,0.07);
+    --shadow-lift: 0 8px 28px rgba(26,46,74,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+  .header-logo {
+    width: 42px; height: 42px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .header-text { min-width: 0; }
+  .header-title { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .header-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 400; margin-top: 1px; }
+  .header-badge {
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 12px; border-radius: 20px;
+    letter-spacing: 0.2px;
+    border: 1px solid rgba(255,255,255,0.18);
+    white-space: nowrap;
+  }
+
+  /* ROLE SELECTOR */
+  .role-bar {
+    background: var(--navy);
+    padding: 0 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .role-selector {
+    max-width: 720px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 4px;
+  }
+  .role-btn {
+    padding: 10px 8px;
+    font-size: 13px; font-weight: 600;
+    background: transparent;
+    color: rgba(255,255,255,0.65);
+    border: none; border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    gap: 6px;
+  }
+  .role-btn:hover { color: rgba(255,255,255,0.9); }
+  .role-btn.active {
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+  .role-btn-emoji { font-size: 14px; }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 16px;
+    animation: fadeIn 0.25s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .card-title {
+    font-size: 19px; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px; line-height: 1.3;
+  }
+  .card-subtitle {
+    font-size: 13px; color: var(--gray);
+    margin-bottom: 20px; line-height: 1.5;
+  }
+  .card-eyebrow {
+    display: inline-block;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+
+  /* PHASE BADGE */
+  .phase-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .phase-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .phase-1 { background: var(--info-bg); color: var(--info); }
+  .phase-1 .dot { background: var(--info); }
+  .phase-2 { background: var(--warning-bg); color: var(--warning); }
+  .phase-2 .dot { background: var(--warning); }
+  .phase-3 { background: var(--success-bg); color: var(--success); }
+  .phase-3 .dot { background: var(--success); }
+  .phase-4 { background: var(--danger-bg); color: var(--danger); }
+  .phase-4 .dot { background: var(--danger); }
+
+  /* DROP ZONE */
+  .dropzone {
+    border: 2px dashed var(--gray-light);
+    border-radius: var(--radius);
+    padding: 36px 20px;
+    text-align: center;
+    background: var(--bg);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .dropzone:hover, .dropzone.dragover {
+    border-color: var(--teal);
+    background: var(--teal-bg);
+  }
+  .dropzone-icon { font-size: 36px; margin-bottom: 10px; }
+  .dropzone-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .dropzone-hint { font-size: 12px; color: var(--gray); }
+
+  /* DIAGNOSTIC SUMMARY */
+  .diag-summary {
+    background: linear-gradient(135deg, var(--teal-bg), var(--white));
+    border: 1px solid var(--teal-bg);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .diag-cert {
+    font-size: 16px; font-weight: 700; color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .diag-meta {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    font-size: 12px; color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .diag-meta strong { color: var(--navy); font-weight: 600; }
+  .diag-orientation {
+    display: inline-block;
+    padding: 4px 10px; border-radius: 14px;
+    font-size: 11px; font-weight: 700;
+    background: var(--teal); color: var(--white);
+    margin-top: 4px;
+  }
+
+  /* FORM */
+  .form-group { margin-bottom: 18px; }
+  .form-label {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    margin-bottom: 6px; display: block;
+  }
+  .form-sublabel {
+    font-size: 12px; color: var(--gray);
+    margin-bottom: 8px; display: block;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--teal);
+  }
+  .form-textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
+
+  /* RADIO PILLS */
+  .radio-pills { display: flex; flex-direction: column; gap: 8px; }
+  .radio-pill {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px;
+    border: 2px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--white);
+  }
+  .radio-pill:hover { border-color: var(--teal-light); background: var(--teal-bg-hover); }
+  .radio-pill.selected { border-color: var(--teal); background: var(--teal-bg); }
+  .radio-pill input { display: none; }
+  .radio-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid var(--gray-light);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .radio-pill.selected .radio-dot {
+    border-color: var(--teal); background: var(--teal);
+  }
+  .radio-pill.selected .radio-dot::after {
+    content: ""; width: 8px; height: 8px;
+    background: var(--white); border-radius: 50%;
+  }
+  .radio-pill-text { flex: 1; min-width: 0; }
+  .radio-pill-label { font-size: 13px; font-weight: 600; color: var(--navy); }
+  .radio-pill-desc { font-size: 11px; color: var(--gray); margin-top: 2px; line-height: 1.4; }
+
+  /* CHECKBOX */
+  .checkbox-grid { display: flex; flex-direction: column; gap: 8px; }
+  .checkbox-pill {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--white);
+  }
+  .checkbox-pill:hover { background: var(--teal-bg-hover); border-color: var(--teal-light); }
+  .checkbox-pill.checked { background: var(--teal-bg); border-color: var(--teal); }
+  .checkbox-pill input { display: none; }
+  .checkbox-box {
+    width: 18px; height: 18px;
+    border: 2px solid var(--gray-light);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+    background: var(--white);
+  }
+  .checkbox-pill.checked .checkbox-box {
+    border-color: var(--teal); background: var(--teal);
+  }
+  .checkbox-pill.checked .checkbox-box::after {
+    content: "✓"; color: var(--white); font-size: 12px; font-weight: 700;
+  }
+  .checkbox-label { font-size: 13px; color: var(--text); flex: 1; }
+
+  /* BUTTONS */
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    padding: 12px 20px;
+    font-size: 14px; font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    line-height: 1;
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-primary {
+    background: var(--teal); color: var(--white);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--teal-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(29,122,140,0.3);
+  }
+  .btn-secondary {
+    background: var(--white); color: var(--navy);
+    border: 2px solid var(--gray-light);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    border-color: var(--teal); color: var(--teal);
+  }
+  .btn-danger {
+    background: var(--white); color: var(--danger);
+    border: 2px solid var(--danger);
+  }
+  .btn-danger:hover:not(:disabled) {
+    background: var(--danger); color: var(--white);
+  }
+  .btn-ghost {
+    background: transparent; color: var(--gray);
+  }
+  .btn-ghost:hover:not(:disabled) { color: var(--navy); }
+  .btn-full { width: 100%; }
+
+  /* INFO BOXES */
+  .info-box {
+    background: var(--info-bg);
+    border-left: 3px solid var(--info);
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 13px; color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .info-box strong { color: var(--navy); }
+  .info-box.warning { background: var(--warning-bg); border-color: var(--warning); }
+  .info-box.success { background: var(--success-bg); border-color: var(--success); }
+  .info-box.danger { background: var(--danger-bg); border-color: var(--danger); }
+
+  /* TOAST */
+  .toast-container {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    display: flex; flex-direction: column; gap: 8px;
+    pointer-events: none;
+  }
+  .toast {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 13px; font-weight: 500;
+    box-shadow: var(--shadow-lift);
+    animation: toastIn 0.25s ease;
+    max-width: 320px;
+    pointer-events: auto;
+  }
+  .toast.error { background: var(--danger); }
+  .toast.success { background: var(--success); }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  /* SECTION DIVIDER */
+  .divider {
+    height: 1px; background: var(--gray-light);
+    margin: 18px 0;
+  }
+  .section-title {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+
+  /* STUB BOX */
+  .stub-box {
+    background: var(--bg);
+    border: 1px dashed var(--gray-light);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 13px;
+  }
+
+  /* DETAILS */
+  details {
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  details summary {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  details summary::after { content: "+"; font-size: 18px; color: var(--gray); }
+  details[open] summary::after { content: "−"; }
+  details summary::-webkit-details-marker { display: none; }
+  details > div { padding-top: 12px; font-size: 13px; color: var(--text); line-height: 1.5; }
+
+  /* RESPONSIVE */
+  @media (max-width: 480px) {
+    header { padding: 0 16px; height: 56px; }
+    .header-logo { width: 36px; height: 36px; font-size: 12px; }
+    .header-title { font-size: 13px; }
+    .header-subtitle { font-size: 10px; }
+    .header-badge { font-size: 10px; padding: 4px 9px; }
+    .main { padding: 16px 12px 80px; }
+    .card { padding: 18px 16px; }
+    .card-title { font-size: 17px; }
+    .role-btn { font-size: 11px; padding: 9px 4px; }
+    .role-btn-emoji { font-size: 12px; }
+    .btn-row { flex-direction: column; }
+    .btn { width: 100%; }
+  }
+
+  /* HIDDEN UTILITY */
+  .hidden { display: none !important; }
+
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(26,46,74,0.55);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+  }
+  .modal-overlay.hidden { display: none; }
+  .modal-card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow-lift); padding: 24px;
+    max-width: 480px; width: 100%;
+    animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .modal-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .modal-subtitle { font-size: 13px; color: var(--gray); margin-bottom: 14px; line-height: 1.5; }
+  .modal-card .form-textarea { min-height: 90px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <div class="header-logo">SAS</div>
+    <div class="header-text">
+      <div class="header-title">SAS de validation</div>
+      <div class="header-subtitle">LMS RCP-NC · Entretien conseiller pré-recevabilité</div>
+    </div>
+  </div>
+  <div class="header-badge" id="phaseBadgeHeader">— phase à venir —</div>
+</header>
+
+<div class="role-bar">
+  <div class="role-selector">
+    <button class="role-btn active" data-role="candidat" onclick="switchRole('candidat')">
+      <span class="role-btn-emoji">👤</span><span>Candidat</span>
+    </button>
+    <button class="role-btn" data-role="conseiller" onclick="switchRole('conseiller')">
+      <span class="role-btn-emoji">🧭</span><span>Conseiller</span>
+    </button>
+    <button class="role-btn" data-role="architecte" onclick="switchRole('architecte')">
+      <span class="role-btn-emoji">🏛️</span><span>Architecte</span>
+    </button>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ============================================================ -->
+  <!-- VUE CANDIDAT                                                  -->
+  <!-- ============================================================ -->
+  <div id="view-candidat" class="role-view">
+
+    <!-- Etape 1 : import dossier M1 -->
+    <div id="candidat-step-import" class="card">
+      <div class="card-eyebrow">Étape 1 sur 3</div>
+      <div class="card-title">Importer votre dossier de diagnostic M1</div>
+      <div class="card-subtitle">
+        Vous venez de terminer le diagnostic d'orientation (Module M1) et avez téléchargé un fichier
+        <code>dossier-parcours-RCPNC.json</code>. Importez-le ici pour préparer votre entretien avec un conseiller.
+      </div>
+      <div class="dropzone" id="candidat-dropzone" onclick="document.getElementById('candidat-file-input').click()">
+        <div class="dropzone-icon">📂</div>
+        <div class="dropzone-title">Cliquez pour sélectionner votre dossier</div>
+        <div class="dropzone-hint">ou glissez-déposez le fichier ici</div>
+        <input type="file" id="candidat-file-input" accept="application/json,.json" style="display:none">
+      </div>
+      <div class="divider"></div>
+      <div style="font-size: 12px; color: var(--gray); text-align: center;">
+        Pas encore fait le diagnostic ?
+        <a href="../M1-diagnostic/index.html" style="color: var(--teal); font-weight: 600;">Démarrer le Module M1 →</a>
+      </div>
+    </div>
+
+    <!-- Etape 2 : formulaire dispos -->
+    <div id="candidat-step-form" class="card hidden">
+      <span class="phase-badge phase-1"><span class="dot"></span>Phase 1 — Orientation suggérée</span>
+      <div class="card-title">Préparez votre entretien avec un conseiller</div>
+      <div class="card-subtitle">
+        Renseignez vos coordonnées et vos disponibilités. Un conseiller vous contactera sous
+        <strong>10 jours ouvrés</strong>.
+      </div>
+
+      <!-- Récap diagnostic -->
+      <div class="diag-summary" id="diag-summary"></div>
+
+      <!-- Identité -->
+      <div class="section-title">Vos coordonnées</div>
+
+      <div class="form-group">
+        <label class="form-label" for="cand-nom">Nom *</label>
+        <input type="text" id="cand-nom" class="form-input" placeholder="Votre nom">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cand-prenom">Prénom *</label>
+        <input type="text" id="cand-prenom" class="form-input" placeholder="Votre prénom">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cand-email">Email *</label>
+        <input type="email" id="cand-email" class="form-input" placeholder="prenom.nom@exemple.nc">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cand-tel">Téléphone *</label>
+        <input type="tel" id="cand-tel" class="form-input" placeholder="00 00 00">
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-title">Votre situation</div>
+
+      <div class="form-group">
+        <label class="form-label">Votre statut actuel *</label>
+        <span class="form-sublabel">Information utilisée pour vous présenter les bons dispositifs de financement.</span>
+        <div class="radio-pills" id="cand-statut-radios">
+          <label class="radio-pill" data-value="demandeur_emploi">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Demandeur d'emploi</div>
+              <div class="radio-pill-desc">Prise en charge NC possible (DTEFP) — délai strict 2 mois après recevabilité.</div>
+            </div>
+            <input type="radio" name="cand-statut" value="demandeur_emploi">
+          </label>
+          <label class="radio-pill" data-value="salarie">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Salarié</div>
+              <div class="radio-pill-desc">Financement via FIAF avec accord de votre employeur.</div>
+            </div>
+            <input type="radio" name="cand-statut" value="salarie">
+          </label>
+          <label class="radio-pill" data-value="non_salarie">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Non salarié / indépendant</div>
+              <div class="radio-pill-desc">Financement propre ou via votre branche professionnelle (CQP).</div>
+            </div>
+            <input type="radio" name="cand-statut" value="non_salarie">
+          </label>
+        </div>
+      </div>
+
+      <!-- Info financement adaptée (apparaît après choix statut) -->
+      <div id="cand-financement-info" class="info-box hidden"></div>
+
+      <div class="divider"></div>
+      <div class="section-title">Vos disponibilités</div>
+
+      <div class="form-group">
+        <label class="form-label" for="cand-dispos">Quand êtes-vous disponible pour un entretien ?</label>
+        <span class="form-sublabel">Exemples : « soirs après 17h », « samedi matin », « mercredi toute la journée ».</span>
+        <textarea id="cand-dispos" class="form-textarea" placeholder="Indiquez vos plages de disponibilité…"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Préférence de contact</label>
+        <div class="radio-pills" id="cand-contact-radios">
+          <label class="radio-pill" data-value="visio">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Visio</div>
+            </div>
+            <input type="radio" name="cand-contact" value="visio">
+          </label>
+          <label class="radio-pill" data-value="telephone">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Téléphone</div>
+            </div>
+            <input type="radio" name="cand-contact" value="telephone">
+          </label>
+          <label class="radio-pill" data-value="presentiel">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Présentiel</div>
+            </div>
+            <input type="radio" name="cand-contact" value="presentiel">
+          </label>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Et après ?</strong> Vous téléchargez votre dossier complété et l'envoyez par e-mail au conseiller
+        désigné. Le conseiller vous recontactera sous 10 jours ouvrés pour fixer un rendez-vous.
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary btn-full" onclick="downloadCandidatDossier()">
+          💾 Télécharger mon dossier pour le conseiller
+        </button>
+      </div>
+      <div style="margin-top: 10px; text-align: center;">
+        <button class="btn btn-ghost" onclick="resetCandidat()">Recommencer</button>
+      </div>
+    </div>
+
+    <!-- Etape 3 : parcours validé (import dossier validé) -->
+    <div id="candidat-step-valide" class="card hidden">
+      <span class="phase-badge phase-3"><span class="dot"></span>Phase 3 — Parcours validé</span>
+      <div class="card-title">Votre parcours a été validé par le conseiller</div>
+      <div class="card-subtitle">
+        Vous pouvez maintenant accéder aux modules de votre parcours et déposer votre Livret 1 chez le certificateur.
+      </div>
+      <div id="valide-recap"></div>
+      <div class="info-box success">
+        <strong>Prochaine étape :</strong> ouvrir le module correspondant à votre orientation
+        (Module M2 — VAE, ou Module M3 — AFEST), en important votre dossier validé.
+      </div>
+      <div class="btn-row" id="valide-actions"></div>
+    </div>
+
+    <!-- État import dossier validé déjà fait -->
+    <div id="candidat-step-import-valide" class="card hidden">
+      <div class="card-eyebrow">Vous avez reçu un dossier validé</div>
+      <div class="card-title">Importer le dossier validé par votre conseiller</div>
+      <div class="card-subtitle">
+        Le conseiller vous a envoyé un fichier <code>dossier-parcours-RCPNC.json</code> par e-mail à la suite de votre entretien.
+        Importez-le ici pour accéder à vos modules.
+      </div>
+      <div class="dropzone" onclick="document.getElementById('candidat-file-input-valide').click()">
+        <div class="dropzone-icon">✅</div>
+        <div class="dropzone-title">Cliquez pour importer le dossier validé</div>
+        <div class="dropzone-hint">fichier reçu par e-mail du conseiller</div>
+        <input type="file" id="candidat-file-input-valide" accept="application/json,.json" style="display:none">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VUE CONSEILLER                                                -->
+  <!-- ============================================================ -->
+  <div id="view-conseiller" class="role-view hidden">
+
+    <!-- Identité conseiller -->
+    <div class="card">
+      <div class="card-eyebrow">Votre identité de conseiller</div>
+      <div class="card-title" style="font-size: 16px;">Renseignée pour cette session</div>
+      <div class="card-subtitle">
+        Ces informations apparaîtront dans le compte-rendu d'entretien et dans le dossier transmis au candidat.
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cons-nom">Nom *</label>
+        <input type="text" id="cons-nom" class="form-input" placeholder="Nom du conseiller">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cons-prenom">Prénom *</label>
+        <input type="text" id="cons-prenom" class="form-input" placeholder="Prénom du conseiller">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cons-structure">Structure *</label>
+        <input type="text" id="cons-structure" class="form-input" placeholder="Ex : organisme de formation référencé…">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Type de conseiller *</label>
+        <div class="radio-pills" id="cons-type-radios">
+          <label class="radio-pill" data-value="PRC">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">PRC</div>
+              <div class="radio-pill-desc">Point Relais Conseil — agrément DTEFP.</div>
+            </div>
+            <input type="radio" name="cons-type" value="PRC">
+          </label>
+          <label class="radio-pill" data-value="OF">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Organisme de formation</div>
+              <div class="radio-pill-desc">Service d'information, d'orientation et d'accompagnement.</div>
+            </div>
+            <input type="radio" name="cons-type" value="OF">
+          </label>
+          <label class="radio-pill" data-value="autre">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Autre</div>
+              <div class="radio-pill-desc">Autre type de conseiller habilité par l'Architecte.</div>
+            </div>
+            <input type="radio" name="cons-type" value="autre">
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Etape : import dossier candidat -->
+    <div id="cons-step-import" class="card">
+      <div class="card-eyebrow">Étape 1 sur 2</div>
+      <div class="card-title">Importer un dossier candidat</div>
+      <div class="card-subtitle">
+        Le candidat vous a envoyé son dossier par e-mail. Importez le fichier <code>dossier-parcours-RCPNC.json</code>
+        ici pour ouvrir sa fiche.
+      </div>
+      <div class="dropzone" id="cons-dropzone" onclick="document.getElementById('cons-file-input').click()">
+        <div class="dropzone-icon">📥</div>
+        <div class="dropzone-title">Cliquez pour sélectionner le dossier</div>
+        <div class="dropzone-hint">ou glissez-déposez le fichier ici</div>
+        <input type="file" id="cons-file-input" accept="application/json,.json" style="display:none">
+      </div>
+    </div>
+
+    <!-- Etape : fiche dossier + compte-rendu -->
+    <div id="cons-step-fiche" class="card hidden">
+      <span class="phase-badge phase-2"><span class="dot"></span>Phase 2 — En attente d'entretien</span>
+      <div class="card-title">Fiche dossier candidat</div>
+      <div class="card-subtitle">Délai SLA : <strong>10 jours ouvrés</strong> pour contacter le candidat.</div>
+
+      <!-- Récap diagnostic -->
+      <div class="diag-summary" id="cons-diag-summary"></div>
+
+      <!-- Coordonnées candidat -->
+      <details open>
+        <summary>Coordonnées du candidat</summary>
+        <div id="cons-cand-coords"></div>
+      </details>
+
+      <!-- Disponibilités -->
+      <details open>
+        <summary>Disponibilités et statut</summary>
+        <div id="cons-cand-dispos"></div>
+      </details>
+
+      <!-- CPU scores du diagnostic (si dispos) -->
+      <details>
+        <summary>Détail du diagnostic M1 (scores par CPU)</summary>
+        <div id="cons-cpu-scores"></div>
+      </details>
+
+      <div class="divider"></div>
+
+      <!-- Compte-rendu d'entretien -->
+      <div class="card-title" style="font-size: 17px; margin-top: 4px;">Compte-rendu de l'entretien</div>
+      <div class="card-subtitle">Saisie mixte : quelques champs structurés pour le suivi M4 + texte libre.</div>
+
+      <div class="form-group">
+        <label class="form-label" for="cr-date">Date de l'entretien *</label>
+        <input type="date" id="cr-date" class="form-input">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Modalité de l'entretien *</label>
+        <div class="radio-pills" id="cr-modalite-radios">
+          <label class="radio-pill" data-value="visio">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text"><div class="radio-pill-label">Visio</div></div>
+            <input type="radio" name="cr-modalite" value="visio">
+          </label>
+          <label class="radio-pill" data-value="telephone">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text"><div class="radio-pill-label">Téléphone</div></div>
+            <input type="radio" name="cr-modalite" value="telephone">
+          </label>
+          <label class="radio-pill" data-value="presentiel">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text"><div class="radio-pill-label">Présentiel</div></div>
+            <input type="radio" name="cr-modalite" value="presentiel">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Décision de routing *</label>
+        <span class="form-sublabel">Le routing détermine quels modules du LMS s'ouvrent au candidat.</span>
+        <div class="radio-pills" id="cr-routing-radios">
+          <label class="radio-pill" data-value="VAE_directe">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">VAE directe</div>
+              <div class="radio-pill-desc">Dossier solide — candidat dépose Livret 1 sans accompagnateur.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="VAE_directe">
+          </label>
+          <label class="radio-pill" data-value="VAE_accompagnee">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">VAE avec accompagnateur</div>
+              <div class="radio-pill-desc">Orientation vers un accompagnateur agréé DTEFP.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="VAE_accompagnee">
+          </label>
+          <label class="radio-pill" data-value="hybride_AFEST_FC">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Hybride AFEST + formation courte</div>
+              <div class="radio-pill-desc">M3 ouvert — AFEST en entreprise + formation courte ciblée.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="hybride_AFEST_FC">
+          </label>
+          <label class="radio-pill" data-value="VAE_plus_FC">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">VAE + complément formation courte</div>
+              <div class="radio-pill-desc">M2 ouvert + attestation formation courte attendue.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="VAE_plus_FC">
+          </label>
+          <label class="radio-pill" data-value="escalade_architecte">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Escalade architecte de parcours</div>
+              <div class="radio-pill-desc">Cas complexe — dossier transféré à l'architecte de parcours.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="escalade_architecte">
+          </label>
+          <label class="radio-pill" data-value="reorientation_hors_LMS">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Réorientation hors LMS</div>
+              <div class="radio-pill-desc">SPOT, RIIFE, ou autre dispositif hors parcours certifiant.</div>
+            </div>
+            <input type="radio" name="cr-routing" value="reorientation_hors_LMS">
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-pill" id="cr-cert-amendee-pill">
+          <input type="checkbox" id="cr-cert-amendee">
+          <span class="checkbox-box"></span>
+          <span class="checkbox-label">La certification visée a été amendée pendant l'entretien</span>
+        </label>
+      </div>
+      <div class="form-group hidden" id="cr-cert-amendee-detail">
+        <label class="form-label" for="cr-cert-nouvelle">Nouvelle certification visée</label>
+        <input type="text" id="cr-cert-nouvelle" class="form-input" placeholder="Nom de la nouvelle certification">
+        <div style="margin-top: 8px;">
+          <label class="form-label" for="cr-cert-raison">Raison de l'amendement</label>
+          <input type="text" id="cr-cert-raison" class="form-input" placeholder="Ex : profil mieux aligné avec…">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">CPU confirmés *</label>
+        <span class="form-sublabel">Sélection des blocs de compétences que le parcours visera.</span>
+        <div class="radio-pills">
+          <label class="radio-pill" data-value="total">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Certification totale</div>
+              <div class="radio-pill-desc">Tous les CPU de la certification visée.</div>
+            </div>
+            <input type="radio" name="cr-cpu-mode" value="total">
+          </label>
+          <label class="radio-pill" data-value="partiel">
+            <span class="radio-dot"></span>
+            <div class="radio-pill-text">
+              <div class="radio-pill-label">Certification partielle</div>
+              <div class="radio-pill-desc">Sélection précise des CPU visés (ci-dessous).</div>
+            </div>
+            <input type="radio" name="cr-cpu-mode" value="partiel">
+          </label>
+        </div>
+      </div>
+      <div class="form-group hidden" id="cr-cpu-list-wrap">
+        <label class="form-label">Cochez les CPU visés</label>
+        <div class="checkbox-grid" id="cr-cpu-list"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="cr-narratif">Notes libres sur l'entretien</label>
+        <span class="form-sublabel">Synthèse, points forts, points de vigilance, observations qualitatives.</span>
+        <textarea id="cr-narratif" class="form-textarea" placeholder="Saisie libre…"></textarea>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="validerParcours()">
+          ✅ Valider le parcours
+        </button>
+        <button class="btn btn-danger" id="btn-reassigner" onclick="reassignerDossier()">
+          ↩ Réassigner ce dossier
+        </button>
+        <button class="btn btn-ghost" onclick="resetConseiller()">Annuler</button>
+      </div>
+      <div style="margin-top: 10px; font-size: 11px; color: var(--gray); text-align: center;">
+        Le bouton « Réassigner » sera retiré si DTEFP confirme que les conseillers ne peuvent pas refuser (Q3).
+      </div>
+    </div>
+
+    <!-- Etape : parcours validé prêt à exporter -->
+    <div id="cons-step-valide" class="card hidden">
+      <span class="phase-badge phase-3"><span class="dot"></span>Phase 3 — Parcours validé</span>
+      <div class="card-title">Parcours validé — à transmettre au candidat</div>
+      <div class="card-subtitle">
+        Téléchargez le dossier validé et envoyez-le par e-mail au candidat. Il pourra alors accéder aux modules de son parcours.
+      </div>
+      <div id="cons-recap-validation"></div>
+      <div class="info-box warning">
+        <strong>Important — transmission au candidat :</strong> en V1 du LMS, c'est vous qui envoyez le dossier validé
+        au candidat <strong>par e-mail</strong>, en pièce jointe. Le candidat l'importera dans son propre écran SAS
+        (rôle « Candidat ») pour accéder à la suite.
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-full" onclick="downloadValideDossier()">
+          💾 Télécharger le dossier validé
+        </button>
+      </div>
+      <div style="margin-top: 10px; text-align: center;">
+        <button class="btn btn-ghost" onclick="resetConseiller()">Traiter un nouveau dossier</button>
+      </div>
+    </div>
+
+    <!-- Etape : dossier réassigné prêt à exporter -->
+    <div id="cons-step-reassigne" class="card hidden">
+      <span class="phase-badge phase-4"><span class="dot"></span>Phase 4 — À réassigner</span>
+      <div class="card-title">Dossier marqué pour réassignation</div>
+      <div class="card-subtitle">
+        Téléchargez ce fichier et envoyez-le à l'architecte de parcours pour qu'il assigne un autre conseiller.
+      </div>
+      <div id="cons-recap-reassign"></div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-full" onclick="downloadReassignDossier()">
+          💾 Télécharger le dossier à réassigner
+        </button>
+      </div>
+      <div style="margin-top: 10px; text-align: center;">
+        <button class="btn btn-ghost" onclick="resetConseiller()">Traiter un nouveau dossier</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- VUE ARCHITECTE                                                -->
+  <!-- ============================================================ -->
+  <div id="view-architecte" class="role-view hidden">
+
+    <div class="card">
+      <div class="card-eyebrow">Vue architecte de parcours</div>
+      <div class="card-title">Réassignation de dossier</div>
+      <div class="card-subtitle">
+        Un conseiller a marqué un dossier pour réassignation. Importez-le ici et désignez le nouveau conseiller à qui le transmettre.
+      </div>
+    </div>
+
+    <!-- Etape : import dossier à réassigner -->
+    <div id="arch-step-import" class="card">
+      <div class="card-eyebrow">Étape 1 sur 2</div>
+      <div class="card-title">Importer un dossier à réassigner</div>
+      <div class="card-subtitle">Fichier reçu d'un conseiller qui a décliné le dossier.</div>
+      <div class="dropzone" id="arch-dropzone" onclick="document.getElementById('arch-file-input').click()">
+        <div class="dropzone-icon">📨</div>
+        <div class="dropzone-title">Cliquez pour sélectionner le dossier</div>
+        <div class="dropzone-hint">ou glissez-déposez le fichier ici</div>
+        <input type="file" id="arch-file-input" accept="application/json,.json" style="display:none">
+      </div>
+    </div>
+
+    <!-- Etape : fiche réassignation -->
+    <div id="arch-step-reassign" class="card hidden">
+      <span class="phase-badge phase-4"><span class="dot"></span>Phase 4 — À réassigner</span>
+      <div class="card-title">Fiche dossier à réassigner</div>
+
+      <div class="diag-summary" id="arch-diag-summary"></div>
+
+      <details open>
+        <summary>Motif de réassignation</summary>
+        <div id="arch-motif"></div>
+      </details>
+
+      <details>
+        <summary>Coordonnées du candidat</summary>
+        <div id="arch-coords"></div>
+      </details>
+
+      <div class="divider"></div>
+      <div class="card-title" style="font-size: 17px;">Nouveau conseiller à désigner</div>
+      <div class="card-subtitle">V1 — saisie libre. V2 = liste déroulante des conseillers disponibles.</div>
+
+      <div class="form-group">
+        <label class="form-label" for="arch-new-nom">Nom du nouveau conseiller *</label>
+        <input type="text" id="arch-new-nom" class="form-input" placeholder="Nom">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="arch-new-prenom">Prénom *</label>
+        <input type="text" id="arch-new-prenom" class="form-input" placeholder="Prénom">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="arch-new-structure">Structure *</label>
+        <input type="text" id="arch-new-structure" class="form-input" placeholder="Ex : organisme de formation référencé…">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="arch-note">Note pour le nouveau conseiller (optionnel)</label>
+        <textarea id="arch-note" class="form-textarea" placeholder="Ex : motif du transfert, contexte particulier…"></textarea>
+      </div>
+
+      <div class="info-box">
+        <strong>Et après ?</strong> Téléchargez le dossier réassigné et envoyez-le par e-mail au nouveau conseiller.
+        Le délai SLA de 10 jours ouvrés repart à zéro à compter de cet envoi.
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary btn-full" onclick="reassignerDossierFinal()">
+          💾 Télécharger le dossier pour le nouveau conseiller
+        </button>
+      </div>
+      <div style="margin-top: 10px; text-align: center;">
+        <button class="btn btn-ghost" onclick="resetArchitecte()">Annuler</button>
+      </div>
+    </div>
+
+    <!-- Stub tableau de bord -->
+    <div class="card">
+      <div class="card-eyebrow">À venir — V2</div>
+      <div class="card-title" style="font-size: 16px;">Tableau de bord conseillers</div>
+      <div class="card-subtitle">
+        Suivi global des dossiers en cours, charge par conseiller, alertes SLA.
+      </div>
+      <div class="stub-box">
+        Le tableau de bord temps réel nécessite un service partagé (backend).
+        Prévu en V2, financée dans le cadre France 2030 NC.
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="modal-reassign" class="modal-overlay hidden" onclick="if(event.target===this)cancelReassignModal()">
+    <div class="modal-card">
+      <div class="modal-title">Motif de la reassignation</div>
+      <div class="modal-subtitle">Ce motif sera transmis a l architecte avec le dossier.</div>
+      <textarea id="modal-reassign-motif" class="form-textarea" placeholder="Ex : capacite depassee, conflit d interets, secteur non maitrise..."></textarea>
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn btn-primary" onclick="confirmReassignModal()">Confirmer la reassignation</button>
+        <button class="btn btn-ghost" onclick="cancelReassignModal()">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script src="../../shared/data/enums.js"></script>
+<script>
+'use strict';
+
+// ============================================================
+// État applicatif (en mémoire uniquement — R16 : pas de localStorage)
+// ============================================================
+const state = {
+  role: 'candidat',
+  candidat: {
+    dossierIn: null,       // dossier importé depuis M1
+    dossierOut: null,      // dossier en_attente_entretien à exporter
+    dossierValide: null    // dossier parcours_validé importé du conseiller
+  },
+  conseiller: {
+    dossierIn: null,       // dossier en_attente_entretien importé
+    dossierOut: null,      // dossier parcours_validé ou à_réassigner à exporter
+    typeSortie: null       // 'valide' ou 'reassign'
+  },
+  architecte: {
+    dossierIn: null,
+    dossierOut: null
+  }
+};
+
+const FINANCEMENT_TEXTS = {
+  demandeur_emploi: '<strong>Demandeur d\'emploi :</strong> prise en charge NC possible (DTEFP). ' +
+    '⚠️ Dossier à déposer <strong>max 2 mois après la recevabilité</strong> (délai strict, aucune exception).',
+  salarie: '<strong>Salarié :</strong> financement via le FIAF avec accord de votre employeur. ' +
+    'Pas d\'équivalent CPF portable en Nouvelle-Calédonie — l\'accord employeur est nécessaire.',
+  non_salarie: '<strong>Non salarié / indépendant :</strong> financement propre, ou via la branche professionnelle ' +
+    'compétente (CQP).'
+};
+
+const ORIENTATION_LABELS = RCPNC_ENUMS.VOIES_M1_LABELS;
+
+const ROUTING_LABELS = RCPNC_ENUMS.ROUTING_LABELS;
+
+// ============================================================
+// Utilitaires UI
+// ============================================================
+function toast(message, type) {
+  const container = document.getElementById('toast-container');
+  const el = document.createElement('div');
+  el.className = 'toast' + (type ? ' ' + type : '');
+  el.textContent = message;
+  container.appendChild(el);
+  setTimeout(() => { el.style.opacity = '0'; el.style.transform = 'translateY(8px)'; }, 3000);
+  setTimeout(() => { container.removeChild(el); }, 3400);
+}
+
+function show(id) { document.getElementById(id).classList.remove('hidden'); }
+function hide(id) { document.getElementById(id).classList.add('hidden'); }
+
+function scrollToCard(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  setTimeout(function() {
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({top: top, behavior: 'smooth'});
+  }, 30);
+}
+
+let _reassignResolver = null;
+function openReassignModal() {
+  return new Promise(function(resolve) {
+    _reassignResolver = resolve;
+    document.getElementById('modal-reassign-motif').value = '';
+    document.getElementById('modal-reassign').classList.remove('hidden');
+    setTimeout(function(){ document.getElementById('modal-reassign-motif').focus(); }, 100);
+  });
+}
+function confirmReassignModal() {
+  const motif = document.getElementById('modal-reassign-motif').value.trim();
+  document.getElementById('modal-reassign').classList.add('hidden');
+  if (_reassignResolver) { _reassignResolver(motif); _reassignResolver = null; }
+}
+function cancelReassignModal() {
+  document.getElementById('modal-reassign').classList.add('hidden');
+  if (_reassignResolver) { _reassignResolver(null); _reassignResolver = null; }
+}
+
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function setPhaseHeader(label, phaseClass) {
+  const el = document.getElementById('phaseBadgeHeader');
+  el.textContent = label;
+  el.className = 'header-badge';
+  if (phaseClass) el.classList.add('hdr-' + phaseClass);
+}
+
+// ============================================================
+// Sélection de rôle
+// ============================================================
+function switchRole(role) {
+  state.role = role;
+  document.querySelectorAll('.role-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.role === role);
+  });
+  document.querySelectorAll('.role-view').forEach(v => v.classList.add('hidden'));
+  document.getElementById('view-' + role).classList.remove('hidden');
+  refreshPhaseHeader();
+}
+
+function refreshPhaseHeader() {
+  if (state.role === 'candidat') {
+    if (state.candidat.dossierValide) setPhaseHeader('Phase 3 — Parcours validé', 'phase-3');
+    else if (state.candidat.dossierIn) setPhaseHeader('Phase 1 — Orientation suggérée', 'phase-1');
+    else setPhaseHeader('— en attente d\'un dossier M1 —', null);
+  } else if (state.role === 'conseiller') {
+    if (state.conseiller.dossierOut && state.conseiller.typeSortie === 'valide')
+      setPhaseHeader('Phase 3 — Parcours validé', 'phase-3');
+    else if (state.conseiller.dossierOut && state.conseiller.typeSortie === 'reassign')
+      setPhaseHeader('Phase 4 — À réassigner', 'phase-4');
+    else if (state.conseiller.dossierIn)
+      setPhaseHeader('Phase 2 — En attente d\'entretien', 'phase-2');
+    else setPhaseHeader('— en attente d\'un dossier candidat —', null);
+  } else {
+    if (state.architecte.dossierIn) setPhaseHeader('Phase 4 — À réassigner', 'phase-4');
+    else setPhaseHeader('— en attente d\'un dossier à réassigner —', null);
+  }
+}
+
+// ============================================================
+// Validation format du dossier importé
+// ============================================================
+function parseDossierFile(file, onOk) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    let parsed;
+    try { parsed = JSON.parse(e.target.result); }
+    catch (err) { toast('Fichier illisible : ce n\'est pas un dossier JSON valide.', 'error'); return; }
+    if (!parsed || !parsed._meta || parsed._meta.format !== 'rcpnc-dossier-parcours') {
+      toast('Ce fichier n\'est pas un dossier de parcours RCP-NC.', 'error'); return;
+    }
+    if (!parsed.diagnostic || !parsed.diagnostic.cert) {
+      toast('Le fichier ne contient pas de diagnostic M1 exploitable.', 'error'); return;
+    }
+    onOk(parsed);
+  };
+  reader.readAsText(file);
+}
+
+function downloadJson(obj, filename) {
+  const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function nowIso() { return new Date().toISOString(); }
+
+// ============================================================
+// Drag & drop générique
+// ============================================================
+function wireDropzone(zoneId, inputId) {
+  const zone = document.getElementById(zoneId);
+  const input = document.getElementById(inputId);
+  if (!zone || !input) return;
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault(); zone.classList.remove('dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      const dt = new DataTransfer(); dt.items.add(e.dataTransfer.files[0]);
+      input.files = dt.files; input.dispatchEvent(new Event('change'));
+    }
+  });
+}
+
+// ============================================================
+// VUE CANDIDAT
+// ============================================================
+function renderDiagSummary(targetId, diagnostic) {
+  const el = document.getElementById(targetId);
+  const orientLabel = ORIENTATION_LABELS[diagnostic.orientation] || diagnostic.orientation;
+  el.innerHTML = `
+    <div class="diag-cert">${escapeHtml(diagnostic.cert.name || 'Certification inconnue')}</div>
+    <div class="diag-meta">
+      <span><strong>Type :</strong> ${escapeHtml(diagnostic.cert.type || '—')}</span>
+      <span><strong>Niveau :</strong> ${escapeHtml(diagnostic.cert.level || '—')}</span>
+      ${diagnostic.scoreGlobal != null ? `<span><strong>Score global :</strong> ${diagnostic.scoreGlobal}%</span>` : ''}
+    </div>
+    <div class="diag-orientation">${escapeHtml(orientLabel)}</div>
+  `;
+}
+
+document.getElementById('candidat-file-input').addEventListener('change', function(evt) {
+  const f = evt.target.files && evt.target.files[0];
+  if (!f) return;
+  parseDossierFile(f, parsed => {
+    if (parsed._meta.exportedFrom === 'SAS_conseiller') {
+      // C'est un dossier validé reçu en retour
+      state.candidat.dossierValide = parsed;
+      hide('candidat-step-import');
+      hide('candidat-step-form');
+      hide('candidat-step-import-valide');
+      renderCandidatValide();
+      refreshPhaseHeader();
+      scrollToCard('candidat-step-valide');
+      toast('Dossier validé importé.', 'success');
+      return;
+    }
+    if (parsed._meta.exportedFrom !== 'M1') {
+      toast('Ce dossier n\'est pas un export de Module M1.', 'error'); return;
+    }
+    state.candidat.dossierIn = parsed;
+    renderDiagSummary('diag-summary', parsed.diagnostic);
+    hide('candidat-step-import');
+    show('candidat-step-form');
+    refreshPhaseHeader();
+    scrollToCard('candidat-step-form');
+    toast('Dossier M1 importé : ' + (parsed.diagnostic.cert.name || 'cert inconnue'), 'success');
+  });
+  evt.target.value = '';
+});
+
+document.getElementById('candidat-file-input-valide').addEventListener('change', function(evt) {
+  const f = evt.target.files && evt.target.files[0];
+  if (!f) return;
+  parseDossierFile(f, parsed => {
+    if (parsed._meta.exportedFrom !== 'SAS_conseiller' || !parsed.validation) {
+      toast('Ce fichier n\'est pas un dossier validé par un conseiller.', 'error'); return;
+    }
+    state.candidat.dossierValide = parsed;
+    hide('candidat-step-import-valide');
+    renderCandidatValide();
+    refreshPhaseHeader();
+    toast('Dossier validé importé.', 'success');
+  });
+  evt.target.value = '';
+});
+
+// Radio pills générique
+function wireRadioPills(rootId, name) {
+  const root = document.getElementById(rootId);
+  if (!root) return;
+  root.querySelectorAll('.radio-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      root.querySelectorAll('.radio-pill').forEach(p => p.classList.remove('selected'));
+      pill.classList.add('selected');
+      const inp = pill.querySelector('input');
+      if (inp) inp.checked = true;
+      // Hook personnalisé
+      if (name === 'cand-statut') {
+        const info = document.getElementById('cand-financement-info');
+        info.innerHTML = FINANCEMENT_TEXTS[inp.value] || '';
+        info.classList.remove('hidden');
+        info.classList.remove('warning', 'success', 'danger');
+        if (inp.value === 'demandeur_emploi') info.classList.add('warning');
+      }
+      if (name === 'cr-cpu-mode') {
+        document.getElementById('cr-cpu-list-wrap').classList.toggle('hidden', inp.value !== 'partiel');
+      }
+    });
+  });
+}
+wireRadioPills('cand-statut-radios', 'cand-statut');
+wireRadioPills('cand-contact-radios', 'cand-contact');
+wireRadioPills('cons-type-radios', 'cons-type');
+wireRadioPills('cr-modalite-radios', 'cr-modalite');
+wireRadioPills('cr-routing-radios', 'cr-routing');
+
+// Checkbox certif amendée
+document.getElementById('cr-cert-amendee').addEventListener('change', function() {
+  const pill = document.getElementById('cr-cert-amendee-pill');
+  pill.classList.toggle('checked', this.checked);
+  document.getElementById('cr-cert-amendee-detail').classList.toggle('hidden', !this.checked);
+});
+
+// CPU mode radio pills
+const cpuModeRoot = document.querySelector('[data-value="total"]')?.parentElement;
+if (cpuModeRoot) {
+  cpuModeRoot.querySelectorAll('.radio-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      cpuModeRoot.querySelectorAll('.radio-pill').forEach(p => p.classList.remove('selected'));
+      pill.classList.add('selected');
+      const inp = pill.querySelector('input'); if (inp) inp.checked = true;
+      if (inp && inp.name === 'cr-cpu-mode') {
+        document.getElementById('cr-cpu-list-wrap').classList.toggle('hidden', inp.value !== 'partiel');
+      }
+    });
+  });
+}
+
+function getSelectedRadioValue(name) {
+  const el = document.querySelector('input[name="' + name + '"]:checked');
+  return el ? el.value : null;
+}
+
+function downloadCandidatDossier() {
+  const nom = document.getElementById('cand-nom').value.trim();
+  const prenom = document.getElementById('cand-prenom').value.trim();
+  const email = document.getElementById('cand-email').value.trim();
+  const tel = document.getElementById('cand-tel').value.trim();
+  const statut = getSelectedRadioValue('cand-statut');
+  const dispos = document.getElementById('cand-dispos').value.trim();
+  const contact = getSelectedRadioValue('cand-contact');
+
+  if (!nom || !prenom || !email || !tel) {
+    toast('Merci de renseigner vos coordonnées (nom, prénom, email, téléphone).', 'error'); return;
+  }
+  if (!statut) { toast('Merci de sélectionner votre statut.', 'error'); return; }
+  if (!dispos) { toast('Merci d\'indiquer vos disponibilités.', 'error'); return; }
+  if (!contact) { toast('Merci de choisir votre préférence de contact.', 'error'); return; }
+
+  const dossier = {
+    _meta: {
+      format: 'rcpnc-dossier-parcours',
+      version: 1,
+      exportedFrom: 'SAS_candidat',
+      exportedAt: nowIso(),
+      phase: 'en_attente_entretien'
+    },
+    diagnostic: state.candidat.dossierIn.diagnostic,
+    candidat_dispos: {
+      nom, prenom, email, telephone: tel,
+      statut,
+      plages_dispo: dispos,
+      preference_contact: contact,
+      depose_le: nowIso()
+    }
+  };
+  state.candidat.dossierOut = dossier;
+  downloadJson(dossier, 'dossier-parcours-RCPNC.json');
+  toast('Dossier téléchargé. Envoyez-le par e-mail au conseiller désigné.', 'success');
+}
+
+function renderCandidatValide() {
+  const d = state.candidat.dossierValide;
+  const v = d.validation;
+  const wrap = document.getElementById('candidat-step-valide');
+  wrap.classList.remove('hidden');
+  const recap = document.getElementById('valide-recap');
+  recap.innerHTML = `
+    <div class="diag-summary">
+      <div class="diag-cert">${escapeHtml(v.certification_visee.name || d.diagnostic.cert.name)}</div>
+      <div class="diag-meta">
+        <span><strong>Routing :</strong> ${escapeHtml(ROUTING_LABELS[v.routing] || v.routing)}</span>
+        <span><strong>CPU :</strong> ${v.cpu_confirmes.total ? 'Certification totale' : (v.cpu_confirmes.cpus || []).length + ' CPU partiels'}</span>
+      </div>
+      <div class="diag-meta">
+        <span><strong>Validé par :</strong> ${escapeHtml(v.conseiller.prenom + ' ' + v.conseiller.nom)} (${escapeHtml(v.conseiller.type)})</span>
+      </div>
+    </div>
+  `;
+  const actions = document.getElementById('valide-actions');
+  let html = '';
+  if (v.routing === 'VAE_directe' || v.routing === 'VAE_accompagnee' || v.routing === 'VAE_plus_FC') {
+    html += '<a href="../M2-vae/index.html" class="btn btn-primary">Ouvrir le Module M2 (VAE) →</a>';
+  }
+  if (v.routing === 'hybride_AFEST_FC') {
+    html += '<a href="../M3-afest/index.html" class="btn btn-primary">Ouvrir le Module M3 (AFEST) →</a>';
+  }
+  html += '<button class="btn btn-secondary" onclick="downloadJson(state.candidat.dossierValide, \'dossier-parcours-RCPNC.json\')">💾 Télécharger à nouveau</button>';
+  actions.innerHTML = html;
+}
+
+function resetCandidat() {
+  state.candidat = { dossierIn: null, dossierOut: null, dossierValide: null };
+  hide('candidat-step-form');
+  hide('candidat-step-valide');
+  show('candidat-step-import');
+  document.getElementById('cand-nom').value = '';
+  document.getElementById('cand-prenom').value = '';
+  document.getElementById('cand-email').value = '';
+  document.getElementById('cand-tel').value = '';
+  document.getElementById('cand-dispos').value = '';
+  document.querySelectorAll('#view-candidat .radio-pill').forEach(p => p.classList.remove('selected'));
+  document.getElementById('cand-financement-info').classList.add('hidden');
+  refreshPhaseHeader();
+}
+
+// ============================================================
+// VUE CONSEILLER
+// ============================================================
+document.getElementById('cons-file-input').addEventListener('change', function(evt) {
+  const f = evt.target.files && evt.target.files[0];
+  if (!f) return;
+  parseDossierFile(f, parsed => {
+    if (parsed._meta.exportedFrom !== 'SAS_candidat' || !parsed.candidat_dispos) {
+      toast('Ce dossier n\'est pas un dossier candidat en attente d\'entretien.', 'error'); return;
+    }
+    state.conseiller.dossierIn = parsed;
+    state.conseiller.dossierOut = null;
+    state.conseiller.typeSortie = null;
+    renderConseillerFiche();
+    hide('cons-step-import');
+    hide('cons-step-valide');
+    hide('cons-step-reassigne');
+    show('cons-step-fiche');
+    refreshPhaseHeader();
+    scrollToCard('cons-step-fiche');
+    toast('Dossier candidat importé.', 'success');
+  });
+  evt.target.value = '';
+});
+
+function renderConseillerFiche() {
+  const d = state.conseiller.dossierIn;
+  renderDiagSummary('cons-diag-summary', d.diagnostic);
+
+  // Coordonnées
+  const c = d.candidat_dispos;
+  document.getElementById('cons-cand-coords').innerHTML = `
+    <p><strong>${escapeHtml(c.prenom)} ${escapeHtml(c.nom)}</strong></p>
+    <p>📧 ${escapeHtml(c.email)}</p>
+    <p>📞 ${escapeHtml(c.telephone)}</p>
+  `;
+
+  // Dispos + statut
+  let statutLabel = c.statut === 'demandeur_emploi' ? 'Demandeur d\'emploi' :
+                    c.statut === 'salarie' ? 'Salarié' : 'Non salarié / indépendant';
+  document.getElementById('cons-cand-dispos').innerHTML = `
+    <p><strong>Statut :</strong> ${escapeHtml(statutLabel)}</p>
+    <p><strong>Préférence contact :</strong> ${escapeHtml(c.preference_contact)}</p>
+    <p style="margin-top:8px;"><strong>Plages disponibles :</strong></p>
+    <p style="white-space: pre-wrap;">${escapeHtml(c.plages_dispo)}</p>
+    <p style="margin-top:8px;font-size:11px;color:var(--gray);">Déposé le ${new Date(c.depose_le).toLocaleString('fr-FR')}</p>
+  `;
+
+  // CPU scores du diagnostic
+  const cpuScores = d.diagnostic.cpuScores;
+  const cpuList = document.getElementById('cr-cpu-list');
+  cpuList.innerHTML = '';
+  if (cpuScores && Array.isArray(cpuScores)) {
+    cpuScores.forEach((cpu, idx) => {
+      const id = 'cpu-cb-' + idx;
+      const pill = document.createElement('label');
+      pill.className = 'checkbox-pill';
+      pill.innerHTML = `
+        <input type="checkbox" id="${id}" value="${escapeHtml(cpu.id || idx)}">
+        <span class="checkbox-box"></span>
+        <span class="checkbox-label">${escapeHtml(cpu.title || cpu.name || cpu.id || ('CPU ' + (idx+1)))} ${cpu.score != null ? '(' + cpu.score + '%)' : ''}</span>
+      `;
+      pill.addEventListener('click', function(e) {
+        if (e.target.tagName === 'INPUT') return;
+        const inp = pill.querySelector('input');
+        inp.checked = !inp.checked;
+        pill.classList.toggle('checked', inp.checked);
+      });
+      cpuList.appendChild(pill);
+    });
+    document.getElementById('cons-cpu-scores').innerHTML = '<p>' + cpuScores.length + ' CPU mesurés en M1.</p>';
+  } else {
+    cpuList.innerHTML = '<p style="color:var(--gray);font-size:12px;">Aucun score CPU dans le diagnostic — sélection à saisir librement.</p>';
+    document.getElementById('cons-cpu-scores').innerHTML = '<p style="color:var(--gray);font-size:12px;">Pas de détail CPU dans ce diagnostic.</p>';
+  }
+
+  // Pré-remplir la date à aujourd'hui
+  document.getElementById('cr-date').value = new Date().toISOString().slice(0,10);
+}
+
+function readConseillerIdentite() {
+  return {
+    nom: document.getElementById('cons-nom').value.trim(),
+    prenom: document.getElementById('cons-prenom').value.trim(),
+    structure: document.getElementById('cons-structure').value.trim(),
+    type: getSelectedRadioValue('cons-type')
+  };
+}
+
+function validerParcours() {
+  const ident = readConseillerIdentite();
+  if (!ident.nom || !ident.prenom || !ident.structure || !ident.type) {
+    toast('Merci de compléter votre identité conseiller (en haut).', 'error'); return;
+  }
+  const date = document.getElementById('cr-date').value;
+  const modalite = getSelectedRadioValue('cr-modalite');
+  const routing = getSelectedRadioValue('cr-routing');
+  const cpuMode = getSelectedRadioValue('cr-cpu-mode');
+  const narratif = document.getElementById('cr-narratif').value.trim();
+  if (!date) { toast('Merci d\'indiquer la date de l\'entretien.', 'error'); return; }
+  if (!modalite) { toast('Merci d\'indiquer la modalité de l\'entretien.', 'error'); return; }
+  if (!routing) { toast('Merci de choisir une décision de routing.', 'error'); return; }
+  if (!cpuMode) { toast('Merci de préciser les CPU confirmés (totale ou partielle).', 'error'); return; }
+
+  const amendee = document.getElementById('cr-cert-amendee').checked;
+  const certIn = state.conseiller.dossierIn.diagnostic.cert;
+  const certif = amendee ? {
+    id: null,
+    name: document.getElementById('cr-cert-nouvelle').value.trim() || certIn.name,
+    amendee: true,
+    raison_amendement: document.getElementById('cr-cert-raison').value.trim()
+  } : {
+    id: certIn.id,
+    name: certIn.name,
+    amendee: false,
+    raison_amendement: ''
+  };
+
+  let cpusList = [];
+  if (cpuMode === 'partiel') {
+    document.querySelectorAll('#cr-cpu-list input:checked').forEach(cb => cpusList.push(cb.value));
+  }
+
+  const c = state.conseiller.dossierIn.candidat_dispos;
+  const dossier = {
+    _meta: {
+      format: 'rcpnc-dossier-parcours',
+      version: 1,
+      exportedFrom: 'SAS_conseiller',
+      exportedAt: nowIso(),
+      phase: 'parcours_validé'
+    },
+    diagnostic: state.conseiller.dossierIn.diagnostic,
+    candidat_dispos: state.conseiller.dossierIn.candidat_dispos,
+    validation: {
+      conseiller: ident,
+      entretien: { date, modalite, compte_rendu: narratif },
+      routing,
+      certification_visee: certif,
+      cpu_confirmes: { total: cpuMode === 'total', cpus: cpusList },
+      financement_info_affiche: c.statut,
+      livret_1_prerempli: {
+        identite: {
+          nom: c.nom || '',
+          prenom: c.prenom || '',
+          email: c.email || '',
+          telephone: c.telephone || '',
+          statut: c.statut || ''
+        },
+        niveaux: {
+          partie_1_identite: 'complet',
+          partie_2_experience: 'partiel',
+          partie_3_diplomes: 'partiel',
+          partie_4_declaration: 'non_prerempli',
+          partie_5_pieces_justif: ['à_definir_par_certificateur']
+        }
+      },
+      valide_le: nowIso()
+    }
+  };
+  state.conseiller.dossierOut = dossier;
+  state.conseiller.typeSortie = 'valide';
+
+  // Récap visuel
+  const recap = document.getElementById('cons-recap-validation');
+  recap.innerHTML = `
+    <div class="diag-summary">
+      <div class="diag-cert">${escapeHtml(certif.name)}</div>
+      <div class="diag-meta">
+        <span><strong>Routing :</strong> ${escapeHtml(ROUTING_LABELS[routing])}</span>
+        <span><strong>CPU :</strong> ${cpuMode === 'total' ? 'Totale' : cpusList.length + ' partiels'}</span>
+        <span><strong>Date entretien :</strong> ${escapeHtml(date)}</span>
+      </div>
+      <div class="diag-meta">
+        <span><strong>Candidat :</strong> ${escapeHtml(c.prenom)} ${escapeHtml(c.nom)} — ${escapeHtml(c.email)}</span>
+      </div>
+    </div>
+  `;
+  hide('cons-step-fiche');
+  show('cons-step-valide');
+  refreshPhaseHeader();
+  scrollToCard('cons-step-valide');
+  toast('Parcours validé. Téléchargez et envoyez le fichier au candidat.', 'success');
+}
+
+async function reassignerDossier() {
+  const ident = readConseillerIdentite();
+  if (!ident.nom || !ident.prenom || !ident.structure || !ident.type) {
+    toast('Merci de compléter votre identité conseiller (en haut).', 'error'); return;
+  }
+  const motif = await openReassignModal();
+  if (!motif || !motif.trim()) { toast('Réassignation annulée — motif manquant.', 'error'); return; }
+  const c = state.conseiller.dossierIn.candidat_dispos;
+  const dossier = {
+    _meta: {
+      format: 'rcpnc-dossier-parcours',
+      version: 1,
+      exportedFrom: 'SAS_conseiller',
+      exportedAt: nowIso(),
+      phase: 'à_réassigner'
+    },
+    diagnostic: state.conseiller.dossierIn.diagnostic,
+    candidat_dispos: state.conseiller.dossierIn.candidat_dispos,
+    reassignation: {
+      conseiller_decline: ident,
+      motif: motif.trim(),
+      decline_le: nowIso()
+    }
+  };
+  state.conseiller.dossierOut = dossier;
+  state.conseiller.typeSortie = 'reassign';
+
+  document.getElementById('cons-recap-reassign').innerHTML = `
+    <div class="diag-summary">
+      <div class="diag-cert">${escapeHtml(state.conseiller.dossierIn.diagnostic.cert.name)}</div>
+      <div class="diag-meta">
+        <span><strong>Candidat :</strong> ${escapeHtml(c.prenom)} ${escapeHtml(c.nom)}</span>
+      </div>
+      <div class="diag-meta">
+        <span><strong>Motif :</strong> ${escapeHtml(motif)}</span>
+      </div>
+    </div>
+  `;
+  hide('cons-step-fiche');
+  show('cons-step-reassigne');
+  refreshPhaseHeader();
+  scrollToCard('cons-step-reassigne');
+  toast('Dossier marqué pour réassignation.', 'success');
+}
+
+function downloadValideDossier() {
+  downloadJson(state.conseiller.dossierOut, 'dossier-parcours-RCPNC.json');
+  toast('Dossier téléchargé. Envoyez-le par e-mail au candidat.', 'success');
+}
+function downloadReassignDossier() {
+  downloadJson(state.conseiller.dossierOut, 'dossier-parcours-RCPNC-a-reassigner.json');
+  toast('Dossier téléchargé. Envoyez-le par e-mail à l\'architecte.', 'success');
+}
+
+function resetConseiller() {
+  state.conseiller = { dossierIn: null, dossierOut: null, typeSortie: null };
+  hide('cons-step-fiche');
+  hide('cons-step-valide');
+  hide('cons-step-reassigne');
+  show('cons-step-import');
+  document.getElementById('cr-narratif').value = '';
+  document.getElementById('cr-cert-amendee').checked = false;
+  document.getElementById('cr-cert-amendee-pill').classList.remove('checked');
+  document.getElementById('cr-cert-amendee-detail').classList.add('hidden');
+  document.getElementById('cr-cert-nouvelle').value = '';
+  document.getElementById('cr-cert-raison').value = '';
+  document.querySelectorAll('#cons-step-fiche .radio-pill').forEach(p => p.classList.remove('selected'));
+  refreshPhaseHeader();
+}
+
+// ============================================================
+// VUE ARCHITECTE
+// ============================================================
+document.getElementById('arch-file-input').addEventListener('change', function(evt) {
+  const f = evt.target.files && evt.target.files[0];
+  if (!f) return;
+  parseDossierFile(f, parsed => {
+    if (parsed._meta.exportedFrom !== 'SAS_conseiller' || !parsed.reassignation) {
+      toast('Ce fichier n\'est pas un dossier à réassigner.', 'error'); return;
+    }
+    state.architecte.dossierIn = parsed;
+    renderArchitecteFiche();
+    hide('arch-step-import');
+    show('arch-step-reassign');
+    refreshPhaseHeader();
+    scrollToCard('arch-step-reassign');
+    toast('Dossier à réassigner importé.', 'success');
+  });
+  evt.target.value = '';
+});
+
+function renderArchitecteFiche() {
+  const d = state.architecte.dossierIn;
+  renderDiagSummary('arch-diag-summary', d.diagnostic);
+  document.getElementById('arch-motif').innerHTML = `
+    <p><strong>Conseiller déclinant :</strong> ${escapeHtml(d.reassignation.conseiller_decline.prenom)} ${escapeHtml(d.reassignation.conseiller_decline.nom)} (${escapeHtml(d.reassignation.conseiller_decline.structure)})</p>
+    <p style="margin-top:8px;"><strong>Motif :</strong></p>
+    <p style="white-space: pre-wrap;">${escapeHtml(d.reassignation.motif)}</p>
+  `;
+  const c = d.candidat_dispos;
+  document.getElementById('arch-coords').innerHTML = `
+    <p>${escapeHtml(c.prenom)} ${escapeHtml(c.nom)}</p>
+    <p>📧 ${escapeHtml(c.email)} · 📞 ${escapeHtml(c.telephone)}</p>
+  `;
+}
+
+function reassignerDossierFinal() {
+  const nom = document.getElementById('arch-new-nom').value.trim();
+  const prenom = document.getElementById('arch-new-prenom').value.trim();
+  const structure = document.getElementById('arch-new-structure').value.trim();
+  const note = document.getElementById('arch-note').value.trim();
+  if (!nom || !prenom || !structure) {
+    toast('Merci de désigner le nouveau conseiller.', 'error'); return;
+  }
+  const d = state.architecte.dossierIn;
+  const dossier = {
+    _meta: {
+      format: 'rcpnc-dossier-parcours',
+      version: 1,
+      exportedFrom: 'SAS_architecte',
+      exportedAt: nowIso(),
+      phase: 'en_attente_entretien'
+    },
+    diagnostic: d.diagnostic,
+    candidat_dispos: d.candidat_dispos,
+    reassignation_historique: [
+      d.reassignation
+    ],
+    nouveau_conseiller_assigne: {
+      nom, prenom, structure,
+      note_architecte: note,
+      assigne_le: nowIso()
+    }
+  };
+  downloadJson(dossier, 'dossier-parcours-RCPNC.json');
+  toast('Dossier réassigné. Envoyez le fichier par e-mail au nouveau conseiller.', 'success');
+}
+
+function resetArchitecte() {
+  state.architecte = { dossierIn: null, dossierOut: null };
+  hide('arch-step-reassign');
+  show('arch-step-import');
+  document.getElementById('arch-new-nom').value = '';
+  document.getElementById('arch-new-prenom').value = '';
+  document.getElementById('arch-new-structure').value = '';
+  document.getElementById('arch-note').value = '';
+  refreshPhaseHeader();
+}
+
+// ============================================================
+// Initialisation
+// ============================================================
+wireDropzone('candidat-dropzone', 'candidat-file-input');
+wireDropzone('cons-dropzone', 'cons-file-input');
+wireDropzone('arch-dropzone', 'arch-file-input');
+refreshPhaseHeader();
+
+</script>
+</body>
+</html>

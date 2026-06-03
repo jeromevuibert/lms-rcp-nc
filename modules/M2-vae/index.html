@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS RCP-NC — Module M2 · Dossier VAE numérique</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --teal: #1d7a8c;
+    --teal-light: #2a9bb0;
+    --gold: #c9a227;
+    --gold-light: #e8c55a;
+    --bg: #f4f7fa;
+    --white: #ffffff;
+    --gray-light: #e8edf2;
+    --gray: #8a9ab0;
+    --text: #2c3e50;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --info: #2980b9;
+    --radius: 12px;
+    --shadow: 0 4px 20px rgba(26,46,74,0.10);
+    --shadow-sm: 0 2px 8px rgba(26,46,74,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  /* HEADER */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-brand { display: flex; align-items: center; gap: 14px; }
+  .header-logo {
+    width: 42px; height: 42px;
+    background: var(--teal); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 18px; color: white; letter-spacing: -1px;
+  }
+  .header-title { font-size: 15px; font-weight: 600; line-height: 1.3; }
+  .header-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 400; }
+  .header-badge {
+    background: var(--gold); color: var(--navy);
+    font-size: 11px; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px; letter-spacing: 0.3px;
+  }
+
+  /* PROGRESS BAR */
+  .progress-bar-wrap { background: var(--navy); padding: 0 24px 16px; }
+  .progress-steps {
+    display: flex; align-items: center; gap: 0;
+    max-width: 700px; margin: 0 auto;
+    padding-top: 20px; padding-bottom: 40px;
+  }
+  .step-item { display: flex; align-items: center; flex: 1; position: relative; }
+  .step-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5);
+    flex-shrink: 0; z-index: 1; transition: all 0.3s; cursor: pointer;
+  }
+  .step-dot.active { background: var(--teal); border-color: var(--teal-light); color: white; box-shadow: 0 0 0 4px rgba(29,122,140,0.25); }
+  .step-dot.done { background: var(--success); border-color: var(--success); color: white; }
+  .step-line { flex: 1; height: 2px; background: rgba(255,255,255,0.15); transition: background 0.3s; }
+  .step-line.done { background: var(--success); }
+  .step-label {
+    font-size: 9px; color: rgba(255,255,255,0.45);
+    position: absolute; top: 34px; left: 50%;
+    transform: translateX(-50%); white-space: nowrap;
+    font-weight: 500; letter-spacing: 0.2px;
+  }
+  .step-label.active { color: var(--teal-light); }
+  .step-label.done { color: rgba(255,255,255,0.7); }
+
+  /* MAIN */
+  .main { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+  .card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 32px; margin-bottom: 20px;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: none; } }
+  .card-title { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+  .card-subtitle { font-size: 14px; color: var(--gray); margin-bottom: 24px; line-height: 1.5; }
+  .section-divider { height: 1px; background: var(--gray-light); margin: 20px 0; }
+
+  /* INTRO ICON */
+  .intro-icon {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin-bottom: 20px;
+  }
+
+  /* STATUS BANNER */
+  .status-banner {
+    border-radius: 12px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 20px;
+    border: 2px solid; background: var(--white);
+  }
+  .status-banner.brouillon { border-color: var(--gray); background: #f7f9fb; }
+  .status-banner.en-cours { border-color: var(--info); background: #eaf3fb; }
+  .status-banner.depose { border-color: var(--gold); background: #fef9ec; }
+  .status-banner.recevable { border-color: var(--success); background: #eafaf1; }
+  .status-banner.non-recevable { border-color: var(--danger); background: #fdedec; }
+  .status-banner.certifie { border-color: var(--success); background: #eafaf1; }
+  .status-icon { font-size: 32px; flex-shrink: 0; }
+  .status-body { flex: 1; }
+  .status-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); margin-bottom: 3px; }
+  .status-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .status-desc { font-size: 13px; color: var(--text); line-height: 1.4; }
+
+  /* M1 RECAP CARD */
+  .m1-recap {
+    background: linear-gradient(135deg, #e0f5f8, #d0edf5);
+    border: 1px solid var(--teal-light);
+    border-radius: 12px; padding: 18px 20px;
+    margin-bottom: 20px;
+  }
+  .m1-recap-title { font-size: 12px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .m1-recap-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .m1-recap-item { display: flex; flex-direction: column; gap: 2px; }
+  .m1-recap-label { font-size: 10px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.3px; }
+  .m1-recap-value { font-size: 14px; font-weight: 700; color: var(--navy); }
+
+  /* NO M1 ALERT */
+  .no-m1-alert {
+    background: #fef9ec; border-left: 4px solid var(--gold);
+    padding: 16px 18px; border-radius: 0 10px 10px 0;
+    margin-bottom: 20px;
+  }
+  .no-m1-alert strong { color: var(--navy); }
+
+  /* STAGE CARDS (accueil) */
+  .stage-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+  .stage-card {
+    border: 2px solid var(--gray-light); border-radius: 10px;
+    padding: 16px 18px; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 14px;
+    background: var(--white);
+  }
+  .stage-card:hover:not(.locked) { border-color: var(--teal); background: #f0f8fa; transform: translateX(3px); }
+  .stage-card.locked { opacity: 0.5; cursor: not-allowed; }
+  .stage-card.current { border-color: var(--teal); background: #e8f5f8; box-shadow: 0 4px 12px rgba(29,122,140,0.15); }
+  .stage-card.done { border-color: var(--success); background: #eafaf1; }
+  .stage-num {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--teal); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; flex-shrink: 0;
+  }
+  .stage-card.done .stage-num { background: var(--success); }
+  .stage-card.locked .stage-num { background: var(--gray); }
+  .stage-body { flex: 1; }
+  .stage-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+  .stage-desc { font-size: 12px; color: var(--gray); line-height: 1.3; }
+  .stage-arrow { font-size: 22px; color: var(--teal); flex-shrink: 0; }
+  .stage-card.locked .stage-arrow { color: var(--gray); }
+
+  /* FORMS */
+  .form-group { margin-bottom: 18px; }
+  .form-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; display: block; }
+  .form-label .req { color: var(--danger); margin-left: 2px; }
+  .form-sublabel { font-size: 12px; color: var(--gray); margin-bottom: 8px; display: block; line-height: 1.4; }
+  .form-input, .form-textarea, .form-select {
+    width: 100%; padding: 11px 14px;
+    border: 2px solid var(--gray-light); border-radius: 8px;
+    font-size: 14px; color: var(--text); outline: none;
+    transition: border-color 0.2s; font-family: inherit;
+    background: var(--white);
+  }
+  .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--teal); }
+  .form-textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 600px) { .form-row, .form-row-3 { grid-template-columns: 1fr; } }
+
+  /* RADIO / CHECKBOX */
+  .radio-group { display: flex; flex-direction: column; gap: 8px; }
+  .radio-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 8px;
+    border: 2px solid var(--gray-light); cursor: pointer;
+    transition: all 0.2s; background: var(--white);
+  }
+  .radio-option:hover { border-color: var(--teal-light); background: #f0f8fa; }
+  .radio-option.selected { border-color: var(--teal); background: #e8f5f8; }
+  .radio-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid var(--gray-light); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .radio-option.selected .radio-dot { border-color: var(--teal); background: var(--teal); }
+  .radio-option.selected .radio-dot::after { content: ''; width: 6px; height: 6px; background: white; border-radius: 50%; }
+  .radio-text { font-size: 13px; color: var(--text); line-height: 1.4; }
+  .radio-text strong { display: block; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 28px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    cursor: pointer; border: none; transition: all 0.2s; text-decoration: none;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--teal); color: white; box-shadow: 0 4px 12px rgba(29,122,140,0.3); }
+  .btn-primary:hover { background: #168198; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+  .btn-secondary:hover { background: #f0f8fa; }
+  .btn-navy { background: var(--navy); color: white; }
+  .btn-navy:hover { background: #243d5c; }
+  .btn-gray { background: var(--gray-light); color: var(--text); }
+  .btn-gray:hover { background: #d8e2ea; }
+  .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 4px 12px rgba(201,162,39,0.3); }
+  .btn-gold:hover { background: #b3901e; }
+  .btn-sm { padding: 8px 16px; font-size: 12px; }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+  .btn-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+
+  /* INFO BOXES */
+  .info-box {
+    background: #eaf3fb; border-left: 4px solid var(--info);
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13px; color: var(--text); line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .info-box strong { color: var(--navy); }
+  .warning-box {
+    background: #fef9ec; border-left: 4px solid var(--gold);
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13px; line-height: 1.5; margin-bottom: 20px;
+  }
+  .success-box {
+    background: #eafaf1; border-left: 4px solid var(--success);
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13px; line-height: 1.5; margin-bottom: 20px;
+  }
+  .danger-box {
+    background: #fdedec; border-left: 4px solid var(--danger);
+    padding: 14px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13px; line-height: 1.5; margin-bottom: 20px;
+  }
+
+  /* LIVRET 1 — accordions (5 parties) */
+  .section-block {
+    border: 1px solid var(--gray-light); border-radius: 10px;
+    margin-bottom: 12px; overflow: hidden; background: var(--white);
+  }
+  .section-header {
+    padding: 14px 18px; background: var(--bg);
+    display: flex; align-items: center; gap: 12px;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .section-header:hover { background: #edf2f7; }
+  .section-header.done { background: #eafaf1; }
+  .section-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--teal); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px; flex-shrink: 0;
+  }
+  .section-header.done .section-num { background: var(--success); }
+  .section-body-title { flex: 1; }
+  .section-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .section-meta { font-size: 11px; color: var(--gray); margin-top: 2px; }
+  .section-chevron { font-size: 20px; color: var(--gray); transition: transform 0.2s; }
+  .section-block.open .section-chevron { transform: rotate(90deg); }
+  .section-content { padding: 20px; display: none; border-top: 1px solid var(--gray-light); }
+  .section-block.open .section-content { display: block; }
+
+  /* EXPERIENCE ITEMS (Livret 1 partie 2) */
+  .exp-item {
+    background: var(--bg); border: 1px solid var(--gray-light);
+    border-radius: 10px; padding: 16px; margin-bottom: 12px;
+    position: relative;
+  }
+  .exp-item-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .exp-remove { background: transparent; border: none; color: var(--danger); font-size: 14px; cursor: pointer; padding: 4px 8px; border-radius: 4px; }
+  .exp-remove:hover { background: #fdedec; }
+  .exp-add-btn {
+    width: 100%; padding: 12px; border: 2px dashed var(--teal-light);
+    background: transparent; color: var(--teal); border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-family: inherit;
+  }
+  .exp-add-btn:hover { background: #f0f8fa; border-style: solid; }
+
+  /* FICHE ACTIVITÉ (Livret 2) */
+  .fiche-nav {
+    display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 12px;
+    border-bottom: 1px solid var(--gray-light); margin-bottom: 20px;
+  }
+  .fiche-tab {
+    padding: 10px 16px; border-radius: 8px; background: var(--bg);
+    border: 1px solid var(--gray-light); cursor: pointer; flex-shrink: 0;
+    font-size: 12px; font-weight: 600; color: var(--gray); transition: all 0.2s;
+  }
+  .fiche-tab:hover { background: #edf2f7; }
+  .fiche-tab.active { background: var(--teal); color: white; border-color: var(--teal); }
+  .fiche-tab.done { background: var(--success); color: white; border-color: var(--success); }
+  .fiche-tab-badge {
+    display: inline-block; margin-left: 6px;
+    padding: 1px 6px; border-radius: 10px;
+    font-size: 10px; background: rgba(255,255,255,0.2);
+  }
+  .fiche-tab.active .fiche-tab-badge, .fiche-tab.done .fiche-tab-badge { background: rgba(255,255,255,0.3); }
+
+  /* FICHE HEADER */
+  .fiche-header {
+    background: linear-gradient(135deg, var(--navy), #2a4070);
+    color: white; padding: 18px 22px; border-radius: 10px; margin-bottom: 20px;
+  }
+  .fiche-header-code { font-size: 11px; color: var(--gold-light); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+  .fiche-header-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+  .fiche-header-sub { font-size: 12px; opacity: 0.8; line-height: 1.4; }
+
+  /* RUBRIQUE BLOCK */
+  .rubrique {
+    background: var(--white);
+    border: 1px solid var(--gray-light); border-left: 4px solid var(--teal);
+    border-radius: 8px; padding: 16px 18px; margin-bottom: 14px;
+  }
+  .rubrique.done { border-left-color: var(--success); background: #f7fcf9; }
+  .rubrique-num { font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .rubrique.done .rubrique-num { color: var(--success); }
+  .rubrique-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+  .rubrique-help { font-size: 12px; color: var(--gray); margin-bottom: 10px; line-height: 1.5; font-style: italic; }
+  .rubrique-help strong { color: var(--text); font-style: normal; }
+
+  /* PIÈCES / FILES */
+  .piece-category {
+    margin-bottom: 16px; border: 1px solid var(--gray-light); border-radius: 10px; overflow: hidden;
+  }
+  .piece-cat-header {
+    padding: 12px 16px; background: var(--bg);
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .piece-cat-counter {
+    padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700;
+    background: var(--gray-light); color: var(--gray); margin-left: auto;
+  }
+  .piece-cat-counter.full { background: var(--success); color: white; }
+  .piece-list { padding: 10px 16px; }
+  .piece-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 12px; border-radius: 8px;
+    background: var(--bg); margin-bottom: 6px;
+    border: 1px solid transparent; transition: all 0.2s;
+  }
+  .piece-item.uploaded { border-color: var(--success); background: #eafaf1; }
+  .piece-icon { font-size: 20px; flex-shrink: 0; }
+  .piece-name { flex: 1; font-size: 13px; line-height: 1.4; }
+  .piece-req { color: var(--danger); font-weight: 700; margin-left: 4px; }
+  .piece-meta { font-size: 11px; color: var(--gray); }
+  .piece-btn {
+    font-size: 11px; padding: 5px 12px; border-radius: 6px;
+    border: 1px solid var(--teal); background: white; color: var(--teal);
+    cursor: pointer; font-family: inherit; font-weight: 600;
+  }
+  .piece-btn:hover { background: #f0f8fa; }
+  .piece-btn.uploaded { background: var(--success); color: white; border-color: var(--success); }
+
+  /* JURY / TIMELINE */
+  .timeline { position: relative; padding-left: 24px; margin: 16px 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px; background: var(--gray-light);
+  }
+  .timeline-item { position: relative; padding-bottom: 18px; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot {
+    position: absolute; left: -21px; top: 2px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--white); border: 3px solid var(--gray-light);
+  }
+  .timeline-item.done .timeline-dot { background: var(--success); border-color: var(--success); }
+  .timeline-item.current .timeline-dot { background: var(--teal); border-color: var(--teal); box-shadow: 0 0 0 3px rgba(29,122,140,0.2); }
+  .timeline-date { font-size: 11px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+  .timeline-title { font-size: 13px; font-weight: 700; color: var(--navy); margin: 2px 0 4px; }
+  .timeline-desc { font-size: 12px; color: var(--text); line-height: 1.4; }
+
+  /* DASHBOARD KPIs */
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 600px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+  .kpi-card {
+    background: var(--white); border-radius: 10px;
+    padding: 14px; text-align: center;
+    border: 1px solid var(--gray-light);
+  }
+  .kpi-value { font-size: 22px; font-weight: 800; color: var(--navy); line-height: 1; }
+  .kpi-value.teal { color: var(--teal); }
+  .kpi-value.success { color: var(--success); }
+  .kpi-value.warning { color: var(--warning); }
+  .kpi-label { font-size: 10px; color: var(--gray); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+
+  /* PROGRESS */
+  .progress-linear { background: var(--gray-light); height: 8px; border-radius: 4px; margin: 8px 0; overflow: hidden; }
+  .progress-linear-bar { height: 100%; background: var(--teal); border-radius: 4px; transition: width 0.4s ease; }
+  .progress-linear-bar.success { background: var(--success); }
+  .progress-linear-bar.gold { background: var(--gold); }
+  .progress-label { font-size: 12px; color: var(--gray); display: flex; justify-content: space-between; }
+
+  /* COUNTDOWN / DELAY BADGE */
+  .delay-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: 20px;
+    background: var(--bg); border: 1px solid var(--gray-light);
+    font-size: 12px; font-weight: 600;
+  }
+  .delay-badge.urgent { background: #fdedec; border-color: var(--danger); color: var(--danger); }
+  .delay-badge.warning { background: #fef9ec; border-color: var(--warning); color: var(--warning); }
+  .delay-badge.ok { background: #eafaf1; border-color: var(--success); color: var(--success); }
+
+  /* TAG */
+  .tag {
+    display: inline-block; padding: 3px 9px;
+    border-radius: 4px; font-size: 11px; font-weight: 600;
+  }
+  .tag-teal { background: #e0f5f8; color: var(--teal); }
+  .tag-navy { background: var(--gray-light); color: var(--navy); }
+  .tag-gold { background: #fef3d0; color: #a07c1a; }
+  .tag-success { background: #eafaf1; color: var(--success); }
+  .tag-danger { background: #fdedec; color: var(--danger); }
+
+  /* FOOTER */
+  .footer-brand {
+    text-align: center; padding: 20px;
+    font-size: 11px; color: var(--gray);
+    border-top: 1px solid var(--gray-light);
+  }
+  .footer-brand strong { color: var(--teal); }
+
+  /* UTILS */
+  .text-center { text-align: center; }
+  .mt-16 { margin-top: 16px; }
+  .mb-0 { margin-bottom: 0; }
+  .hidden { display: none !important; }
+
+  /* CERT SUGGESTED BANNER */
+  .selected-cert-banner {
+    background: linear-gradient(135deg, #e0f5f8, #d0edf5);
+    border: 1px solid var(--teal-light);
+    border-radius: 10px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .selected-cert-banner .cert-icon { font-size: 24px; }
+  .selected-cert-banner .cert-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .selected-cert-banner .cert-detail { font-size: 12px; color: var(--teal); }
+
+  /* CHAT / SUPPORT */
+  .chat-zone {
+    background: var(--bg); border-radius: 10px; padding: 14px 16px;
+    margin-top: 16px; display: flex; gap: 10px; align-items: flex-start;
+  }
+  .chat-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--teal); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; flex-shrink: 0;
+  }
+  .chat-bubble { flex: 1; font-size: 12px; line-height: 1.5; color: var(--text); }
+  .chat-bubble strong { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-brand">
+    <div class="header-logo">LMS</div>
+    <div>
+      <div class="header-title">LMS RCP-NC</div>
+      <div class="header-subtitle">Plateforme de certification de Nouvelle-Calédonie</div>
+    </div>
+  </div>
+  <span class="header-badge">M2 — Dossier VAE</span>
+</header>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar-wrap">
+  <div class="progress-steps" id="progressSteps"></div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="mainContent">
+  <!-- Rendu dynamique -->
+</div>
+
+<!-- FOOTER -->
+<div class="footer-brand">
+  <strong>LMS RCP-NC — Certi-NC</strong> · Prototype Module M2 · Dossier VAE numérique<br>
+  Conforme aux livrets DNC 2026 · DTEFP Nouvelle-Calédonie · Conception Jérôme Vuibert — avril 2026
+</div>
+
+<script src="../../shared/data/enums.js"></script>
+<script>
+// ============================================================
+// ÉTAT GLOBAL
+// ============================================================
+const STORAGE_KEY = 'rcpnc_user';
+
+function loadUserState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) { return {}; }
+}
+
+function saveUserState(data) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
+}
+
+// Initialise la structure M2 si manquante
+function initDossier() {
+  const u = loadUserState();
+  if (!u.dossierVAE) {
+    u.dossierVAE = {
+      statut: 'brouillon',
+      etape: 0,
+      dateCreation: new Date().toISOString(),
+      dateMAJ: new Date().toISOString(),
+      livret1: {
+        // Partie 1 — Identité
+        identite: { nom:'', prenom:'', dateNaissance:'', lieuNaissance:'', adresse:'', codePostal:'', commune:'', telephone:'', email:'', nationalite:'', situationFamiliale:'' },
+        // Partie 2 — Expériences (array d'expériences)
+        experiences: [],
+        // Partie 3 — Diplômes / titres / certificats
+        diplomes: [],
+        // Partie 4 — Déclaration sur l'honneur
+        declarationHonneur1: false,
+        // Partie 5 — Pièces (déclaration sur pièces)
+        declarationPieces: false,
+        dateDepot: null
+      },
+      livret2: {
+        declarationHonneur2: false,
+        fiches: {} // clé = id CPU/activité, valeur = { rubrique1, rubrique2, ... rubrique10 }
+      },
+      pieces: {}, // clé = id pièce, valeur = { fileName, uploadDate, category }
+      jury: {
+        modalite: null, // 'presentiel' | 'visio'
+        date: null,
+        lieu: null,
+        prepare: false,
+        decision: null // 'validation_totale' | 'validation_partielle' | 'non_validation'
+      }
+    };
+    saveUserState(u);
+  }
+  return u;
+}
+
+let state = {
+  currentView: 'accueil',
+  currentFicheIdx: 0,
+  userData: initDossier()
+};
+
+// ============================================================
+// CERTIFICATIONS DE DÉMO (pour cas où M1 non effectué)
+// ============================================================
+const DEMO_CERTS = {
+  'nc-04': { id:'nc-04', name:'Auxiliaire de vie sociale NC', type:'NC', typeLabel:'Certif NC', level:'3', cpus:[
+    { id:'nc-04-cpu1', name:'Accompagner la personne dans les actes essentiels de la vie quotidienne' },
+    { id:'nc-04-cpu2', name:'Accompagner la personne dans la vie sociale et relationnelle' },
+    { id:'nc-04-cpu3', name:'Participer à la prévention, à la sécurité et au confort' },
+    { id:'nc-04-cpu4', name:'Inscrire son action dans un projet d\'accompagnement' }
+  ]},
+  'tp-09': { id:'tp-09', name:'Assistant(e) de vie aux familles (TP)', type:'TP', typeLabel:'Titre Pro', level:'3', cpus:[
+    { id:'tp-09-ccp1', name:'CCP1 — Entretenir le logement et le linge d\'un particulier' },
+    { id:'tp-09-ccp2', name:'CCP2 — Accompagner la personne dans les actes essentiels du quotidien' },
+    { id:'tp-09-ccp3', name:'CCP3 — Relayer les parents dans la prise en charge des enfants à leur domicile' }
+  ]},
+  'tp-14': { id:'tp-14', name:'Secrétaire assistant(e) (TP)', type:'TP', typeLabel:'Titre Pro', level:'4', cpus:[
+    { id:'tp-14-ccp1', name:'CCP1 — Assister une équipe dans la communication des informations' },
+    { id:'tp-14-ccp2', name:'CCP2 — Traiter les opérations administratives liées à la gestion commerciale' },
+    { id:'tp-14-ccp3', name:'CCP3 — Assurer l\'administration des ressources humaines' }
+  ]}
+};
+
+// ============================================================
+// PIÈCES JUSTIFICATIVES (structure officielle Livret 1 DNC 2026)
+// ============================================================
+const PIECES_CATEGORIES = [
+  {
+    id: 'identite',
+    label: '1. Identité',
+    pieces: [
+      { id:'piece_cni', name:'Copie pièce d\'identité (CNI, passeport, titre de séjour)', required:true },
+      { id:'piece_photo', name:'Photo d\'identité récente', required:false }
+    ]
+  },
+  {
+    id: 'diplomes',
+    label: '2. Diplômes, titres, certifications',
+    pieces: [
+      { id:'piece_diplomes', name:'Copie des diplômes, titres, certifications déjà obtenus', required:false }
+    ]
+  },
+  {
+    id: 'salarie',
+    label: '3. Si expérience salariée',
+    pieces: [
+      { id:'piece_contrat_trav', name:'Copie contrats de travail', required:false, scope:'salarie' },
+      { id:'piece_bulletins', name:'Bulletins de salaire (ou attestation employeur)', required:false, scope:'salarie' },
+      { id:'piece_attest_emploi', name:'Attestation d\'emploi (modèle DTEFP)', required:false, scope:'salarie' },
+      { id:'piece_fiche_poste', name:'Fiche de poste ou fiche de fonction', required:false, scope:'salarie' }
+    ]
+  },
+  {
+    id: 'non_salarie',
+    label: '4. Si activité non-salariée',
+    pieces: [
+      { id:'piece_kbis', name:'Extrait RIDET/RCS ou équivalent (< 3 mois)', required:false, scope:'non_salarie' },
+      { id:'piece_avis_impots', name:'Avis d\'imposition BIC/BNC (3 dernières années)', required:false, scope:'non_salarie' },
+      { id:'piece_activite', name:'Justificatif activité (factures clients, attestation comptable)', required:false, scope:'non_salarie' }
+    ]
+  },
+  {
+    id: 'benevole',
+    label: '5. Si expérience bénévole, syndicale, service civique',
+    pieces: [
+      { id:'piece_attest_benevole', name:'Attestation de bénévolat (2 signatures, modèle DTEFP)', required:false, scope:'benevole' },
+      { id:'piece_attest_service_civique', name:'Attestation de service civique', required:false, scope:'service_civique' },
+      { id:'piece_statuts', name:'Statuts de l\'association (si bénévolat)', required:false, scope:'benevole' }
+    ]
+  }
+];
+
+// ============================================================
+// RUBRIQUES OFFICIELLES LIVRET 2 — 10 rubriques par fiche activité
+// ============================================================
+const RUBRIQUES = [
+  { id:1, title:'Description de l\'activité', help:'Décrivez précisément <strong>les résultats attendus et obtenus</strong> et <strong>le processus de réalisation</strong> de l\'activité. Évitez les généralités — donnez des exemples concrets.' },
+  { id:2, title:'Lieu(x) de pratique', help:'Où exercez-vous cette activité ? <strong>Entreprise, service, département</strong>, configuration de l\'espace de travail.' },
+  { id:3, title:'Interlocuteurs internes', help:'Avec qui interagissez-vous au sein de la structure ? <strong>Collègues, supérieurs, autres services</strong>. Précisez les rôles.' },
+  { id:4, title:'Interlocuteurs externes', help:'Avec qui interagissez-vous à l\'extérieur ? <strong>Clients, fournisseurs, partenaires, usagers, familles</strong>.' },
+  { id:5, title:'Traitement des informations', help:'Quelles informations recueillez-vous, traitez-vous, transmettez-vous ? <strong>Sources, circuits, confidentialité</strong>.' },
+  { id:6, title:'Équipements, outils, logiciels', help:'Quels outils utilisez-vous ? <strong>Matériels, logiciels, applications métier</strong>. Indiquez votre niveau de maîtrise.' },
+  { id:7, title:'Conditions et obligations particulières', help:'Contraintes spécifiques : <strong>sécurité, hygiène, normes, habilitations, urgence, confidentialité</strong>.' },
+  { id:8, title:'Procédures mises en œuvre', help:'Quelles méthodes, protocoles ou procédures appliquez-vous ? <strong>Référez-vous à des procédures écrites si elles existent</strong>.' },
+  { id:9, title:'Savoir-faire, qualités, habiletés', help:'Quelles compétences techniques et qualités personnelles mobilisez-vous ? <strong>Donnez des exemples pour illustrer</strong>.' },
+  { id:10, title:'Autres informations utiles + annexes', help:'Tout élément complémentaire aidant le jury à comprendre l\'activité. <strong>Annexes : productions, comptes-rendus, documents anonymisés</strong>.' }
+];
+
+// ============================================================
+// STATUTS DU DOSSIER
+// ============================================================
+const STATUTS = {
+  brouillon: { label:'Brouillon', icon:'📝', desc:'Vous constituez votre dossier. Rien n\'est encore déposé.', class:'brouillon' },
+  livret1_en_cours: { label:'Livret 1 en cours', icon:'✏️', desc:'Vous remplissez le dossier de recevabilité.', class:'en-cours' },
+  livret1_depose: { label:'Livret 1 déposé', icon:'📤', desc:'Dossier en attente de décision (délai : 2 mois).', class:'depose' },
+  recevable: { label:'Recevable', icon:'✅', desc:'Vous pouvez constituer le Livret 2. Délai : 3 ans.', class:'recevable' },
+  non_recevable: { label:'Non recevable', icon:'⚠️', desc:'Voir motifs dans la décision.', class:'non-recevable' },
+  livret2_en_cours: { label:'Livret 2 en cours', icon:'📖', desc:'Vous décrivez vos activités pour les CPUs/CCPs.', class:'en-cours' },
+  livret2_depose: { label:'Livret 2 déposé', icon:'📤', desc:'En attente du jury.', class:'depose' },
+  jury_programme: { label:'Jury programmé', icon:'🗓️', desc:'Convocation transmise.', class:'en-cours' },
+  certifie: { label:'Certifié', icon:'🎓', desc:'Validation totale. Attestation disponible.', class:'certifie' },
+  valide_partiel: { label:'Validation partielle', icon:'🏅', desc:'Certains CPUs validés. Accompagnement post-jury.', class:'depose' },
+  non_valide: { label:'Non validé', icon:'❌', desc:'Décision motivée. Droit à recours.', class:'non-recevable' }
+};
+
+// ============================================================
+// NAVIGATION ENTRE ÉTAPES (progress bar)
+// ============================================================
+const STEPS = [
+  { id:'accueil', label:'Accueil' },
+  { id:'preparer', label:'Préparer' },
+  { id:'livret1', label:'Livret 1' },
+  { id:'livret2', label:'Livret 2' },
+  { id:'pieces', label:'Pièces' },
+  { id:'jury', label:'Jury' },
+  { id:'dashboard', label:'Suivi' }
+];
+
+function renderProgress() {
+  const container = document.getElementById('progressSteps');
+  const currentIdx = STEPS.findIndex(s => s.id === state.currentView);
+  let html = '';
+  STEPS.forEach((step, idx) => {
+    const done = idx < currentIdx;
+    const active = idx === currentIdx;
+    if (idx > 0) html += `<div class="step-item"><div class="step-line ${done ? 'done':''}"></div>`;
+    else html += `<div class="step-item">`;
+    const dotClass = active ? 'active' : (done ? 'done' : '');
+    const labelClass = active ? 'active' : (done ? 'done' : '');
+    html += `<div class="step-dot ${dotClass}" onclick="goTo('${step.id}')">${done?'✓':(idx+1)}</div>`;
+    html += `<span class="step-label ${labelClass}">${step.label}</span>`;
+    html += `</div>`;
+  });
+  container.innerHTML = html;
+}
+
+function goTo(viewId) {
+  state.currentView = viewId;
+  window.scrollTo(0, 0);
+  render();
+}
+
+// ============================================================
+// RENDU PRINCIPAL
+// ============================================================
+function render() {
+  renderProgress();
+  const m = document.getElementById('mainContent');
+  switch (state.currentView) {
+    case 'accueil': m.innerHTML = renderAccueil(); break;
+    case 'preparer': m.innerHTML = renderPreparer(); break;
+    case 'livret1': m.innerHTML = renderLivret1(); break;
+    case 'livret2': m.innerHTML = renderLivret2(); break;
+    case 'pieces': m.innerHTML = renderPieces(); break;
+    case 'jury': m.innerHTML = renderJury(); break;
+    case 'dashboard': m.innerHTML = renderDashboard(); break;
+    default: m.innerHTML = renderAccueil();
+  }
+}
+
+// ============================================================
+// HELPERS UI
+// ============================================================
+function getCurrentCert() {
+  // 1. priorité : cert choisi dans l'écran Préparer
+  if (state.userData.dossierVAE && state.userData.dossierVAE.certificationId) {
+    const id = state.userData.dossierVAE.certificationId;
+    return DEMO_CERTS[id] || null;
+  }
+  // 2. sinon : cert issu du diagnostic M1
+  if (state.userData.diagnostic && state.userData.diagnostic.cert) {
+    const d = state.userData.diagnostic.cert;
+    // cherche dans demo si id connu, sinon reconstruit
+    if (DEMO_CERTS[d.id]) return DEMO_CERTS[d.id];
+    return { id:d.id, name:d.name, type:d.type, typeLabel:d.type==='TP'?'Titre Pro':(d.type==='NC'?'Certif NC':d.type), level:d.level, cpus:[] };
+  }
+  return null;
+}
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleDateString('fr-FR', { day:'2-digit', month:'long', year:'numeric' });
+}
+
+function getStatutCurrent() {
+  const s = state.userData.dossierVAE.statut;
+  return STATUTS[s] || STATUTS.brouillon;
+}
+
+// ============================================================
+// VUE : ACCUEIL
+// ============================================================
+function escapeHtml(s){
+  if (s == null) return '';
+  return String(s).replace(/[&<>"']/g, function(ch){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+  });
+}
+
+function renderValidationBanner(v) {
+  if (!v) return '';
+  const c = v.conseiller || {};
+  const e = v.entretien || {};
+  const cv = v.certification_visee || {};
+  const cpu = v.cpu_confirmes || {};
+  const typeLabel = c.type === 'PRC' ? 'PRC (agréé DTEFP)' : (c.type === 'OF' ? 'Organisme de formation' : c.type);
+  const cpuTxt = cpu.total ? 'Certification totale' : ((cpu.cpus || []).length + ' CPU partiels');
+  const dateFmt = e.date ? formatDate(e.date) : '—';
+  const modaliteLabel = { visio:'Visioconférence', telephone:'Téléphone', presentiel:'Présentiel' }[e.modalite] || e.modalite || '—';
+  const routingLabel = RCPNC_ENUMS.ROUTING_LABELS[v.routing] || v.routing || '—';
+  const amendeeWarn = cv.amendee ? '<div style="margin-top:6px; padding:8px; background:#fff3cd; border-left:3px solid #d4a017; color:#5a4500; font-size:12px"><strong>Certification amendée</strong> par votre conseiller — Raison : ' + escapeHtml(cv.raison_amendement || '(non précisée)') + '</div>' : '';
+  const vaeDirecteInfo = v.routing === 'VAE_directe' ? '<div style="margin-top:8px; padding:8px; background:rgba(255,255,255,0.14); border-left:3px solid #fff; font-size:12px">Votre conseiller a confirmé une <strong>VAE directe</strong> — aucun accompagnateur n\'est requis (charte DTEFP 2026).</div>' : '';
+  const niv = (v.livret_1_prerempli && v.livret_1_prerempli.niveaux) ? v.livret_1_prerempli.niveaux : null;
+  let nivBlock = '';
+  if (niv) {
+    const nl = { complet:'Complet', partiel:'Partiel', non_prerempli:'À remplir' };
+    nivBlock = '<details style="margin-top:10px"><summary style="cursor:pointer; font-size:12px; font-weight:600">Voir l\'état attendu de votre Livret 1</summary>'
+      + '<div style="margin-top:6px; padding:8px; background:rgba(255,255,255,0.12); border-radius:6px; font-size:11px; line-height:1.7">'
+      + '<div>Partie 1 — Identité : ' + (nl[niv.partie_1_identite] || niv.partie_1_identite || '—') + '</div>'
+      + '<div>Partie 2 — Expérience : ' + (nl[niv.partie_2_experience] || niv.partie_2_experience || '—') + '</div>'
+      + '<div>Partie 3 — Diplômes : ' + (nl[niv.partie_3_diplomes] || niv.partie_3_diplomes || '—') + '</div>'
+      + '<div>Partie 4 — Déclaration : ' + (nl[niv.partie_4_declaration] || niv.partie_4_declaration || '—') + '</div>'
+      + '</div></details>';
+  }
+  let crBlock = '';
+  if (e.compte_rendu) {
+    crBlock = '<details style="margin-top:8px"><summary style="cursor:pointer; font-size:12px; font-weight:600">Compte-rendu de l\'entretien</summary>'
+      + '<div style="margin-top:6px; padding:8px; background:rgba(255,255,255,0.12); border-radius:6px; font-size:12px; line-height:1.6; white-space:pre-wrap">'
+      + escapeHtml(e.compte_rendu) + '</div></details>';
+  }
+  return '<div class="validation-banner" style="background:linear-gradient(135deg,#1d7a8c 0%,#1a2e4a 100%); color:#fff; padding:16px; border-radius:12px; margin-bottom:16px; box-shadow:0 4px 12px rgba(0,0,0,0.12)">'
+    + '<div style="display:flex; align-items:flex-start; gap:10px; margin-bottom:10px">'
+    + '<div style="font-size:24px; line-height:1">&#10003;</div>'
+    + '<div><div style="font-size:11px; opacity:0.85; text-transform:uppercase; letter-spacing:0.5px">Dossier validé par votre conseiller</div>'
+    + '<div style="font-size:16px; font-weight:600">' + escapeHtml((c.prenom||'') + ' ' + (c.nom||'')) + ' — ' + escapeHtml(typeLabel || '—') + '</div>'
+    + '<div style="font-size:12px; opacity:0.9">' + escapeHtml(c.structure || '') + '</div></div></div>'
+    + '<div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12px; margin-top:8px">'
+    + '<div><strong>Entretien :</strong> ' + dateFmt + '<br>' + escapeHtml(modaliteLabel) + '</div>'
+    + '<div><strong>Routing :</strong> ' + escapeHtml(routingLabel) + '<br><strong>CPU :</strong> ' + escapeHtml(cpuTxt) + '</div></div>'
+    + '<div style="margin-top:10px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.2)">'
+    + '<div style="font-size:11px; opacity:0.85">Certification visée</div>'
+    + '<div style="font-size:14px; font-weight:600">' + escapeHtml(cv.name || '—') + '</div>'
+    + amendeeWarn + '</div>' + vaeDirecteInfo + crBlock + nivBlock + '</div>';
+}
+
+function renderAccueil() {
+  const u = state.userData;
+  const diag = u.diagnostic;
+  const cert = getCurrentCert();
+  const statut = getStatutCurrent();
+  const dossier = u.dossierVAE;
+
+  // Bloc M1 recap (si diagnostic présent) ou alerte M1 absent
+  let m1Block = '';
+  if (diag && diag.cert) {
+    const orientLabel = {
+      vae: 'VAE directe',
+      complement: 'Complément court + VAE',
+      hybride: 'Parcours hybride (AFEST + formation + VAE)',
+      spot: 'Orientation SPOT préalable'
+    }[diag.orientation] || diag.orientation || '—';
+    m1Block = `
+      <div class="m1-recap">
+        <div class="m1-recap-title">📊 Résultats de votre diagnostic (Module M1)</div>
+        <div class="m1-recap-row">
+          <div class="m1-recap-item">
+            <span class="m1-recap-label">Certification visée</span>
+            <span class="m1-recap-value">${diag.cert.name}</span>
+          </div>
+          <div class="m1-recap-item">
+            <span class="m1-recap-label">Score global</span>
+            <span class="m1-recap-value">${diag.scoreGlobal != null ? diag.scoreGlobal + '%' : '—'}</span>
+          </div>
+          <div class="m1-recap-item">
+            <span class="m1-recap-label">Orientation suggérée</span>
+            <span class="m1-recap-value">${orientLabel}</span>
+          </div>
+          <div class="m1-recap-item">
+            <span class="m1-recap-label">Expérience</span>
+            <span class="m1-recap-value">${diag.experience || '—'} an${(diag.experience||0)>1?'s':''}</span>
+          </div>
+        </div>
+        <div style="margin-top:14px; text-align:center">
+          <button class="btn btn-primary btn-sm" onclick="downloadDossierM2()">&#128190; Télécharger mon dossier (transmission M4 / archivage)</button>
+        </div>
+      </div>`;
+  } else {
+    m1Block = `
+      <div class="no-m1-alert">
+        <strong>Aucun diagnostic M1 détecté.</strong><br>
+        Avant de déposer une VAE, nous vous recommandons de réaliser le <strong>Module M1 — Diagnostic & Orientation</strong>
+        pour évaluer vos acquis et valider que la VAE est la voie la plus adaptée.
+        <div style="margin-top:10px">
+          <button class="btn btn-primary btn-sm" onclick="triggerImportM1()">📂 Importer mon dossier M1</button>
+          <a href="../M1-diagnostic/index.html" class="btn btn-secondary btn-sm">↗ Faire le diagnostic M1</a>
+          <button class="btn btn-gray btn-sm" onclick="loadDemoDiagnostic()">⚡ Charger un exemple (démo)</button>
+        </div>
+        <input type="file" id="m1-import-input" accept="application/json,.json" style="display:none" onchange="importDossierM1(event)">
+      </div>`;
+  }
+
+  // Statut dossier
+  const statutBlock = `
+    <div class="status-banner ${statut.class}">
+      <div class="status-icon">${statut.icon}</div>
+      <div class="status-body">
+        <div class="status-label">Statut de votre dossier</div>
+        <div class="status-title">${statut.label}</div>
+        <div class="status-desc">${statut.desc}</div>
+      </div>
+    </div>`;
+
+  // Progression globale
+  const etapesDone = getEtapesDone();
+  const totalEtapes = 4;
+  const progressPct = Math.round((etapesDone/totalEtapes) * 100);
+
+  // Stage cards (navigation rapide)
+  const stageDefs = [
+    { id:'preparer', num:1, title:'Préparer mon parcours VAE', desc:'Information, PRC, certification visée' },
+    { id:'livret1', num:2, title:'Livret 1 — Dossier de recevabilité', desc:'Identité, expériences, diplômes, déclaration' },
+    { id:'livret2', num:3, title:'Livret 2 — Présentation des Acquis (PAE)', desc:`Fiches Activité par CPU${cert && cert.cpus.length ? ' ('+cert.cpus.length+' CPU)':''}` },
+    { id:'jury', num:4, title:'Jury & décision', desc:'Préparation, convocation (présentiel ou visio)' }
+  ];
+
+  let stagesHtml = '';
+  stageDefs.forEach((s, idx) => {
+    const current = (dossier.etape === idx+1);
+    const done = (dossier.etape > idx+1) || isEtapeComplete(s.id);
+    const locked = idx > 0 && !isEtapeComplete(stageDefs[idx-1].id) && !done && !current;
+    const cls = done ? 'done' : (current ? 'current' : (locked ? 'locked' : ''));
+    const click = locked ? '' : `onclick="goTo('${s.id}')"`;
+    stagesHtml += `
+      <div class="stage-card ${cls}" ${click}>
+        <div class="stage-num">${done ? '✓' : s.num}</div>
+        <div class="stage-body">
+          <div class="stage-title">${s.title}</div>
+          <div class="stage-desc">${s.desc}</div>
+        </div>
+        <div class="stage-arrow">${locked ? '🔒' : '›'}</div>
+      </div>`;
+  });
+
+  // Accès supports transverses
+  const transverse = `
+    <div class="section-divider"></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+      <button class="btn btn-gray" onclick="goTo('pieces')" style="justify-content:flex-start">
+        <span style="font-size:18px">📎</span>
+        <span style="text-align:left"><strong style="display:block">Pièces justificatives</strong><span style="font-size:11px; font-weight:400; color:var(--gray)">${countPiecesUploaded()} / ${countPiecesTotal()}</span></span>
+      </button>
+      <button class="btn btn-gray" onclick="goTo('dashboard')" style="justify-content:flex-start">
+        <span style="font-size:18px">📊</span>
+        <span style="text-align:left"><strong style="display:block">Tableau de bord</strong><span style="font-size:11px; font-weight:400; color:var(--gray)">Jalons, délais, historique</span></span>
+      </button>
+    </div>`;
+
+  return `
+    <div class="card">
+      <div class="intro-icon">📖</div>
+      <div class="card-title">Module M2 — Dossier VAE numérique</div>
+      <div class="card-subtitle">
+        Constituez votre dossier de <strong>Validation des Acquis de l'Expérience</strong> selon le cadre en vigueur en Nouvelle-Calédonie
+        (Délibération n° 119 du 21 avril 2016, Code du travail NC Lp. 541-8 et s., Arrêté 2023-907/GNC du 26 avril 2023).
+      </div>
+
+      ${m1Block}
+      ${u.validation ? renderValidationBanner(u.validation) : ''}
+      ${statutBlock}
+
+      <div class="form-group">
+        <div class="form-label">Progression globale de votre dossier</div>
+        <div class="progress-linear"><div class="progress-linear-bar" style="width:${progressPct}%"></div></div>
+        <div class="progress-label"><span>${etapesDone} étape${etapesDone>1?'s':''} sur ${totalEtapes}</span><span>${progressPct}%</span></div>
+      </div>
+
+      <div class="stage-grid">${stagesHtml}</div>
+      ${transverse}
+
+      <div class="chat-zone" style="margin-top:20px">
+        <div class="chat-avatar">GI</div>
+        <div class="chat-bubble">
+          <strong>Besoin d'aide ?</strong> Les <strong>conseillers VAE</strong> peuvent vous accompagner gratuitement à chaque étape.
+          <br>📞 Accompagnement disponible en présentiel ou à distance via un organisme de formation référencé.
+        </div>
+      </div>
+    </div>`;
+}
+
+// Démo : charge un diagnostic M1 fictif pour tester le flux M2 sans M1
+function loadDemoDiagnostic() {
+  const u = loadUserState();
+  u.diagnostic = {
+    cert: { id:'nc-04', name:'Auxiliaire de vie sociale NC', type:'NC', level:'3' },
+    orientation: 'vae',
+    scoreGlobal: 84,
+    experience: 5,
+    profile: 'salarie',
+    date: new Date().toISOString()
+  };
+  saveUserState(u);
+  state.userData = initDossier();
+  render();
+}
+
+// Helpers "étapes complètes"
+function isEtapeComplete(etapeId) {
+  const d = state.userData.dossierVAE;
+  switch (etapeId) {
+    case 'preparer': return !!d.certificationId || (state.userData.diagnostic && state.userData.diagnostic.cert);
+    case 'livret1': return ['livret1_depose','recevable','livret2_en_cours','livret2_depose','jury_programme','certifie','valide_partiel','non_valide'].includes(d.statut);
+    case 'livret2': return ['livret2_depose','jury_programme','certifie','valide_partiel','non_valide'].includes(d.statut);
+    case 'jury': return ['certifie','valide_partiel','non_valide'].includes(d.statut);
+    default: return false;
+  }
+}
+function getEtapesDone() {
+  return ['preparer','livret1','livret2','jury'].filter(isEtapeComplete).length;
+}
+function countPiecesTotal() {
+  return PIECES_CATEGORIES.reduce((a,c)=>a+c.pieces.length,0);
+}
+function countPiecesUploaded() {
+  return Object.keys(state.userData.dossierVAE.pieces || {}).length;
+}
+
+// ============================================================
+// VUE : PRÉPARER (Étape 1)
+// ============================================================
+function renderPreparer() {
+  const u = state.userData;
+  const diag = u.diagnostic;
+  const dossier = u.dossierVAE;
+
+  // pré-selection à partir du diagnostic
+  const preselectedId = dossier.certificationId || (diag && diag.cert ? diag.cert.id : null);
+
+  let certOptions = Object.values(DEMO_CERTS).map(c => {
+    const sel = (c.id === preselectedId) ? 'selected' : '';
+    return `<option value="${c.id}" ${sel}>${c.name} — ${c.typeLabel} niv. ${c.level}</option>`;
+  }).join('');
+
+  return `
+    <div class="card">
+      <div class="card-title">📋 Étape 1 — Préparer mon parcours VAE</div>
+      <div class="card-subtitle">Information, point relais conseil, choix de la certification visée.</div>
+
+      <div class="info-box">
+        <strong>Qu'est-ce que la VAE en Nouvelle-Calédonie ?</strong><br>
+        La Validation des Acquis de l'Expérience permet d'obtenir <strong>tout ou partie d'une certification</strong>
+        (titre professionnel, certification NC, CQP) en faisant reconnaître les compétences acquises par l'expérience
+        professionnelle, bénévole, syndicale ou de service civique.
+      </div>
+
+      <div class="form-group">
+        <span class="form-label">⏱ Conditions d'éligibilité</span>
+        <ul style="list-style:none; padding:0; margin-top:6px">
+          <li style="padding:6px 0; border-bottom:1px solid var(--gray-light); font-size:13px">
+            ✓ <strong>Expérience minimum : 1 an</strong> (cumulé, en rapport direct avec la certification)
+          </li>
+          <li style="padding:6px 0; border-bottom:1px solid var(--gray-light); font-size:13px">
+            ✓ Expériences <strong>salariée, non-salariée, bénévole, syndicale, service civique</strong> acceptées
+          </li>
+          <li style="padding:6px 0; font-size:13px">
+            ✓ Une seule certification par année civile (dispositif VAE DTEFP)
+          </li>
+        </ul>
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠ Certifications Éducation Nationale (CAP, Bac Pro, BTS…)</strong><br>
+        Si vous visez un diplôme de l'Éducation Nationale, votre VAE relève du <strong>DAVA</strong> (Délégation Académique à la Validation des Acquis), pas du dispositif DTEFP de ce LMS.
+        <a href="https://vae.nc" target="_blank" style="color:var(--navy); font-weight:600">↗ Plus d'infos sur vae.nc</a>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">🎯 Certification visée <span class="req">*</span></label>
+        <div class="form-sublabel">Choisissez la certification pour laquelle vous préparez votre VAE. Le Livret 2 sera structuré selon les CPUs/CCPs de cette certification.</div>
+        <select class="form-select" id="prepCertSelect" onchange="savePrepCert()">
+          <option value="">— Sélectionner —</option>
+          ${certOptions}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">🏢 Point Relais Conseil (PRC) VAE</label>
+        <div class="form-sublabel">Un entretien gratuit avec un conseiller VAE est fortement recommandé avant de déposer votre dossier.</div>
+        <div class="radio-group">
+          <label class="radio-option ${dossier.prc === 'fait' ? 'selected':''}" onclick="setPRC('fait')">
+            <div class="radio-dot"></div>
+            <div class="radio-text"><strong>J'ai déjà rencontré un conseiller VAE</strong>Poursuivre avec le Livret 1</div>
+          </label>
+          <label class="radio-option ${dossier.prc === 'a_faire' ? 'selected':''}" onclick="setPRC('a_faire')">
+            <div class="radio-dot"></div>
+            <div class="radio-text"><strong>Je souhaite prendre RDV avec un conseiller VAE</strong>Organisme de formation référencé</div>
+          </label>
+          <label class="radio-option ${dossier.prc === 'passer' ? 'selected':''}" onclick="setPRC('passer')">
+            <div class="radio-dot"></div>
+            <div class="radio-text"><strong>Je souhaite poursuivre sans entretien</strong>Vous pourrez toujours contacter un conseiller en cours de parcours</div>
+          </label>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Retour</button>
+        <button class="btn btn-primary" onclick="completePrepare()">Continuer vers le Livret 1 →</button>
+      </div>
+    </div>`;
+}
+
+function savePrepCert() {
+  const val = document.getElementById('prepCertSelect').value;
+  const u = loadUserState();
+  u.dossierVAE.certificationId = val || null;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+}
+
+function setPRC(val) {
+  const u = loadUserState();
+  u.dossierVAE.prc = val;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function completePrepare() {
+  const u = loadUserState();
+  if (!u.dossierVAE.certificationId && !(u.diagnostic && u.diagnostic.cert)) {
+    alert('Merci de sélectionner la certification visée avant de continuer.');
+    return;
+  }
+  if (u.dossierVAE.etape < 2) u.dossierVAE.etape = 2;
+  if (u.dossierVAE.statut === 'brouillon') u.dossierVAE.statut = 'livret1_en_cours';
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  goTo('livret1');
+}
+
+
+// ============================================================
+// VUE : LIVRET 1 — RECEVABILITÉ
+// ============================================================
+let livret1OpenSection = 1; // section ouverte par défaut
+
+function toggleL1Section(n) {
+  livret1OpenSection = (livret1OpenSection === n) ? 0 : n;
+  render();
+}
+
+function renderLivret1() {
+  const u = state.userData;
+  const l1 = u.dossierVAE.livret1;
+  const cert = getCurrentCert();
+
+  const sections = [
+    { num:1, title:'Identité', meta:'Nom, prénom, coordonnées, situation', done: isL1Section1Done(l1) },
+    { num:2, title:'Expériences', meta:`${(l1.experiences||[]).length} expérience(s) déclarée(s)`, done: isL1Section2Done(l1) },
+    { num:3, title:'Diplômes, titres, certifications', meta:`${(l1.diplomes||[]).length} diplôme(s) déclaré(s)`, done: isL1Section3Done(l1) },
+    { num:4, title:'Déclaration sur l\'honneur', meta:'Engagement du candidat', done: !!l1.declarationHonneur1 },
+    { num:5, title:'Pièces justificatives', meta:`${countPiecesUploaded()} pièce(s) chargée(s)`, done: countPiecesUploaded() >= 2 }
+  ];
+
+  const allDone = sections.every(s => s.done);
+
+  let sectionsHtml = sections.map(s => {
+    const open = livret1OpenSection === s.num;
+    const doneCls = s.done ? 'done' : '';
+    const openCls = open ? 'open' : '';
+    return `
+      <div class="section-block ${openCls}">
+        <div class="section-header ${doneCls}" onclick="toggleL1Section(${s.num})">
+          <div class="section-num">${s.done ? '✓' : s.num}</div>
+          <div class="section-body-title">
+            <div class="section-title">Partie ${s.num} — ${s.title}</div>
+            <div class="section-meta">${s.meta}</div>
+          </div>
+          <div class="section-chevron">›</div>
+        </div>
+        <div class="section-content">${renderL1SectionContent(s.num)}</div>
+      </div>`;
+  }).join('');
+
+  const banner = cert ? `
+    <div class="selected-cert-banner">
+      <span class="cert-icon">🎯</span>
+      <div>
+        <div class="cert-name">${cert.name}</div>
+        <div class="cert-detail">${cert.typeLabel} · Niveau ${cert.level} · Organisme certificateur compétent</div>
+      </div>
+    </div>` : '';
+
+  const statusInfo = u.dossierVAE.statut === 'livret1_depose' ? `
+    <div class="info-box">
+      <strong>📤 Livret 1 déposé le ${formatDate(u.dossierVAE.livret1.dateDepot)}.</strong><br>
+      La Section Certification de la DTEFP dispose de <strong>2 mois</strong> pour notifier la décision de recevabilité.
+    </div>` : '';
+
+  return `
+    <div class="card">
+      <div class="card-title">📝 Étape 2 — Livret 1 · Dossier de recevabilité</div>
+      <div class="card-subtitle">
+        Conforme au <strong>Livret 1 DNC 2026</strong>. 5 parties obligatoires.
+        Le dossier sera étudié par la Section Certification de la DTEFP (délai : 2 mois).
+      </div>
+
+      ${banner}
+      ${statusInfo}
+
+      <div class="info-box">
+        <strong>📬 Dépôt du dossier</strong> — DTEFP, Section Certification, BP M2 98849 Nouméa Cedex ·
+        Courriel : <strong>dtefp.certification@gouv.nc</strong> ·
+        Si > 10 Mo : <strong>gouvbox.gouv.nc</strong>
+      </div>
+
+      <div style="margin-top:8px">${sectionsHtml}</div>
+
+      <div class="btn-row">
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Accueil</button>
+        ${allDone ? `<button class="btn btn-primary" onclick="submitLivret1()">📤 Déposer le Livret 1</button>` : `<button class="btn btn-primary" disabled>Complétez les 5 parties</button>`}
+      </div>
+
+      ${u.dossierVAE.statut === 'livret1_depose' ? `
+        <div class="section-divider"></div>
+        <div class="warning-box">
+          <strong>Simulation pédagogique</strong> — pour poursuivre le prototype, vous pouvez forcer une décision de recevabilité :<br>
+          <button class="btn btn-secondary btn-sm mt-16" onclick="decideRecevabilite('recevable')">✅ Simuler : Recevable</button>
+          <button class="btn btn-secondary btn-sm mt-16" onclick="decideRecevabilite('non_recevable')" style="margin-left:8px">⚠ Simuler : Non recevable</button>
+        </div>` : ''}
+    </div>`;
+}
+
+function renderL1SectionContent(n) {
+  switch(n) {
+    case 1: return renderL1Identite();
+    case 2: return renderL1Experiences();
+    case 3: return renderL1Diplomes();
+    case 4: return renderL1Declaration();
+    case 5: return renderL1PiecesInline();
+  }
+  return '';
+}
+
+function isL1Section1Done(l1) {
+  const id = l1.identite || {};
+  return !!(id.nom && id.prenom && id.dateNaissance && id.telephone && id.email && id.adresse);
+}
+function isL1Section2Done(l1) {
+  return (l1.experiences || []).length > 0 && l1.experiences.every(e => e.employeur && e.fonction && e.dureeMois);
+}
+function isL1Section3Done(l1) {
+  // Optionnel côté données, mais on demande au moins de déclarer "aucun diplôme" ou au moins 1
+  return l1.diplomes && l1.diplomes._declared;
+}
+
+// --- Partie 1 : Identité
+function renderL1Identite() {
+  const id = state.userData.dossierVAE.livret1.identite || {};
+  return `
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Nom <span class="req">*</span></label>
+        <input type="text" class="form-input" value="${id.nom||''}" oninput="saveL1('identite.nom', this.value)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Prénom(s) <span class="req">*</span></label>
+        <input type="text" class="form-input" value="${id.prenom||''}" oninput="saveL1('identite.prenom', this.value)">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Date de naissance <span class="req">*</span></label>
+        <input type="date" class="form-input" value="${id.dateNaissance||''}" oninput="saveL1('identite.dateNaissance', this.value)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Lieu de naissance</label>
+        <input type="text" class="form-input" value="${id.lieuNaissance||''}" oninput="saveL1('identite.lieuNaissance', this.value)">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Adresse <span class="req">*</span></label>
+      <input type="text" class="form-input" value="${id.adresse||''}" oninput="saveL1('identite.adresse', this.value)" placeholder="N° et voie">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Code postal</label>
+        <input type="text" class="form-input" value="${id.codePostal||''}" oninput="saveL1('identite.codePostal', this.value)" placeholder="988xx">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Commune <span class="req">*</span></label>
+        <input type="text" class="form-input" value="${id.commune||''}" oninput="saveL1('identite.commune', this.value)">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Téléphone <span class="req">*</span></label>
+        <input type="tel" class="form-input" value="${id.telephone||''}" oninput="saveL1('identite.telephone', this.value)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Courriel <span class="req">*</span></label>
+        <input type="email" class="form-input" value="${id.email||''}" oninput="saveL1('identite.email', this.value)">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Nationalité</label>
+        <input type="text" class="form-input" value="${id.nationalite||''}" oninput="saveL1('identite.nationalite', this.value)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Situation familiale</label>
+        <select class="form-select" onchange="saveL1('identite.situationFamiliale', this.value)">
+          <option value="">—</option>
+          <option value="celibataire" ${id.situationFamiliale==='celibataire'?'selected':''}>Célibataire</option>
+          <option value="marie" ${id.situationFamiliale==='marie'?'selected':''}>Marié(e) / PACS</option>
+          <option value="divorce" ${id.situationFamiliale==='divorce'?'selected':''}>Divorcé(e)</option>
+          <option value="veuf" ${id.situationFamiliale==='veuf'?'selected':''}>Veuf / Veuve</option>
+        </select>
+      </div>
+    </div>
+  `;
+}
+
+// --- Partie 2 : Expériences
+function renderL1Experiences() {
+  const exps = state.userData.dossierVAE.livret1.experiences || [];
+  let html = `
+    <div class="form-sublabel">
+      Listez toutes les expériences (professionnelles, bénévoles, syndicales, service civique) en rapport avec la certification visée.
+      L'expérience minimum est de <strong>1 an cumulé</strong> (réforme VAE 2024).
+    </div>`;
+
+  exps.forEach((exp, idx) => {
+    html += `
+      <div class="exp-item">
+        <div class="exp-item-title">
+          <span>Expérience #${idx+1}</span>
+          <button class="exp-remove" onclick="removeExperience(${idx})">✕ Retirer</button>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nature <span class="req">*</span></label>
+          <select class="form-select" onchange="saveExp(${idx},'nature',this.value)">
+            <option value="">—</option>
+            <option value="salarie" ${exp.nature==='salarie'?'selected':''}>Salarié(e)</option>
+            <option value="non_salarie" ${exp.nature==='non_salarie'?'selected':''}>Non salarié(e) / indépendant(e)</option>
+            <option value="benevole" ${exp.nature==='benevole'?'selected':''}>Bénévole</option>
+            <option value="syndical" ${exp.nature==='syndical'?'selected':''}>Syndical / élu</option>
+            <option value="service_civique" ${exp.nature==='service_civique'?'selected':''}>Service civique</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Employeur / Structure <span class="req">*</span></label>
+            <input type="text" class="form-input" value="${exp.employeur||''}" oninput="saveExp(${idx},'employeur',this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Fonction / Poste <span class="req">*</span></label>
+            <input type="text" class="form-input" value="${exp.fonction||''}" oninput="saveExp(${idx},'fonction',this.value)">
+          </div>
+        </div>
+        <div class="form-row-3">
+          <div class="form-group">
+            <label class="form-label">Du</label>
+            <input type="date" class="form-input" value="${exp.dateDebut||''}" oninput="saveExp(${idx},'dateDebut',this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Au</label>
+            <input type="date" class="form-input" value="${exp.dateFin||''}" oninput="saveExp(${idx},'dateFin',this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Durée (mois) <span class="req">*</span></label>
+            <input type="number" min="0" class="form-input" value="${exp.dureeMois||''}" oninput="saveExp(${idx},'dureeMois',this.value)">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Temps</label>
+            <select class="form-select" onchange="saveExp(${idx},'tempsPlein',this.value)">
+              <option value="">—</option>
+              <option value="plein" ${exp.tempsPlein==='plein'?'selected':''}>Temps plein</option>
+              <option value="partiel" ${exp.tempsPlein==='partiel'?'selected':''}>Temps partiel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Quotité (si partiel)</label>
+            <input type="text" class="form-input" value="${exp.quotite||''}" placeholder="ex: 80%" oninput="saveExp(${idx},'quotite',this.value)">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Principales activités exercées</label>
+          <textarea class="form-textarea" oninput="saveExp(${idx},'activites',this.value)" placeholder="Décrivez brièvement les missions et activités principales liées à la certification visée.">${exp.activites||''}</textarea>
+        </div>
+      </div>`;
+  });
+
+  html += `<button class="exp-add-btn" onclick="addExperience()">+ Ajouter une expérience</button>`;
+
+  // Récapitulatif durée totale
+  const totalMois = exps.reduce((a,e)=>a + (parseInt(e.dureeMois,10)||0), 0);
+  const totalAns = (totalMois / 12).toFixed(1);
+  const okMin = totalMois >= 12;
+  html += `
+    <div class="${okMin ? 'success-box' : 'warning-box'}" style="margin-top:14px">
+      <strong>Durée totale cumulée : ${totalMois} mois (${totalAns} an${totalAns>1?'s':''})</strong>
+      ${okMin ? ' ✓ Seuil minimum 1 an atteint' : ' — Seuil minimum requis : 1 an (12 mois)'}
+    </div>`;
+
+  return html;
+}
+
+// --- Partie 3 : Diplômes
+function renderL1Diplomes() {
+  const dips = state.userData.dossierVAE.livret1.diplomes || [];
+  let html = `
+    <div class="form-sublabel">
+      Listez les <strong>diplômes, titres, certifications</strong> (y compris blocs de compétences) que vous avez déjà obtenus.
+      Ils peuvent permettre des dispenses ou blocs déjà acquis.
+    </div>`;
+
+  dips.forEach((d, idx) => {
+    html += `
+      <div class="exp-item">
+        <div class="exp-item-title">
+          <span>Diplôme / titre #${idx+1}</span>
+          <button class="exp-remove" onclick="removeDiplome(${idx})">✕ Retirer</button>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Intitulé</label>
+            <input type="text" class="form-input" value="${d.intitule||''}" oninput="saveDip(${idx},'intitule',this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Niveau</label>
+            <select class="form-select" onchange="saveDip(${idx},'niveau',this.value)">
+              <option value="">—</option>
+              <option value="3" ${d.niveau==='3'?'selected':''}>Niveau 3 (CAP, BEP)</option>
+              <option value="4" ${d.niveau==='4'?'selected':''}>Niveau 4 (Bac)</option>
+              <option value="5" ${d.niveau==='5'?'selected':''}>Niveau 5 (Bac+2)</option>
+              <option value="6" ${d.niveau==='6'?'selected':''}>Niveau 6 (Bac+3/4)</option>
+              <option value="7" ${d.niveau==='7'?'selected':''}>Niveau 7 (Bac+5)</option>
+              <option value="8" ${d.niveau==='8'?'selected':''}>Niveau 8 (Doctorat)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Organisme</label>
+            <input type="text" class="form-input" value="${d.organisme||''}" oninput="saveDip(${idx},'organisme',this.value)">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Année d'obtention</label>
+            <input type="number" min="1950" max="2030" class="form-input" value="${d.annee||''}" oninput="saveDip(${idx},'annee',this.value)">
+          </div>
+        </div>
+      </div>`;
+  });
+
+  html += `<button class="exp-add-btn" onclick="addDiplome()">+ Ajouter un diplôme / titre / certificat</button>`;
+  html += `
+    <label class="radio-option ${dips._declared ? 'selected':''}" style="margin-top:14px" onclick="markDiplomesDeclared()">
+      <div class="radio-dot"></div>
+      <div class="radio-text"><strong>Je déclare avoir listé tous les diplômes/titres concernés</strong>(ou avoir indiqué n'en avoir aucun)</div>
+    </label>`;
+  return html;
+}
+
+// --- Partie 4 : Déclaration sur l'honneur
+function renderL1Declaration() {
+  const l1 = state.userData.dossierVAE.livret1;
+  return `
+    <div class="info-box">
+      Je soussigné(e), candidat(e) à la Validation des Acquis de l'Expérience, déclare sur l'honneur :
+      <ul style="margin:10px 0 0 20px; font-size:13px; line-height:1.6">
+        <li>que les informations fournies dans ce livret sont <strong>sincères et exactes</strong> ;</li>
+        <li>ne pas avoir déposé, au cours de la même année civile, <strong>plus d'une demande de VAE</strong> pour le même diplôme ou titre ;</li>
+        <li>ne pas avoir déposé, pour le même diplôme ou titre, <strong>plus de trois demandes de VAE au cours de la même année civile</strong> ;</li>
+        <li>avoir pris connaissance des modalités du dispositif VAE en Nouvelle-Calédonie.</li>
+      </ul>
+    </div>
+    <label class="radio-option ${l1.declarationHonneur1 ? 'selected':''}" onclick="toggleDeclaration()">
+      <div class="radio-dot"></div>
+      <div class="radio-text"><strong>Je certifie l'exactitude des déclarations ci-dessus</strong>En cochant cette case, vous validez la partie 4 du Livret 1.</div>
+    </label>
+    <div class="form-group mt-16">
+      <label class="form-label">Fait à</label>
+      <input type="text" class="form-input" value="${l1.declarationLieu||''}" oninput="saveL1('declarationLieu',this.value)" placeholder="ex: Nouméa">
+    </div>
+  `;
+}
+
+// --- Partie 5 : Pièces (vue rapide depuis Livret 1)
+function renderL1PiecesInline() {
+  return `
+    <div class="info-box">
+      La gestion détaillée des pièces justificatives se fait dans l'écran <strong>Pièces justificatives</strong>.
+      Minimum requis pour la recevabilité : <strong>pièce d'identité</strong> + pièces propres à la nature de vos expériences.
+    </div>
+    <div style="text-align:center; padding:20px">
+      <button class="btn btn-primary" onclick="goTo('pieces')">📎 Ouvrir la gestion des pièces</button>
+    </div>
+    <div class="progress-label mt-16">
+      <span>Progression pièces</span>
+      <span><strong>${countPiecesUploaded()}</strong> / ${countPiecesTotal()}</span>
+    </div>
+    <div class="progress-linear">
+      <div class="progress-linear-bar" style="width:${Math.round(countPiecesUploaded()/countPiecesTotal()*100)}%"></div>
+    </div>
+  `;
+}
+
+// ---- HELPERS Livret 1 ----
+function saveL1(path, value) {
+  const u = loadUserState();
+  const parts = path.split('.');
+  let obj = u.dossierVAE.livret1;
+  for (let i=0; i<parts.length-1; i++) {
+    if (!obj[parts[i]]) obj[parts[i]] = {};
+    obj = obj[parts[i]];
+  }
+  obj[parts[parts.length-1]] = value;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+}
+
+function addExperience() {
+  const u = loadUserState();
+  if (!u.dossierVAE.livret1.experiences) u.dossierVAE.livret1.experiences = [];
+  u.dossierVAE.livret1.experiences.push({ nature:'', employeur:'', fonction:'', dateDebut:'', dateFin:'', dureeMois:'', tempsPlein:'', activites:'' });
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+function removeExperience(idx) {
+  const u = loadUserState();
+  u.dossierVAE.livret1.experiences.splice(idx, 1);
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+function saveExp(idx, field, value) {
+  const u = loadUserState();
+  u.dossierVAE.livret1.experiences[idx][field] = value;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+}
+function addDiplome() {
+  const u = loadUserState();
+  if (!u.dossierVAE.livret1.diplomes) u.dossierVAE.livret1.diplomes = [];
+  u.dossierVAE.livret1.diplomes.push({ intitule:'', niveau:'', organisme:'', annee:'' });
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+function removeDiplome(idx) {
+  const u = loadUserState();
+  u.dossierVAE.livret1.diplomes.splice(idx, 1);
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+function saveDip(idx, field, value) {
+  const u = loadUserState();
+  u.dossierVAE.livret1.diplomes[idx][field] = value;
+  saveUserState(u);
+  state.userData = u;
+}
+function markDiplomesDeclared() {
+  const u = loadUserState();
+  if (!u.dossierVAE.livret1.diplomes) u.dossierVAE.livret1.diplomes = [];
+  u.dossierVAE.livret1.diplomes._declared = !u.dossierVAE.livret1.diplomes._declared;
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+function toggleDeclaration() {
+  const u = loadUserState();
+  u.dossierVAE.livret1.declarationHonneur1 = !u.dossierVAE.livret1.declarationHonneur1;
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function submitLivret1() {
+  if (!confirm('Confirmer le dépôt du Livret 1 auprès de la DTEFP ?\nLe dossier sera envoyé à dtefp.certification@gouv.nc. Vous recevrez une décision sous 2 mois.')) return;
+  const u = loadUserState();
+  u.dossierVAE.statut = 'livret1_depose';
+  u.dossierVAE.livret1.dateDepot = new Date().toISOString();
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  alert('✅ Livret 1 déposé. Accusé de réception envoyé. Décision sous 2 mois.');
+  render();
+}
+
+function decideRecevabilite(decision) {
+  const u = loadUserState();
+  u.dossierVAE.statut = decision;
+  u.dossierVAE.livret1.decisionDate = new Date().toISOString();
+  if (decision === 'recevable') {
+    u.dossierVAE.etape = 3;
+    u.dossierVAE.dateValiditeRecevabilite = new Date(Date.now() + 3*365*24*3600*1000).toISOString();
+  }
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+// ============================================================
+// VUE : LIVRET 2 — PRÉSENTATION DES ACQUIS DE L'EXPÉRIENCE (PAE)
+// ============================================================
+function renderLivret2() {
+  const u = state.userData;
+  const l2 = u.dossierVAE.livret2 || {};
+  const cert = getCurrentCert();
+
+  // Garde-fou : Livret 2 seulement si recevable (ou si démo)
+  const accessOK = ['recevable','livret2_en_cours','livret2_depose','jury_programme','certifie','valide_partiel','non_valide'].includes(u.dossierVAE.statut);
+
+  if (!accessOK) {
+    return `
+      <div class="card">
+        <div class="card-title">📖 Étape 3 — Livret 2 · Présentation des Acquis</div>
+        <div class="warning-box">
+          <strong>Accès verrouillé</strong> — Le Livret 2 n'est accessible qu'après <strong>décision de recevabilité</strong> (notifiée par la DTEFP dans les 2 mois suivant le dépôt du Livret 1).<br><br>
+          Statut actuel : <strong>${getStatutCurrent().label}</strong>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-gray" onclick="goTo('accueil')">← Retour</button>
+          <button class="btn btn-secondary" onclick="goTo('livret1')">Retour au Livret 1</button>
+        </div>
+      </div>`;
+  }
+
+  if (!cert || !cert.cpus || cert.cpus.length === 0) {
+    return `
+      <div class="card">
+        <div class="card-title">📖 Étape 3 — Livret 2 · Présentation des Acquis</div>
+        <div class="danger-box">
+          <strong>Certification non sélectionnée ou sans CPUs documentés.</strong><br>
+          Retournez à l'étape <strong>Préparer</strong> pour choisir une certification avec référentiel CPU/CCP.
+        </div>
+        <button class="btn btn-primary" onclick="goTo('preparer')">← Choisir une certification</button>
+      </div>`;
+  }
+
+  const idxMax = cert.cpus.length - 1;
+  if (state.currentFicheIdx > idxMax) state.currentFicheIdx = 0;
+  const currentCPU = cert.cpus[state.currentFicheIdx];
+
+  // Navigation fiches
+  let tabsHtml = '';
+  cert.cpus.forEach((cpu, idx) => {
+    const ficheData = (l2.fiches || {})[cpu.id] || {};
+    const done = isFicheComplete(ficheData);
+    const active = idx === state.currentFicheIdx;
+    const cls = active ? 'active' : (done ? 'done' : '');
+    const label = cert.type === 'TP' ? cpu.name.split('—')[0].trim() : ('CPU ' + (idx+1));
+    const rubriquesDone = countRubriquesDone(ficheData);
+    tabsHtml += `
+      <div class="fiche-tab ${cls}" onclick="switchFiche(${idx})">
+        ${label}
+        <span class="fiche-tab-badge">${rubriquesDone}/10</span>
+      </div>`;
+  });
+
+  // Déclaration d'honneur Livret 2
+  const declBlock = `
+    <div class="info-box" style="margin-bottom:16px">
+      <strong>Déclaration sur l'honneur (Livret 2 DNC 2026)</strong><br>
+      J'atteste sur l'honneur que les informations fournies dans ce livret <strong>sont exactes</strong> et concernent des activités que j'ai <strong>moi-même exercées</strong>.
+    </div>
+    <label class="radio-option ${l2.declarationHonneur2 ? 'selected':''}" onclick="toggleDecl2()">
+      <div class="radio-dot"></div>
+      <div class="radio-text"><strong>Je certifie l'authenticité et la sincérité des informations</strong>Obligatoire avant dépôt du Livret 2.</div>
+    </label>`;
+
+  // Rubriques de la fiche courante
+  const ficheData = (l2.fiches || {})[currentCPU.id] || {};
+  let rubriquesHtml = '';
+  RUBRIQUES.forEach(r => {
+    const val = ficheData['r'+r.id] || '';
+    const done = val && val.trim().length >= 20;
+    rubriquesHtml += `
+      <div class="rubrique ${done ? 'done':''}">
+        <div class="rubrique-num">Rubrique ${r.id}/10 ${done ? '· Renseignée ✓':''}</div>
+        <div class="rubrique-title">${r.title}</div>
+        <div class="rubrique-help">${r.help}</div>
+        <textarea class="form-textarea" placeholder="Votre description…" oninput="saveRubrique('${currentCPU.id}','r${r.id}',this.value)">${val}</textarea>
+      </div>`;
+  });
+
+  const allFichesComplete = cert.cpus.every(cpu => isFicheComplete((l2.fiches||{})[cpu.id] || {}));
+
+  return `
+    <div class="card">
+      <div class="card-title">📖 Étape 3 — Livret 2 · Présentation des Acquis (PAE)</div>
+      <div class="card-subtitle">
+        Une <strong>fiche Activité par CPU/CCP</strong> de la certification. Chaque fiche comporte <strong>10 rubriques obligatoires</strong> (modèle DNC 2026).
+      </div>
+
+      <div class="selected-cert-banner">
+        <span class="cert-icon">🎯</span>
+        <div>
+          <div class="cert-name">${cert.name}</div>
+          <div class="cert-detail">${cert.typeLabel} · ${cert.cpus.length} ${cert.type==='TP'?'CCP':'CPU'} à documenter</div>
+        </div>
+      </div>
+
+      ${declBlock}
+
+      <div class="section-divider"></div>
+
+      <div class="fiche-nav">${tabsHtml}</div>
+
+      <div class="fiche-header">
+        <div class="fiche-header-code">${cert.type==='TP'?'CCP':'CPU'} ${state.currentFicheIdx+1} / ${cert.cpus.length}</div>
+        <div class="fiche-header-title">${currentCPU.name}</div>
+        <div class="fiche-header-sub">Décrivez précisément une activité représentative que vous avez exercée en lien avec ce ${cert.type==='TP'?'CCP':'CPU'}. Les 10 rubriques guidées ci-dessous correspondent au modèle officiel DNC 2026.</div>
+      </div>
+
+      ${rubriquesHtml}
+
+      <div class="btn-row" style="margin-top:16px">
+        <button class="btn btn-gray" onclick="switchFiche(${Math.max(0, state.currentFicheIdx-1)})" ${state.currentFicheIdx===0?'disabled':''}>← Fiche précédente</button>
+        ${state.currentFicheIdx < idxMax
+          ? `<button class="btn btn-primary" onclick="switchFiche(${state.currentFicheIdx+1})">Fiche suivante →</button>`
+          : (allFichesComplete && l2.declarationHonneur2
+              ? `<button class="btn btn-primary" onclick="submitLivret2()">📤 Déposer le Livret 2</button>`
+              : `<button class="btn btn-primary" disabled>Complétez toutes les fiches & la déclaration</button>`)}
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="progress-label"><span>Progression globale des fiches</span><span><strong>${countFichesDone()}</strong> / ${cert.cpus.length}</span></div>
+      <div class="progress-linear"><div class="progress-linear-bar" style="width:${Math.round(countFichesDone()/cert.cpus.length*100)}%"></div></div>
+
+      <div class="btn-row" style="margin-top:8px">
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Accueil</button>
+        <button class="btn btn-secondary" onclick="goTo('dashboard')">📊 Tableau de bord</button>
+      </div>
+    </div>`;
+}
+
+function switchFiche(idx) {
+  const cert = getCurrentCert();
+  if (!cert) return;
+  if (idx < 0 || idx > cert.cpus.length-1) return;
+  state.currentFicheIdx = idx;
+  window.scrollTo(0,0);
+  render();
+}
+
+function saveRubrique(cpuId, rubriqueKey, value) {
+  const u = loadUserState();
+  if (!u.dossierVAE.livret2) u.dossierVAE.livret2 = { fiches:{} };
+  if (!u.dossierVAE.livret2.fiches) u.dossierVAE.livret2.fiches = {};
+  if (!u.dossierVAE.livret2.fiches[cpuId]) u.dossierVAE.livret2.fiches[cpuId] = {};
+  u.dossierVAE.livret2.fiches[cpuId][rubriqueKey] = value;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  if (u.dossierVAE.statut === 'recevable') u.dossierVAE.statut = 'livret2_en_cours';
+  saveUserState(u);
+  state.userData = u;
+  // pas de full render pour ne pas perdre le focus textarea
+}
+
+function isFicheComplete(ficheData) {
+  // seuil : les 10 rubriques ≥ 20 caractères
+  for (let i = 1; i <= 10; i++) {
+    const v = ficheData['r'+i];
+    if (!v || v.trim().length < 20) return false;
+  }
+  return true;
+}
+function countRubriquesDone(ficheData) {
+  let n = 0;
+  for (let i = 1; i <= 10; i++) {
+    const v = ficheData['r'+i];
+    if (v && v.trim().length >= 20) n++;
+  }
+  return n;
+}
+function countFichesDone() {
+  const cert = getCurrentCert();
+  if (!cert) return 0;
+  const fiches = (state.userData.dossierVAE.livret2||{}).fiches || {};
+  return cert.cpus.filter(cpu => isFicheComplete(fiches[cpu.id] || {})).length;
+}
+
+function toggleDecl2() {
+  const u = loadUserState();
+  if (!u.dossierVAE.livret2) u.dossierVAE.livret2 = { fiches:{} };
+  u.dossierVAE.livret2.declarationHonneur2 = !u.dossierVAE.livret2.declarationHonneur2;
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function submitLivret2() {
+  if (!confirm('Confirmer le dépôt du Livret 2 auprès de la DTEFP ?\nUn jury sera programmé dans les 3 mois.')) return;
+  const u = loadUserState();
+  u.dossierVAE.statut = 'livret2_depose';
+  u.dossierVAE.livret2.dateDepot = new Date().toISOString();
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  alert('✅ Livret 2 déposé. Convocation jury sous 3 mois.');
+  goTo('jury');
+}
+// ============================================================
+// VUE : PIÈCES JUSTIFICATIVES
+// ============================================================
+function renderPieces() {
+  const u = state.userData;
+  const piecesUploaded = u.dossierVAE.pieces || {};
+
+  // Déterminer profil(s) actif(s) à partir des expériences pour signaler les pièces "scopées"
+  const exps = (u.dossierVAE.livret1.experiences) || [];
+  const activeScopes = new Set(exps.map(e => e.nature).filter(Boolean));
+
+  let catsHtml = '';
+  PIECES_CATEGORIES.forEach(cat => {
+    let uploadedInCat = 0;
+    let itemsHtml = '';
+    cat.pieces.forEach(p => {
+      const up = piecesUploaded[p.id];
+      if (up) uploadedInCat++;
+      const scoped = p.scope && !activeScopes.has(p.scope);
+      itemsHtml += `
+        <div class="piece-item ${up ? 'uploaded':''}">
+          <div class="piece-icon">${up ? '✅' : (p.required ? '⚠️' : '📄')}</div>
+          <div class="piece-name">
+            ${p.name}
+            ${p.required ? '<span class="piece-req">*</span>' : ''}
+            ${scoped ? '<br><span class="piece-meta">(non requis selon vos expériences déclarées)</span>' : ''}
+            ${up ? `<br><span class="piece-meta">Chargée le ${formatDate(up.uploadDate)} · ${up.fileName}</span>` : ''}
+          </div>
+          ${up
+            ? `<button class="piece-btn uploaded" onclick="removePiece('${p.id}')">✕ Retirer</button>`
+            : `<button class="piece-btn" onclick="simulateUpload('${p.id}','${p.name.replace(/'/g,"\\'")}')">↑ Charger</button>`}
+        </div>`;
+    });
+    const counterCls = uploadedInCat >= (cat.pieces.filter(x=>x.required).length || 1) ? 'full' : '';
+    catsHtml += `
+      <div class="piece-category">
+        <div class="piece-cat-header">
+          📁 <span>${cat.label}</span>
+          <span class="piece-cat-counter ${counterCls}">${uploadedInCat}/${cat.pieces.length}</span>
+        </div>
+        <div class="piece-list">${itemsHtml}</div>
+      </div>`;
+  });
+
+  return `
+    <div class="card">
+      <div class="card-title">📎 Pièces justificatives</div>
+      <div class="card-subtitle">Chargez les documents requis pour votre dossier VAE. <strong>Simulation UI</strong> — aucun fichier n'est réellement transmis.</div>
+
+      <div class="info-box">
+        <strong>📬 Transmission</strong> — courriel : <strong>dtefp.certification@gouv.nc</strong> ·
+        Pour pli volumineux (> 10 Mo) : utiliser <strong>gouvbox.gouv.nc</strong>.<br>
+        Formats acceptés : PDF, JPG, PNG. Pièces numériques, lisibles, non coupées.
+      </div>
+
+      ${catsHtml}
+
+      <div class="section-divider"></div>
+
+      <div class="progress-label"><span>Pièces chargées</span><span><strong>${countPiecesUploaded()}</strong> / ${countPiecesTotal()}</span></div>
+      <div class="progress-linear"><div class="progress-linear-bar" style="width:${Math.round(countPiecesUploaded()/countPiecesTotal()*100)}%"></div></div>
+
+      <div class="btn-row">
+        <button class="btn btn-gray" onclick="goTo('livret1')">← Retour Livret 1</button>
+        <button class="btn btn-secondary" onclick="goTo('accueil')">Accueil</button>
+      </div>
+    </div>`;
+}
+
+function simulateUpload(pieceId, pieceName) {
+  const fake = prompt(`Simulation d'upload pour :\n"${pieceName}"\n\nIndiquez un nom de fichier (ex: attestation_emploi.pdf)`, 'document.pdf');
+  if (!fake) return;
+  const u = loadUserState();
+  if (!u.dossierVAE.pieces) u.dossierVAE.pieces = {};
+  u.dossierVAE.pieces[pieceId] = {
+    fileName: fake,
+    uploadDate: new Date().toISOString(),
+    simulated: true
+  };
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function removePiece(pieceId) {
+  if (!confirm('Retirer cette pièce ?')) return;
+  const u = loadUserState();
+  delete u.dossierVAE.pieces[pieceId];
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+// ============================================================
+// VUE : JURY
+// ============================================================
+function renderJury() {
+  const u = state.userData;
+  const j = u.dossierVAE.jury || {};
+  const statut = u.dossierVAE.statut;
+
+  const accessOK = ['livret2_depose','jury_programme','certifie','valide_partiel','non_valide'].includes(statut);
+  if (!accessOK) {
+    return `
+      <div class="card">
+        <div class="card-title">🏛 Étape 4 — Jury VAE</div>
+        <div class="warning-box">
+          <strong>Accès verrouillé</strong> — Le jury est convoqué <strong>après dépôt du Livret 2</strong>.<br><br>
+          Statut actuel : <strong>${getStatutCurrent().label}</strong>
+        </div>
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Retour</button>
+      </div>`;
+  }
+
+  // Modalité
+  const modaliteBlock = `
+    <div class="form-group">
+      <label class="form-label">📍 Modalité du jury</label>
+      <div class="form-sublabel">Conformément aux décisions de conception LMS, les deux modalités sont proposées. Le jury notifie la modalité avec la convocation.</div>
+      <div class="radio-group">
+        <label class="radio-option ${j.modalite==='presentiel' ? 'selected':''}" onclick="setJury('modalite','presentiel')">
+          <div class="radio-dot"></div>
+          <div class="radio-text"><strong>Présentiel</strong>DTEFP Nouméa / antenne Koné / Lifou</div>
+        </label>
+        <label class="radio-option ${j.modalite==='visio' ? 'selected':''}" onclick="setJury('modalite','visio')">
+          <div class="radio-dot"></div>
+          <div class="radio-text"><strong>Visioconférence</strong>Recommandé pour candidats Brousse / Îles Loyauté</div>
+        </label>
+      </div>
+    </div>`;
+
+  // Date (si jury_programme)
+  const dateBlock = statut === 'jury_programme' || statut === 'certifie' || statut === 'valide_partiel' || statut === 'non_valide' ? `
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Date de jury</label>
+        <input type="date" class="form-input" value="${j.date||''}" oninput="setJury('date',this.value)">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Lieu / lien visio</label>
+        <input type="text" class="form-input" value="${j.lieu||''}" oninput="setJury('lieu',this.value)" placeholder="${j.modalite==='visio' ? 'Lien visio' : 'Adresse'}">
+      </div>
+    </div>` : '';
+
+  // Préparation checklist
+  const prepChecks = [
+    { id:'p1', label:'J\'ai relu intégralement mon Livret 2' },
+    { id:'p2', label:'J\'ai préparé un résumé de chaque fiche Activité' },
+    { id:'p3', label:'J\'ai identifié mes réussites et difficultés professionnelles' },
+    { id:'p4', label:'Je me suis préparé(e) à présenter une activité en 5 minutes' },
+    { id:'p5', label:'J\'ai anticipé les questions potentielles du jury' }
+  ];
+  const prepState = j.prepChecks || {};
+  let prepHtml = prepChecks.map(p => `
+    <label class="radio-option ${prepState[p.id]?'selected':''}" onclick="toggleJuryPrep('${p.id}')">
+      <div class="radio-dot"></div>
+      <div class="radio-text">${p.label}</div>
+    </label>
+  `).join('');
+  const prepCount = Object.keys(prepState).filter(k => prepState[k]).length;
+
+  // Timeline jury
+  const timelineBlock = `
+    <div class="timeline">
+      <div class="timeline-item ${u.dossierVAE.livret2.dateDepot?'done':'current'}">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">${u.dossierVAE.livret2.dateDepot ? formatDate(u.dossierVAE.livret2.dateDepot) : 'À venir'}</div>
+        <div class="timeline-title">Dépôt Livret 2</div>
+        <div class="timeline-desc">Dossier complet transmis à la DTEFP</div>
+      </div>
+      <div class="timeline-item ${j.date?'done':'current'}">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">${j.date ? formatDate(j.date) : 'Dans les 3 mois'}</div>
+        <div class="timeline-title">Convocation et tenue du jury</div>
+        <div class="timeline-desc">Jury composé de professionnels, représentant DTEFP, candidat</div>
+      </div>
+      <div class="timeline-item ${j.decision?'done':''}">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Décision du jury</div>
+        <div class="timeline-title">${j.decision ? decisionLabel(j.decision) : '—'}</div>
+        <div class="timeline-desc">3 issues possibles : validation totale, validation partielle, non-validation</div>
+      </div>
+    </div>`;
+
+  // Boutons action selon statut
+  let actionsBlock = '';
+  if (statut === 'livret2_depose') {
+    actionsBlock = `
+      <div class="warning-box">
+        <strong>Simulation pédagogique</strong> — déclenchez la programmation du jury :
+        <button class="btn btn-secondary btn-sm mt-16" onclick="scheduleJury()">🗓 Simuler convocation</button>
+      </div>`;
+  } else if (statut === 'jury_programme') {
+    actionsBlock = `
+      <div class="warning-box">
+        <strong>Simulation pédagogique</strong> — saisir la décision du jury :
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px">
+          <button class="btn btn-secondary btn-sm" onclick="setJuryDecision('validation_totale')">🎓 Validation totale</button>
+          <button class="btn btn-secondary btn-sm" onclick="setJuryDecision('validation_partielle')">🏅 Validation partielle</button>
+          <button class="btn btn-secondary btn-sm" onclick="setJuryDecision('non_validation')">❌ Non validation</button>
+        </div>
+      </div>`;
+  } else if (statut === 'certifie') {
+    actionsBlock = `
+      <div class="success-box">
+        🎉 <strong>Félicitations !</strong> Vous avez obtenu la certification <strong>${getCurrentCert()?.name || ''}</strong> par VAE.
+        L'attestation officielle vous sera transmise par la DTEFP.
+        Vos compétences sont désormais inscrites dans votre portefeuille CPU pour 5 ans (Module M4).
+      </div>`;
+  } else if (statut === 'valide_partiel') {
+    actionsBlock = `
+      <div class="warning-box">
+        <strong>Validation partielle</strong> — certains CPUs ont été validés, d'autres non. Un accompagnement post-jury sera proposé :
+        <ul style="margin:8px 0 0 20px; font-size:13px; line-height:1.6">
+          <li>formation complémentaire ciblée (blocs manquants)</li>
+          <li>nouvelle session VAE sur les blocs non validés</li>
+          <li>entretien de conseil avec un organisme de formation référencé</li>
+        </ul>
+      </div>`;
+  } else if (statut === 'non_valide') {
+    actionsBlock = `
+      <div class="danger-box">
+        <strong>Non validation</strong> — vous pouvez redéposer un Livret 2 après renforcement de votre expérience / formation. Droit à recours gracieux dans un délai de 2 mois.
+      </div>`;
+  }
+
+  return `
+    <div class="card">
+      <div class="card-title">🏛 Étape 4 — Jury VAE</div>
+      <div class="card-subtitle">Préparation, convocation, décision. Jury présentiel ou visioconférence (décision validée — les deux modalités sont prévues).</div>
+
+      ${modaliteBlock}
+      ${dateBlock}
+
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">🎯 Préparation au jury</label>
+        <div class="form-sublabel">Cochez les étapes de préparation que vous avez effectuées.</div>
+        ${prepHtml}
+        <div class="progress-label" style="margin-top:12px"><span>Préparation</span><span>${prepCount}/${prepChecks.length}</span></div>
+        <div class="progress-linear"><div class="progress-linear-bar ${prepCount===prepChecks.length?'success':''}" style="width:${Math.round(prepCount/prepChecks.length*100)}%"></div></div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:12px">⏱ Déroulement</h3>
+      ${timelineBlock}
+
+      ${actionsBlock}
+
+      <div class="btn-row">
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Accueil</button>
+        <button class="btn btn-secondary" onclick="goTo('dashboard')">📊 Tableau de bord</button>
+      </div>
+    </div>`;
+}
+
+function decisionLabel(d) {
+  return {
+    validation_totale: '🎓 Validation totale — Certification acquise',
+    validation_partielle: '🏅 Validation partielle — Complément nécessaire',
+    non_validation: '❌ Non validation'
+  }[d] || d;
+}
+
+function setJury(field, value) {
+  const u = loadUserState();
+  if (!u.dossierVAE.jury) u.dossierVAE.jury = {};
+  u.dossierVAE.jury[field] = value;
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function toggleJuryPrep(id) {
+  const u = loadUserState();
+  if (!u.dossierVAE.jury) u.dossierVAE.jury = {};
+  if (!u.dossierVAE.jury.prepChecks) u.dossierVAE.jury.prepChecks = {};
+  u.dossierVAE.jury.prepChecks[id] = !u.dossierVAE.jury.prepChecks[id];
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+function scheduleJury() {
+  const u = loadUserState();
+  u.dossierVAE.statut = 'jury_programme';
+  const futureDate = new Date(Date.now() + 45*24*3600*1000); // +45 jours
+  u.dossierVAE.jury.date = futureDate.toISOString().substr(0,10);
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  alert('✅ Convocation jury programmée pour ' + formatDate(futureDate.toISOString()));
+  render();
+}
+
+function setJuryDecision(d) {
+  const u = loadUserState();
+  u.dossierVAE.jury.decision = d;
+  u.dossierVAE.jury.dateDecision = new Date().toISOString();
+  if (d === 'validation_totale') u.dossierVAE.statut = 'certifie';
+  else if (d === 'validation_partielle') u.dossierVAE.statut = 'valide_partiel';
+  else u.dossierVAE.statut = 'non_valide';
+  u.dossierVAE.dateMAJ = new Date().toISOString();
+  saveUserState(u);
+  state.userData = u;
+  render();
+}
+
+// ============================================================
+// VUE : DASHBOARD / SUIVI
+// ============================================================
+function renderDashboard() {
+  const u = state.userData;
+  const d = u.dossierVAE;
+  const statut = getStatutCurrent();
+  const cert = getCurrentCert();
+
+  // KPIs
+  const piecesUp = countPiecesUploaded();
+  const piecesTot = countPiecesTotal();
+  const fichesDone = countFichesDone();
+  const fichesTot = cert ? cert.cpus.length : 0;
+  const l1Complete = (d.livret1 ? (
+    isL1Section1Done(d.livret1) +
+    (isL1Section2Done(d.livret1) ? 1 : 0) +
+    (isL1Section3Done(d.livret1) ? 1 : 0) +
+    (d.livret1.declarationHonneur1 ? 1 : 0)
+  ) : 0);
+
+  // Countdown 2 mois si Livret 1 déposé
+  let countdown = '';
+  if (d.statut === 'livret1_depose' && d.livret1.dateDepot) {
+    const depot = new Date(d.livret1.dateDepot);
+    const deadline = new Date(depot.getTime() + 60*24*3600*1000);
+    const now = new Date();
+    const daysLeft = Math.max(0, Math.ceil((deadline - now) / (24*3600*1000)));
+    const cls = daysLeft <= 7 ? 'urgent' : (daysLeft <= 30 ? 'warning' : 'ok');
+    countdown = `<div class="delay-badge ${cls}">⏱ Décision attendue sous ${daysLeft} jour${daysLeft>1?'s':''} (échéance ${formatDate(deadline.toISOString())})</div>`;
+  }
+  // Validité recevabilité 3 ans
+  let validityBadge = '';
+  if (d.dateValiditeRecevabilite) {
+    const endDate = new Date(d.dateValiditeRecevabilite);
+    const daysLeft = Math.max(0, Math.ceil((endDate - new Date()) / (24*3600*1000)));
+    const monthsLeft = Math.round(daysLeft / 30);
+    const cls = daysLeft <= 180 ? 'warning' : 'ok';
+    validityBadge = `<div class="delay-badge ${cls}" style="margin-left:8px">🔑 Recevabilité valable encore ${monthsLeft} mois (${formatDate(endDate.toISOString())})</div>`;
+  }
+
+  // Timeline globale du dossier
+  const events = [];
+  events.push({ date: d.dateCreation, title:'Création du dossier', desc:'Dossier initialisé', done:true });
+  if (d.livret1?.dateDepot) events.push({ date: d.livret1.dateDepot, title:'Dépôt du Livret 1', desc:'Envoyé à la DTEFP', done:true });
+  if (d.livret1?.decisionDate) {
+    const lbl = d.statut === 'non_recevable' ? 'Décision : Non recevable' : 'Décision : Recevable ✓';
+    events.push({ date: d.livret1.decisionDate, title: lbl, desc: d.statut === 'recevable' ? 'Possibilité de déposer le Livret 2' : 'Voir motifs', done:true });
+  }
+  if (d.livret2?.dateDepot) events.push({ date: d.livret2.dateDepot, title:'Dépôt du Livret 2', desc:'PAE complète transmise', done:true });
+  if (d.jury?.date && (d.statut==='jury_programme')) events.push({ date: d.jury.date, title:'Jury convoqué', desc: d.jury.modalite==='visio' ? 'Visioconférence' : 'Présentiel', current:true });
+  if (d.jury?.dateDecision) events.push({ date: d.jury.dateDecision, title:'Décision du jury', desc: decisionLabel(d.jury.decision), done:true });
+
+  const timelineHtml = events.length === 0 ? '<div class="form-sublabel">Aucun événement pour l\'instant.</div>' :
+    '<div class="timeline">' + events.map(ev => `
+      <div class="timeline-item ${ev.done?'done':(ev.current?'current':'')}">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">${formatDate(ev.date)}</div>
+        <div class="timeline-title">${ev.title}</div>
+        <div class="timeline-desc">${ev.desc}</div>
+      </div>`).join('') + '</div>';
+
+  return `
+    <div class="card">
+      <div class="card-title">📊 Tableau de bord · Mon dossier VAE</div>
+      <div class="card-subtitle">Vision globale de votre parcours VAE, jalons, délais réglementaires et historique.</div>
+
+      <div class="status-banner ${statut.class}">
+        <div class="status-icon">${statut.icon}</div>
+        <div class="status-body">
+          <div class="status-label">Statut courant</div>
+          <div class="status-title">${statut.label}</div>
+          <div class="status-desc">${statut.desc}</div>
+        </div>
+      </div>
+
+      ${countdown ? `<div style="margin-bottom:16px">${countdown}${validityBadge}</div>` : (validityBadge ? `<div style="margin-bottom:16px">${validityBadge}</div>` : '')}
+
+      ${cert ? `
+        <div class="selected-cert-banner">
+          <span class="cert-icon">🎯</span>
+          <div>
+            <div class="cert-name">${cert.name}</div>
+            <div class="cert-detail">${cert.typeLabel} · Niveau ${cert.level}</div>
+          </div>
+        </div>` : ''}
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-value teal">${l1Complete}/4</div>
+          <div class="kpi-label">Livret 1</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value teal">${fichesDone}/${fichesTot||'–'}</div>
+          <div class="kpi-label">Fiches Livret 2</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value teal">${piecesUp}/${piecesTot}</div>
+          <div class="kpi-label">Pièces chargées</div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:12px">⏱ Historique du dossier</h3>
+      ${timelineHtml}
+
+      <div class="section-divider"></div>
+
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:12px">📅 Jalons réglementaires VAE NC</h3>
+      <div class="info-box" style="margin-bottom:10px">
+        <strong>2 mois</strong> — délai décision de recevabilité par la Section Certification (après dépôt du Livret 1)
+      </div>
+      <div class="info-box" style="margin-bottom:10px">
+        <strong>3 ans</strong> — durée de validité d'une décision de recevabilité
+      </div>
+      <div class="info-box" style="margin-bottom:10px">
+        <strong>3 mois</strong> — convocation du jury après dépôt du Livret 2 (indicatif)
+      </div>
+      <div class="info-box" style="margin-bottom:10px">
+        <strong>5 ans</strong> — durée de validité d'une unité capitalisable acquise (gérée dans Module M4)
+      </div>
+
+      <div class="section-divider"></div>
+
+      <h3 style="font-size:15px; color:var(--navy); margin-bottom:12px">🔗 Actions</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+        <button class="btn btn-secondary btn-sm" onclick="goTo('preparer')">📋 Préparer</button>
+        <button class="btn btn-secondary btn-sm" onclick="goTo('livret1')">📝 Livret 1</button>
+        <button class="btn btn-secondary btn-sm" onclick="goTo('livret2')">📖 Livret 2</button>
+        <button class="btn btn-secondary btn-sm" onclick="goTo('jury')">🏛 Jury</button>
+        <button class="btn btn-gray btn-sm" onclick="goTo('pieces')" style="grid-column:1/-1">📎 Pièces</button>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="chat-zone">
+        <div class="chat-avatar">GI</div>
+        <div class="chat-bubble">
+          <strong>Conseiller VAE / Architecte de parcours</strong> — un chat intégré permettra (v1) d'échanger avec votre conseiller et votre expert métier. Fonctionnalité prévue dans les prochaines versions du LMS.
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="warning-box">
+        <strong>🧪 Outils développeur (simulation)</strong><br>
+        <button class="btn btn-gray btn-sm mt-16" onclick="resetDossier()">🗑 Réinitialiser le dossier VAE</button>
+        <button class="btn btn-gray btn-sm mt-16" onclick="loadDemoDiagnostic()" style="margin-left:6px">⚡ Charger diagnostic M1 démo</button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-gray" onclick="goTo('accueil')">← Accueil</button>
+      </div>
+    </div>`;
+}
+
+function triggerImportM1() {
+  document.getElementById('m1-import-input').click();
+}
+
+function importDossierM1(evt) {
+  const file = evt.target.files && evt.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    let parsed;
+    try { parsed = JSON.parse(e.target.result); }
+    catch (err) { alert('Fichier illisible : ce n\'est pas un dossier JSON valide.'); return; }
+    if (!parsed || !parsed._meta || parsed._meta.format !== 'rcpnc-dossier-parcours') {
+      alert('Ce fichier n\'est pas un dossier de parcours RCP-NC.'); return;
+    }
+    if (!parsed.diagnostic || !parsed.diagnostic.cert) {
+      alert('Le fichier ne contient pas de diagnostic M1 exploitable.'); return;
+    }
+    const u = loadUserState();
+    u.diagnostic = parsed.diagnostic;
+    if (parsed.dossierVAE) u.dossierVAE = parsed.dossierVAE;
+
+    const from = parsed._meta.exportedFrom;
+    const phase = parsed._meta.phase;
+    let msg = '';
+    if (from === 'SAS_conseiller' && phase === 'parcours_validé') {
+      if (!parsed.validation) {
+        alert('Dossier SAS_conseiller mal formé : bloc validation manquant.'); return;
+      }
+      u.validation = parsed.validation;
+      if (parsed.candidat_dispos) u.candidat_dispos = parsed.candidat_dispos;
+      if (!u.dossierVAE) u.dossierVAE = { livret1:{ identite:{}, experiences:[], diplomes:[] }, pieces:{}, statut:'brouillon', etape:1 };
+      if (!u.dossierVAE.livret1) u.dossierVAE.livret1 = { identite:{}, experiences:[], diplomes:[] };
+      const cv = parsed.validation.certification_visee;
+      if (cv && cv.id) u.dossierVAE.certificationId = cv.id;
+      const pre = parsed.validation.livret_1_prerempli;
+      if (pre && pre.identite) {
+        u.dossierVAE.livret1.identite = Object.assign({}, u.dossierVAE.livret1.identite, pre.identite);
+      }
+      msg = 'Dossier validé par conseiller importé : ' + (cv && cv.name ? cv.name : parsed.diagnostic.cert.name);
+    } else {
+      msg = 'Dossier M1 importé : ' + (parsed.diagnostic.cert.name || 'certification inconnue');
+    }
+
+    saveUserState(u);
+    state.userData = u;
+    evt.target.value = '';
+    alert(msg);
+    render();
+  };
+  reader.readAsText(file);
+}
+
+function resetDossier() {
+  if (!confirm('Réinitialiser complètement le dossier VAE ? (le diagnostic M1 est conservé)')) return;
+  const u = loadUserState();
+  delete u.dossierVAE;
+  saveUserState(u);
+  state.userData = initDossier();
+  state.currentView = 'accueil';
+  render();
+}
+
+
+function downloadDossierM2() {
+  const u = loadUserState();
+  if (!u || !u.diagnostic) {
+    alert('Aucun dossier à exporter. Importez d\'abord votre dossier M1.'); return;
+  }
+  const dossier = {
+    _meta: {
+      format: RCPNC_ENUMS.FORMAT,
+      version: RCPNC_ENUMS.VERSION,
+      exportedFrom: 'M2',
+      exportedAt: new Date().toISOString(),
+      phase: 'dossier_vae'
+    },
+    diagnostic: u.diagnostic
+  };
+  if (u.candidat_dispos) dossier.candidat_dispos = u.candidat_dispos;
+  if (u.validation) dossier.validation = u.validation;
+  if (u.dossierVAE) dossier.dossierVAE = u.dossierVAE;
+  const blob = new Blob([JSON.stringify(dossier, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'dossier-parcours-RCPNC.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+}
+
+// Démarrage
+document.addEventListener('DOMContentLoaded', render);
+</script>
+</body>
+</html>
