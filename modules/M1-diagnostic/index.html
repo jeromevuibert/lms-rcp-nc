@@ -2555,11 +2555,15 @@ function renderStep() {
 
 let _prevStep = -1;
 function render() {
+  console.log('[LMS-DEBUG] render() appelé — step:', state.currentStep, '| _prevStep:', _prevStep, '| scrollY avant:', window.scrollY, '| stack:', new Error().stack.split('\n')[2]);
   renderProgressBar();
   renderStep();
   if (state.currentStep !== _prevStep) {
+    console.log('[LMS-DEBUG] ✅ scrollTo(0,0) déclenché — changement de step', _prevStep, '→', state.currentStep);
     window.scrollTo(0, 0);
     _prevStep = state.currentStep;
+  } else {
+    console.log('[LMS-DEBUG] ⚠️ render() sans scroll — même step. scrollY après renderStep:', window.scrollY);
   }
 }
 
