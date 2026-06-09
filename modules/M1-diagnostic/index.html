@@ -275,7 +275,12 @@
     font-size: 14px; font-weight: 700; color: var(--navy);
     border-bottom: 1px solid var(--gray-light);
     display: flex; align-items: center; gap: 10px;
+    cursor: pointer; user-select: none;
   }
+  .cpu-block-title::after { content: ' ▶'; font-size: 10px; color: var(--gray); margin-left: auto; flex-shrink: 0; }
+  .cpu-block-title.open::after { content: ' ▼'; }
+  .cpu-activities { display: none; }
+  .cpu-activities.open { display: block; }
   .cpu-num {
     background: var(--teal); color: white;
     width: 24px; height: 24px; border-radius: 6px;
@@ -2555,15 +2560,11 @@ function renderStep() {
 
 let _prevStep = -1;
 function render() {
-  console.log('[LMS-DEBUG] render() appelé — step:', state.currentStep, '| _prevStep:', _prevStep, '| scrollY avant:', window.scrollY, '| stack:', new Error().stack.split('\n')[2]);
   renderProgressBar();
   renderStep();
   if (state.currentStep !== _prevStep) {
-    console.log('[LMS-DEBUG] ✅ scrollTo(0,0) déclenché — changement de step', _prevStep, '→', state.currentStep);
     window.scrollTo(0, 0);
     _prevStep = state.currentStep;
-  } else {
-    console.log('[LMS-DEBUG] ⚠️ render() sans scroll — même step. scrollY après renderStep:', window.scrollY);
   }
 }
 
@@ -2990,12 +2991,13 @@ function renderAssessment() {
     </div>
     <div class="assessment-progress-label">${answered} / ${total} ${itemLabel} évaluées (${pct}%)</div>
 
-    ${cpus.cpus.map(cpu => `
+    ${cpus.cpus.map((cpu, cpuIdx) => `
       <div class="cpu-block">
-        <div class="cpu-block-title">
+        <div class="cpu-block-title ${cpuIdx === 0 ? 'open' : ''}" onclick="toggleCpu(this)">
           <div class="cpu-num">C${cpu.id.replace('c','')}</div>
           ${cpu.title}
         </div>
+        <div class="cpu-activities ${cpuIdx === 0 ? 'open' : ''}">
         ${cpu.activities.map(act => {
           if (act.skills && act.skills.length > 0) {
             return `
@@ -3039,6 +3041,7 @@ function renderAssessment() {
           </div>`;
           }
         }).join('')}
+        </div>
       </div>`).join('')}
 
     <div class="btn-row">
@@ -3434,6 +3437,12 @@ function setAnswer(actId, value) {
       nextBtn.textContent = answered < total ? `Évaluez encore ${total - answered} ${iLabel}` : 'Voir mes résultats →';
     }
   }
+}
+function toggleCpu(titleEl) {
+  const block = titleEl.parentElement;
+  const activities = block.querySelector('.cpu-activities');
+  titleEl.classList.toggle('open');
+  activities.classList.toggle('open');
 }
 function skipToResults() {
   state.currentStep = 5;
