@@ -213,6 +213,13 @@
     font-size: 10px; font-weight: 700; background: var(--gray-light); color: var(--gray);
     margin-left: 8px;
   }
+  .vae-chip {
+    display: inline-block; padding: 2px 7px; border-radius: 4px;
+    font-size: 10px; font-weight: 700; margin-left: 6px; white-space: nowrap;
+  }
+  .vae-chip.vae-non { background: #fdecea; color: #c62828; }
+  .vae-chip.vae-part { background: #fff8e1; color: #e65100; }
+  .vae-chip.vae-conf { background: #eceff1; color: #546e7a; }
   .no-results { text-align: center; padding: 32px; color: var(--gray); font-size: 14px; }
 
   /* EXPERIENCE FORM */
@@ -662,34 +669,34 @@ const certifications = [
   { id: 'nc-12', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Accompagnateur de sortie pédestre', level: 3, hasCpus: true },
   { id: 'nc-13', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Animateur tout public', level: 3, hasCpus: true },
   { id: 'nc-14', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Intervenant artistique et culturel', level: 4, hasCpus: true },
-  { id: 'nc-15', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Guide de randonnée équestre', level: 4, hasCpus: true },
+  { id: 'nc-15', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Guide de randonnée équestre', level: 4, hasCpus: true, vae: 'confirmer' },
   { id: 'nc-16', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Guide de randonnée pédestre', level: 4, hasCpus: true },
   { id: 'nc-17', type: 'NC', cat: 'Tourisme Sport Loisirs', name: 'Exploitant de petite structure touristique', level: 4, hasCpus: true },
   { id: 'nc-18', type: 'NC', cat: 'Industrie Mines', name: 'Opérateur sur chargeuse et bouteur dans une exploitation minière (OCBEM)', level: 3, hasCpus: true },
   { id: 'nc-19', type: 'NC', cat: 'Industrie Mines', name: 'Opérateur sur pelle hydraulique dans une exploitation minière (OPHEM)', level: 3, hasCpus: true },
   { id: 'nc-20', type: 'NC', cat: 'Industrie Mines', name: 'Opérateur sur tombereau dans une exploitation minière (OTEM)', level: 3, hasCpus: true },
   { id: 'nc-21', type: 'NC', cat: 'Industrie Mines', name: 'Opérateur sur camion de roulage de descente de mine (OCRDM)', level: 3, hasCpus: true },
-  { id: 'nc-22', type: 'NC', cat: 'Installation Maintenance', name: 'Agent de maintenance des automates bancaires', level: 3, hasCpus: true },
-  { id: 'nc-23', type: 'NC', cat: 'Compétences clés', name: 'Certificat de compétences essentielles (CCE)', level: 1, hasCpus: true },
+  { id: 'nc-22', type: 'NC', cat: 'Installation Maintenance', name: 'Agent de maintenance des automates bancaires', level: 3, hasCpus: true, vae: 'non' },
+  { id: 'nc-23', type: 'NC', cat: 'Compétences clés', name: 'Certificat de compétences essentielles (CCE)', level: 1, hasCpus: true, vae: 'confirmer' },
   { id: 'nc-24', type: 'NC', cat: 'Santé', name: 'Aide-soignant (version 2019)', level: 3, hasCpus: true },
   { id: 'nc-25', type: 'NC', cat: 'Santé', name: 'Auxiliaire de puériculture', level: 3, hasCpus: true },
-  { id: 'nc-26', type: 'NC', cat: 'Santé', name: 'Ambulancier (version 2024)', level: 3, hasCpus: true },
+  { id: 'nc-26', type: 'NC', cat: 'Santé', name: 'Ambulancier (version 2024)', level: 3, hasCpus: true, vae: 'partielle' },
   { id: 'nc-27', type: 'NC', cat: 'Santé', name: 'Assistante dentaire (version 2022)', level: 4, hasCpus: true },
   { id: 'nc-28', type: 'NC', cat: 'Services Personnes', name: 'Accompagnatrice de vie (version 2025)', level: 3, hasCpus: true },
   { id: 'nc-29', type: 'NC', cat: 'Services Personnes', name: 'Auxiliaire d\'autonomie (version 2025)', level: 3, hasCpus: true },
-  { id: 'nc-30', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sécurité privé qualifié (version 2024)', level: 3, hasCpus: true },
-  { id: 'nc-31', type: 'NC', cat: 'Sécurité Surveillance', name: 'Convoyeur de valeurs', level: 3, hasCpus: true },
-  { id: 'nc-32', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sécurité renforcée armé', level: 3, hasCpus: true },
-  { id: 'nc-33', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sûreté aéroportuaire', level: 4, hasCpus: true },
+  { id: 'nc-30', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sécurité privé qualifié (version 2024)', level: 3, hasCpus: true, vae: 'non' },
+  { id: 'nc-31', type: 'NC', cat: 'Sécurité Surveillance', name: 'Convoyeur de valeurs', level: 3, hasCpus: true, vae: 'non' },
+  { id: 'nc-32', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sécurité renforcée armé', level: 3, hasCpus: true, vae: 'non' },
+  { id: 'nc-33', type: 'NC', cat: 'Sécurité Surveillance', name: 'Agent de sûreté aéroportuaire', level: 4, hasCpus: true, vae: 'non' },
   { id: 'nc-34', type: 'NC', cat: 'Services Personnes', name: 'Moniteur éducateur', level: 4, hasCpus: true },
   { id: 'nc-35', type: 'NC', cat: 'Administratif RH', name: 'Encadrant technique et pédagogique en insertion professionnelle', level: 4, hasCpus: true },
-  { id: 'nc-36', type: 'NC', cat: 'Sécurité Surveillance', name: 'Opérateur en centre de télésurveillance', level: 4, hasCpus: true },
-  { id: 'nc-37', type: 'NC', cat: 'Sécurité Surveillance', name: 'Opérateur en centre de vidéo-protection', level: 4, hasCpus: true },
+  { id: 'nc-36', type: 'NC', cat: 'Sécurité Surveillance', name: 'Opérateur en centre de télésurveillance', level: 4, hasCpus: true, vae: 'non' },
+  { id: 'nc-37', type: 'NC', cat: 'Sécurité Surveillance', name: 'Opérateur en centre de vidéo-protection', level: 4, hasCpus: true, vae: 'non' },
   { id: 'nc-38', type: 'NC', cat: 'Administratif RH', name: 'Formateur d\'adultes', level: 5, hasCpus: false },
-  { id: 'nc-39', type: 'NC', cat: 'Administratif RH', name: 'Formateur à la conduite automobile et à la sécurité routière', level: 5, hasCpus: true },
+  { id: 'nc-39', type: 'NC', cat: 'Administratif RH', name: 'Formateur à la conduite automobile et à la sécurité routière', level: 5, hasCpus: true, vae: 'non' },
   { id: 'nc-40', type: 'NC', cat: 'Services Personnes', name: 'Éducateur en milieu scolaire', level: 5, hasCpus: true },
-  { id: 'nc-41', type: 'NC', cat: 'Sécurité Surveillance', name: 'Dirigeant d\'entreprise de sécurité privée', level: 5, hasCpus: false },
-  { id: 'nc-42', type: 'NC', cat: 'Support Entreprise', name: 'Agent de traitement de valeurs', level: 3, hasCpus: true },
+  { id: 'nc-41', type: 'NC', cat: 'Sécurité Surveillance', name: 'Dirigeant d\'entreprise de sécurité privée', level: 5, hasCpus: false, vae: 'non' },
+  { id: 'nc-42', type: 'NC', cat: 'Support Entreprise', name: 'Agent de traitement de valeurs', level: 3, hasCpus: true, vae: 'confirmer' },
   { id: 'nc-43', type: 'NC', cat: 'Support Entreprise', name: 'Encadrant d\'équipe', level: 4, hasCpus: false },
   { id: 'nc-44', type: 'NC', cat: 'Support Entreprise', name: 'Assistant médico-socio-administratif', level: 4, hasCpus: true },
   { id: 'nc-45', type: 'NC', cat: 'Support Entreprise', name: 'Manager de proximité dans le secteur public', level: 5, hasCpus: true },
@@ -711,40 +718,40 @@ const certifications = [
   { id: 'etat-13', type: 'ÉTAT', cat: 'Agriculture', name: 'Bac pro Conduite et gestion de l\'exploitation agricole', level: 4, hasCpus: false },
   { id: 'etat-14', type: 'ÉTAT', cat: 'Agriculture', name: 'Bac pro Aménagements paysagers', level: 4, hasCpus: false },
   { id: 'etat-15', type: 'ÉTAT', cat: 'Agriculture', name: 'BTSA Développement de l\'agriculture des régions chaudes (DARC)', level: 5, hasCpus: false },
-  { id: 'etat-16', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien', level: 7, hasCpus: false },
-  { id: 'etat-17', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien', level: 7, hasCpus: false },
-  { id: 'etat-18', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine', level: 7, hasCpus: false },
-  { id: 'etat-19', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second capitaine', level: 7, hasCpus: false },
-  { id: 'etat-20', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet d\'officier chef de quart passerelle', level: 6, hasCpus: false },
-  { id: 'etat-21', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet d\'officier de quart machine', level: 6, hasCpus: false },
-  { id: 'etat-22', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 3000', level: 6, hasCpus: false },
-  { id: 'etat-23', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 3000 yacht', level: 6, hasCpus: false },
-  { id: 'etat-24', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien 8000 kW', level: 6, hasCpus: false },
-  { id: 'etat-25', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 8000 kW', level: 6, hasCpus: false },
-  { id: 'etat-26', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second capitaine 3000', level: 6, hasCpus: false },
-  { id: 'etat-27', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine de pêche', level: 6, hasCpus: false },
-  { id: 'etat-28', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 yacht', level: 3, hasCpus: false },
-  { id: 'etat-29', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200', level: 3, hasCpus: false },
-  { id: 'etat-30', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de matelot pont', level: 3, hasCpus: false },
-  { id: 'etat-31', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 pêche', level: 3, hasCpus: false },
-  { id: 'etat-32', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de mécanicien 250 kW', level: 3, hasCpus: false },
-  { id: 'etat-33', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de matelot de quart passerelle', level: 3, hasCpus: false },
+  { id: 'etat-16', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien', level: 7, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-17', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien', level: 7, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-18', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine', level: 7, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-19', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second capitaine', level: 7, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-20', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet d\'officier chef de quart passerelle', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-21', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet d\'officier de quart machine', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-22', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 3000', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-23', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 3000 yacht', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-24', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien 8000 kW', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-25', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 8000 kW', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-26', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second capitaine 3000', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-27', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine de pêche', level: 6, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-28', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 yacht', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-29', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-30', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de matelot pont', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-31', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 pêche', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-32', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de mécanicien 250 kW', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-33', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de matelot de quart passerelle', level: 3, hasCpus: false, vae: 'confirmer' },
   { id: 'etat-34', type: 'ÉTAT', cat: 'Installation Maintenance', name: 'Certificat de mécanicien', level: 3, hasCpus: false },
   { id: 'etat-35', type: 'ÉTAT', cat: 'Installation Maintenance', name: 'Certificat de mécanicien de quart machine', level: 3, hasCpus: false },
-  { id: 'etat-36', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de marin qualifié pont', level: 3, hasCpus: false },
-  { id: 'etat-37', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de marin qualifié machine', level: 3, hasCpus: false },
-  { id: 'etat-38', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat d\'aptitude au commandement à la petite pêche', level: 3, hasCpus: false },
-  { id: 'etat-39', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 500', level: 4, hasCpus: false },
-  { id: 'etat-40', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 voile', level: 4, hasCpus: false },
-  { id: 'etat-41', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 500 yacht', level: 4, hasCpus: false },
-  { id: 'etat-42', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef de quart 500', level: 4, hasCpus: false },
-  { id: 'etat-43', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de mécanicien 750 kW', level: 4, hasCpus: false },
-  { id: 'etat-44', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef de quart 500 yacht', level: 4, hasCpus: false },
-  { id: 'etat-45', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de lieutenant de pêche', level: 4, hasCpus: false },
-  { id: 'etat-46', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien 3000 kW', level: 5, hasCpus: false },
-  { id: 'etat-47', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 3000 kW', level: 5, hasCpus: false },
-  { id: 'etat-48', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de patron de pêche', level: 5, hasCpus: false },
-  { id: 'etat-49', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 3000 kW limité 200 milles', level: 5, hasCpus: false },
+  { id: 'etat-36', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de marin qualifié pont', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-37', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat de marin qualifié machine', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-38', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Certificat d\'aptitude au commandement à la petite pêche', level: 3, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-39', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 500', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-40', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 200 voile', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-41', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de capitaine 500 yacht', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-42', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef de quart 500', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-43', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de mécanicien 750 kW', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-44', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef de quart 500 yacht', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-45', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de lieutenant de pêche', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-46', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de second mécanicien 3000 kW', level: 5, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-47', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 3000 kW', level: 5, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-48', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de patron de pêche', level: 5, hasCpus: false, vae: 'confirmer' },
+  { id: 'etat-49', type: 'ÉTAT', cat: 'Transport Logistique', name: 'Brevet de chef mécanicien 3000 kW limité 200 milles', level: 5, hasCpus: false, vae: 'confirmer' },
   { id: 'etat-50', type: 'ÉTAT', cat: 'Restauration', name: 'CAP Cuisine', level: 3, hasCpus: true },
   { id: 'etat-51', type: 'ÉTAT', cat: 'Commerce Vente', name: 'CAP Équipier polyvalent du commerce', level: 3, hasCpus: true },
   { id: 'etat-52', type: 'ÉTAT', cat: 'BTP', name: 'CAP Charpentier bois', level: 3, hasCpus: false },
@@ -840,7 +847,7 @@ const certifications = [
   { id: 'etat-142', type: 'ÉTAT', cat: 'Administratif RH', name: 'BTS Comptabilité et gestion', level: 5, hasCpus: false },
   { id: 'etat-143', type: 'ÉTAT', cat: 'BTP', name: 'BTS Bâtiment', level: 5, hasCpus: false },
   { id: 'etat-144', type: 'ÉTAT', cat: 'Propreté Hygiène Environnement', name: 'BTS Métiers des services à l\'environnement', level: 5, hasCpus: false },
-  { id: 'etat-145', type: 'ÉTAT', cat: 'Santé', name: 'Diplôme d\'État d\'infirmier', level: 6, hasCpus: false },
+  { id: 'etat-145', type: 'ÉTAT', cat: 'Santé', name: 'Diplôme d\'État d\'infirmier', level: 6, hasCpus: false, vae: 'non' },
   { id: 'tp-01', type: 'TP', cat: 'Numérique', name: 'TP Concepteur designer UI et webdesign', level: 6, hasCpus: true },
   { id: 'tp-02', type: 'TP', cat: 'BTP', name: 'TP Charpentier bois', level: 3, hasCpus: true },
   { id: 'tp-03', type: 'TP', cat: 'BTP', name: 'TP Agent de maintenance du bâtiment', level: 3, hasCpus: true },
@@ -868,7 +875,7 @@ const certifications = [
   { id: 'tp-25', type: 'TP', cat: 'Administratif RH', name: 'TP Assistant de direction', level: 5, hasCpus: true },
   { id: 'tp-26', type: 'TP', cat: 'Numérique', name: 'TP Technicien supérieur en automatique et informatique industrielle', level: 5, hasCpus: true },
   { id: 'tp-27', type: 'TP', cat: 'Administratif RH', name: 'TP Conseiller(ère) en insertion professionnelle', level: 5, hasCpus: true },
-  { id: 'etat-146', type: 'ÉTAT', cat: 'Santé', name: 'DEUST Préparateur/technicien en pharmacie', level: 5, hasCpus: true },
+  { id: 'etat-146', type: 'ÉTAT', cat: 'Santé', name: 'DEUST Préparateur/technicien en pharmacie', level: 5, hasCpus: true, vae: 'confirmer' },
   { id: 'etat-147', type: 'ÉTAT', cat: 'Support Entreprise', name: 'Master Management et administration des entreprises', level: 7, hasCpus: true },
   { id: 'etat-148', type: 'ÉTAT', cat: 'Études supérieures', name: 'Master Science de la durabilité', level: 7, hasCpus: true },
   { id: 'etat-149', type: 'ÉTAT', cat: 'Administratif RH', name: 'Master MEEF -- Pratiques et ingénierie de formation', level: 7, hasCpus: true },
@@ -902,20 +909,20 @@ const certifications = [
   { id: 'etat-177', type: 'ÉTAT', cat: 'Études supérieures', name: 'Capacité en droit', level: 4, hasCpus: true },
   { id: 'etat-178', type: 'ÉTAT', cat: 'Études supérieures', name: 'Diplôme d\'accès aux études universitaires (DAEU)', level: 4, hasCpus: false },
   { id: 'etat-179', type: 'ÉTAT', cat: 'Industrie Mines', name: 'DEUST Géosciences appliquées mines, eau et environnement', level: 5, hasCpus: true },
-  { id: 'autre-01', type: 'AUTRE', cat: 'Banque Assurance', name: 'Responsable d\'unité bancaire', level: 7, hasCpus: false },
-  { id: 'autre-02', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller clientèle multicanal de particuliers en banque-assurance', level: 6, hasCpus: true },
-  { id: 'autre-03', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller patrimonial agence', level: 6, hasCpus: true },
-  { id: 'autre-04', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller bancaire clientèle de professionnels', level: 6, hasCpus: true },
-  { id: 'autre-05', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller de clientèle de particuliers banque et assurance', level: 6, hasCpus: true },
-  { id: 'autre-06', type: 'AUTRE', cat: 'Commerce Vente', name: 'Vendeur conseiller commercial', level: 4, hasCpus: true },
-  { id: 'autre-07', type: 'AUTRE', cat: 'Numérique', name: 'Concepteur réalisateur en communication', level: 6, hasCpus: true },
-  { id: 'autre-08', type: 'AUTRE', cat: 'Tourisme Sport Loisirs', name: 'Moniteur sportif de natation', level: 4, hasCpus: true },
-  { id: 'autre-09', type: 'AUTRE', cat: 'Tourisme Sport Loisirs', name: 'Moniteur de football', level: 4, hasCpus: true },
-  { id: 'autre-10', type: 'AUTRE', cat: 'Administratif RH', name: 'Diplôme d\'université de formateur d\'adultes (DUFA)', level: 5, hasCpus: false },
-  { id: 'autre-11', type: 'AUTRE', cat: 'Support Entreprise', name: 'Management et gestion des organisations', level: 7, hasCpus: true },
-  { id: 'autre-12', type: 'AUTRE', cat: 'Support Entreprise', name: 'Responsable paie et administration des ressources humaines', level: 6, hasCpus: true },
-  { id: 'autre-13', type: 'AUTRE', cat: 'Support Entreprise', name: 'Adjoint de dirigeant d\'entreprise artisanale', level: 4, hasCpus: false },
-  { id: 'cqp-01', type: 'CQP', cat: 'BTP', name: 'CQP Cordiste niveau 1', level: 3, hasCpus: false },
+  { id: 'autre-01', type: 'AUTRE', cat: 'Banque Assurance', name: 'Responsable d\'unité bancaire', level: 7, hasCpus: false, vae: 'confirmer' },
+  { id: 'autre-02', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller clientèle multicanal de particuliers en banque-assurance', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-03', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller patrimonial agence', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-04', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller bancaire clientèle de professionnels', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-05', type: 'AUTRE', cat: 'Banque Assurance', name: 'Conseiller de clientèle de particuliers banque et assurance', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-06', type: 'AUTRE', cat: 'Commerce Vente', name: 'Vendeur conseiller commercial', level: 4, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-07', type: 'AUTRE', cat: 'Numérique', name: 'Concepteur réalisateur en communication', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-08', type: 'AUTRE', cat: 'Tourisme Sport Loisirs', name: 'Moniteur sportif de natation', level: 4, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-09', type: 'AUTRE', cat: 'Tourisme Sport Loisirs', name: 'Moniteur de football', level: 4, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-10', type: 'AUTRE', cat: 'Administratif RH', name: 'Diplôme d\'université de formateur d\'adultes (DUFA)', level: 5, hasCpus: false, vae: 'confirmer' },
+  { id: 'autre-11', type: 'AUTRE', cat: 'Support Entreprise', name: 'Management et gestion des organisations', level: 7, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-12', type: 'AUTRE', cat: 'Support Entreprise', name: 'Responsable paie et administration des ressources humaines', level: 6, hasCpus: true, vae: 'confirmer' },
+  { id: 'autre-13', type: 'AUTRE', cat: 'Support Entreprise', name: 'Adjoint de dirigeant d\'entreprise artisanale', level: 4, hasCpus: false, vae: 'confirmer' },
+  { id: 'cqp-01', type: 'CQP', cat: 'BTP', name: 'CQP Cordiste niveau 1', level: 3, hasCpus: false, vae: 'confirmer' },
   { id: 'cqp-02', type: 'CQP', cat: 'BTP', name: 'CQP Assistant hygiène sécurité environnement', level: 4, hasCpus: false },
   { id: 'cqp-04', type: 'CQP', cat: 'Installation Maintenance', name: 'CQP Mécanicien(ne) spécialiste automobile', level: 3, hasCpus: false },
 ];
@@ -2530,7 +2537,7 @@ const sectors = [
   { id: 'transport', emoji: '🚛', label: 'Transport & Logistique', desc: 'Conducteur PL, logistique d\'entrepôt, maritime, pêche...', cats: ['Transport Logistique', 'Agriculture'] },
   { id: 'numerique', emoji: '💻', label: 'Numérique & Informatique', desc: 'Technicien informatique, développeur web, designer, réseaux...', cats: ['Numérique'] },
   { id: 'admin', emoji: '📋', label: 'Administratif, RH & Management', desc: 'Secrétaire, assistant RH, manager de proximité, formateur...', cats: ['Administratif RH', 'Support Entreprise', 'Banque Assurance'] },
-  { id: 'cce', emoji: '🌱', label: 'Compétences essentielles (CCE / SPOT)', desc: 'Premier pas vers la qualification — sans prérequis', cats: ['Compétences clés'] },
+  { id: 'cce', emoji: '🌱', label: 'Compétences essentielles (CCE)', desc: 'Premier pas vers la qualification — sans prérequis', cats: ['Compétences clés'] },
   { id: 'etudes', emoji: '🎓', label: 'Études supérieures / Université', desc: 'Licences, Masters, DAEU, Capacité droit — diplômes universitaires généralistes', cats: ['Études supérieures'] },
   { id: 'securite', emoji: '🛡️', label: 'Sécurité & Surveillance', desc: 'Agent de sécurité, surveillance, télésurveillance, vidéo-protection, sûreté aéroportuaire...', cats: ['Sécurité Surveillance'] },
   { id: 'proprete', emoji: '🧹', label: 'Propreté & Environnement', desc: 'Agent de propreté, hygiène, blanchisserie/pressing, services à l\'environnement...', cats: ['Propreté Hygiène Environnement'] },
@@ -2659,6 +2666,42 @@ function renderProfile() {
   </div>`;
 }
 
+function vaeChipHtml(c) {
+  if (c.vae === 'non') return '<span class="vae-chip vae-non">VAE : non</span>';
+  if (c.vae === 'partielle') return '<span class="vae-chip vae-part">VAE partielle</span>';
+  if (c.vae === 'confirmer') return '<span class="vae-chip vae-conf">VAE : \u00e0 confirmer</span>';
+  return '';
+}
+
+function vaeSelectedNotice(c) {
+  if (!c || !c.vae) return '';
+  if (c.vae === 'non') return `
+    <div style="background:#fdecea;border:2px solid #e57373;border-radius:10px;padding:14px 16px;margin-top:10px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">⛔</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#c62828;margin-bottom:4px;">Voie VAE fermée pour cette certification</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">La fiche officielle du RCP-NC n'ouvre pas l'accès par la VAE (métier réglementé ou choix du certificateur). <strong>Vous pouvez quand même faire le diagnostic</strong> : il cartographie vos acquis et servira à préparer une entrée en formation ou un parcours AFEST.</div>
+      </div>
+    </div>`;
+  if (c.vae === 'partielle') return `
+    <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-top:10px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">⚠️</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">VAE partielle</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">Seule une partie de cette certification est accessible par la VAE selon la fiche officielle du RCP-NC. Un conseiller précisera le périmètre avant d'engager la démarche.</div>
+      </div>
+    </div>`;
+  if (c.vae === 'confirmer') return `
+    <div style="background:#eceff1;border:2px solid #b0bec5;border-radius:10px;padding:14px 16px;margin-top:10px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">ℹ️</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#546e7a;margin-bottom:4px;">Accessibilité VAE à confirmer</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">La fiche officielle ne précise pas la voie VAE pour cette certification. Vérifiez auprès du certificateur avant d'engager une démarche VAE.</div>
+      </div>
+    </div>`;
+  return '';
+}
+
 function renderCertification() {
   // === PHASE 1 : Choix du secteur ===
   if (!state.selectedSector) {
@@ -2706,7 +2749,7 @@ function renderCertification() {
       <div class="cert-item ${isSelected ? 'selected' : ''}" onclick="selectCert('${c.id}')">
         <div class="cert-badge ${badgeClass}">${c.type}</div>
         <div class="cert-info">
-          <div class="cert-name">${c.name} <span class="cert-level">Niv. ${c.level}</span></div>
+          <div class="cert-name">${c.name} <span class="cert-level">Niv. ${c.level}</span>${vaeChipHtml(c)}</div>
           <div class="cert-meta">${c.cat}</div>
         </div>
         ${isSelected ? '<span>✅</span>' : ''}
@@ -2761,7 +2804,7 @@ function renderCertification() {
         <div class="cert-name">${state.selectedCert.name}</div>
         <div class="cert-detail">${state.selectedCert.type} · Niveau ${state.selectedCert.level} · ${state.selectedCert.cat}</div>
       </div>
-    </div>` : ''}
+    </div>${vaeSelectedNotice(state.selectedCert)}` : ''}
 
     <div class="btn-row">
       <button type="button" class="btn btn-gray" onclick="clearSector()">← Secteurs</button>
@@ -2822,7 +2865,7 @@ function renderExperience() {
       <label class="form-sublabel">Cette information permet d\'adapter le parcours proposé à votre point de départ réel.</label>
       <div class="radio-group">
         ${[
-          { id: 'no_qual', label: 'Sorti(e) du système scolaire sans diplôme ou qualification', icon: '📌', tag: 'Public SPOT / CCE prioritaire' },
+          { id: 'no_qual', label: 'Sorti(e) du système scolaire sans diplôme ou qualification', icon: '📌', tag: 'Public CCE prioritaire' },
           { id: 'cap_bep', label: 'CAP, BEP, ou autre certification de niveau 3', icon: '📜', tag: null },
           { id: 'bac', label: 'Baccalauréat ou certification de niveau 4', icon: '🎒', tag: null },
           { id: 'sup', label: 'BTS, Licence ou niveau supérieur', icon: '🎓', tag: null },
@@ -3173,9 +3216,9 @@ function renderResults() {
   const orientationConfig = {
     spot: {
       emoji: '🌱', type: 'spot',
-      label: 'SPOT + Certificat de Compétences Essentielles',
-      title: 'Parcours SPOT / CCE suggéré',
-      desc: 'Votre profil suggère de sécuriser d\'abord les compétences essentielles avant d\'entrer en parcours FEST ou VAE. Le SPOT et le CCE (Niveau 1, RCP-NC) constituent l\'étape préalable recommandée vers la certification visée. <strong>Cette suggestion sera confirmée avec un conseiller et un architecte de parcours.</strong>',
+      label: 'Certificat de Compétences Essentielles (CCE)',
+      title: 'Certification CCE suggérée',
+      desc: 'Votre profil suggère de viser d\'abord le <strong>Certificat de Compétences Essentielles</strong> (CCE, niveau 1 RCP-NC) : 12 compétences transversales indispensables à une insertion professionnelle durable. Ce socle vous permettra ensuite d\'accéder à un emploi ou de vous engager dans un parcours qualifiant vers la certification visée. <strong>Cette suggestion sera confirmée avec un conseiller et un architecte de parcours.</strong>',
     },
     hybride: {
       emoji: '🔄', type: 'hybride',
@@ -3195,6 +3238,12 @@ function renderResults() {
       title: 'Parcours VAE suggéré',
       desc: 'Votre niveau de maîtrise et votre expérience semblent favorables à une démarche VAE directe. <strong>Cette orientation est une suggestion — elle sera validée avec un conseiller et un architecte de parcours qui affineront votre plan de parcours.</strong>',
     },
+    formation_sans_vae: {
+      emoji: '🎓', type: 'conseil',
+      label: 'Parcours formation / AFEST',
+      title: 'Orientation formation ou AFEST suggérée',
+      desc: 'La fiche officielle de cette certification (RCP-NC) n\'ouvre pas l\'accès par la VAE — elle s\'obtient par la formation. Votre diagnostic reste précieux : il cartographie vos acquis et permettra à un conseiller de cibler un parcours de formation ou d\'AFEST adapté, potentiellement raccourci. <strong>Cette orientation sera affinée avec un conseiller et un architecte de parcours.</strong>',
+    },
     conseil: {
       emoji: '🤝', type: 'conseil',
       label: 'Rencontre conseiller RIIFE',
@@ -3202,14 +3251,44 @@ function renderResults() {
       desc: 'Votre profil qualifié mérite une analyse fine avant tout parcours. Un conseiller du réseau RIIFE cartographiera avec vous le différentiel entre vos acquis et les compétences visées par la certification, puis composera un parcours sur mesure : AFEST en entreprise, VAE directe, formation courte ciblée en centre, ou combinaison. <strong>Cette orientation est une invitation à cadrer votre projet — le plan sera co-construit avec un conseiller et un architecte de parcours.</strong>',
     },
   };
+  // Accessibilité VAE (fiche officielle RCP-NC) — arbitrage Jérôme 10/06 : sortie adaptée si voie fermée
+  const vaeStatus = c.vae || 'oui';
+  if (vaeStatus === 'non' && orientation !== 'spot') {
+    orientation = 'formation_sans_vae';
+  }
+  const vaeResultBanner =
+    vaeStatus === 'non' ? `
+    <div style="background:#fdecea;border:2px solid #e57373;border-radius:10px;padding:14px 16px;margin-bottom:4px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">⛔</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#c62828;margin-bottom:4px;">VAE non disponible pour cette certification</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">La fiche officielle du répertoire RCP-NC ne prévoit pas l'accès par la validation des acquis. Les étapes ci-dessous orientent vers la formation et l'AFEST.</div>
+      </div>
+    </div>` :
+    vaeStatus === 'partielle' ? `
+    <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-bottom:4px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">⚠️</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">VAE partielle pour cette certification</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">Seule une partie de la certification est accessible par la VAE (fiche officielle RCP-NC). Un conseiller précisera le périmètre avant la démarche.</div>
+      </div>
+    </div>` :
+    vaeStatus === 'confirmer' ? `
+    <div style="background:#eceff1;border:2px solid #b0bec5;border-radius:10px;padding:14px 16px;margin-bottom:4px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:22px;flex-shrink:0;">ℹ️</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#546e7a;margin-bottom:4px;">Accessibilité VAE à confirmer</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">La fiche officielle ne précise pas la voie VAE pour cette certification. Vérifiez auprès du certificateur avant d'engager une démarche VAE.</div>
+      </div>
+    </div>` : '';
   const oc = orientationConfig[orientation];
 
   const nextStepsConfig = {
     spot: [
-      { text: '<strong>Prenez contact avec un organisme de formation référencé</strong> pour intégrer le dispositif SPOT — un accompagnement individualisé pour sécuriser votre employabilité et construire votre projet professionnel' },
-      { text: '<strong>Visez le CCE — Certificat de Compétences Essentielles (Niveau 1 RCP-NC)</strong> — Première certification accessible qui valide les compétences transversales de base (communication, calcul, numérique, savoir-être professionnel)' },
-      { text: '<strong>Identifiez votre secteur cible</strong> lors du SPOT : les conseillers vous aideront à confirmer ou affiner votre projet de certification vers ' + c.name },
-      { text: '<strong>Le LMS RCP-NC vous accompagnera dès le SPOT</strong> — Module M1 accessible hors-ligne pour suivre votre progression vers la certification cible, dès votre entrée en parcours' },
+      { text: '<strong>Visez le CCE — Certificat de Compétences Essentielles (niveau 1 RCP-NC)</strong> — première certification professionnelle : 12 compétences transversales (communication, calcul, numérique, savoir-être professionnel…) évaluées une à une. En cas de validation partielle, seules les compétences manquantes sont à repasser' },
+      { text: '<strong>Adressez-vous à un organisme évaluateur habilité par la DFPC</strong> — il vous accompagne pendant tout le parcours de certification, individualisé, qui peut mêler formation et activités professionnelles' },
+      { text: '<strong>Identifiez votre secteur cible</strong> pendant ce parcours : les conseillers vous aideront à confirmer ou affiner votre projet de certification vers ' + c.name },
+      { text: '<strong>Le LMS RCP-NC vous accompagne dès cette étape</strong> — Module M1 accessible hors-ligne pour suivre votre progression, du CCE vers la certification métier visée' },
     ],
     hybride: [
       { text: '<strong>Rencontrez un conseiller</strong> pour co-construire votre plan de parcours hybride, ciblé sur les ' + cpuLabel + 's les plus lacunaires' },
@@ -3228,6 +3307,12 @@ function renderResults() {
       { text: '<strong>Rassemblez les preuves de votre expérience</strong> : bulletins de salaire, attestations d\'employeurs, portfolios, photos de réalisations, formations suivies' },
       { text: '<strong>Commencez le livret PAE numérique</strong> (Présentation des Acquis de l\'Expérience) dans le Module M2 du LMS, structuré par ' + cpuLabel + ' de votre certification' },
       { text: '<strong>Jury à distance disponible</strong> — Les jurys DTEFP peuvent se tenir en visioconférence depuis votre domicile ou lieu de travail (îles et zones éloignées)' },
+    ],
+    formation_sans_vae: [
+      { text: '<strong>Rencontrez un conseiller du réseau RIIFE</strong> avec votre dossier d\'orientation : vos acquis cartographiés permettront de cibler un parcours de formation ajusté, sans repartir de zéro' },
+      { text: '<strong>Si vous êtes en poste, étudiez la voie AFEST</strong> (Module M3 du LMS) — développer les compétences manquantes en situation de travail, avec l\'appui d\'un expert métier' },
+      { text: '<strong>Rapprochez-vous d\'un organisme de formation préparant à ' + c.name + '</strong> — votre diagnostic en main, l\'organisme pourra adapter la durée et le contenu du parcours' },
+      { text: '<strong>Vérifiez les prérequis d\'exercice du métier</strong> (carte professionnelle, agrément, aptitude médicale…) auprès du certificateur avant d\'engager le parcours' },
     ],
     conseil: [
       { text: '<strong>Prenez rendez-vous avec un conseiller du réseau RIIFE</strong> pour cartographier vos acquis face aux compétences visées par ' + c.name },
@@ -3280,7 +3365,7 @@ function renderResults() {
       </div>
       <div class="continuum-steps">
         ${[
-          { code: 'D1', cls: 'd1', label: 'SPOT / CCE', desc: 'Sécurisation de base · Employabilité · Remise à niveau', pos: 'Entrée parcours', active: orientation === 'spot' },
+          { code: 'D1', cls: 'd1', label: 'CCE', desc: 'Sécurisation de base · Employabilité · Remise à niveau', pos: 'Entrée parcours', active: orientation === 'spot' },
           { code: 'D2', cls: 'd2', label: 'AFEST / FEST', desc: 'Formation en Situation de Travail · Production de compétences traçables', pos: 'Production', active: orientation === 'hybride' },
           { code: 'D3', cls: 'd3', label: cpuLabel + ' / RCP-NC', desc: 'Complément de formation · Blocs cumulables sur 5 ans · Certification progressive', pos: 'Jalonnement', active: orientation === 'complement' },
           { code: 'D4', cls: 'd4', label: 'VAE', desc: 'Validation de l\'expérience · Jury NC · Certification reconnue', pos: 'Sortie / Reconnaissance', active: orientation === 'vae' },
@@ -3320,6 +3405,8 @@ function renderResults() {
 
     <div class="section-divider"></div>
 
+    ${vaeResultBanner}
+
     <div class="next-steps">
       <div class="next-steps-title">📋 Vos prochaines étapes recommandées</div>
       ${nextStepsConfig[orientation].map((s, i) => `
@@ -3334,7 +3421,9 @@ function renderResults() {
     <div style="background: var(--bg); border-radius:10px; padding:18px; text-align:center;">
       <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px;">✅ Votre diagnostic a été enregistré</div>
       <div style="font-size:13px; color:var(--gray); line-height:1.5; margin-bottom:16px;">
-        Résultats sauvegardés dans ce navigateur — prêts à être exportés vers le Module M2 (Dossier VAE) ou M3 (FEST) selon votre orientation.
+        ${vaeStatus === 'non'
+          ? `Résultats sauvegardés dans ce navigateur — prêts à être exportés vers le Module M3 (FEST) ou à présenter à votre conseiller.`
+          : `Résultats sauvegardés dans ce navigateur — prêts à être exportés vers le Module M2 (Dossier VAE) ou M3 (FEST) selon votre orientation.`}
       </div>
       <div style="background:#fff3cd; border:1px solid #ffe69c; border-radius:8px; padding:14px; margin-bottom:16px; font-size:13px; font-weight:600; color:var(--navy); line-height:1.5;">
         Un conseiller vous contactera sous 10 jours ouvrés.
@@ -3352,7 +3441,7 @@ function renderResults() {
     <strong>LMS RCP-NC</strong> · Module M1 — Diagnostic & Orientation · Prototype v3 (passerelle M2)<br>
     Plateforme RCP-NC · DTEFP Nouvelle-Calédonie · France 2030 NC<br>
     <em>Référentiel : RCP-NC (rcpnc.gouv.nc) · Titres Professionnels MCE · Loi du pays 2017-7<br>
-    Continuum : SPOT/CCE (D1) → FEST (D2) → CPU/RCP-NC (D3) → VAE (D4)</em>
+    Continuum : CCE (D1) → FEST (D2) → CPU/RCP-NC (D3) → VAE (D4)</em>
   </div>`;
 }
 
