@@ -15,7 +15,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29",
+    "vae": "oui",
+    "vae_note": "Justifier de périodes d’embarquement d’une durée minimale de 12 mois, en continu | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/matelot-de-peche"
   },
   {
     "id": "nc-02",
@@ -33,7 +35,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conseiller-en-assurance"
   },
   {
     "id": "nc-03",
@@ -51,7 +55,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/mediateur-numerique"
   },
   {
     "id": "nc-04",
@@ -69,7 +75,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/installateur-en-sanitaire-et-energies-renouvelables"
   },
   {
     "id": "nc-05",
@@ -87,7 +95,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/poseur-en-systemes-photovoltaiques"
   },
   {
     "id": "nc-06",
@@ -105,7 +115,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-palmee-subaquatique"
   },
   {
     "id": "nc-07",
@@ -123,7 +135,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-de-canyonisme"
   },
   {
     "id": "nc-08",
@@ -141,7 +155,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-initiateur-velo"
   },
   {
     "id": "nc-09",
@@ -159,7 +175,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-de-canoe-kayak-vaa-et-disciplines-associees"
   },
   {
     "id": "nc-10",
@@ -177,7 +195,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-darts-martiaux-option-judo-jujitsu-karate-ou-aikido"
   },
   {
     "id": "nc-11",
@@ -195,7 +215,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-equestre"
   },
   {
     "id": "nc-12",
@@ -213,7 +235,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-pedestre"
   },
   {
     "id": "nc-13",
@@ -231,7 +255,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/animateur-tout-public"
   },
   {
     "id": "nc-14",
@@ -249,7 +275,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/intervenant-artistique-et-culturel"
   },
   {
     "id": "nc-15",
@@ -267,7 +295,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu-fiche-muette",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-equestre"
   },
   {
     "id": "nc-16",
@@ -285,7 +315,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-pedestre"
   },
   {
     "id": "nc-17",
@@ -303,7 +335,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/exploitant-de-petite-structure-touristique"
   },
   {
     "id": "nc-18",
@@ -321,7 +355,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "Le diplôme d’ « opérateur sur chargeuse et bouteur dans une exploitation minière | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-chargeuse-et-bouteur-dans-une-exploitation"
   },
   {
     "id": "nc-19",
@@ -339,7 +375,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "Le diplôme d’ « opérateur sur pelle hydraulique dans une exploitation minière » | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-pelle-hydraulique-dans-une-exploitation"
   },
   {
     "id": "nc-20",
@@ -357,7 +395,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-tombereau-dans-une-exploitation-miniere-0"
   },
   {
     "id": "nc-21",
@@ -375,7 +415,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-sur-camion-de-roulage-de-descente-de-mine"
   },
   {
     "id": "nc-22",
@@ -393,7 +435,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-maintenance-des-automates-bancaires"
   },
   {
     "id": "nc-23",
@@ -411,7 +455,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Transversal→Compétences clés 2026-05-11"
+    "note": "Recatégorisé Transversal→Compétences clés 2026-05-11",
+    "vae": "inconnu-fiche-muette",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/certificat-de-competences-essentielles-cce"
   },
   {
     "id": "nc-24",
@@ -429,7 +475,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "Le candidat souhaitant acquérir le diplôme d'aide-soignant par la validation des | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/aide-soignant-partir-de-2019"
   },
   {
     "id": "nc-25",
@@ -447,7 +495,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-de-puericulture"
   },
   {
     "id": "nc-26",
@@ -465,7 +515,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "partielle",
+    "vae_note": "partielle sur CPU 1 uniquement EPREUVES DE CERTIFICATION Par CPU Epreuve CPU1 CPU2 Mises en situatio | source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/ambulancier-version-2024"
   },
   {
     "id": "nc-27",
@@ -483,7 +535,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistante-dentaire-version-2022"
   },
   {
     "id": "nc-28",
@@ -501,7 +555,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnatrice-de-vie-version-2019"
   },
   {
     "id": "nc-29",
@@ -519,7 +575,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-dautonomie-version-2019"
   },
   {
     "id": "nc-30",
@@ -537,7 +595,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-prive-qualifie-version-2024"
   },
   {
     "id": "nc-31",
@@ -555,7 +615,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/convoyeur-de-valeurs"
   },
   {
     "id": "nc-32",
@@ -573,7 +635,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-renforcee-arme"
   },
   {
     "id": "nc-33",
@@ -591,7 +655,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-surete-aeroportuaire"
   },
   {
     "id": "nc-34",
@@ -609,7 +675,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-educateur"
   },
   {
     "id": "nc-35",
@@ -627,7 +695,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-technique-et-pedagogique-en-insertion-0"
   },
   {
     "id": "nc-36",
@@ -645,7 +715,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-telesurveillance"
   },
   {
     "id": "nc-37",
@@ -663,7 +735,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-video-protection"
   },
   {
     "id": "nc-38",
@@ -681,7 +755,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/formateur-dadultes"
   },
   {
     "id": "nc-39",
@@ -699,7 +775,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "accès par la voie de la validation des acquis de l’expérience n’est pas possible | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/formateur-la-conduite-automobile-et-la-securite-routiere"
   },
   {
     "id": "nc-40",
@@ -717,7 +795,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/educateur-en-milieu-scolaire"
   },
   {
     "id": "nc-41",
@@ -735,7 +815,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "non",
+    "vae_note": "transitoire expirée: (transitoirement possible jusqu’en mars 2022) EPREUVES DE CERTIFICATION Epreuves | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/dirigeant-dentreprise-de-securite-privee"
   },
   {
     "id": "nc-42",
@@ -753,7 +835,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu-fiche-muette",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-traitement-de-valeurs"
   },
   {
     "id": "nc-43",
@@ -771,7 +855,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-dequipe"
   },
   {
     "id": "nc-44",
@@ -789,7 +875,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistant-medico-socio-administratif"
   },
   {
     "id": "nc-45",
@@ -807,7 +895,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/manager-de-proximite-dans-le-secteur-public"
   },
   {
     "id": "nc-46",
@@ -825,7 +915,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/conducteur-de-transport-en-commun-de-personnes-version-2019"
   },
   {
     "id": "nc-47",
@@ -843,7 +935,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29",
+    "vae": "oui",
+    "vae_note": null
   },
   {
     "id": "nc-48",
@@ -861,7 +955,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conducteur-de-transport-routier-de-marchandises"
   },
   {
     "id": "etat-01",
@@ -881,7 +977,9 @@
     "doublons_m1_absorbes": [
       "etat-01"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-superieur-en-marketing-commerce-et-gestion"
   },
   {
     "id": "etat-02",
@@ -901,7 +999,9 @@
     "doublons_m1_absorbes": [
       "etat-02"
     ],
-    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11"
+    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-gestion"
   },
   {
     "id": "etat-03",
@@ -921,7 +1021,9 @@
     "doublons_m1_absorbes": [
       "etat-03"
     ],
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-sciences-pour-lingenieur"
   },
   {
     "id": "etat-04",
@@ -941,7 +1043,9 @@
     "doublons_m1_absorbes": [
       "etat-04"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-btp-genie-civil-et"
   },
   {
     "id": "etat-05",
@@ -961,7 +1065,9 @@
     "doublons_m1_absorbes": [
       "etat-05"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-qualite-hygiene-securite"
   },
   {
     "id": "etat-06",
@@ -981,7 +1087,9 @@
     "doublons_m1_absorbes": [
       "etat-06"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/deust-batiment-et-travaux-publics"
   },
   {
     "id": "etat-07",
@@ -1001,7 +1109,9 @@
     "doublons_m1_absorbes": [
       "etat-07"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-jardinier-paysagiste"
   },
   {
     "id": "etat-08",
@@ -1021,7 +1131,9 @@
     "doublons_m1_absorbes": [
       "etat-08"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-services-aux-personnes-et-vente-en-espace-rural"
   },
   {
     "id": "etat-09",
@@ -1041,7 +1153,9 @@
     "doublons_m1_absorbes": [
       "etat-09"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-agricultures-des-regions-chaudes"
   },
   {
     "id": "etat-10",
@@ -1061,7 +1175,9 @@
     "doublons_m1_absorbes": [
       "etat-10"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-metiers-de-lagriculture"
   },
   {
     "id": "etat-11",
@@ -1081,7 +1197,9 @@
     "doublons_m1_absorbes": [
       "etat-11"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-services-aux-personnes-et-aux-territoires"
   },
   {
     "id": "etat-12",
@@ -1101,7 +1219,9 @@
     "doublons_m1_absorbes": [
       "etat-12"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-milieux-naturels-et-de-la-faune"
   },
   {
     "id": "etat-13",
@@ -1121,7 +1241,9 @@
     "doublons_m1_absorbes": [
       "etat-13"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-conduite-et-gestion-de-lexploitation-agricole"
   },
   {
     "id": "etat-14",
@@ -1141,7 +1263,9 @@
     "doublons_m1_absorbes": [
       "etat-14"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-amenagements-paysagers"
   },
   {
     "id": "etat-15",
@@ -1161,7 +1285,9 @@
     "doublons_m1_absorbes": [
       "etat-15"
     ],
-    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29"
+    "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/btsa-developpement-de-lagriculture-des-regions-chaudes-darc"
   },
   {
     "id": "etat-16",
@@ -1181,7 +1307,9 @@
     "doublons_m1_absorbes": [
       "etat-16"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien"
   },
   {
     "id": "etat-17",
@@ -1201,7 +1329,9 @@
     "doublons_m1_absorbes": [
       "etat-17"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien"
   },
   {
     "id": "etat-18",
@@ -1221,7 +1351,9 @@
     "doublons_m1_absorbes": [
       "etat-18"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine"
   },
   {
     "id": "etat-19",
@@ -1241,7 +1373,9 @@
     "doublons_m1_absorbes": [
       "etat-19"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine"
   },
   {
     "id": "etat-20",
@@ -1261,7 +1395,9 @@
     "doublons_m1_absorbes": [
       "etat-20"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-passerelle"
   },
   {
     "id": "etat-21",
@@ -1281,7 +1417,9 @@
     "doublons_m1_absorbes": [
       "etat-21"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-machine"
   },
   {
     "id": "etat-22",
@@ -1301,7 +1439,9 @@
     "doublons_m1_absorbes": [
       "etat-22"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000"
   },
   {
     "id": "etat-23",
@@ -1321,7 +1461,9 @@
     "doublons_m1_absorbes": [
       "etat-23"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000-yacht"
   },
   {
     "id": "etat-24",
@@ -1341,7 +1483,9 @@
     "doublons_m1_absorbes": [
       "etat-24"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-8000-kw"
   },
   {
     "id": "etat-25",
@@ -1361,7 +1505,9 @@
     "doublons_m1_absorbes": [
       "etat-25"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-8000-kw"
   },
   {
     "id": "etat-26",
@@ -1381,7 +1527,9 @@
     "doublons_m1_absorbes": [
       "etat-26"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine-3000"
   },
   {
     "id": "etat-27",
@@ -1401,7 +1549,9 @@
     "doublons_m1_absorbes": [
       "etat-27"
     ],
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-capitaine-de-peche"
   },
   {
     "id": "etat-28",
@@ -1421,7 +1571,9 @@
     "doublons_m1_absorbes": [
       "etat-28"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-yacht"
   },
   {
     "id": "etat-29",
@@ -1441,7 +1593,9 @@
     "doublons_m1_absorbes": [
       "etat-29"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200"
   },
   {
     "id": "etat-30",
@@ -1461,7 +1615,9 @@
     "doublons_m1_absorbes": [
       "etat-30"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-pont"
   },
   {
     "id": "etat-31",
@@ -1481,7 +1637,9 @@
     "doublons_m1_absorbes": [
       "etat-31"
     ],
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-peche"
   },
   {
     "id": "etat-32",
@@ -1501,7 +1659,9 @@
     "doublons_m1_absorbes": [
       "etat-32"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": null
   },
   {
     "id": "etat-33",
@@ -1521,7 +1681,9 @@
     "doublons_m1_absorbes": [
       "etat-33"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-quart-passerelle"
   },
   {
     "id": "etat-34",
@@ -1541,7 +1703,9 @@
     "doublons_m1_absorbes": [
       "etat-34"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-0"
   },
   {
     "id": "etat-35",
@@ -1561,7 +1725,9 @@
     "doublons_m1_absorbes": [
       "etat-35"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-quart-machine"
   },
   {
     "id": "etat-36",
@@ -1581,7 +1747,9 @@
     "doublons_m1_absorbes": [
       "etat-36"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-pont"
   },
   {
     "id": "etat-37",
@@ -1601,7 +1769,9 @@
     "doublons_m1_absorbes": [
       "etat-37"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-machine"
   },
   {
     "id": "etat-38",
@@ -1621,7 +1791,9 @@
     "doublons_m1_absorbes": [
       "etat-38"
     ],
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/certificat-daptitude-au-commandement-la-petite-peche"
   },
   {
     "id": "etat-39",
@@ -1641,7 +1813,9 @@
     "doublons_m1_absorbes": [
       "etat-39"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500"
   },
   {
     "id": "etat-40",
@@ -1661,7 +1835,9 @@
     "doublons_m1_absorbes": [
       "etat-40"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-voile"
   },
   {
     "id": "etat-41",
@@ -1681,7 +1857,9 @@
     "doublons_m1_absorbes": [
       "etat-41"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500-yacht"
   },
   {
     "id": "etat-42",
@@ -1701,7 +1879,9 @@
     "doublons_m1_absorbes": [
       "etat-42"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-chef-de-quart-500"
   },
   {
     "id": "etat-43",
@@ -1721,7 +1901,9 @@
     "doublons_m1_absorbes": [
       "etat-43"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-mecanicien-750-kw"
   },
   {
     "id": "etat-44",
@@ -1741,7 +1923,9 @@
     "doublons_m1_absorbes": [
       "etat-44"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-de-quart-500-yacht"
   },
   {
     "id": "etat-45",
@@ -1761,7 +1945,9 @@
     "doublons_m1_absorbes": [
       "etat-45"
     ],
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-lieutenant-de-peche"
   },
   {
     "id": "etat-46",
@@ -1781,7 +1967,9 @@
     "doublons_m1_absorbes": [
       "etat-46"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-3000-kw"
   },
   {
     "id": "etat-47",
@@ -1801,7 +1989,9 @@
     "doublons_m1_absorbes": [
       "etat-47"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw"
   },
   {
     "id": "etat-48",
@@ -1821,7 +2011,9 @@
     "doublons_m1_absorbes": [
       "etat-48"
     ],
-    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29"
+    "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-patron-de-peche"
   },
   {
     "id": "etat-49",
@@ -1841,7 +2033,9 @@
     "doublons_m1_absorbes": [
       "etat-49"
     ],
-    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29"
+    "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
+    "vae": "a-confirmer-DAM",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw"
   },
   {
     "id": "etat-50",
@@ -1861,7 +2055,9 @@
     "doublons_m1_absorbes": [
       "etat-50"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine"
   },
   {
     "id": "etat-51",
@@ -1881,7 +2077,9 @@
     "doublons_m1_absorbes": [
       "etat-51"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-equipier-polyvalent-du-commerce"
   },
   {
     "id": "etat-52",
@@ -1901,7 +2099,9 @@
     "doublons_m1_absorbes": [
       "etat-52"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois"
   },
   {
     "id": "etat-53",
@@ -1921,7 +2121,9 @@
     "doublons_m1_absorbes": [
       "etat-53"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-production-et-service-en-restaurations"
   },
   {
     "id": "etat-54",
@@ -1941,7 +2143,9 @@
     "doublons_m1_absorbes": [
       "etat-54"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-interventions-en-maintenance-technique-des-batiments"
   },
   {
     "id": "etat-55",
@@ -1961,7 +2165,9 @@
     "doublons_m1_absorbes": [
       "etat-55"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier"
   },
   {
     "id": "etat-56",
@@ -1981,7 +2187,9 @@
     "doublons_m1_absorbes": [
       "etat-56"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-macon"
   },
   {
     "id": "etat-57",
@@ -2001,7 +2209,9 @@
     "doublons_m1_absorbes": [
       "etat-57"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-boulanger"
   },
   {
     "id": "etat-58",
@@ -2021,7 +2231,9 @@
     "doublons_m1_absorbes": [
       "etat-58"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-59",
@@ -2041,7 +2253,9 @@
     "doublons_m1_absorbes": [
       "etat-59"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-menuisier-fabricant"
   },
   {
     "id": "etat-60",
@@ -2061,7 +2275,9 @@
     "doublons_m1_absorbes": [
       "etat-60"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-conducteur-dinstallations-de-production"
   },
   {
     "id": "etat-61",
@@ -2081,7 +2297,9 @@
     "doublons_m1_absorbes": [
       "etat-61"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher"
   },
   {
     "id": "etat-62",
@@ -2101,7 +2319,9 @@
     "doublons_m1_absorbes": [
       "etat-62"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-employe-traiteur"
   },
   {
     "id": "etat-63",
@@ -2121,7 +2341,9 @@
     "doublons_m1_absorbes": [
       "etat-63"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-operateur-operatrice-logistique"
   },
   {
     "id": "etat-64",
@@ -2141,7 +2363,9 @@
     "doublons_m1_absorbes": [
       "etat-64"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-securite"
   },
   {
     "id": "etat-65",
@@ -2161,7 +2385,9 @@
     "doublons_m1_absorbes": [
       "etat-65"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-monteur-en-installations-sanitaires"
   },
   {
     "id": "etat-66",
@@ -2181,7 +2407,9 @@
     "doublons_m1_absorbes": [
       "etat-66"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien"
   },
   {
     "id": "etat-67",
@@ -2201,7 +2429,9 @@
     "doublons_m1_absorbes": [
       "etat-67"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-commercialisation-et-services-hotel-cafe-restaurant"
   },
   {
     "id": "etat-68",
@@ -2221,7 +2451,9 @@
     "doublons_m1_absorbes": [
       "etat-68"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-installateur-en-froid-et-conditionnement-dair"
   },
   {
     "id": "etat-69",
@@ -2241,7 +2473,9 @@
     "doublons_m1_absorbes": [
       "etat-69"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-accompagnant-educatif-petite-enfance"
   },
   {
     "id": "etat-70",
@@ -2261,7 +2495,9 @@
     "doublons_m1_absorbes": [
       "etat-70"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-71",
@@ -2281,7 +2517,9 @@
     "doublons_m1_absorbes": [
       "etat-71"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-patissier"
   },
   {
     "id": "etat-72",
@@ -2301,7 +2539,9 @@
     "doublons_m1_absorbes": [
       "etat-72"
     ],
-    "note": "Recatégorisé Autres→Artisanat 2026-04-29"
+    "note": "Recatégorisé Autres→Artisanat 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie"
   },
   {
     "id": "etat-73",
@@ -2321,7 +2561,9 @@
     "doublons_m1_absorbes": [
       "etat-73"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-peintre-applicateur-de-revetement"
   },
   {
     "id": "etat-74",
@@ -2341,7 +2583,9 @@
     "doublons_m1_absorbes": [
       "etat-74"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-metiers-de-la-coiffure"
   },
   {
     "id": "etat-75",
@@ -2361,7 +2605,9 @@
     "doublons_m1_absorbes": [
       "etat-75"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-carreleur-mosaiste"
   },
   {
     "id": "etat-76",
@@ -2381,7 +2627,9 @@
     "doublons_m1_absorbes": [
       "etat-76"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-77",
@@ -2401,7 +2649,9 @@
     "doublons_m1_absorbes": [
       "etat-77"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-proprete-et-dhygiene"
   },
   {
     "id": "etat-78",
@@ -2421,7 +2671,9 @@
     "doublons_m1_absorbes": [
       "etat-78"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-proprete-de-lenvironnement-urbain-collecte-et-recyclage"
   },
   {
     "id": "etat-79",
@@ -2441,7 +2693,9 @@
     "doublons_m1_absorbes": [
       "etat-79"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-materiels"
   },
   {
     "id": "etat-80",
@@ -2461,7 +2715,9 @@
     "doublons_m1_absorbes": [
       "etat-80"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-commercialisation-et-services-en-restauration"
   },
   {
     "id": "etat-81",
@@ -2481,7 +2737,9 @@
     "doublons_m1_absorbes": [
       "etat-81"
     ],
-    "note": "Recatégorisé Autres→Agriculture 2026-05-11"
+    "note": "Recatégorisé Autres→Agriculture 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-pollutions-et-protection-de-lenvironnement"
   },
   {
     "id": "etat-82",
@@ -2501,7 +2759,9 @@
     "doublons_m1_absorbes": [
       "etat-82"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-animation-enfance-et-personnes-agees"
   },
   {
     "id": "etat-83",
@@ -2521,7 +2781,9 @@
     "doublons_m1_absorbes": [
       "etat-83"
     ],
-    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11"
+    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-assistance-la-gestion-des-organisations-et-de-leurs"
   },
   {
     "id": "etat-84",
@@ -2541,7 +2803,9 @@
     "doublons_m1_absorbes": [
       "etat-84"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-organisation-de-transport-de-marchandises"
   },
   {
     "id": "etat-85",
@@ -2561,7 +2825,9 @@
     "doublons_m1_absorbes": [
       "etat-85"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes"
   },
   {
     "id": "etat-86",
@@ -2581,7 +2847,9 @@
     "doublons_m1_absorbes": [
       "etat-86"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-87",
@@ -2601,7 +2869,9 @@
     "doublons_m1_absorbes": [
       "etat-87"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-installateur-en-chauffage-climatisation-et-energies"
   },
   {
     "id": "etat-88",
@@ -2621,7 +2891,9 @@
     "doublons_m1_absorbes": [
       "etat-88"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-du-froid-et-des-energies-renouvelables"
   },
   {
     "id": "etat-89",
@@ -2641,7 +2913,9 @@
     "doublons_m1_absorbes": [
       "etat-89"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-artisanat-et-metiers-dart-option-communication"
   },
   {
     "id": "etat-90",
@@ -2661,7 +2935,9 @@
     "doublons_m1_absorbes": [
       "etat-90"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher"
   },
   {
     "id": "etat-91",
@@ -2681,7 +2957,9 @@
     "doublons_m1_absorbes": [
       "etat-91"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-cybersecurite-informatique-et-reseaux-electronique"
   },
   {
     "id": "etat-92",
@@ -2701,7 +2979,9 @@
     "doublons_m1_absorbes": [
       "etat-92"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-maintenance-nautique-0"
   },
   {
     "id": "etat-93",
@@ -2721,7 +3001,9 @@
     "doublons_m1_absorbes": [
       "etat-93"
     ],
-    "note": "Recatégorisé Autres→Restauration 2026-05-11"
+    "note": "Recatégorisé Autres→Restauration 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-boulanger-patissier"
   },
   {
     "id": "etat-94",
@@ -2741,7 +3023,9 @@
     "doublons_m1_absorbes": [
       "etat-94"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine"
   },
   {
     "id": "etat-95",
@@ -2761,7 +3045,9 @@
     "doublons_m1_absorbes": [
       "etat-95"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement"
   },
   {
     "id": "etat-96",
@@ -2781,7 +3067,9 @@
     "doublons_m1_absorbes": [
       "etat-96"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-constructeur-bois"
   },
   {
     "id": "etat-97",
@@ -2801,7 +3089,9 @@
     "doublons_m1_absorbes": [
       "etat-97"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-agenceur"
   },
   {
     "id": "etat-98",
@@ -2821,7 +3111,9 @@
     "doublons_m1_absorbes": [
       "etat-98"
     ],
-    "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11"
+    "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-reception"
   },
   {
     "id": "etat-99",
@@ -2841,7 +3133,9 @@
     "doublons_m1_absorbes": [
       "etat-99"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-dans-les-transports"
   },
   {
     "id": "etat-100",
@@ -2861,7 +3155,9 @@
     "doublons_m1_absorbes": [
       "etat-100"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-coiffure"
   },
   {
     "id": "etat-101",
@@ -2881,7 +3177,9 @@
     "doublons_m1_absorbes": [
       "etat-101"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-logistique"
   },
   {
     "id": "etat-102",
@@ -2901,7 +3199,9 @@
     "doublons_m1_absorbes": [
       "etat-102"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-technicien-en-chaudronnerie-industrielle"
   },
   {
     "id": "etat-103",
@@ -2921,7 +3221,9 @@
     "doublons_m1_absorbes": [
       "etat-103"
     ],
-    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11"
+    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-laccueil"
   },
   {
     "id": "etat-104",
@@ -2941,7 +3243,9 @@
     "doublons_m1_absorbes": [
       "etat-104"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-assistance-conseil-vente-distance"
   },
   {
     "id": "etat-105",
@@ -2961,7 +3265,9 @@
     "doublons_m1_absorbes": [
       "etat-105"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-installateur-depanneur-en-froid-et-conditionnement-dair"
   },
   {
     "id": "etat-106",
@@ -2981,7 +3287,9 @@
     "doublons_m1_absorbes": [
       "etat-106"
     ],
-    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11"
+    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-mode-vetements"
   },
   {
     "id": "etat-107",
@@ -3001,7 +3309,9 @@
     "doublons_m1_absorbes": [
       "etat-107"
     ],
-    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11"
+    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-couture-et-de-la-confection"
   },
   {
     "id": "etat-108",
@@ -3021,7 +3331,9 @@
     "doublons_m1_absorbes": [
       "etat-108"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-lelectricite-et-de-ses-environnements"
   },
   {
     "id": "etat-109",
@@ -3041,7 +3353,9 @@
     "doublons_m1_absorbes": [
       "etat-109"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien"
   },
   {
     "id": "etat-110",
@@ -3061,7 +3375,9 @@
     "doublons_m1_absorbes": [
       "etat-110"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-detudes-du-batiment"
   },
   {
     "id": "etat-111",
@@ -3081,7 +3397,9 @@
     "doublons_m1_absorbes": [
       "etat-111"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-securite"
   },
   {
     "id": "etat-112",
@@ -3101,7 +3419,9 @@
     "doublons_m1_absorbes": [
       "etat-112"
     ],
-    "note": "Recatégorisé Autres→Artisanat 2026-04-29"
+    "note": "Recatégorisé Autres→Artisanat 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie"
   },
   {
     "id": "etat-113",
@@ -3121,7 +3441,9 @@
     "doublons_m1_absorbes": [
       "etat-113"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-ouvrages-du-batiment-metallerie-0"
   },
   {
     "id": "etat-114",
@@ -3141,7 +3463,9 @@
     "doublons_m1_absorbes": [
       "etat-114"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-hygiene-proprete-sterilisation"
   },
   {
     "id": "etat-115",
@@ -3161,7 +3485,9 @@
     "doublons_m1_absorbes": [
       "etat-115"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-116",
@@ -3181,7 +3507,9 @@
     "doublons_m1_absorbes": [
       "etat-116"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-animation-gestion-de-projets-dans-le-secteur-sportif"
   },
   {
     "id": "etat-117",
@@ -3201,7 +3529,9 @@
     "doublons_m1_absorbes": [
       "etat-117"
     ],
-    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11"
+    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-pilote-de-ligne-de-production"
   },
   {
     "id": "etat-118",
@@ -3221,7 +3551,9 @@
     "doublons_m1_absorbes": [
       "etat-118"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-maintenance-des-installations-oleohydrauliques-et"
   },
   {
     "id": "etat-119",
@@ -3241,7 +3573,9 @@
     "doublons_m1_absorbes": [
       "etat-119"
     ],
-    "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11"
+    "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-encadrement-secteur-sportif"
   },
   {
     "id": "etat-120",
@@ -3261,7 +3595,9 @@
     "doublons_m1_absorbes": [
       "etat-120"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes"
   },
   {
     "id": "etat-121",
@@ -3281,7 +3617,9 @@
     "doublons_m1_absorbes": [
       "etat-121"
     ],
-    "note": "Recatégorisé Tourisme→Restauration 2026-04-29"
+    "note": "Recatégorisé Tourisme→Restauration 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-en-hotellerie-restauration-options-b-et-c"
   },
   {
     "id": "etat-122",
@@ -3301,7 +3639,9 @@
     "doublons_m1_absorbes": [
       "etat-122"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-services-informatiques-aux-organisations"
   },
   {
     "id": "etat-123",
@@ -3321,7 +3661,9 @@
     "doublons_m1_absorbes": [
       "etat-123"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-electrotechnique"
   },
   {
     "id": "etat-124",
@@ -3341,7 +3683,9 @@
     "doublons_m1_absorbes": [
       "etat-124"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-commerce-international"
   },
   {
     "id": "etat-125",
@@ -3361,7 +3705,9 @@
     "doublons_m1_absorbes": [
       "etat-125"
     ],
-    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11"
+    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-conseil-et-commercialisation-de-solutions-techniques"
   },
   {
     "id": "etat-126",
@@ -3381,7 +3727,9 @@
     "doublons_m1_absorbes": [
       "etat-126"
     ],
-    "note": "Recatégorisé Autres→Santé 2026-05-11"
+    "note": "Recatégorisé Autres→Santé 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-economie-sociale-et-familiale"
   },
   {
     "id": "etat-127",
@@ -3401,7 +3749,9 @@
     "doublons_m1_absorbes": [
       "etat-127"
     ],
-    "note": "Recatégorisé Autres→Santé 2026-05-11"
+    "note": "Recatégorisé Autres→Santé 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-128",
@@ -3421,7 +3771,9 @@
     "doublons_m1_absorbes": [
       "etat-128"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-communication"
   },
   {
     "id": "etat-129",
@@ -3441,7 +3793,9 @@
     "doublons_m1_absorbes": [
       "etat-129"
     ],
-    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11"
+    "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-assistance-technique-dingenieur"
   },
   {
     "id": "etat-130",
@@ -3461,7 +3815,9 @@
     "doublons_m1_absorbes": [
       "etat-130"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-tourisme"
   },
   {
     "id": "etat-131",
@@ -3481,7 +3837,9 @@
     "doublons_m1_absorbes": [
       "etat-131"
     ],
-    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11"
+    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-pilotage-de-procedes"
   },
   {
     "id": "etat-132",
@@ -3501,7 +3859,9 @@
     "doublons_m1_absorbes": [
       "etat-132"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-assurance"
   },
   {
     "id": "etat-133",
@@ -3521,7 +3881,9 @@
     "doublons_m1_absorbes": [
       "etat-133"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-commercial-operationnel"
   },
   {
     "id": "etat-134",
@@ -3541,7 +3903,9 @@
     "doublons_m1_absorbes": [
       "etat-134"
     ],
-    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11"
+    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-gestion-de-la-pme"
   },
   {
     "id": "etat-135",
@@ -3561,7 +3925,9 @@
     "doublons_m1_absorbes": [
       "etat-135"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-support-laction-manageriale"
   },
   {
     "id": "etat-136",
@@ -3581,7 +3947,9 @@
     "doublons_m1_absorbes": [
       "etat-136"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-transports-et-logistique-associee"
   },
   {
     "id": "etat-137",
@@ -3601,7 +3969,9 @@
     "doublons_m1_absorbes": [
       "etat-137"
     ],
-    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11"
+    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-negociation-et-digitalisation-de-la-relation-client"
   },
   {
     "id": "etat-138",
@@ -3621,7 +3991,9 @@
     "doublons_m1_absorbes": [
       "etat-138"
     ],
-    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11"
+    "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-professions-immobilieres"
   },
   {
     "id": "etat-139",
@@ -3641,7 +4013,9 @@
     "doublons_m1_absorbes": [
       "etat-139"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-banque"
   },
   {
     "id": "etat-140",
@@ -3661,7 +4035,9 @@
     "doublons_m1_absorbes": [
       "etat-140"
     ],
-    "note": "Recatégorisé Autres→BTP 2026-05-11"
+    "note": "Recatégorisé Autres→BTP 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement"
   },
   {
     "id": "etat-141",
@@ -3681,7 +4057,9 @@
     "doublons_m1_absorbes": [
       "etat-141"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-maintenance-des-materiels-de-la-construction-et-de"
   },
   {
     "id": "etat-142",
@@ -3701,7 +4079,9 @@
     "doublons_m1_absorbes": [
       "etat-142"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-comptabilite-et-gestion"
   },
   {
     "id": "etat-143",
@@ -3721,7 +4101,9 @@
     "doublons_m1_absorbes": [
       "etat-143"
     ],
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-batiment"
   },
   {
     "id": "etat-144",
@@ -3741,7 +4123,9 @@
     "doublons_m1_absorbes": [
       "etat-144"
     ],
-    "note": "Recatégorisé Autres→Services Personnes 2026-05-11"
+    "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-metiers-des-services-lenvironnement"
   },
   {
     "id": "etat-145",
@@ -3761,7 +4145,9 @@
     "doublons_m1_absorbes": [
       "etat-145"
     ],
-    "note": null
+    "note": null,
+    "vae": "non-profession-reglementee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/infirmier-infirmiere"
   },
   {
     "id": "tp-01",
@@ -3779,7 +4165,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Numérique 2026-04-29"
+    "note": "Recatégorisé Autres->Numérique 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-concepteur-designer-ui-et-webdesign"
   },
   {
     "id": "tp-02",
@@ -3797,7 +4185,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->BTP 2026-04-29"
+    "note": "Recatégorisé Autres->BTP 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois"
   },
   {
     "id": "tp-03",
@@ -3815,7 +4205,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-agent-de-maintenance-du-batiment"
   },
   {
     "id": "tp-04",
@@ -3833,7 +4225,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-employe-de-commerce-en-magasin"
   },
   {
     "id": "tp-05",
@@ -3851,7 +4245,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-conducteur-dinstallations-et-de-machines-automatisees"
   },
   {
     "id": "tp-06",
@@ -3869,7 +4265,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->BTP 2026-04-29"
+    "note": "Recatégorisé Autres->BTP 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/tp-menuisier-aluminium"
   },
   {
     "id": "tp-07",
@@ -3887,7 +4285,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-mecanicien-de-maintenance-automobile"
   },
   {
     "id": "tp-08",
@@ -3905,7 +4305,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->BTP 2026-04-29"
+    "note": "Recatégorisé Autres->BTP 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier"
   },
   {
     "id": "tp-09",
@@ -3923,7 +4325,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-commis-de-cuisine"
   },
   {
     "id": "tp-10",
@@ -3941,7 +4345,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-serveur-euse-de-restaurant"
   },
   {
     "id": "tp-11",
@@ -3959,7 +4365,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-electromecanien-en-maintenance-industrielle"
   },
   {
     "id": "tp-12",
@@ -3977,7 +4385,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-en-logistique-dentreposage"
   },
   {
     "id": "tp-13",
@@ -3995,7 +4405,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Installation Maintenance 2026-04-29"
+    "note": "Recatégorisé Autres->Installation Maintenance 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-chaudronnier"
   },
   {
     "id": "tp-14",
@@ -4013,7 +4425,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-de-maintenance-industrielle"
   },
   {
     "id": "tp-15",
@@ -4031,7 +4445,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Administratif RH 2026-04-29"
+    "note": "Recatégorisé Autres->Administratif RH 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-secretaire-assistante"
   },
   {
     "id": "tp-16",
@@ -4049,7 +4465,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "tp-17",
@@ -4067,7 +4485,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-dassistance-en-informatique"
   },
   {
     "id": "tp-18",
@@ -4085,7 +4505,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-receptionniste-en-hotellerie"
   },
   {
     "id": "tp-19",
@@ -4103,7 +4525,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "tp-20",
@@ -4121,7 +4545,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-ressources-humaines"
   },
   {
     "id": "tp-21",
@@ -4139,7 +4565,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Numérique 2026-04-29"
+    "note": "Recatégorisé Autres->Numérique 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-developpeur-web-et-web-mobile"
   },
   {
     "id": "tp-22",
@@ -4157,7 +4585,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Numérique 2026-04-29"
+    "note": "Recatégorisé Autres->Numérique 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/titre-professionnel-technicien-superieur-systemes-et-reseaux"
   },
   {
     "id": "tp-23",
@@ -4175,7 +4605,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Support Entreprise 2026-04-29"
+    "note": "Recatégorisé Autres->Support Entreprise 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-responsable-de-petite-et-moyenne-structure"
   },
   {
     "id": "tp-24",
@@ -4193,7 +4625,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-superieur-en-production-industrielle"
   },
   {
     "id": "tp-25",
@@ -4211,7 +4645,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Administratif RH 2026-04-29"
+    "note": "Recatégorisé Autres->Administratif RH 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-de-direction"
   },
   {
     "id": "tp-26",
@@ -4229,7 +4665,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-technicienne-superieure-en-automatique-et-informatique"
   },
   {
     "id": "tp-27",
@@ -4247,7 +4685,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres->Services Personnes 2026-04-29"
+    "note": "Recatégorisé Autres->Services Personnes 2026-04-29",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-146",
@@ -4265,7 +4705,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Santé 2026-05-11"
+    "note": "Recatégorisé Autres→Santé 2026-05-11",
+    "vae": "a-verifier",
+    "vae_note": null
   },
   {
     "id": "etat-147",
@@ -4283,7 +4725,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-management-et-administration-des-entreprises"
   },
   {
     "id": "etat-148",
@@ -4301,7 +4745,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-science-de-la-durabilite"
   },
   {
     "id": "etat-149",
@@ -4319,7 +4765,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Administratif RH 2026-05-11"
+    "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-150",
@@ -4337,7 +4785,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Administratif RH 2026-05-11"
+    "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-151",
@@ -4355,7 +4805,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-droit"
   },
   {
     "id": "etat-152",
@@ -4373,7 +4825,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Administratif RH 2026-05-11"
+    "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-153",
@@ -4391,7 +4845,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Agriculture 2026-05-11"
+    "note": "Recatégorisé Autres→Agriculture 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/master-mention-sciences-pour-lenvironnement-specialite-gestion-integree-de"
   },
   {
     "id": "etat-154",
@@ -4409,7 +4865,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Administratif RH 2026-05-11"
+    "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-gestion-des-territoires-et-developpement-local"
   },
   {
     "id": "etat-155",
@@ -4427,7 +4885,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-civilisation-cultures-et-societe"
   },
   {
     "id": "etat-156",
@@ -4445,7 +4905,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Numérique 2026-05-11"
+    "note": "Recatégorisé Autres→Numérique 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-157",
@@ -4463,7 +4925,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-158",
@@ -4481,7 +4945,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-159",
@@ -4499,7 +4965,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-droit"
   },
   {
     "id": "etat-160",
@@ -4517,7 +4985,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-physique-chimie"
   },
   {
     "id": "etat-161",
@@ -4535,7 +5005,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11"
+    "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-economie-et-gestion"
   },
   {
     "id": "etat-162",
@@ -4553,7 +5025,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-langues-etrangeres-appliquees"
   },
   {
     "id": "etat-163",
@@ -4571,7 +5045,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linformatique-applications"
   },
   {
     "id": "etat-164",
@@ -4589,7 +5065,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-gestion-et-de-la"
   },
   {
     "id": "etat-165",
@@ -4607,7 +5085,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-166",
@@ -4625,7 +5105,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-mathematiques"
   },
   {
     "id": "etat-167",
@@ -4643,7 +5125,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-lettres"
   },
   {
     "id": "etat-168",
@@ -4661,7 +5145,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-sciences-de-la-vie-et-de-la-terre"
   },
   {
     "id": "etat-169",
@@ -4679,7 +5165,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-informatique"
   },
   {
     "id": "etat-170",
@@ -4697,7 +5185,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-171",
@@ -4715,7 +5205,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Banque Assurance 2026-05-11"
+    "note": "Recatégorisé Autres→Banque Assurance 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": null
   },
   {
     "id": "etat-172",
@@ -4733,7 +5225,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-commerce-et-distribution"
   },
   {
     "id": "etat-173",
@@ -4751,7 +5245,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-communication-charge-de"
   },
   {
     "id": "etat-174",
@@ -4769,7 +5265,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Agriculture 2026-05-11"
+    "note": "Recatégorisé Autres→Agriculture 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-des-ressources-naturelles-et"
   },
   {
     "id": "etat-175",
@@ -4787,7 +5285,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Numérique 2026-05-11"
+    "note": "Recatégorisé Autres→Numérique 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linstrumentation-de-la"
   },
   {
     "id": "etat-176",
@@ -4805,7 +5305,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-tourisme-et-des-loisirs"
   },
   {
     "id": "etat-177",
@@ -4823,7 +5325,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capacite-en-droit"
   },
   {
     "id": "etat-178",
@@ -4841,7 +5345,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": "Recatégorisé Autres→Études supérieures 2026-05-11"
+    "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-dacces-aux-etudes-universitaires-daeu"
   },
   {
     "id": "etat-179",
@@ -4859,7 +5365,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui-droit-commun",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/deust-geosciences-appliquees-mines-eau-et-environnement"
   },
   {
     "id": "autre-01",
@@ -4877,7 +5385,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-dunite-bancaire-0"
   },
   {
     "id": "autre-02",
@@ -4895,7 +5405,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "fiche-non-trouvee",
+    "vae_note": null
   },
   {
     "id": "autre-03",
@@ -4913,7 +5425,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-patrimonial-agence"
   },
   {
     "id": "autre-04",
@@ -4931,7 +5445,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-bancaire-clientele-de-0"
   },
   {
     "id": "autre-05",
@@ -4949,7 +5465,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-de-clientele-de"
   },
   {
     "id": "autre-06",
@@ -4967,7 +5485,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/vendeur-conseiller-commercial"
   },
   {
     "id": "autre-07",
@@ -4985,7 +5505,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/concepteur-realisateur-en"
   },
   {
     "id": "autre-08",
@@ -5003,7 +5525,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-sportif-de-natation"
   },
   {
     "id": "autre-09",
@@ -5021,7 +5545,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-de-football"
   },
   {
     "id": "autre-10",
@@ -5039,7 +5565,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/diplome-duniversite-de-formateur"
   },
   {
     "id": "autre-11",
@@ -5057,7 +5585,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/management-et-gestion-des"
   },
   {
     "id": "autre-12",
@@ -5075,7 +5605,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-paie-et-administration"
   },
   {
     "id": "autre-13",
@@ -5093,7 +5625,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/adjoint-de-dirigeant-dentreprise"
   },
   {
     "id": "cqp-01",
@@ -5111,7 +5645,9 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "inconnu",
+    "vae_note": "source: https://rcpnc.gouv.nc/certificat-de-qualification-professionnelle/cordiste-niveau-1-branche-btp"
   },
   {
     "id": "cqp-02",
@@ -5131,7 +5667,9 @@
     "doublons_m1_absorbes": [
       "cqp-03"
     ],
-    "note": "⚠ Id cqp-03 absorbé (même intitulé + niveau 4) : divergence sur cat uniquement (cqp-02 = BTP, cqp-03 = Industrie Mines). Ce CQP couvre deux secteurs. Source de l'écart 271 ids distincts vs 270 clés fonctionnelles."
+    "note": "⚠ Id cqp-03 absorbé (même intitulé + niveau 4) : divergence sur cat uniquement (cqp-02 = BTP, cqp-03 = Industrie Mines). Ce CQP couvre deux secteurs. Source de l'écart 271 ids distincts vs 270 clés fonctionnelles.",
+    "vae": "oui",
+    "vae_note": "La VAE est accessible à toute personne justifiant d'un parcours professionnel d' | source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-assistant-hygiene-securite"
   },
   {
     "id": "cqp-04",
@@ -5149,6 +5687,8 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
-    "note": null
+    "note": null,
+    "vae": "oui",
+    "vae_note": "source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-mecanicienne-specialiste-automobile"
   }
 ]
