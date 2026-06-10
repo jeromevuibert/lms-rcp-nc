@@ -50,7 +50,7 @@
       vae: 'VAE — Validation des Acquis de l’Expérience',
       complement: 'Complément formation courte + VAE',
       hybride: 'Hybride — AFEST + formation courte + VAE',
-      spot: 'SPOT + Certificat de Compétences Essentielles',
+      spot: 'Certificat de Compétences Essentielles (CCE)',
       conseil: 'Rencontre conseiller RIIFE'
     },
 
