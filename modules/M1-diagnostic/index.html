@@ -2544,6 +2544,373 @@ const sectors = [
   { id: 'autre', emoji: '🔎', label: 'Je ne sais pas / Autre', desc: 'Rechercher par nom ou parcourir toutes les certifications disponibles', cats: [] },
 ];
 
+// ════════════════════════════════════════════════════════════
+// ÉTAGE NATIONAL — couche de surface (incréments 2-3)
+// Table cert NC -> secteur (25 nationaux + 4 NC-only), VALIDÉE 30/06. certifications.json INCHANGÉ.
+// ════════════════════════════════════════════════════════════
+const NC_SECTEUR_MAP = {
+  "nc-01": "maritime-peche",
+  "nc-02": "banque-assurance-immobilier",
+  "nc-03": "numerique-informatique",
+  "nc-04": "batiment-travaux-publics",
+  "nc-05": "electricite-electronique",
+  "nc-06": "sport-animation",
+  "nc-07": "sport-animation",
+  "nc-08": "sport-animation",
+  "nc-09": "sport-animation",
+  "nc-10": "sport-animation",
+  "nc-11": "sport-animation",
+  "nc-12": "sport-animation",
+  "nc-13": "sport-animation",
+  "nc-14": "arts-culture-artisanat-d-art",
+  "nc-15": "sport-animation",
+  "nc-16": "sport-animation",
+  "nc-17": "hotellerie-restauration-tourisme",
+  "nc-18": "industrie-materiaux",
+  "nc-19": "industrie-materiaux",
+  "nc-20": "industrie-materiaux",
+  "nc-21": "industrie-materiaux",
+  "nc-22": "maintenance-industrielle",
+  "nc-23": "_cce",
+  "nc-24": "sante-paramedical",
+  "nc-25": "sante-paramedical",
+  "nc-26": "sante-paramedical",
+  "nc-27": "sante-paramedical",
+  "nc-28": "_sap",
+  "nc-29": "_sap",
+  "nc-30": "securite",
+  "nc-31": "securite",
+  "nc-32": "securite",
+  "nc-33": "securite",
+  "nc-34": "travail-social",
+  "nc-35": "_formation",
+  "nc-36": "securite",
+  "nc-37": "securite",
+  "nc-38": "_formation",
+  "nc-39": "transport-logistique",
+  "nc-40": "travail-social",
+  "nc-41": "securite",
+  "nc-42": "securite",
+  "nc-43": "comptabilite-gestion-rh",
+  "nc-44": "comptabilite-gestion-rh",
+  "nc-45": "comptabilite-gestion-rh",
+  "nc-46": "transport-logistique",
+  "nc-47": "maritime-peche",
+  "nc-48": "transport-logistique",
+  "etat-01": "commerce-vente",
+  "etat-02": "comptabilite-gestion-rh",
+  "etat-03": "_etudes",
+  "etat-04": "batiment-travaux-publics",
+  "etat-05": "securite",
+  "etat-06": "batiment-travaux-publics",
+  "etat-07": "agriculture-peche-espaces-verts",
+  "etat-08": "_sap",
+  "etat-09": "agriculture-peche-espaces-verts",
+  "etat-10": "agriculture-peche-espaces-verts",
+  "etat-11": "_sap",
+  "etat-12": "environnement-proprete",
+  "etat-13": "agriculture-peche-espaces-verts",
+  "etat-14": "agriculture-peche-espaces-verts",
+  "etat-15": "agriculture-peche-espaces-verts",
+  "etat-16": "maritime-peche",
+  "etat-17": "maritime-peche",
+  "etat-18": "maritime-peche",
+  "etat-19": "maritime-peche",
+  "etat-20": "maritime-peche",
+  "etat-21": "maritime-peche",
+  "etat-22": "maritime-peche",
+  "etat-23": "maritime-peche",
+  "etat-24": "maritime-peche",
+  "etat-25": "maritime-peche",
+  "etat-26": "maritime-peche",
+  "etat-27": "maritime-peche",
+  "etat-28": "maritime-peche",
+  "etat-29": "maritime-peche",
+  "etat-30": "maritime-peche",
+  "etat-31": "maritime-peche",
+  "etat-32": "maritime-peche",
+  "etat-33": "maritime-peche",
+  "etat-34": "maintenance-industrielle",
+  "etat-35": "maritime-peche",
+  "etat-36": "maritime-peche",
+  "etat-37": "maritime-peche",
+  "etat-38": "maritime-peche",
+  "etat-39": "maritime-peche",
+  "etat-40": "maritime-peche",
+  "etat-41": "maritime-peche",
+  "etat-42": "maritime-peche",
+  "etat-43": "maritime-peche",
+  "etat-44": "maritime-peche",
+  "etat-45": "maritime-peche",
+  "etat-46": "maritime-peche",
+  "etat-47": "maritime-peche",
+  "etat-48": "maritime-peche",
+  "etat-49": "maritime-peche",
+  "etat-50": "hotellerie-restauration-tourisme",
+  "etat-51": "commerce-vente",
+  "etat-52": "bois-ameublement",
+  "etat-53": "hotellerie-restauration-tourisme",
+  "etat-54": "batiment-travaux-publics",
+  "etat-55": "batiment-travaux-publics",
+  "etat-56": "batiment-travaux-publics",
+  "etat-57": "agroalimentaire",
+  "etat-58": "mode-textile-cuir",
+  "etat-59": "bois-ameublement",
+  "etat-60": "maintenance-industrielle",
+  "etat-61": "agroalimentaire",
+  "etat-62": "agroalimentaire",
+  "etat-63": "transport-logistique",
+  "etat-64": "securite",
+  "etat-65": "maintenance-industrielle",
+  "etat-66": "electricite-electronique",
+  "etat-67": "hotellerie-restauration-tourisme",
+  "etat-68": "maintenance-industrielle",
+  "etat-69": "_sap",
+  "etat-70": "industrie-materiaux",
+  "etat-71": "agroalimentaire",
+  "etat-72": "coiffure-esthetique",
+  "etat-73": "mode-textile-cuir",
+  "etat-74": "coiffure-esthetique",
+  "etat-75": "batiment-travaux-publics",
+  "etat-76": "mecanique-automobile-aeronautique",
+  "etat-77": "environnement-proprete",
+  "etat-78": "environnement-proprete",
+  "etat-79": "maintenance-industrielle",
+  "etat-80": "hotellerie-restauration-tourisme",
+  "etat-81": "environnement-proprete",
+  "etat-82": "sport-animation",
+  "etat-83": "comptabilite-gestion-rh",
+  "etat-84": "transport-logistique",
+  "etat-85": "maintenance-industrielle",
+  "etat-86": "maintenance-industrielle",
+  "etat-87": "maintenance-industrielle",
+  "etat-88": "maintenance-industrielle",
+  "etat-89": "communication-audiovisuel-edition",
+  "etat-90": "agroalimentaire",
+  "etat-91": "securite",
+  "etat-92": "maritime-peche",
+  "etat-93": "agroalimentaire",
+  "etat-94": "hotellerie-restauration-tourisme",
+  "etat-95": "bois-ameublement",
+  "etat-96": "bois-ameublement",
+  "etat-97": "bois-ameublement",
+  "etat-98": "hotellerie-restauration-tourisme",
+  "etat-99": "transport-logistique",
+  "etat-100": "coiffure-esthetique",
+  "etat-101": "transport-logistique",
+  "etat-102": "industrie-materiaux",
+  "etat-103": "commerce-vente",
+  "etat-104": "commerce-vente",
+  "etat-105": "maintenance-industrielle",
+  "etat-106": "mode-textile-cuir",
+  "etat-107": "mode-textile-cuir",
+  "etat-108": "electricite-electronique",
+  "etat-109": "electricite-electronique",
+  "etat-110": "batiment-travaux-publics",
+  "etat-111": "securite",
+  "etat-112": "coiffure-esthetique",
+  "etat-113": "batiment-travaux-publics",
+  "etat-114": "environnement-proprete",
+  "etat-115": "mecanique-automobile-aeronautique",
+  "etat-116": "sport-animation",
+  "etat-117": "industrie-materiaux",
+  "etat-118": "maintenance-industrielle",
+  "etat-119": "sport-animation",
+  "etat-120": "maintenance-industrielle",
+  "etat-121": "hotellerie-restauration-tourisme",
+  "etat-122": "numerique-informatique",
+  "etat-123": "electricite-electronique",
+  "etat-124": "commerce-vente",
+  "etat-125": "commerce-vente",
+  "etat-126": "sante-paramedical",
+  "etat-127": "sante-paramedical",
+  "etat-128": "communication-audiovisuel-edition",
+  "etat-129": "maintenance-industrielle",
+  "etat-130": "hotellerie-restauration-tourisme",
+  "etat-131": "industrie-materiaux",
+  "etat-132": "banque-assurance-immobilier",
+  "etat-133": "comptabilite-gestion-rh",
+  "etat-134": "comptabilite-gestion-rh",
+  "etat-135": "comptabilite-gestion-rh",
+  "etat-136": "transport-logistique",
+  "etat-137": "commerce-vente",
+  "etat-138": "banque-assurance-immobilier",
+  "etat-139": "banque-assurance-immobilier",
+  "etat-140": "bois-ameublement",
+  "etat-141": "batiment-travaux-publics",
+  "etat-142": "comptabilite-gestion-rh",
+  "etat-143": "batiment-travaux-publics",
+  "etat-144": "environnement-proprete",
+  "etat-145": "sante-paramedical",
+  "tp-01": "numerique-informatique",
+  "tp-02": "bois-ameublement",
+  "tp-03": "batiment-travaux-publics",
+  "tp-04": "commerce-vente",
+  "tp-05": "maintenance-industrielle",
+  "tp-06": "batiment-travaux-publics",
+  "tp-07": "mecanique-automobile-aeronautique",
+  "tp-08": "batiment-travaux-publics",
+  "tp-09": "hotellerie-restauration-tourisme",
+  "tp-10": "hotellerie-restauration-tourisme",
+  "tp-11": "industrie-materiaux",
+  "tp-12": "transport-logistique",
+  "tp-13": "maintenance-industrielle",
+  "tp-14": "industrie-materiaux",
+  "tp-15": "comptabilite-gestion-rh",
+  "tp-16": "commerce-vente",
+  "tp-17": "numerique-informatique",
+  "tp-18": "hotellerie-restauration-tourisme",
+  "tp-19": "maintenance-industrielle",
+  "tp-20": "comptabilite-gestion-rh",
+  "tp-21": "numerique-informatique",
+  "tp-22": "numerique-informatique",
+  "tp-23": "comptabilite-gestion-rh",
+  "tp-24": "industrie-materiaux",
+  "tp-25": "comptabilite-gestion-rh",
+  "tp-26": "numerique-informatique",
+  "tp-27": "_formation",
+  "etat-146": "sante-paramedical",
+  "etat-147": "comptabilite-gestion-rh",
+  "etat-148": "_etudes",
+  "etat-149": "_formation",
+  "etat-150": "_formation",
+  "etat-151": "droit-justice",
+  "etat-152": "_formation",
+  "etat-153": "environnement-proprete",
+  "etat-154": "comptabilite-gestion-rh",
+  "etat-155": "_etudes",
+  "etat-156": "numerique-informatique",
+  "etat-157": "comptabilite-gestion-rh",
+  "etat-158": "numerique-informatique",
+  "etat-159": "droit-justice",
+  "etat-160": "_etudes",
+  "etat-161": "comptabilite-gestion-rh",
+  "etat-162": "_etudes",
+  "etat-163": "numerique-informatique",
+  "etat-164": "comptabilite-gestion-rh",
+  "etat-165": "comptabilite-gestion-rh",
+  "etat-166": "_etudes",
+  "etat-167": "_etudes",
+  "etat-168": "_etudes",
+  "etat-169": "numerique-informatique",
+  "etat-170": "_etudes",
+  "etat-171": "banque-assurance-immobilier",
+  "etat-172": "commerce-vente",
+  "etat-173": "communication-audiovisuel-edition",
+  "etat-174": "environnement-proprete",
+  "etat-175": "numerique-informatique",
+  "etat-176": "hotellerie-restauration-tourisme",
+  "etat-177": "droit-justice",
+  "etat-178": "_etudes",
+  "etat-179": "environnement-proprete",
+  "autre-01": "banque-assurance-immobilier",
+  "autre-02": "banque-assurance-immobilier",
+  "autre-03": "banque-assurance-immobilier",
+  "autre-04": "banque-assurance-immobilier",
+  "autre-05": "banque-assurance-immobilier",
+  "autre-06": "commerce-vente",
+  "autre-07": "communication-audiovisuel-edition",
+  "autre-08": "sport-animation",
+  "autre-09": "sport-animation",
+  "autre-10": "_formation",
+  "autre-11": "comptabilite-gestion-rh",
+  "autre-12": "comptabilite-gestion-rh",
+  "autre-13": "comptabilite-gestion-rh",
+  "cqp-01": "batiment-travaux-publics",
+  "cqp-02": "securite",
+  "cqp-04": "mecanique-automobile-aeronautique",
+};
+const NAT_SECTOR_EMOJI = {
+  "batiment-travaux-publics":"🏗️",
+  "industrie-materiaux":"⚙️",
+  "arts-culture-artisanat-d-art":"🎨",
+  "mecanique-automobile-aeronautique":"🔧",
+  "agriculture-peche-espaces-verts":"🌱",
+  "agroalimentaire":"🥖",
+  "commerce-vente":"🛒",
+  "hotellerie-restauration-tourisme":"🍽️",
+  "mode-textile-cuir":"🧵",
+  "bois-ameublement":"🪵",
+  "maritime-peche":"⚓",
+  "communication-audiovisuel-edition":"🎬",
+  "sante-paramedical":"🏥",
+  "transport-logistique":"🚛",
+  "travail-social":"🤝",
+  "environnement-proprete":"🧹",
+  "coiffure-esthetique":"💇",
+  "comptabilite-gestion-rh":"📊",
+  "electricite-electronique":"🔌",
+  "securite":"🛡️",
+  "numerique-informatique":"💻",
+  "banque-assurance-immobilier":"🏦",
+  "maintenance-industrielle":"🛠️",
+  "sport-animation":"⚽",
+  "droit-justice":"⚖️"
+};
+const NC_ONLY_SECTORS = [
+  { id:'_cce', emoji:'🌱', label:'Compétences essentielles (CCE)', desc:'Premier pas vers la qualification — sans prérequis' },
+  { id:'_sap', emoji:'🤲', label:'Services à la personne', desc:'Aide à domicile, auxiliaire de vie, petite enfance…' },
+  { id:'_formation', emoji:'🎓', label:'Formation, enseignement & insertion', desc:'Formateur, enseignant, conseiller en insertion…' },
+  { id:'_etudes', emoji:'📚', label:'Études supérieures / Université', desc:'Licences, Masters, DAEU, Capacité droit — généralistes' },
+  { id:'autre', emoji:'🔎', label:'Je ne sais pas / Autre', desc:'Rechercher par nom ou parcourir toutes les certifications disponibles' },
+];
+function ncCountBySector() {
+  const m = {};
+  certifications.forEach(c => { const s = NC_SECTEUR_MAP[c.id]; if (s) m[s] = (m[s]||0)+1; });
+  return m;
+}
+function entrySectors() {
+  if (!NATIONAL || !Array.isArray(NATIONAL.secteurs)) return sectors;  // fallback : 13 NC historiques
+  const counts = ncCountBySector();
+  const nat = NATIONAL.secteurs.map(s => ({
+    id: s.id, emoji: NAT_SECTOR_EMOJI[s.id] || '📂', label: s.libelle,
+    desc: counts[s.id] ? (counts[s.id] + ' certification(s) NC') : 'Diplômes nationaux (indicatif)',
+    national: true, nbNC: counts[s.id] || 0
+  }));
+  return nat.concat(NC_ONLY_SECTORS);
+}
+function findEntrySector(id) {
+  return entrySectors().find(s => s.id === id) || sectors.find(s => s.id === id) || NC_ONLY_SECTORS.find(s => s.id === id);
+}
+function certInSector(secId, c) {
+  if (NATIONAL && NC_SECTEUR_MAP[c.id]) return NC_SECTEUR_MAP[c.id] === secId;  // table validée
+  const s = findEntrySector(secId);  // fallback (national indispo) : ancienne logique cats
+  if (!s || !s.cats) return true;
+  return s.cats.length === 0 || s.cats.includes(c.cat);
+}
+function nationalDiplomasFor(secId) {
+  if (!NATIONAL || !Array.isArray(NATIONAL.etage_2a_EN_DAVA)) return [];
+  return NATIONAL.etage_2a_EN_DAVA.filter(d => d.secteur_id === secId);
+}
+// --- Incrément 3 : étage national indicatif + renvois (Voie B) ---
+function renderNationalBlock(secId, query) {
+  let dips = nationalDiplomasFor(secId);
+  if (query) dips = dips.filter(d => d.intitule.toLowerCase().includes(query));
+  if (!dips.length) return '';
+  const items = dips.slice(0, 80).map(d => `
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid var(--gray-light);">
+      <div style="min-width:0;">
+        <div style="font-size:13px;color:var(--navy);font-weight:600;line-height:1.3;">${d.intitule}</div>
+        <div style="font-size:11px;color:var(--gray);">${d.famille} · Niv. ${d.niveau}</div>
+      </div>
+      <span style="font-size:11px;padding:3px 9px;border-radius:8px;background:#e6f1fb;color:#0c447c;white-space:nowrap;flex-shrink:0;">national · indicatif</span>
+    </div>`).join('');
+  return `
+    <div style="margin-top:18px;">
+      <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;">Diplômes nationaux de ce secteur <span style="font-weight:400;color:var(--gray);">(${dips.length})</span></div>
+      <div style="font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:8px;">Diplômes de l'Éducation nationale, accessibles par VAE <strong>à distance via le DAVA Nouvelle-Calédonie</strong>. Orientation <strong>indicative</strong> — pas d'auto-évaluation détaillée ici.</div>
+      <div style="border:1px solid var(--gray-light);border-radius:8px;max-height:300px;overflow-y:auto;">${items}</div>
+      ${dips.length > 80 ? `<div style="font-size:12px;color:var(--gray);text-align:center;padding:6px;">Précisez votre recherche pour affiner</div>` : ''}
+    </div>`;
+}
+function prcHelpBox() {
+  return `
+    <div style="background:#e6f1fb;color:#0c447c;border-radius:12px;padding:12px 16px;font-size:13px;line-height:1.5;margin-top:16px;">
+      Vous visez un diplôme du supérieur (université, CNAM), un titre professionnel, un DE santé/social, un brevet sport… ou vous ne trouvez pas votre cible ? Un <strong>conseiller PRC</strong> (Point Relais Conseil VAE) vous oriente gratuitement — <strong>GIEP-NC</strong> et <strong>CFA CMA-NC</strong>. Coordonnées sur <strong>vae.nc</strong>.
+    </div>`;
+}
+
+
 // STATE
 let state = {
   currentStep: 0,
@@ -2710,7 +3077,7 @@ function renderCertification() {
       <div class="card-title">Dans quel domaine travaillez-vous ?</div>
       <div class="card-subtitle">Choisissez le secteur qui correspond à votre activité ou à votre projet professionnel. Cela permet d'afficher uniquement les certifications adaptées à votre situation.</div>
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:24px;">
-        ${sectors.map(s => `
+        ${entrySectors().map(s => `
           <div onclick="selectSector('${s.id}')" style="
             border:2px solid var(--gray-light); border-radius:10px;
             padding:16px 14px; cursor:pointer; transition:all 0.2s;
@@ -2730,11 +3097,11 @@ function renderCertification() {
   }
 
   // === PHASE 2 : Liste certifications filtrées par secteur ===
-  const sector = sectors.find(s => s.id === state.selectedSector);
+  const sector = findEntrySector(state.selectedSector);
   const query = (state.certSearch || '').toLowerCase();
 
   let filtered = certifications.filter(c => {
-    const inSector = sector.cats.length === 0 || sector.cats.includes(c.cat);
+    const inSector = certInSector(state.selectedSector, c);
     const matchQuery = !query || c.name.toLowerCase().includes(query) || c.cat.toLowerCase().includes(query);
     return inSector && matchQuery;
   });
@@ -2787,6 +3154,9 @@ function renderCertification() {
       ${certItems}
       ${filtered.length > 60 ? `<div class="cert-item" style="justify-content:center;color:var(--gray);font-size:12px;">Précisez votre recherche pour affiner</div>` : ''}
     </div>`}
+
+    ${renderNationalBlock(state.selectedSector, query)}
+    ${prcHelpBox()}
 
     ${selectedIsEN ? `
     <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-top:14px;display:flex;gap:12px;align-items:flex-start;">
@@ -3583,7 +3953,23 @@ function restartDiagnostic() {
 // ============================================================
 // INIT
 // ============================================================
+// -- Étage national (option B : couche de données SÉPARÉE, chargée à la volée — incrément 1) --
+let NATIONAL = null;
+async function loadNational() {
+  try {
+    const resp = await fetch('../../shared/data/national.json', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    NATIONAL = await resp.json();
+    if (typeof window !== 'undefined') window.NATIONAL = NATIONAL;
+    console.log('[M1] étage national chargé', NATIONAL && NATIONAL._meta ? NATIONAL._meta.compteurs : '?');
+  } catch (e) {
+    NATIONAL = null;
+    console.warn('[M1] étage national indisponible -> fallback NC seul :', e && e.message);
+  }
+}
+
 render();
+loadNational();
 </script>
 
 
