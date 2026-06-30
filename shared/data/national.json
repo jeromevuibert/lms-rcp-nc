@@ -1,21 +1,23 @@
 {
   "_meta": {
-    "version": 1,
-    "genere_le": "2026-06-29",
+    "version": 2,
+    "genere_le": "2026-06-30",
     "source": "docs/CATALOGUE_national_EN_M1.xlsx + docs/ETAGE2B_renvois_M1.xlsx",
     "role": "Étage national de M1 (option B : couche de données SÉPARÉE).",
     "regles": [
       "NE PAS fusionner avec certifications.json (= étage local NC, épais).",
       "Étage national = 'mince' : trouvabilité + renvoi, PAS d'auto-évaluation.",
       "Marquer ces entrées 'indicatif/national' à l'écran.",
-      "Mobile-first ; anonymisation non concernée (diplômes publics)."
+      "Mobile-first ; anonymisation non concernée (diplômes publics).",
+      "Garde-fou : le portail national France VAE (vae.gouv.fr) est inadapté au contexte NC (FranceConnect, certificateurs/jurys métropolitains, agents publics exclus, ne porte ni les diplômes NC ni les relais locaux). Depuis la NC : TOUJOURS le relais local (DAVA NC, IFPSS-NC, DTEFP, UNC/Pôle FCA, CNAM-ACESTE, CCI/CMA-NC) + conseiller PRC."
     ],
     "compteurs": {
       "secteurs": 25,
       "etage_2a": 438,
       "etage_2b_renvois": 10,
       "a_confirmer": 1
-    }
+    },
+    "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC."
   },
   "secteurs": [
     {
@@ -4864,8 +4866,8 @@
       "secteur": "Travail social",
       "secteur_id": "travail-social",
       "nsf_domaine": "33",
-      "renvoi": "DAVA NC",
-      "note": ""
+      "renvoi": "Recevabilité : DAVA NC / Vice-rectorat. (Accompagnement IFPSS-NC à confirmer.)",
+      "note": "Accompagnement IFPSS-NC confirmé pour Éduc. spécialisé & Moniteur éduc. ; périmètre exact IFPSS à confirmer pour les autres."
     },
     {
       "id": "EN-428",
@@ -4875,8 +4877,8 @@
       "secteur": "Travail social",
       "secteur_id": "travail-social",
       "nsf_domaine": "33",
-      "renvoi": "DAVA NC",
-      "note": ""
+      "renvoi": "Recevabilité : DAVA NC / Vice-rectorat. Accompagnement local : IFPSS-NC (filière sociale, confirmé).",
+      "note": "Accompagnement IFPSS-NC confirmé pour Éduc. spécialisé & Moniteur éduc. ; périmètre exact IFPSS à confirmer pour les autres."
     },
     {
       "id": "EN-429",
@@ -4886,8 +4888,8 @@
       "secteur": "Travail social",
       "secteur_id": "travail-social",
       "nsf_domaine": "33",
-      "renvoi": "DAVA NC",
-      "note": ""
+      "renvoi": "Recevabilité : DAVA NC / Vice-rectorat. (Accompagnement IFPSS-NC à confirmer.)",
+      "note": "Accompagnement IFPSS-NC confirmé pour Éduc. spécialisé & Moniteur éduc. ; périmètre exact IFPSS à confirmer pour les autres."
     },
     {
       "id": "EN-430",
@@ -4897,7 +4899,7 @@
       "secteur": "Travail social",
       "secteur_id": "travail-social",
       "nsf_domaine": "33",
-      "renvoi": "DAVA NC",
+      "renvoi": "Recevabilité : DAVA NC / Vice-rectorat. Accompagnement local : IFPSS-NC (filière sociale, confirmé).",
       "note": "Équivalent local : Moniteur éducateur (RCP-NC) — étage local épais"
     },
     {
@@ -5026,23 +5028,23 @@
       "certificateur": "Ministère du Travail — Titres Professionnels",
       "diplomes_typiques": "~300 Titres Pro (tous secteurs)",
       "secteurs": "Transversal",
-      "renvoi_nc": "DTEFP NC — dépôt livret 1 à la DTEFP",
+      "renvoi_nc": "DTEFP NC — recevabilité à la DTEFP (filière tertiaire)",
       "accessible_nc": "OUI (local)",
-      "reserves": "Déjà partiellement dans le catalogue NC (TP). Jury via centre agréé."
+      "reserves": "En NC via la DTEFP : techniquement possible sur les TP disposant d'un centre agréé sur place, voire d'autres selon le plateau technique mobilisable ; périmètre exact à confirmer auprès de la DTEFP. Certificateur = ministère du Travail (national : recevabilité/jury DREETS-DDETS, désormais via France VAE). Plusieurs TP déjà au catalogue RCP-NC."
     },
     {
-      "certificateur": "Ministère Santé / Affaires sociales — ASP",
-      "diplomes_typiques": "DE sanitaires (infirmier, aide-soignant, ERGOTHÉRAPEUTE…) + DE sociaux ASP (DEAES, DEASS, DEEJE)",
+      "certificateur": "Ministère Santé / Solidarités (DE sanitaires & sociaux)",
+      "diplomes_typiques": "DE sociaux (DEAES, DEASS, DEEJE…). DE sanitaires (infirmier, aide-soignant) = professions réglementées, VAE fermée ou restreinte.",
       "secteurs": "Santé/paramédical, Travail social",
-      "renvoi_nc": "ASP — vae.asp-public.fr",
-      "accessible_nc": "Partiel (dossier en ligne)",
-      "reserves": "Certains ont un équivalent NC (RCP-NC : aide-soignant, etc.). DEES/DEME/DEETS/DECESF = DAVA (étage 2a), PAS ici."
+      "renvoi_nc": "Recevabilité nationale des DE sociaux (livret 1) via vae.asp-public.fr — surtout ceux NON accompagnés localement (DEASS, DEEJE, DEAES). En NC, les DE sociaux courants (Éduc. spécialisé, Moniteur éducateur, CAFERUIS) ont un accompagnement local IFPSS-NC ; recevabilité DAVA/Vice-rectorat.",
+      "accessible_nc": "Partiel (accompagnement local IFPSS)",
+      "reserves": "L'ASP n'est PAS le certificateur (= État/ministère ; jury DREETS) : c'est le guichet national de recevabilité. Infirmier : VAE fermée (réglementé ; formation initiale IFPSS). Le national bascule vers France VAE (inadapté NC). Source : ifpss.nc (page VAE filière sociale) + DREETS (DEASS par VAE), consulté 30/06/2026."
     },
     {
       "certificateur": "Ministère Jeunesse & Sports / Animation",
-      "diplomes_typiques": "JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS), animation",
+      "diplomes_typiques": "Sport : DE JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS). Animation : brevets calédoniens (en construction).",
       "secteurs": "Sport, animation",
-      "renvoi_nc": "⚠ VOIE EN TRANSITION : BPJEPS suspendus en NC (pas d'accord État/NC) ; BAFA/BAFD arrêtés 01/01/2026 ; brevets calédoniens d'animation en co-construction (DJS, texte à venir). Diplômes sport NC → DTEFP.",
+      "renvoi_nc": "⚠ DEUX voies distinctes. (a) SPORT — DE JEPS, certificateur national (recevabilité/jury via DRAJES) ; BPJEPS suspendus en NC (pas d'accord État/NC), voie en transition. (b) ANIMATION — brevets calédoniens (DJS NC, co-construction lancée 25/06/2026, texte à venir) ; BAFA/BAFD arrêtés 01/01/2026. Diplômes sport NC → DTEFP.",
       "accessible_nc": "Restreint / transition",
       "reserves": "Message dédié, PAS un renvoi standard. Source : contexte §5f + veille 29/06."
     },
@@ -5064,11 +5066,11 @@
     },
     {
       "certificateur": "CCI / CMA / branches (CQP)",
-      "diplomes_typiques": "Titres consulaires, CQP de branche",
+      "diplomes_typiques": "Titres consulaires nationaux RNCP (réseau Negoventis pour les CCI ; titres de la CMA, ex. Brevet de maîtrise/BTM) ; CQP de branche.",
       "secteurs": "Transversal",
-      "renvoi_nc": "CQP → jury paritaire de branche (inscrits RCP-NC) ; CCI NC : fiches inactives ; CMA : pas de diplômes propres",
-      "accessible_nc": "Partiel",
-      "reserves": "Cf. contexte §5f. CQP au RCP-NC = étage local."
+      "renvoi_nc": "Titres CCI/CMA = certifications nationales RNCP ACTIVES (repérer le diplôme + l'organisme au RNCP) ; relais consulaire local CCI-NC / CMA-NC. CQP → jury paritaire de branche (inscrits RCP-NC).",
+      "accessible_nc": "Partiel (national RNCP + relais local)",
+      "reserves": "⚠ Titres propres de la CMA au RNCP (Brevet de maîtrise/BTM) à confirmer. CQP au RCP-NC = étage local. Source CCI : negoventis.cci.fr / France Compétences RNCP (lu 30/06/2026)."
     }
   ],
   "a_confirmer": [
