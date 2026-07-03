@@ -18,7 +18,7 @@
       "a_confirmer": 1
     },
     "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC.",
-    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 640 certifs) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur)."
+    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 640 certifs) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur). Complément même jour : 2 BTSA du secteur agroalimentaire ré-attribués ministère Agriculture → DAFE NC."
   },
   "secteurs": [
     {
@@ -61,7 +61,7 @@
       "libelle": "Agroalimentaire",
       "nb_2a": 23,
       "dans_19_actuels": false,
-      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie. Exception : les BTSA (Sciences et technologies des aliments, Viticulture-œnologie) relèvent du ministère de l'Agriculture — en NC, la DAFE (dafe.gouv.nc)."
     },
     {
       "id": "commerce-vente",
@@ -547,7 +547,7 @@
       "secteur": "Agroalimentaire",
       "secteur_id": "agroalimentaire",
       "nsf_domaine": "22",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -558,7 +558,7 @@
       "secteur": "Agroalimentaire",
       "secteur_id": "agroalimentaire",
       "nsf_domaine": "22",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
