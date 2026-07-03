@@ -701,10 +701,10 @@
   },
   "Études supérieures": {
     "suggestions_nc": [],
-    "certificateur_special": null,
-    "renvoi_dava": true,
+    "certificateur_special": "UNC",
+    "renvoi_dava": false,
     "nb_suggestions": 0,
-    "note": "Diplômes universitaires généralistes (Licences, Masters, DAEU, Capacité droit) sans secteur métier dédié. Routage DAVA."
+    "note": "Diplômes universitaires (Licences, Masters, DAEU, Capacité droit) délivrés par l'UNC. Routage UNC – Pôle FCA (www.unc.nc · sfc@unc.nc · 290 490), recevabilité 01/02-31/03. Corrigé 03/07/2026 (avant : DAVA, à tort)."
   },
   "Autres": {
     "suggestions_nc": [],
