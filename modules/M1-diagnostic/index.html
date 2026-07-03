@@ -650,7 +650,7 @@ const EN_NC_MAP = {
   "Sécurité Surveillance": { renvoi: null, suggestions: [{"intitule": "Agent de sécurité privé qualifié (version 2024)", "niveau": 3, "type": "NC", "id": "nc-30"}, {"intitule": "Convoyeur de valeurs", "niveau": 3, "type": "NC", "id": "nc-31"}, {"intitule": "Agent de sécurité renforcée armé", "niveau": 3, "type": "NC", "id": "nc-32"}, {"intitule": "Agent de sûreté aéroportuaire", "niveau": 4, "type": "NC", "id": "nc-33"}, {"intitule": "Opérateur en centre de télésurveillance", "niveau": 4, "type": "NC", "id": "nc-36"}, {"intitule": "Opérateur en centre de vidéo-protection", "niveau": 4, "type": "NC", "id": "nc-37"}, {"intitule": "Dirigeant d'entreprise de sécurité privée", "niveau": 5, "type": "NC", "id": "nc-41"}] },
   "Artisanat": { renvoi: "DAVA", suggestions: [] },
   "Compétences clés": { renvoi: null, suggestions: [] },
-  "Études supérieures": { renvoi: "DAVA", suggestions: [] },
+  "Études supérieures": { renvoi: "UNC", suggestions: [] },
   "Autres": { renvoi: "DAVA", suggestions: [] }
 };
 
@@ -2885,6 +2885,8 @@ function nationalDiplomasFor(secId) {
 // --- Incrément 3 : étage national indicatif + renvois (Voie B) ---
 function renderNationalBlock(secId, query) {
   let dips = nationalDiplomasFor(secId);
+  const secNat = (NATIONAL && Array.isArray(NATIONAL.secteurs)) ? NATIONAL.secteurs.find(s => s.id === secId) : null;
+  const renvoiNote = (secNat && secNat.renvoi_note) ? secNat.renvoi_note : "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie.";
   if (query) dips = dips.filter(d => d.intitule.toLowerCase().includes(query));
   if (!dips.length) return '';
   const items = dips.slice(0, 80).map(d => `
@@ -2898,7 +2900,7 @@ function renderNationalBlock(secId, query) {
   return `
     <div style="margin-top:18px;">
       <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;">Diplômes nationaux de ce secteur <span style="font-weight:400;color:var(--gray);">(${dips.length})</span></div>
-      <div style="font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:8px;">Diplômes de l'Éducation nationale, accessibles par VAE <strong>à distance via le DAVA Nouvelle-Calédonie</strong>. Orientation <strong>indicative</strong> — pas d'auto-évaluation détaillée ici.</div>
+      <div style="font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:8px;">${renvoiNote} Orientation <strong>indicative</strong> — pas d'auto-évaluation détaillée ici.</div>
       <div style="border:1px solid var(--gray-light);border-radius:8px;max-height:300px;overflow-y:auto;">${items}</div>
       ${dips.length > 80 ? `<div style="font-size:12px;color:var(--gray);text-align:center;padding:6px;">Précisez votre recherche pour affiner</div>` : ''}
     </div>`;
@@ -3162,8 +3164,8 @@ function renderCertification() {
     <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-top:14px;display:flex;gap:12px;align-items:flex-start;">
       <span style="font-size:22px;flex-shrink:0;">⚠️</span>
       <div>
-        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">Diplôme de l'Éducation nationale — Point d'attention</div>
-        <div style="font-size:12px;color:var(--text);line-height:1.5;">Ce diplôme relève du <strong>Rectorat de NC</strong> et de la <strong>DAVA</strong> pour la VAE.</div>
+        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">${state.selectedCert.cat === 'Études supérieures' ? `Diplôme universitaire — Point d'attention` : `Diplôme de l'Éducation nationale — Point d'attention`}</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">${state.selectedCert.cat === 'Études supérieures' ? `Ce diplôme relève de l'<strong>UNC</strong> (Pôle Formation Continue et Alternance) pour la VAE.` : `Ce diplôme relève du <strong>Rectorat de NC</strong> et de la <strong>DAVA</strong> pour la VAE.`}</div>
       </div>
     </div>` : ''}
 
@@ -3334,6 +3336,22 @@ function renderAssessment() {
           <div style="font-size:12px;color:#0a2342;line-height:1.7;">
             Direction des Affaires Maritimes — Gouvernement NC<br>
             <span style="color:#1d7a8c;font-weight:600;">dam.gouv.nc</span> · dam.nc.pro@gouv.nc
+          </div>
+        </div>
+      </div>` : effectiveRenvoi === 'UNC' ? `
+      <div style="background:#ede7f6;border:2px solid #5e35b1;border-radius:12px;padding:18px 20px;margin-top:16px;">
+        <div style="font-size:15px;font-weight:800;color:#4527a0;margin-bottom:8px;">🎓 Ce diplôme universitaire relève de l'UNC — Université de la Nouvelle-Calédonie</div>
+        <div style="font-size:13px;color:#2c1a4d;line-height:1.7;">
+          Pour la VAE sur une licence, un master, le DAEU ou la capacité en droit délivrés par l'UNC, c'est le
+          <strong>Pôle Formation Continue et Alternance (Pôle FCA)</strong> de l'UNC qui est compétent —
+          et non le Vice-Rectorat/DAVA.<br>
+          Dossier de recevabilité : du <strong>1<sup>er</sup> février au 31 mars</strong> · 1 an d'expérience en rapport avec le diplôme visé.
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;background:white;border-radius:8px;border:1px solid #5e35b1;">
+          <div style="font-size:12px;font-weight:700;color:#4527a0;margin-bottom:4px;">🔗 Contactez le Pôle FCA de l'UNC pour votre démarche VAE :</div>
+          <div style="font-size:12px;color:#2c1a4d;line-height:1.7;">
+            UNC — Pôle Formation Continue et Alternance · Campus de Nouville<br>
+            <span style="color:#1d7a8c;font-weight:600;">www.unc.nc</span> · sfc@unc.nc · (+687) 290 490
           </div>
         </div>
       </div>` : '';
