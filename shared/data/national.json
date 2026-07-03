@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": 2,
+    "version": 3,
     "genere_le": "2026-06-30",
     "source": "docs/CATALOGUE_national_EN_M1.xlsx + docs/ETAGE2B_renvois_M1.xlsx",
     "role": "Étage national de M1 (option B : couche de données SÉPARÉE).",
@@ -9,166 +9,192 @@
       "Étage national = 'mince' : trouvabilité + renvoi, PAS d'auto-évaluation.",
       "Marquer ces entrées 'indicatif/national' à l'écran.",
       "Mobile-first ; anonymisation non concernée (diplômes publics).",
-      "Garde-fou : le portail national France VAE (vae.gouv.fr) est inadapté au contexte NC (FranceConnect, certificateurs/jurys métropolitains, agents publics exclus, ne porte ni les diplômes NC ni les relais locaux). Depuis la NC : TOUJOURS le relais local (DAVA NC, IFPSS-NC, DTEFP, UNC/Pôle FCA, CNAM-ACESTE, CCI/CMA-NC) + conseiller PRC."
+      "Garde-fou France VAE : le portail national (vae.gouv.fr) est inadapté au contexte NC (FranceConnect, certificateurs/jurys métropolitains, agents publics exclus). Ce cul-de-sac ne vaut QUE pour les certifications portées par France VAE (~1 640 : Éducation nationale, titres professionnels, une partie du social). Université, écoles/instituts du supérieur et certificateurs privés hors France VAE : s'adresser au certificateur EN DIRECT, à distance depuis la NC, sans FranceConnect. Relais locaux selon le diplôme : DAVA NC, IFPSS-NC, DTEFP, DAM NC, DAFE NC, UNC/Pôle FCA, CNAM-ACESTE, CCI-NC/CMA-NC + conseiller PRC."
     ],
     "compteurs": {
       "secteurs": 25,
       "etage_2a": 438,
-      "etage_2b_renvois": 10,
+      "etage_2b_renvois": 11,
       "a_confirmer": 1
     },
-    "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC."
+    "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC.",
+    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 640 certifs) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur)."
   },
   "secteurs": [
     {
       "id": "batiment-travaux-publics",
       "libelle": "Bâtiment, travaux publics",
       "nb_2a": 62,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "industrie-materiaux",
       "libelle": "Industrie & matériaux",
       "nb_2a": 51,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "arts-culture-artisanat-d-art",
       "libelle": "Arts, culture, artisanat d'art",
       "nb_2a": 37,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "mecanique-automobile-aeronautique",
       "libelle": "Mécanique, automobile, aéronautique",
       "nb_2a": 32,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "agriculture-peche-espaces-verts",
       "libelle": "Agriculture, pêche, espaces verts",
       "nb_2a": 26,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes agricoles (CAPA, BTSA, Bac Pro agricole) : ministère de l'Agriculture — en NC, la DAFE (dafe.gouv.nc), pas le DAVA."
     },
     {
       "id": "agroalimentaire",
       "libelle": "Agroalimentaire",
       "nb_2a": 23,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "commerce-vente",
       "libelle": "Commerce, vente",
       "nb_2a": 22,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "hotellerie-restauration-tourisme",
       "libelle": "Hôtellerie, restauration, tourisme",
       "nb_2a": 22,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "mode-textile-cuir",
       "libelle": "Mode, textile, cuir",
       "nb_2a": 22,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "bois-ameublement",
       "libelle": "Bois & ameublement",
       "nb_2a": 17,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "maritime-peche",
       "libelle": "Maritime, pêche",
       "nb_2a": 14,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Selon le diplôme : les diplômes maritimes (CAPM, BTSM, Bac Pro CGEM, Cultures marines, Polyvalent navigant, Électromécanicien marine) relèvent du ministère chargé de la mer — en NC, la DAM (dam.gouv.nc). Les diplômes EN du nautisme (charpentier de marine, maintenance nautique, réparation d'embarcations) relèvent du DAVA."
     },
     {
       "id": "communication-audiovisuel-edition",
       "libelle": "Communication, audiovisuel, édition",
       "nb_2a": 13,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "sante-paramedical",
       "libelle": "Santé, paramédical",
       "nb_2a": 13,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "transport-logistique",
       "libelle": "Transport, logistique",
       "nb_2a": 13,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "travail-social",
       "libelle": "Travail social",
       "nb_2a": 12,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes EN via le DAVA. Pour les DE sociaux (DEES, DEME, DEETS, DECESF…) : recevabilité DAVA/Vice-rectorat, accompagnement local par l'IFPSS-NC."
     },
     {
       "id": "environnement-proprete",
       "libelle": "Environnement, propreté",
       "nb_2a": 11,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "coiffure-esthetique",
       "libelle": "Coiffure, esthétique",
       "nb_2a": 9,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "comptabilite-gestion-rh",
       "libelle": "Comptabilité, gestion, RH",
       "nb_2a": 8,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "electricite-electronique",
       "libelle": "Électricité, électronique",
       "nb_2a": 8,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "securite",
       "libelle": "Sécurité",
       "nb_2a": 7,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "numerique-informatique",
       "libelle": "Numérique, informatique",
       "nb_2a": 5,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "banque-assurance-immobilier",
       "libelle": "Banque, assurance, immobilier",
       "nb_2a": 4,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "maintenance-industrielle",
       "libelle": "Maintenance industrielle",
       "nb_2a": 3,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     },
     {
       "id": "sport-animation",
       "libelle": "Sport, animation",
       "nb_2a": 3,
-      "dans_19_actuels": true
+      "dans_19_actuels": true,
+      "renvoi_note": "Ces diplômes EN relèvent du DAVA. Les diplômes d'État JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) relèvent du ministère des Sports — renseignements : Mission d'appui au sport du Haut-Commissariat (tél. 20.02.00). Les brevets sport et animation calédoniens relèvent de la DTEFP (service VAE, tél. 24.66.22)."
     },
     {
       "id": "droit-justice",
       "libelle": "Droit, justice",
       "nb_2a": 1,
-      "dans_19_actuels": false
+      "dans_19_actuels": false,
+      "renvoi_note": "Diplômes de l'Éducation nationale, accessibles par VAE à distance via le DAVA Nouvelle-Calédonie."
     }
   ],
   "etage_2a_EN_DAVA": [
@@ -180,7 +206,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -191,7 +217,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -202,7 +228,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -213,7 +239,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -224,7 +250,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -235,7 +261,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -246,7 +272,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -257,7 +283,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -268,7 +294,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -279,7 +305,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -290,7 +316,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -301,7 +327,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -312,7 +338,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -323,7 +349,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -334,7 +360,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -345,7 +371,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -356,7 +382,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -367,7 +393,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -378,7 +404,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -389,7 +415,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -400,7 +426,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -411,7 +437,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -422,7 +448,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -433,7 +459,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -444,7 +470,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -455,7 +481,7 @@
       "secteur": "Agriculture, pêche, espaces verts",
       "secteur_id": "agriculture-peche-espaces-verts",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère de l'Agriculture — en NC : DAFE NC (dafe.gouv.nc)",
       "note": ""
     },
     {
@@ -3590,7 +3616,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3601,7 +3627,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3612,7 +3638,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3623,7 +3649,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3634,7 +3660,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3656,7 +3682,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3667,7 +3693,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3700,7 +3726,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -3711,7 +3737,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "DAVA NC (à distance)",
+      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
       "note": ""
     },
     {
@@ -4996,7 +5022,7 @@
       "certificateur": "Université — UNC",
       "diplomes_typiques": "Licence, Master, BUT (IUT), DU, Doctorat",
       "secteurs": "Tous (selon filière UNC : droit-éco-gestion, lettres-langues-SHS, sciences-techniques)",
-      "renvoi_nc": "UNC – Pôle FCA, Campus Nouville · sfc@unc.nc · (+687) 290 490",
+      "renvoi_nc": "UNC – Pôle FCA, Campus de Nouville · www.unc.nc · sfc@unc.nc · (+687) 290 490",
       "accessible_nc": "OUI (local)",
       "reserves": "Recevabilité 01/02–31/03. 1 an d'exp. (code éducation). Pour les diplômes que l'UNC délivre."
     },
@@ -5036,25 +5062,33 @@
       "certificateur": "Ministère Santé / Solidarités (DE sanitaires & sociaux)",
       "diplomes_typiques": "DE sociaux (DEAES, DEASS, DEEJE…). DE sanitaires (infirmier, aide-soignant) = professions réglementées, VAE fermée ou restreinte.",
       "secteurs": "Santé/paramédical, Travail social",
-      "renvoi_nc": "Recevabilité nationale des DE sociaux (livret 1) via vae.asp-public.fr — surtout ceux NON accompagnés localement (DEASS, DEEJE, DEAES). En NC, les DE sociaux courants (Éduc. spécialisé, Moniteur éducateur, CAFERUIS) ont un accompagnement local IFPSS-NC ; recevabilité DAVA/Vice-rectorat.",
+      "renvoi_nc": "Recevabilité nationale des DE sociaux (livret 1) via vae.asp-public.fr — surtout ceux NON accompagnés localement (DEASS, DEEJE, DEAES). En NC, les DE sociaux courants (Éduc. spécialisé, Moniteur éducateur, CAFERUIS) ont un accompagnement local IFPSS-NC ; recevabilité DAVA/Vice-rectorat. L'IFPSS-NC accompagne à la fois des certifications calédoniennes (Accompagnant de vie, Moniteur-éducateur NC) et nationales (DEES, CAFERUIS).",
       "accessible_nc": "Partiel (accompagnement local IFPSS)",
-      "reserves": "L'ASP n'est PAS le certificateur (= État/ministère ; jury DREETS) : c'est le guichet national de recevabilité. Infirmier : VAE fermée (réglementé ; formation initiale IFPSS). Le national bascule vers France VAE (inadapté NC). Source : ifpss.nc (page VAE filière sociale) + DREETS (DEASS par VAE), consulté 30/06/2026."
+      "reserves": "L'ASP n'est PAS le certificateur (= État/ministère ; jury DREETS) : c'est le guichet national de recevabilité. Infirmier : VAE fermée (réglementé ; formation initiale IFPSS). Le national bascule vers France VAE (inadapté NC). Source : ifpss.nc (page VAE filière sociale) + DREETS (DEASS par VAE), consulté 30/06/2026. Habilitation DTEFP des accompagnateurs : arrêté 2019-679/GNC du 26/03/2019 — procédure sans liste annuelle ni registre public, requise seulement pour certif NC + demandeur d'emploi financé NC → écrire « à confirmer auprès de la DTEFP », jamais « habilité »."
     },
     {
       "certificateur": "Ministère Jeunesse & Sports / Animation",
       "diplomes_typiques": "Sport : DE JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS). Animation : brevets calédoniens (en construction).",
       "secteurs": "Sport, animation",
-      "renvoi_nc": "⚠ DEUX voies distinctes. (a) SPORT — DE JEPS, certificateur national (recevabilité/jury via DRAJES) ; BPJEPS suspendus en NC (pas d'accord État/NC), voie en transition. (b) ANIMATION — brevets calédoniens (DJS NC, co-construction lancée 25/06/2026, texte à venir) ; BAFA/BAFD arrêtés 01/01/2026. Diplômes sport NC → DTEFP.",
+      "renvoi_nc": "⚠ DEUX voies distinctes. (a) SPORT & ANIMATION NC — brevets calédoniens (RCP-NC) → DTEFP, service VAE (tél. 24.66.22). (b) DIPLÔMES D'ÉTAT JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) → Mission d'appui au sport du Haut-Commissariat de la NC (tél. 20.02.00). BPJEPS suspendus en NC (pas d'accord État/NC), voie en transition ; brevets calédoniens animation en co-construction DJS (25/06/2026) ; BAFA/BAFD arrêtés au 01/01/2026.",
       "accessible_nc": "Restreint / transition",
-      "reserves": "Message dédié, PAS un renvoi standard. Source : contexte §5f + veille 29/06."
+      "reserves": "Message dédié, PAS un renvoi standard. La DJS-NC renvoie elle-même au Haut-Commissariat pour les diplômes d'État. Source : djs.gouv.nc, pages « La validation des acquis de l'expérience » et « Les diplômes d'État à finalité professionnelle » (lues 03/07/2026)."
     },
     {
       "certificateur": "Ministère Agriculture",
       "diplomes_typiques": "CAPA, BTSA, Bac Pro agricole",
       "secteurs": "Agriculture, agroalimentaire",
-      "renvoi_nc": "DRAAF / établissements agricoles ; VAE via le réseau agricole",
+      "renvoi_nc": "Ministère de l'Agriculture (certificateur) — en NC : DAFE (dafe.gouv.nc) pour les diplômes agricoles (CAPA, BTSA, Bac Pro agricole).",
       "accessible_nc": "OUI",
-      "reserves": "Beaucoup déjà dans nos listes EN (CAPA/BTSA/BacPro agri)."
+      "reserves": "Les diplômes agricoles de nos listes (secteur Agriculture) sont routés DAFE, pas DAVA."
+    },
+    {
+      "certificateur": "Ministère chargé de la mer (enseignement maritime)",
+      "diplomes_typiques": "CAPM (matelot…), CAPM conchyliculture, Bac Pro CGEM (commerce/plaisance, pêche), Bac Pro Polyvalent navigant pont/machine, Bac Pro Électromécanicien marine, Bac Pro Cultures marines, BTSM (PGEM, MASEN)",
+      "secteurs": "Maritime, pêche",
+      "renvoi_nc": "DAM NC — Direction des Affaires Maritimes (dam.gouv.nc · dam.nc.pro@gouv.nc)",
+      "accessible_nc": "OUI (local)",
+      "reserves": "Liste officielle des diplômes maritimes : formations.mer.gouv.fr (lu 03/07/2026). Les diplômes EN du nautisme (charpentier de marine, maintenance nautique, réparation d'embarcations de plaisance, CS mécatronique navale) relèvent du DAVA, pas de la DAM."
     },
     {
       "certificateur": "Ministère Culture",
