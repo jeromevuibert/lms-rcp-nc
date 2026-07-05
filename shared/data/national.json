@@ -18,7 +18,7 @@
       "a_confirmer": 1
     },
     "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC.",
-    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 640 certifs) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur). Complément même jour : 2 BTSA du secteur agroalimentaire ré-attribués ministère Agriculture → DAFE NC."
+    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 693 certifs (MAJ 05/07/2026, vérifié vae.gouv.fr : 1693 au 02/07/2026)) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur). Complément même jour : 2 BTSA du secteur agroalimentaire ré-attribués ministère Agriculture → DAFE NC."
   },
   "secteurs": [
     {
@@ -54,7 +54,7 @@
       "libelle": "Agriculture, pêche, espaces verts",
       "nb_2a": 26,
       "dans_19_actuels": true,
-      "renvoi_note": "Diplômes agricoles (CAPA, BTSA, Bac Pro agricole) : ministère de l'Agriculture — en NC, la DAFE (dafe.gouv.nc), pas le DAVA."
+      "renvoi_note": "Diplômes agricoles TECHNIQUES (CAPa, BPA, BP, Bac pro, BTSA, CS) : ministère de l'Agriculture — en NC, la DAFE (dafe.gouv.nc), pas le DAVA. Le supérieur LONG agricole (Licence pro, Ingénieur, Master, Doctorat) ne passe PAS par la DAFE : écoles d'enseignement supérieur agricole / portail national / France Compétences. [Vérifié dafe.gouv.nc/vae 05/07/2026]"
     },
     {
       "id": "agroalimentaire",
@@ -96,7 +96,7 @@
       "libelle": "Maritime, pêche",
       "nb_2a": 14,
       "dans_19_actuels": false,
-      "renvoi_note": "Selon le diplôme : les diplômes maritimes (CAPM, BTSM, Bac Pro CGEM, Cultures marines, Polyvalent navigant, Électromécanicien marine) relèvent du ministère chargé de la mer — en NC, la DAM (dam.gouv.nc). Les diplômes EN du nautisme (charpentier de marine, maintenance nautique, réparation d'embarcations) relèvent du DAVA."
+      "renvoi_note": "Selon le diplôme : les diplômes maritimes (CAPM, BTSM, Bac Pro CGEM, Cultures marines, Polyvalent navigant, Électromécanicien marine) relèvent du ministère chargé de la mer — en NC, la DAM (dam.gouv.nc) est l'autorité maritime, MAIS la VAE des titres maritimes nationaux passe par l'UCEM (Unité des concours et examens maritimes) — la DAM y renvoie (vérifié 05/07/2026). Les diplômes EN du nautisme (charpentier de marine, maintenance nautique, réparation d'embarcations) relèvent du DAVA."
     },
     {
       "id": "communication-audiovisuel-edition",
@@ -3616,7 +3616,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3627,7 +3627,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3638,7 +3638,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3649,7 +3649,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3660,7 +3660,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3682,7 +3682,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3693,7 +3693,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "25",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3726,7 +3726,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
@@ -3737,7 +3737,7 @@
       "secteur": "Maritime, pêche",
       "secteur_id": "maritime-peche",
       "nsf_domaine": "21",
-      "renvoi": "Ministère chargé de la mer — en NC : DAM NC (dam.gouv.nc)",
+      "renvoi": "Ministère chargé de la mer — la DAM (dam.gouv.nc) = autorité maritime NC (titres, formation) ; la VAE des titres maritimes NATIONAUX passe par l'UCEM (Unité des concours et examens maritimes, national) — la DAM y renvoie explicitement (vérifié dam.gouv.nc 05/07/2026)",
       "note": ""
     },
     {
