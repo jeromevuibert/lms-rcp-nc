@@ -9,7 +9,7 @@
       "Étage national = 'mince' : trouvabilité + renvoi, PAS d'auto-évaluation.",
       "Marquer ces entrées 'indicatif/national' à l'écran.",
       "Mobile-first ; anonymisation non concernée (diplômes publics).",
-      "Garde-fou France VAE : le portail national (vae.gouv.fr) est inadapté au contexte NC (FranceConnect, certificateurs/jurys métropolitains, agents publics exclus). Ce cul-de-sac ne vaut QUE pour les certifications portées par France VAE (~1 640 : Éducation nationale, titres professionnels, une partie du social). Université, écoles/instituts du supérieur et certificateurs privés hors France VAE : s'adresser au certificateur EN DIRECT, à distance depuis la NC, sans FranceConnect. Relais locaux selon le diplôme : DAVA NC, IFPSS-NC, DTEFP, DAM NC, DAFE NC, UNC/Pôle FCA, CNAM-ACESTE, CCI-NC/CMA-NC + conseiller PRC."
+      "Garde-fou France VAE : le portail national (vae.gouv.fr) est inadapté au contexte NC (FranceConnect, certificateurs/jurys métropolitains, agents publics exclus). Ce cul-de-sac ne vaut QUE pour les certifications portées par France VAE (~1 693 au 02/07/2026 : Éducation nationale, titres professionnels, une partie du social). Université, écoles/instituts du supérieur et certificateurs privés hors France VAE : s'adresser au certificateur EN DIRECT, à distance depuis la NC, sans FranceConnect. Relais locaux selon le diplôme : DAVA NC, IFPSS-NC, DTEFP, DAM NC, DAFE NC, UNC/Pôle FCA, CNAM-ACESTE, CCI-NC/CMA-NC + conseiller PRC."
     ],
     "compteurs": {
       "secteurs": 25,
@@ -18,7 +18,8 @@
       "a_confirmer": 1
     },
     "maj_2026_06_30": "Étage 2b corrigé (terrain PRC + sources officielles datées) ; DE sociaux : recevabilité DAVA/Vice-rectorat + accompagnement IFPSS-NC (couche locale) ; garde-fou France VAE. Aligné sur la session PRC.",
-    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 693 certifs (MAJ 05/07/2026, vérifié vae.gouv.fr : 1693 au 02/07/2026)) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur). Complément même jour : 2 BTSA du secteur agroalimentaire ré-attribués ministère Agriculture → DAFE NC."
+    "maj_2026_07_03": "v3 : garde-fou France VAE affiné (limité à son périmètre ~1 693 certifs (MAJ 05/07/2026, vérifié vae.gouv.fr : 1693 au 02/07/2026)) ; sport recadré source djs.gouv.nc lu 03/07/2026 (brevets NC → DTEFP service VAE 24.66.22 ; JEPS État → Mission d'appui au sport du Haut-Commissariat 20.02.00) ; maritime : 9 diplômes ré-attribués au ministère chargé de la mer (→ DAM NC, source formations.mer.gouv.fr) + fiche 2b dédiée ; agriculture : 26 diplômes → ministère de l'Agriculture (→ DAFE NC) ; UNC : site www.unc.nc ajouté ; IFPSS : périmètre NC+national explicite + nuance habilitation (arrêté 2019-679/GNC du 26/03/2019, procédure sans registre public) ; renvoi_note par secteur (bandeau M1 adapté au secteur, plus de DAVA en dur). Complément même jour : 2 BTSA du secteur agroalimentaire ré-attribués ministère Agriculture → DAFE NC.",
+    "maj_2026_07_14": "Sport : intégration France VAE des JEPS actée au national (01/07/2026, vérifié sports.gouv.fr + bandeau vae.gouv.fr 1693 au 02/07) ; garde-fou NC maintenu (Haut-Com relais, DTEFP pour brevets NC). Maritime : 34 titres etat- reclassés certificateur 'Ministère chargé de la mer (VAE : UCEM)', branche routage UCEM M1 (source arrêté 13/07/2016 + dam.gouv.nc)."
   },
   "secteurs": [
     {
@@ -187,7 +188,7 @@
       "libelle": "Sport, animation",
       "nb_2a": 3,
       "dans_19_actuels": true,
-      "renvoi_note": "Ces diplômes EN relèvent du DAVA. Les diplômes d'État JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) relèvent du ministère des Sports — renseignements : Mission d'appui au sport du Haut-Commissariat (tél. 20.02.00). Les brevets sport et animation calédoniens relèvent de la DTEFP (service VAE, tél. 24.66.22)."
+      "renvoi_note": "Ces diplômes EN relèvent du DAVA. Les diplômes d'État JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) relèvent du ministère des Sports — renseignements : Mission d'appui au sport du Haut-Commissariat (tél. 20.02.00). Les brevets sport et animation calédoniens relèvent de la DTEFP (service VAE, tél. 24.66.22). MAJ 14/07/2026 : depuis le 1er juillet 2026, la recevabilité VAE des diplômes d'État JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS + DE des métiers de la montagne) est portée au niveau NATIONAL par France VAE (vae.gouv.fr). ⚠ En Nouvelle-Calédonie, France VAE n'est PAS directement accessible (compte FranceConnect/NC Connect) : passer par la Mission d'appui au sport du Haut-Commissariat (tél. 20.02.00), qui reste le relais d'information local. Les brevets sport/animation calédoniens restent gérés par la DTEFP (service VAE, tél. 24.66.22)."
     },
     {
       "id": "droit-justice",
@@ -5070,7 +5071,7 @@
       "certificateur": "Ministère Jeunesse & Sports / Animation",
       "diplomes_typiques": "Sport : DE JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS). Animation : brevets calédoniens (en construction).",
       "secteurs": "Sport, animation",
-      "renvoi_nc": "⚠ DEUX voies distinctes. (a) SPORT & ANIMATION NC — brevets calédoniens (RCP-NC) → DTEFP, service VAE (tél. 24.66.22). (b) DIPLÔMES D'ÉTAT JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) → Mission d'appui au sport du Haut-Commissariat de la NC (tél. 20.02.00). BPJEPS suspendus en NC (pas d'accord État/NC), voie en transition ; brevets calédoniens animation en co-construction DJS (25/06/2026) ; BAFA/BAFD arrêtés au 01/01/2026.",
+      "renvoi_nc": "⚠ DEUX voies distinctes. (a) SPORT & ANIMATION NC — brevets calédoniens (RCP-NC) → DTEFP, service VAE (tél. 24.66.22). (b) DIPLÔMES D'ÉTAT JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS) → Mission d'appui au sport du Haut-Commissariat de la NC (tél. 20.02.00). BPJEPS suspendus en NC (pas d'accord État/NC), voie en transition ; brevets calédoniens animation en co-construction DJS (25/06/2026) ; BAFA/BAFD arrêtés au 01/01/2026. MAJ 14/07/2026 : depuis le 1er juillet 2026, la recevabilité VAE des diplômes d'État JEPS (CPJEPS, BPJEPS, DEJEPS, DESJEPS + DE des métiers de la montagne) est portée au niveau NATIONAL par France VAE (vae.gouv.fr). ⚠ En Nouvelle-Calédonie, France VAE n'est PAS directement accessible (compte FranceConnect/NC Connect) : passer par la Mission d'appui au sport du Haut-Commissariat (tél. 20.02.00), qui reste le relais d'information local. Les brevets sport/animation calédoniens restent gérés par la DTEFP (service VAE, tél. 24.66.22).",
       "accessible_nc": "Restreint / transition",
       "reserves": "Message dédié, PAS un renvoi standard. La DJS-NC renvoie elle-même au Haut-Commissariat pour les diplômes d'État. Source : djs.gouv.nc, pages « La validation des acquis de l'expérience » et « Les diplômes d'État à finalité professionnelle » (lues 03/07/2026)."
     },
