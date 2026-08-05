@@ -16,8 +16,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29",
-    "vae": "oui",
-    "vae_note": "Justifier de périodes d’embarquement d’une durée minimale de 12 mois, en continu | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/matelot-de-peche"
+    "vae": "ouverte",
+    "vae_note": "Justifier de périodes d’embarquement d’une durée minimale de 12 mois, en continu | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/matelot-de-peche",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-02",
@@ -36,8 +38,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conseiller-en-assurance"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conseiller-en-assurance",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-03",
@@ -56,8 +60,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/mediateur-numerique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/mediateur-numerique",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-04",
@@ -76,8 +82,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/installateur-en-sanitaire-et-energies-renouvelables"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/installateur-en-sanitaire-et-energies-renouvelables",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-05",
@@ -96,8 +104,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/poseur-en-systemes-photovoltaiques"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/poseur-en-systemes-photovoltaiques",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-06",
@@ -116,8 +126,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-palmee-subaquatique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-palmee-subaquatique",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-07",
@@ -136,8 +148,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-de-canyonisme"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-de-canyonisme",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-08",
@@ -156,8 +170,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-initiateur-velo"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnateur-initiateur-velo",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-09",
@@ -176,8 +192,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-de-canoe-kayak-vaa-et-disciplines-associees"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-de-canoe-kayak-vaa-et-disciplines-associees",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-10",
@@ -196,8 +214,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-darts-martiaux-option-judo-jujitsu-karate-ou-aikido"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-darts-martiaux-option-judo-jujitsu-karate-ou-aikido",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-11",
@@ -216,8 +236,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-equestre"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-equestre",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-12",
@@ -236,8 +258,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-pedestre"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/accompagnateur-de-sortie-pedestre",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-13",
@@ -256,8 +280,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/animateur-tout-public"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/animateur-tout-public",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-14",
@@ -276,8 +302,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/intervenant-artistique-et-culturel"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/intervenant-artistique-et-culturel",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-15",
@@ -296,8 +324,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "inconnu-fiche-muette",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-equestre"
+    "vae": "inconnu",
+    "vae_note": "[ancienne valeur : inconnu-fiche-muette] source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-equestre",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-16",
@@ -316,8 +346,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-pedestre"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/guide-de-randonnee-pedestre",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-17",
@@ -336,8 +368,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/exploitant-de-petite-structure-touristique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/exploitant-de-petite-structure-touristique",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-18",
@@ -356,8 +390,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "Le diplôme d’ « opérateur sur chargeuse et bouteur dans une exploitation minière | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-chargeuse-et-bouteur-dans-une-exploitation"
+    "vae": "ouverte",
+    "vae_note": "Le diplôme d’ « opérateur sur chargeuse et bouteur dans une exploitation minière | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-chargeuse-et-bouteur-dans-une-exploitation",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-19",
@@ -376,8 +412,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "Le diplôme d’ « opérateur sur pelle hydraulique dans une exploitation minière » | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-pelle-hydraulique-dans-une-exploitation"
+    "vae": "ouverte",
+    "vae_note": "Le diplôme d’ « opérateur sur pelle hydraulique dans une exploitation minière » | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-pelle-hydraulique-dans-une-exploitation",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-20",
@@ -396,8 +434,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-tombereau-dans-une-exploitation-miniere-0"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/operateur-sur-tombereau-dans-une-exploitation-miniere-0",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-21",
@@ -416,8 +456,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-sur-camion-de-roulage-de-descente-de-mine"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-sur-camion-de-roulage-de-descente-de-mine",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-22",
@@ -436,8 +478,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-maintenance-des-automates-bancaires"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-maintenance-des-automates-bancaires",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-23",
@@ -456,8 +500,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Transversal→Compétences clés 2026-05-11",
-    "vae": "inconnu-fiche-muette",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/certificat-de-competences-essentielles-cce"
+    "vae": "inconnu",
+    "vae_note": "[ancienne valeur : inconnu-fiche-muette] source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/certificat-de-competences-essentielles-cce",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-24",
@@ -476,8 +522,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "Le candidat souhaitant acquérir le diplôme d'aide-soignant par la validation des | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/aide-soignant-partir-de-2019"
+    "vae": "ouverte",
+    "vae_note": "Le candidat souhaitant acquérir le diplôme d'aide-soignant par la validation des | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/aide-soignant-partir-de-2019",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-25",
@@ -496,8 +544,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-de-puericulture"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-de-puericulture",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-26",
@@ -517,7 +567,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "partielle",
-    "vae_note": "partielle sur CPU 1 uniquement EPREUVES DE CERTIFICATION Par CPU Epreuve CPU1 CPU2 Mises en situatio | source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/ambulancier-version-2024"
+    "vae_note": "partielle sur CPU 1 uniquement EPREUVES DE CERTIFICATION Par CPU Epreuve CPU1 CPU2 Mises en situatio | source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/ambulancier-version-2024",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-27",
@@ -536,8 +588,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistante-dentaire-version-2022"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistante-dentaire-version-2022",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-28",
@@ -556,8 +610,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnatrice-de-vie-version-2019"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/accompagnatrice-de-vie-version-2019",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-29",
@@ -576,8 +632,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-dautonomie-version-2019"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/auxiliaire-dautonomie-version-2019",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-30",
@@ -596,8 +654,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-prive-qualifie-version-2024"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-prive-qualifie-version-2024",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-31",
@@ -616,8 +676,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/convoyeur-de-valeurs"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/convoyeur-de-valeurs",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-32",
@@ -636,8 +698,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-renforcee-arme"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/agent-de-securite-renforcee-arme",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-33",
@@ -656,8 +720,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-surete-aeroportuaire"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-surete-aeroportuaire",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-34",
@@ -676,8 +742,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-educateur"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/moniteur-educateur",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-35",
@@ -696,8 +764,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-technique-et-pedagogique-en-insertion-0"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-technique-et-pedagogique-en-insertion-0",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-36",
@@ -716,8 +786,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-telesurveillance"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-telesurveillance",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-37",
@@ -736,8 +808,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-video-protection"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/operateur-en-centre-de-video-protection",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-38",
@@ -756,8 +830,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/formateur-dadultes"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/formateur-dadultes",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-39",
@@ -776,8 +852,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "accès par la voie de la validation des acquis de l’expérience n’est pas possible | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/formateur-la-conduite-automobile-et-la-securite-routiere"
+    "vae": "fermee",
+    "vae_note": "accès par la voie de la validation des acquis de l’expérience n’est pas possible | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/formateur-la-conduite-automobile-et-la-securite-routiere",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-40",
@@ -796,8 +874,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/educateur-en-milieu-scolaire"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/educateur-en-milieu-scolaire",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-41",
@@ -816,8 +896,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "non",
-    "vae_note": "transitoire expirée: (transitoirement possible jusqu’en mars 2022) EPREUVES DE CERTIFICATION Epreuves | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/dirigeant-dentreprise-de-securite-privee"
+    "vae": "fermee",
+    "vae_note": "transitoire expirée: (transitoirement possible jusqu’en mars 2022) EPREUVES DE CERTIFICATION Epreuves | source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/dirigeant-dentreprise-de-securite-privee",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-42",
@@ -836,8 +918,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "inconnu-fiche-muette",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-traitement-de-valeurs"
+    "vae": "inconnu",
+    "vae_note": "[ancienne valeur : inconnu-fiche-muette] source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/agent-de-traitement-de-valeurs",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-43",
@@ -856,8 +940,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-dequipe"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/encadrant-dequipe",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-44",
@@ -876,8 +962,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistant-medico-socio-administratif"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/assistant-medico-socio-administratif",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-45",
@@ -896,8 +984,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/manager-de-proximite-dans-le-secteur-public"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/manager-de-proximite-dans-le-secteur-public",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-46",
@@ -916,8 +1006,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/conducteur-de-transport-en-commun-de-personnes-version-2019"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-de-la-nouvelle-caledonie/conducteur-de-transport-en-commun-de-personnes-version-2019",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-47",
@@ -936,8 +1028,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime NC) 2026-04-29 | certificateur DFPC 2026-04-29",
-    "vae": "oui",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "nc-48",
@@ -956,8 +1050,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conducteur-de-transport-routier-de-marchandises"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-la-nouvelle-caledonie/conducteur-de-transport-routier-de-marchandises",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-01",
@@ -978,8 +1074,10 @@
       "etat-01"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-superieur-en-marketing-commerce-et-gestion"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-superieur-en-marketing-commerce-et-gestion",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-02",
@@ -1000,8 +1098,10 @@
       "etat-02"
     ],
     "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-gestion"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-gestion",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-03",
@@ -1022,8 +1122,10 @@
       "etat-03"
     ],
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-sciences-pour-lingenieur"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-sciences-pour-lingenieur",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-04",
@@ -1044,8 +1146,10 @@
       "etat-04"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-btp-genie-civil-et"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-btp-genie-civil-et",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-05",
@@ -1066,8 +1170,10 @@
       "etat-05"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-qualite-hygiene-securite"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-qualite-hygiene-securite",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-06",
@@ -1088,8 +1194,10 @@
       "etat-06"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/deust-batiment-et-travaux-publics"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/deust-batiment-et-travaux-publics",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-07",
@@ -1110,8 +1218,17 @@
       "etat-07"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-jardinier-paysagiste"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-jardinier-paysagiste",
+    "rncp_numero": "RNCP38386",
+    "rncp_intitule": "Jardinier-paysagiste",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-08",
@@ -1132,8 +1249,17 @@
       "etat-08"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-services-aux-personnes-et-vente-en-espace-rural"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-services-aux-personnes-et-vente-en-espace-rural",
+    "rncp_numero": "RNCP38390",
+    "rncp_intitule": "Services aux personnes et vente en espace rural",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-09",
@@ -1154,8 +1280,17 @@
       "etat-09"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-agricultures-des-regions-chaudes"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-agricultures-des-regions-chaudes",
+    "rncp_numero": "RNCP38854",
+    "rncp_intitule": "Agricultures des régions chaudes",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "01/01/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-10",
@@ -1176,8 +1311,17 @@
       "etat-10"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-metiers-de-lagriculture"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capa-metiers-de-lagriculture",
+    "rncp_numero": "RNCP40523",
+    "rncp_intitule": "Métiers de l'agriculture",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-11",
@@ -1198,8 +1342,17 @@
       "etat-11"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-services-aux-personnes-et-aux-territoires"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-services-aux-personnes-et-aux-territoires",
+    "rncp_numero": "RNCP36788",
+    "rncp_intitule": "Services aux personnes et animation dans les territoires",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP13905 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-12",
@@ -1220,8 +1373,17 @@
       "etat-12"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-milieux-naturels-et-de-la-faune"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-milieux-naturels-et-de-la-faune",
+    "rncp_numero": "RNCP36789",
+    "rncp_intitule": "Gestion des milieux naturels et de la faune",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-13",
@@ -1242,8 +1404,17 @@
       "etat-13"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-conduite-et-gestion-de-lexploitation-agricole"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-conduite-et-gestion-de-lexploitation-agricole",
+    "rncp_numero": "RNCP38316",
+    "rncp_intitule": "Conduite et gestion de l'entreprise agricole",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "01/01/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP11475 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-14",
@@ -1264,8 +1435,17 @@
       "etat-14"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-amenagements-paysagers"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-amenagements-paysagers",
+    "rncp_numero": "RNCP38314",
+    "rncp_intitule": "Aménagements paysagers",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "01/01/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-15",
@@ -1286,8 +1466,10 @@
       "etat-15"
     ],
     "note": "Certificateur DAFE NC (pas DAVA) 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/btsa-developpement-de-lagriculture-des-regions-chaudes-darc"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/btsa-developpement-de-lagriculture-des-regions-chaudes-darc",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-16",
@@ -1308,8 +1490,17 @@
       "etat-16"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien",
+    "rncp_numero": "RNCP39819",
+    "rncp_intitule": "Brevet de chef mécanicien",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-17",
@@ -1330,8 +1521,17 @@
       "etat-17"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien",
+    "rncp_numero": "RNCP39932",
+    "rncp_intitule": "Brevet de second mécanicien",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-18",
@@ -1352,8 +1552,17 @@
       "etat-18"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine",
+    "rncp_numero": "RNCP39934",
+    "rncp_intitule": "Brevet de capitaine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-19",
@@ -1374,8 +1583,17 @@
       "etat-19"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine",
+    "rncp_numero": "RNCP39941",
+    "rncp_intitule": "Brevet de second capitaine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-20",
@@ -1396,8 +1614,17 @@
       "etat-20"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-passerelle"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-passerelle",
+    "rncp_numero": "RNCP39656",
+    "rncp_intitule": "Brevet d'officier chef de quart passerelle",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "successeur de RNCP25958 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-21",
@@ -1418,8 +1645,10 @@
       "etat-21"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-machine"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-dofficier-chef-de-quart-machine",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-22",
@@ -1440,8 +1669,10 @@
       "etat-22"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-23",
@@ -1462,8 +1693,17 @@
       "etat-23"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000-yacht"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-3000-yacht",
+    "rncp_numero": "RNCP39800",
+    "rncp_intitule": "Brevet de capitaine 3 000 yacht",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP25877 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-24",
@@ -1484,8 +1724,10 @@
       "etat-24"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-8000-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-8000-kw",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-25",
@@ -1506,8 +1748,10 @@
       "etat-25"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-8000-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-8000-kw",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-26",
@@ -1528,8 +1772,10 @@
       "etat-26"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine-3000"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-capitaine-3000",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-27",
@@ -1550,8 +1796,17 @@
       "etat-27"
     ],
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-capitaine-de-peche"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-capitaine-de-peche",
+    "rncp_numero": "RNCP40083",
+    "rncp_intitule": "Brevet de capitaine de pêche",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-28",
@@ -1572,8 +1827,17 @@
       "etat-28"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-yacht"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-yacht",
+    "rncp_numero": "RNCP39653",
+    "rncp_intitule": "Brevet de capitaine 200 yacht",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-29",
@@ -1594,8 +1858,17 @@
       "etat-29"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200",
+    "rncp_numero": "RNCP38863",
+    "rncp_intitule": "Brevet de capitaine 200",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-30",
@@ -1616,8 +1889,17 @@
       "etat-30"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-pont"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-pont",
+    "rncp_numero": "RNCP39154",
+    "rncp_intitule": "Certificat de matelot pont",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-31",
@@ -1638,8 +1920,17 @@
       "etat-31"
     ],
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-peche"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-peche",
+    "rncp_numero": "RNCP39651",
+    "rncp_intitule": "Brevet de capitaine 200 pêche",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "successeur de RNCP25325 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-32",
@@ -1660,8 +1951,17 @@
       "etat-32"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-mecanicien-250-kw",
+    "rncp_numero": "RNCP39701",
+    "rncp_intitule": "Brevet de mécanicien 250 kW",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-33",
@@ -1682,8 +1982,17 @@
       "etat-33"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-quart-passerelle"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-matelot-de-quart-passerelle",
+    "rncp_numero": "RNCP39813",
+    "rncp_intitule": "Certificat de matelot de quart passerelle",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-34",
@@ -1704,8 +2013,17 @@
       "etat-34"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-0"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-0",
+    "rncp_numero": "RNCP39814",
+    "rncp_intitule": "Certificat de mécanicien",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-35",
@@ -1726,8 +2044,17 @@
       "etat-35"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-quart-machine"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-mecanicien-quart-machine",
+    "rncp_numero": "RNCP39815",
+    "rncp_intitule": "Certificat de mécanicien de quart machine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-36",
@@ -1748,8 +2075,17 @@
       "etat-36"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-pont"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-pont",
+    "rncp_numero": "RNCP39816",
+    "rncp_intitule": "Certificat de marin qualifié pont",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-37",
@@ -1770,8 +2106,17 @@
       "etat-37"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-machine"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/certificat-de-marin-qualifie-machine",
+    "rncp_numero": "RNCP39826",
+    "rncp_intitule": "Certificat de marin qualifié machine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-38",
@@ -1792,8 +2137,17 @@
       "etat-38"
     ],
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/certificat-daptitude-au-commandement-la-petite-peche"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/certificat-daptitude-au-commandement-la-petite-peche",
+    "rncp_numero": "RNCP40094",
+    "rncp_intitule": "Certificat d'aptitude au commandement à la petite pêche",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-39",
@@ -1814,8 +2168,17 @@
       "etat-39"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500",
+    "rncp_numero": "RNCP39152",
+    "rncp_intitule": "Brevet de capitaine 500",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-40",
@@ -1836,8 +2199,17 @@
       "etat-40"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-voile"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-200-voile",
+    "rncp_numero": "RNCP39652",
+    "rncp_intitule": "Brevet de capitaine 200 voile",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-41",
@@ -1858,8 +2230,17 @@
       "etat-41"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500-yacht"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-capitaine-500-yacht",
+    "rncp_numero": "RNCP39654",
+    "rncp_intitule": "Brevet de capitaine 500 yacht",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-42",
@@ -1880,8 +2261,17 @@
       "etat-42"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-chef-de-quart-500"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/brevet-de-chef-de-quart-500",
+    "rncp_numero": "RNCP39655",
+    "rncp_intitule": "Brevet de chef de quart 500",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-43",
@@ -1902,8 +2292,17 @@
       "etat-43"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-mecanicien-750-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-mecanicien-750-kw",
+    "rncp_numero": "RNCP39702",
+    "rncp_intitule": "Brevet de mécanicien 750 kW",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-44",
@@ -1924,8 +2323,17 @@
       "etat-44"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-de-quart-500-yacht"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-de-quart-500-yacht",
+    "rncp_numero": "RNCP39797",
+    "rncp_intitule": "Brevet de chef de quart 500 yacht",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "successeur de RNCP25475 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-45",
@@ -1946,8 +2354,17 @@
       "etat-45"
     ],
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-lieutenant-de-peche"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-lieutenant-de-peche",
+    "rncp_numero": "RNCP40095",
+    "rncp_intitule": "Brevet de lieutenant de pêche",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-46",
@@ -1968,8 +2385,10 @@
       "etat-46"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-3000-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-second-mecanicien-3000-kw",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-47",
@@ -1990,8 +2409,10 @@
       "etat-47"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-48",
@@ -2012,8 +2433,17 @@
       "etat-48"
     ],
     "note": "Recatégorisé Agriculture→Transport Logistique (maritime DAFE) 2026-04-29 | certificateur corrigé DAFE→DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-patron-de-peche"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-patron-de-peche",
+    "rncp_numero": "RNCP40084",
+    "rncp_intitule": "Brevet de patron de pêche",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": true
   },
   {
     "id": "etat-49",
@@ -2034,8 +2464,10 @@
       "etat-49"
     ],
     "note": "cat Autres→Transport Logistique, certificateur DAM NC 2026-04-29",
-    "vae": "a-confirmer-DAM",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw"
+    "vae": "ouverte",
+    "vae_note": "VAE ouverte : voie « Par expérience » (fiche RNCP39819, arrêté du 13/07/2016). Jury VAE désigné par le directeur interrégional de la mer — organisé hors Nouvelle-Calédonie. Pas de blocs de compétences : acquisition en totalité (profession réglementée). | source: https://rcpnc.gouv.nc/certifications-detat/brevet-de-chef-mecanicien-3000-kw-limite-200-milles-des-cotes",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-50",
@@ -2056,8 +2488,17 @@
       "etat-50"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine",
+    "rncp_numero": "RNCP38430",
+    "rncp_intitule": "Cuisine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-51",
@@ -2078,8 +2519,17 @@
       "etat-51"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-equipier-polyvalent-du-commerce"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-equipier-polyvalent-du-commerce",
+    "rncp_numero": "RNCP40994",
+    "rncp_intitule": "Equipier polyvalent du commerce",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-52",
@@ -2100,8 +2550,17 @@
       "etat-52"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois",
+    "rncp_numero": "RNCP41012",
+    "rncp_intitule": "Charpentier bois",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-53",
@@ -2122,8 +2581,10 @@
       "etat-53"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-production-et-service-en-restaurations"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-production-et-service-en-restaurations",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-54",
@@ -2144,8 +2605,17 @@
       "etat-54"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-interventions-en-maintenance-technique-des-batiments"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-interventions-en-maintenance-technique-des-batiments",
+    "rncp_numero": "RNCP35696",
+    "rncp_intitule": "Interventions en maintenance technique des bâtiments",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-55",
@@ -2166,8 +2636,17 @@
       "etat-55"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier",
+    "rncp_numero": "RNCP37897",
+    "rncp_intitule": "Métallier",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-56",
@@ -2188,8 +2667,17 @@
       "etat-56"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-macon"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-macon",
+    "rncp_numero": "RNCP35715",
+    "rncp_intitule": "Maçon",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-57",
@@ -2210,8 +2698,17 @@
       "etat-57"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-boulanger"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-boulanger",
+    "rncp_numero": "RNCP37537",
+    "rncp_intitule": "Boulanger",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-58",
@@ -2232,8 +2729,10 @@
       "etat-58"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-59",
@@ -2254,8 +2753,17 @@
       "etat-59"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-menuisier-fabricant"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-menuisier-fabricant",
+    "rncp_numero": "RNCP36112",
+    "rncp_intitule": "Menuisier fabricant",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-60",
@@ -2276,8 +2784,17 @@
       "etat-60"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-conducteur-dinstallations-de-production"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-conducteur-dinstallations-de-production",
+    "rncp_numero": "RNCP36429",
+    "rncp_intitule": "Conducteur d'installations de production",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-61",
@@ -2298,8 +2815,17 @@
       "etat-61"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher",
+    "rncp_numero": "RNCP37535",
+    "rncp_intitule": "Boucher",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-62",
@@ -2320,8 +2846,10 @@
       "etat-62"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-employe-traiteur"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-employe-traiteur",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-63",
@@ -2342,8 +2870,17 @@
       "etat-63"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-operateur-operatrice-logistique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-operateur-operatrice-logistique",
+    "rncp_numero": "RNCP37672",
+    "rncp_intitule": "Opérateur logistique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP22689 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-64",
@@ -2364,8 +2901,17 @@
       "etat-64"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-securite"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-securite",
+    "rncp_numero": "RNCP38226",
+    "rncp_intitule": "Agent de sécurité",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-65",
@@ -2386,8 +2932,17 @@
       "etat-65"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-monteur-en-installations-sanitaires"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-monteur-en-installations-sanitaires",
+    "rncp_numero": "RNCP38305",
+    "rncp_intitule": "Monteur en installations sanitaires",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-66",
@@ -2408,8 +2963,17 @@
       "etat-66"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien",
+    "rncp_numero": "RNCP38401",
+    "rncp_intitule": "Electricien",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-67",
@@ -2430,8 +2994,17 @@
       "etat-67"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-commercialisation-et-services-hotel-cafe-restaurant"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-commercialisation-et-services-hotel-cafe-restaurant",
+    "rncp_numero": "RNCP38424",
+    "rncp_intitule": "Commercialisation et services en hôtel-café-restaurant",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP31096 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-68",
@@ -2452,8 +3025,17 @@
       "etat-68"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-installateur-en-froid-et-conditionnement-dair"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-installateur-en-froid-et-conditionnement-dair",
+    "rncp_numero": "RNCP38560",
+    "rncp_intitule": "Installateur en froid et conditionnement d'air",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-69",
@@ -2474,8 +3056,17 @@
       "etat-69"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-accompagnant-educatif-petite-enfance"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-accompagnant-educatif-petite-enfance",
+    "rncp_numero": "RNCP38565",
+    "rncp_intitule": "Accompagnant éducatif petite enfance",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-70",
@@ -2496,8 +3087,10 @@
       "etat-70"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-71",
@@ -2518,8 +3111,17 @@
       "etat-71"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-patissier"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-patissier",
+    "rncp_numero": "RNCP38765",
+    "rncp_intitule": "Pâtissier",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-72",
@@ -2540,8 +3142,17 @@
       "etat-72"
     ],
     "note": "Recatégorisé Autres→Artisanat 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie",
+    "rncp_numero": "RNCP39030",
+    "rncp_intitule": "Esthétique Cosmétique Parfumerie",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-73",
@@ -2562,8 +3173,10 @@
       "etat-73"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-peintre-applicateur-de-revetement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-peintre-applicateur-de-revetement",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-74",
@@ -2584,8 +3197,17 @@
       "etat-74"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-metiers-de-la-coiffure"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-metiers-de-la-coiffure",
+    "rncp_numero": "RNCP39266",
+    "rncp_intitule": "Métiers de la coiffure",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-75",
@@ -2606,8 +3228,17 @@
       "etat-75"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-carreleur-mosaiste"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-carreleur-mosaiste",
+    "rncp_numero": "RNCP39328",
+    "rncp_intitule": "Carreleur Mosaïste",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-76",
@@ -2628,8 +3259,10 @@
       "etat-76"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-77",
@@ -2650,8 +3283,17 @@
       "etat-77"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-proprete-et-dhygiene"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/cap-agent-de-proprete-et-dhygiene",
+    "rncp_numero": "RNCP40309",
+    "rncp_intitule": "Propreté et prévention des biocontaminations",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP39938 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-78",
@@ -2672,8 +3314,17 @@
       "etat-78"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-proprete-de-lenvironnement-urbain-collecte-et-recyclage"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-proprete-de-lenvironnement-urbain-collecte-et-recyclage",
+    "rncp_numero": "RNCP40310",
+    "rncp_intitule": "Valorisation des matières et propreté des espaces urbains",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP39948 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-79",
@@ -2694,8 +3345,17 @@
       "etat-79"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-materiels"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-materiels",
+    "rncp_numero": "RNCP39330",
+    "rncp_intitule": "Maintenance des matériels",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-80",
@@ -2716,8 +3376,17 @@
       "etat-80"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-commercialisation-et-services-en-restauration"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-commercialisation-et-services-en-restauration",
+    "rncp_numero": "RNCP37909",
+    "rncp_intitule": "Commercialisation et services en restauration",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-81",
@@ -2738,8 +3407,10 @@
       "etat-81"
     ],
     "note": "Recatégorisé Autres→Agriculture 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-pollutions-et-protection-de-lenvironnement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-gestion-des-pollutions-et-protection-de-lenvironnement",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-82",
@@ -2760,8 +3431,17 @@
       "etat-82"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-animation-enfance-et-personnes-agees"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-animation-enfance-et-personnes-agees",
+    "rncp_numero": "RNCP41187",
+    "rncp_intitule": "Animation - enfance et personnes âgées",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-83",
@@ -2782,8 +3462,17 @@
       "etat-83"
     ],
     "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-assistance-la-gestion-des-organisations-et-de-leurs"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-assistance-la-gestion-des-organisations-et-de-leurs",
+    "rncp_numero": "RNCP40705",
+    "rncp_intitule": "Assistance à la gestion des organisations et de leurs activités",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-84",
@@ -2804,8 +3493,17 @@
       "etat-84"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-organisation-de-transport-de-marchandises"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-organisation-de-transport-de-marchandises",
+    "rncp_numero": "RNCP40993",
+    "rncp_intitule": "Organisation de transport de marchandises",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-85",
@@ -2826,8 +3524,17 @@
       "etat-85"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes",
+    "rncp_numero": "RNCP42118",
+    "rncp_intitule": "Maintenance des Systèmes de Production Connectés",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2031",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-86",
@@ -2848,8 +3555,17 @@
       "etat-86"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "rncp_numero": "RNCP35844",
+    "rncp_intitule": "Maintenance et Efficacité Energétique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-87",
@@ -2870,8 +3586,17 @@
       "etat-87"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-installateur-en-chauffage-climatisation-et-energies"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-installateur-en-chauffage-climatisation-et-energies",
+    "rncp_numero": "RNCP35845",
+    "rncp_intitule": "Installateur en Chauffage, Climatisation et Énergies Renouvelables",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-88",
@@ -2892,8 +3617,17 @@
       "etat-88"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-du-froid-et-des-energies-renouvelables"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-du-froid-et-des-energies-renouvelables",
+    "rncp_numero": "RNCP35846",
+    "rncp_intitule": "Métiers du Froid et des Energies Renouvelables",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-89",
@@ -2914,8 +3648,10 @@
       "etat-89"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-artisanat-et-metiers-dart-option-communication"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-artisanat-et-metiers-dart-option-communication",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-90",
@@ -2936,8 +3672,17 @@
       "etat-90"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-boucher",
+    "rncp_numero": "RNCP37310",
+    "rncp_intitule": "Boucher",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-91",
@@ -2958,8 +3703,17 @@
       "etat-91"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-cybersecurite-informatique-et-reseaux-electronique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-cybersecurite-informatique-et-reseaux-electronique",
+    "rncp_numero": "RNCP37489",
+    "rncp_intitule": "Cybersécurité, Informatique et réseaux, Electronique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-92",
@@ -2980,8 +3734,17 @@
       "etat-92"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-maintenance-nautique-0"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-maintenance-nautique-0",
+    "rncp_numero": "RNCP37698",
+    "rncp_intitule": "Maintenance nautique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-93",
@@ -3002,8 +3765,17 @@
       "etat-93"
     ],
     "note": "Recatégorisé Autres→Restauration 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-boulanger-patissier"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-boulanger-patissier",
+    "rncp_numero": "RNCP37908",
+    "rncp_intitule": "Boulanger-pâtissier",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-94",
@@ -3024,8 +3796,17 @@
       "etat-94"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-cuisine",
+    "rncp_numero": "RNCP37910",
+    "rncp_intitule": "Cuisine",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-95",
@@ -3046,8 +3827,17 @@
       "etat-95"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement",
+    "rncp_numero": "RNCP37911",
+    "rncp_intitule": "Etude et réalisation d'agencement",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-96",
@@ -3068,8 +3858,17 @@
       "etat-96"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-constructeur-bois"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-constructeur-bois",
+    "rncp_numero": "RNCP37916",
+    "rncp_intitule": "Technicien constructeur bois",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-97",
@@ -3090,8 +3889,10 @@
       "etat-97"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-agenceur"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-agenceur",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-98",
@@ -3112,8 +3913,10 @@
       "etat-98"
     ],
     "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-reception"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-reception",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-99",
@@ -3134,8 +3937,10 @@
       "etat-99"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-dans-les-transports"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-accueil-dans-les-transports",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-100",
@@ -3156,8 +3961,17 @@
       "etat-100"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-coiffure"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-coiffure",
+    "rncp_numero": "RNCP38231",
+    "rncp_intitule": "Coiffure",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-101",
@@ -3178,8 +3992,17 @@
       "etat-101"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-logistique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-logistique",
+    "rncp_numero": "RNCP38302",
+    "rncp_intitule": "Logistique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-102",
@@ -3200,8 +4023,17 @@
       "etat-102"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-technicien-en-chaudronnerie-industrielle"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-technicien-en-chaudronnerie-industrielle",
+    "rncp_numero": "RNCP38337",
+    "rncp_intitule": "Technicien en chaudronnerie industrielle",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-103",
@@ -3222,8 +4054,17 @@
       "etat-103"
     ],
     "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-laccueil"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-laccueil",
+    "rncp_numero": "RNCP38397",
+    "rncp_intitule": "Métiers de l'accueil",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-104",
@@ -3244,8 +4085,10 @@
       "etat-104"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-assistance-conseil-vente-distance"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-assistance-conseil-vente-distance",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-105",
@@ -3266,8 +4109,17 @@
       "etat-105"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-installateur-depanneur-en-froid-et-conditionnement-dair"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bp-installateur-depanneur-en-froid-et-conditionnement-dair",
+    "rncp_numero": "RNCP38635",
+    "rncp_intitule": "Installateur dépanneur en froid et conditionnement d'air",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-106",
@@ -3277,19 +4129,29 @@
     "cat": "Industrie Mines",
     "certificateur": null,
     "statut": "Actif",
-    "M1_affichable": true,
+    "M1_affichable": false,
     "M2_VAE_code": null,
     "M2_VAE_porte": null,
     "M3_AFEST_possible": null,
     "M4_CPU_referenced": false,
     "phase_deploiement": null,
-    "present_M1_actuel": true,
+    "present_M1_actuel": false,
     "doublons_m1_absorbes": [
       "etat-106"
     ],
-    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-mode-vetements"
+    "note": "Recatégorisé Autres→Industrie Mines 2026-05-11 | 05/08/2026 : fusionné dans etat-107 — même diplôme, intitulé d'avant la rénovation (RNCP38729)",
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-mode-vetements",
+    "rncp_numero": "RNCP38729",
+    "rncp_intitule": "Métiers de la couture et de la confection",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP24703 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "renvoi_vers": "etat-107",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-107",
@@ -3307,11 +4169,21 @@
     "phase_deploiement": null,
     "present_M1_actuel": true,
     "doublons_m1_absorbes": [
+      "etat-106",
       "etat-107"
     ],
     "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-couture-et-de-la-confection"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-couture-et-de-la-confection",
+    "rncp_numero": "RNCP38729",
+    "rncp_intitule": "Métiers de la couture et de la confection",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-108",
@@ -3332,8 +4204,17 @@
       "etat-108"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-lelectricite-et-de-ses-environnements"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-lelectricite-et-de-ses-environnements",
+    "rncp_numero": "RNCP38878",
+    "rncp_intitule": "Métiers de l'électricité et de ses environnements connectés",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-109",
@@ -3354,8 +4235,17 @@
       "etat-109"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cap-electricien",
+    "rncp_numero": "RNCP38880",
+    "rncp_intitule": "Electricien",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP27774 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-110",
@@ -3376,8 +4266,17 @@
       "etat-110"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-detudes-du-batiment"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-technicien-detudes-du-batiment",
+    "rncp_numero": "RNCP39033",
+    "rncp_intitule": "Technicien d'études du bâtiment",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-111",
@@ -3398,8 +4297,17 @@
       "etat-111"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-securite"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-metiers-de-la-securite",
+    "rncp_numero": "RNCP39133",
+    "rncp_intitule": "Métiers de la sécurité",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-112",
@@ -3420,8 +4328,17 @@
       "etat-112"
     ],
     "note": "Recatégorisé Autres→Artisanat 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bp-esthetique-cosmetique-parfumerie",
+    "rncp_numero": "RNCP39291",
+    "rncp_intitule": "Esthétique Cosmétique Parfumerie",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-113",
@@ -3442,8 +4359,17 @@
       "etat-113"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-ouvrages-du-batiment-metallerie-0"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-ouvrages-du-batiment-metallerie-0",
+    "rncp_numero": "RNCP39514",
+    "rncp_intitule": "Ouvrages du bâtiment : métallerie",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-114",
@@ -3464,8 +4390,17 @@
       "etat-114"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-hygiene-proprete-sterilisation"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bac-pro-hygiene-proprete-sterilisation",
+    "rncp_numero": "RNCP40312",
+    "rncp_intitule": "Hygiène, propreté, stérilisation",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-115",
@@ -3486,8 +4421,10 @@
       "etat-115"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-116",
@@ -3508,8 +4445,10 @@
       "etat-116"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-animation-gestion-de-projets-dans-le-secteur-sportif"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-animation-gestion-de-projets-dans-le-secteur-sportif",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-117",
@@ -3530,8 +4469,17 @@
       "etat-117"
     ],
     "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-pilote-de-ligne-de-production"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-pilote-de-ligne-de-production",
+    "rncp_numero": "RNCP36428",
+    "rncp_intitule": "Pilote de ligne de production",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-118",
@@ -3552,8 +4500,10 @@
       "etat-118"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-maintenance-des-installations-oleohydrauliques-et"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-maintenance-des-installations-oleohydrauliques-et",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-119",
@@ -3574,8 +4524,10 @@
       "etat-119"
     ],
     "note": "Recatégorisé Autres→Tourisme Sport Loisirs 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-encadrement-secteur-sportif"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/cs-encadrement-secteur-sportif",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-120",
@@ -3596,8 +4548,10 @@
       "etat-120"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bac-pro-maintenance-des-systemes-de-production-connectes",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-121",
@@ -3618,8 +4572,10 @@
       "etat-121"
     ],
     "note": "Recatégorisé Tourisme→Restauration 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-en-hotellerie-restauration-options-b-et-c"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-en-hotellerie-restauration-options-b-et-c",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-122",
@@ -3640,8 +4596,17 @@
       "etat-122"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-services-informatiques-aux-organisations"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-services-informatiques-aux-organisations",
+    "rncp_numero": "RNCP40792",
+    "rncp_intitule": "Services informatiques aux organisations, Option A : « Solutions d’infrastructure, systèmes et réseaux » ; Option B : « Solutions logicielles et applications métiers »",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP17108 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-123",
@@ -3662,8 +4627,17 @@
       "etat-123"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-electrotechnique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-electrotechnique",
+    "rncp_numero": "RNCP41007",
+    "rncp_intitule": "Electrotechnique",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2030",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-124",
@@ -3684,8 +4658,17 @@
       "etat-124"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-commerce-international"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-commerce-international",
+    "rncp_numero": "RNCP41759",
+    "rncp_intitule": "Commerce international",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2031",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-125",
@@ -3706,8 +4689,17 @@
       "etat-125"
     ],
     "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-conseil-et-commercialisation-de-solutions-techniques"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-conseil-et-commercialisation-de-solutions-techniques",
+    "rncp_numero": "RNCP35801",
+    "rncp_intitule": "Conseil et commercialisation de solutions techniques",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-126",
@@ -3728,8 +4720,17 @@
       "etat-126"
     ],
     "note": "Recatégorisé Autres→Santé 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-economie-sociale-et-familiale"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-economie-sociale-et-familiale",
+    "rncp_numero": "RNCP36938",
+    "rncp_intitule": "Economie sociale familiale",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/07/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "successeur de RNCP1047 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-127",
@@ -3750,8 +4751,17 @@
       "etat-127"
     ],
     "note": "Recatégorisé Autres→Santé 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "rncp_numero": "RNCP36939",
+    "rncp_intitule": "Services et prestations des secteurs sanitaire et social",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-128",
@@ -3772,8 +4782,17 @@
       "etat-128"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-communication"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-communication",
+    "rncp_numero": "RNCP37198",
+    "rncp_intitule": "Communication",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-129",
@@ -3794,8 +4813,17 @@
       "etat-129"
     ],
     "note": "Recatégorisé Autres→Installation Maintenance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-assistance-technique-dingenieur"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-assistance-technique-dingenieur",
+    "rncp_numero": "RNCP37561",
+    "rncp_intitule": "Assistance technique d'ingénieur",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-130",
@@ -3816,8 +4844,17 @@
       "etat-130"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-tourisme"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-tourisme",
+    "rncp_numero": "RNCP37890",
+    "rncp_intitule": "Tourisme",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-131",
@@ -3838,8 +4875,17 @@
       "etat-131"
     ],
     "note": "Recatégorisé Autres→Industrie Mines 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-pilotage-de-procedes"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-pilotage-de-procedes",
+    "rncp_numero": "RNCP38217",
+    "rncp_intitule": "Pilotage de procédés",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-132",
@@ -3860,8 +4906,17 @@
       "etat-132"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-assurance"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-assurance",
+    "rncp_numero": "RNCP38359",
+    "rncp_intitule": "Assurance",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-133",
@@ -3882,8 +4937,17 @@
       "etat-133"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-commercial-operationnel"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-management-commercial-operationnel",
+    "rncp_numero": "RNCP38362",
+    "rncp_intitule": "Management commercial opérationnel",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-134",
@@ -3904,8 +4968,17 @@
       "etat-134"
     ],
     "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-gestion-de-la-pme"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-gestion-de-la-pme",
+    "rncp_numero": "RNCP38363",
+    "rncp_intitule": "Gestion de la PME",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-135",
@@ -3926,8 +4999,17 @@
       "etat-135"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-support-laction-manageriale"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-support-laction-manageriale",
+    "rncp_numero": "RNCP38364",
+    "rncp_intitule": "Support à l'action managériale",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2027",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-136",
@@ -3948,8 +5030,10 @@
       "etat-136"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-transports-et-logistique-associee"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-transports-et-logistique-associee",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-137",
@@ -3970,8 +5054,17 @@
       "etat-137"
     ],
     "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-negociation-et-digitalisation-de-la-relation-client"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-negociation-et-digitalisation-de-la-relation-client",
+    "rncp_numero": "RNCP38368",
+    "rncp_intitule": "Négociation et digitalisation de la relation client",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-138",
@@ -3992,8 +5085,17 @@
       "etat-138"
     ],
     "note": "Recatégorisé Autres→Commerce Vente 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-professions-immobilieres"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-professions-immobilieres",
+    "rncp_numero": "RNCP38380",
+    "rncp_intitule": "Professions immobilières",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-139",
@@ -4014,8 +5116,17 @@
       "etat-139"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-banque"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-banque",
+    "rncp_numero": "RNCP38381",
+    "rncp_intitule": "Banque",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-140",
@@ -4036,8 +5147,17 @@
       "etat-140"
     ],
     "note": "Recatégorisé Autres→BTP 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-etude-et-realisation-dagencement",
+    "rncp_numero": "RNCP38383",
+    "rncp_intitule": "Etude et réalisation d'agencement",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2028",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-141",
@@ -4058,8 +5178,10 @@
       "etat-141"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-maintenance-des-materiels-de-la-construction-et-de"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-maintenance-des-materiels-de-la-construction-et-de",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-142",
@@ -4080,8 +5202,17 @@
       "etat-142"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-comptabilite-et-gestion"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-comptabilite-et-gestion",
+    "rncp_numero": "RNCP39159",
+    "rncp_intitule": "Comptabilité et Gestion",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/08/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-143",
@@ -4102,8 +5233,17 @@
       "etat-143"
     ],
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-batiment"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/bts-batiment",
+    "rncp_numero": "RNCP39801",
+    "rncp_intitule": "Bâtiment",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-144",
@@ -4124,8 +5264,17 @@
       "etat-144"
     ],
     "note": "Recatégorisé Autres→Services Personnes 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-metiers-des-services-lenvironnement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/bts-metiers-des-services-lenvironnement",
+    "rncp_numero": "RNCP39944",
+    "rncp_intitule": "Métiers des services à l'environnement",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/12/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "etat-145",
@@ -4146,8 +5295,10 @@
       "etat-145"
     ],
     "note": null,
-    "vae": "non-profession-reglementee",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/infirmier-infirmiere"
+    "vae": "fermee",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/infirmier-infirmiere",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-01",
@@ -4166,8 +5317,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Numérique 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-concepteur-designer-ui-et-webdesign"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-concepteur-designer-ui-et-webdesign",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-02",
@@ -4186,8 +5339,17 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->BTP 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-charpentier-bois",
+    "rncp_numero": "RNCP42101",
+    "rncp_intitule": "Charpentier bois",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "26/04/2031",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "fiche du certificateur (ministère du Travail), résolue le 05/08",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "tp-03",
@@ -4206,8 +5368,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-agent-de-maintenance-du-batiment"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-agent-de-maintenance-du-batiment",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-04",
@@ -4226,8 +5390,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-employe-de-commerce-en-magasin"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-employe-de-commerce-en-magasin",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-05",
@@ -4246,8 +5412,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-conducteur-dinstallations-et-de-machines-automatisees"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-conducteur-dinstallations-et-de-machines-automatisees",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-06",
@@ -4266,8 +5434,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->BTP 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/tp-menuisier-aluminium"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/tp-menuisier-aluminium",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-07",
@@ -4286,8 +5456,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-mecanicien-de-maintenance-automobile"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-mecanicien-de-maintenance-automobile",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-08",
@@ -4306,8 +5478,17 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->BTP 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-metallier",
+    "rncp_numero": "RNCP38719",
+    "rncp_intitule": "Métallier",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "24/07/2029",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "fiche du certificateur (ministère du Travail), résolue le 05/08",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "tp-09",
@@ -4326,8 +5507,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-commis-de-cuisine"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-commis-de-cuisine",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-10",
@@ -4346,8 +5529,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-serveur-euse-de-restaurant"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-serveur-euse-de-restaurant",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-11",
@@ -4366,8 +5551,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-electromecanien-en-maintenance-industrielle"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-electromecanien-en-maintenance-industrielle",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-12",
@@ -4386,8 +5573,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-en-logistique-dentreposage"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-en-logistique-dentreposage",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-13",
@@ -4406,8 +5595,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Installation Maintenance 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-chaudronnier"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-chaudronnier",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-14",
@@ -4426,8 +5617,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-de-maintenance-industrielle"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-de-maintenance-industrielle",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-15",
@@ -4446,8 +5639,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Administratif RH 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-secretaire-assistante"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-secretaire-assistante",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-16",
@@ -4466,8 +5661,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-17",
@@ -4486,8 +5683,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-dassistance-en-informatique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-dassistance-en-informatique",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-18",
@@ -4506,8 +5705,17 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-receptionniste-en-hotellerie"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-receptionniste-en-hotellerie",
+    "rncp_numero": "RNCP38870",
+    "rncp_intitule": "Réceptionniste hôtellerie et hôtellerie de plein air",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "02/08/2029",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "successeur de RNCP1943 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "tp-19",
@@ -4526,8 +5734,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-20",
@@ -4546,8 +5756,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-ressources-humaines"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-ressources-humaines",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-21",
@@ -4566,8 +5778,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Numérique 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-developpeur-web-et-web-mobile"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-developpeur-web-et-web-mobile",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-22",
@@ -4586,8 +5800,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Numérique 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/titre-professionnel-technicien-superieur-systemes-et-reseaux"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/titre-professionnel-technicien-superieur-systemes-et-reseaux",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-23",
@@ -4606,8 +5822,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Support Entreprise 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-responsable-de-petite-et-moyenne-structure"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-responsable-de-petite-et-moyenne-structure",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-24",
@@ -4626,8 +5844,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-superieur-en-production-industrielle"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-technicien-superieur-en-production-industrielle",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-25",
@@ -4646,8 +5866,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Administratif RH 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-de-direction"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/titre-professionnel-assistant-e-de-direction",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-26",
@@ -4666,8 +5888,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-technicienne-superieure-en-automatique-et-informatique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/tp-technicienne-superieure-en-automatique-et-informatique",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "tp-27",
@@ -4686,8 +5910,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres->Services Personnes 2026-04-29",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-146",
@@ -4706,8 +5932,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Santé 2026-05-11",
-    "vae": "a-verifier",
-    "vae_note": null
+    "vae": "inconnu",
+    "vae_note": "[ancienne valeur : a-verifier]",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-147",
@@ -4726,8 +5954,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-management-et-administration-des-entreprises"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-management-et-administration-des-entreprises",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-148",
@@ -4746,8 +5976,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-science-de-la-durabilite"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-science-de-la-durabilite",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-149",
@@ -4766,8 +5998,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-150",
@@ -4786,8 +6020,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-151",
@@ -4806,8 +6042,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-droit"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-droit",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-152",
@@ -4826,8 +6064,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-153",
@@ -4846,8 +6086,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Agriculture 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/master-mention-sciences-pour-lenvironnement-specialite-gestion-integree-de"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/master-mention-sciences-pour-lenvironnement-specialite-gestion-integree-de",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-154",
@@ -4866,8 +6108,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Administratif RH 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-gestion-des-territoires-et-developpement-local"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-gestion-des-territoires-et-developpement-local",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-155",
@@ -4886,8 +6130,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-civilisation-cultures-et-societe"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/master-civilisation-cultures-et-societe",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-156",
@@ -4906,8 +6152,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Numérique 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-157",
@@ -4926,8 +6174,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-158",
@@ -4946,8 +6196,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-159",
@@ -4966,8 +6218,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-droit"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-droit",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-160",
@@ -4986,8 +6240,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-physique-chimie"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-physique-chimie",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-161",
@@ -5006,8 +6262,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Support Entreprise 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-economie-et-gestion"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-economie-et-gestion",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-162",
@@ -5026,8 +6284,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-langues-etrangeres-appliquees"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-langues-etrangeres-appliquees",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-163",
@@ -5046,8 +6306,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linformatique-applications"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linformatique-applications",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-164",
@@ -5066,8 +6328,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-gestion-et-de-la"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-gestion-et-de-la",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-165",
@@ -5086,8 +6350,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-166",
@@ -5106,8 +6372,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-mathematiques"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-mathematiques",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-167",
@@ -5126,8 +6394,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-lettres"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-lettres",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-168",
@@ -5146,8 +6416,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-sciences-de-la-vie-et-de-la-terre"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/licence-mention-sciences-de-la-vie-et-de-la-terre",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-169",
@@ -5166,8 +6438,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-informatique"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-informatique",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-170",
@@ -5186,8 +6460,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-171",
@@ -5206,8 +6482,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Banque Assurance 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": null
+    "vae": "ouverte",
+    "vae_note": null,
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-172",
@@ -5226,8 +6504,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-commerce-et-distribution"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-commerce-et-distribution",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-173",
@@ -5246,8 +6526,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-communication-charge-de"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-la-communication-charge-de",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-174",
@@ -5266,8 +6548,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Agriculture 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-des-ressources-naturelles-et"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-des-ressources-naturelles-et",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-175",
@@ -5286,8 +6570,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Numérique 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linstrumentation-de-la"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-de-linstrumentation-de-la",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-176",
@@ -5306,8 +6592,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-tourisme-et-des-loisirs"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/licence-professionnelle-metiers-du-tourisme-et-des-loisirs",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-177",
@@ -5326,8 +6614,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capacite-en-droit"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/capacite-en-droit",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-178",
@@ -5346,8 +6636,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": "Recatégorisé Autres→Études supérieures 2026-05-11",
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-dacces-aux-etudes-universitaires-daeu"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-au-nom-de-letat/diplome-dacces-aux-etudes-universitaires-daeu",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "etat-179",
@@ -5366,8 +6658,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui-droit-commun",
-    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/deust-geosciences-appliquees-mines-eau-et-environnement"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certifications-detat/deust-geosciences-appliquees-mines-eau-et-environnement",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-01",
@@ -5387,7 +6681,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-dunite-bancaire-0"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-dunite-bancaire-0",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-02",
@@ -5406,8 +6702,10 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "fiche-non-trouvee",
-    "vae_note": null
+    "vae": "inconnu",
+    "vae_note": "[ancienne valeur : fiche-non-trouvee]",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-03",
@@ -5427,7 +6725,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-patrimonial-agence"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-patrimonial-agence",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-04",
@@ -5447,7 +6747,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-bancaire-clientele-de-0"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-bancaire-clientele-de-0",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-05",
@@ -5467,7 +6769,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-de-clientele-de"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/conseiller-de-clientele-de",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-06",
@@ -5487,7 +6791,16 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/vendeur-conseiller-commercial"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/vendeur-conseiller-commercial",
+    "rncp_numero": "RNCP36865",
+    "rncp_intitule": "Vendeur conseil omnicanal",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "29/09/2027",
+    "rncp_mention_nc": "Non",
+    "rncp_origine": "successeur de RNCP14228 (table France compétences 04/08)",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "autre-07",
@@ -5507,7 +6820,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/concepteur-realisateur-en"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/concepteur-realisateur-en",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-08",
@@ -5527,7 +6842,16 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-sportif-de-natation"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-sportif-de-natation",
+    "rncp_numero": "RNCP39098",
+    "rncp_intitule": "Moniteur sportif de natation",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "31/05/2029",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "autre-09",
@@ -5547,7 +6871,16 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-de-football"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/moniteur-de-football",
+    "rncp_numero": "RNCP38292",
+    "rncp_intitule": "Moniteur de football",
+    "rncp_actif": "ACTIVE",
+    "rncp_fin_enregistrement": "15/11/2026",
+    "rncp_mention_nc": "Oui",
+    "rncp_origine": "appariement exact intitulé+niveau, fiche active",
+    "rncp_source": "export France compétences 2026-08-04",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": false
   },
   {
     "id": "autre-10",
@@ -5567,7 +6900,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/diplome-duniversite-de-formateur"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/diplome-duniversite-de-formateur",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-11",
@@ -5587,7 +6922,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/management-et-gestion-des"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/management-et-gestion-des",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-12",
@@ -5607,7 +6944,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-paie-et-administration"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/responsable-paie-et-administration",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "autre-13",
@@ -5627,7 +6966,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/adjoint-de-dirigeant-dentreprise"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certification-delivree-par-un-autre-certificateur-public-ou-prive/adjoint-de-dirigeant-dentreprise",
+    "vae_regime": "national",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "cqp-01",
@@ -5647,7 +6988,9 @@
     "doublons_m1_absorbes": null,
     "note": null,
     "vae": "inconnu",
-    "vae_note": "source: https://rcpnc.gouv.nc/certificat-de-qualification-professionnelle/cordiste-niveau-1-branche-btp"
+    "vae_note": "[ancienne valeur : inconnu] source: https://rcpnc.gouv.nc/certificat-de-qualification-professionnelle/cordiste-niveau-1-branche-btp",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "cqp-02",
@@ -5668,8 +7011,10 @@
       "cqp-03"
     ],
     "note": "⚠ Id cqp-03 absorbé (même intitulé + niveau 4) : divergence sur cat uniquement (cqp-02 = BTP, cqp-03 = Industrie Mines). Ce CQP couvre deux secteurs. Source de l'écart 271 ids distincts vs 270 clés fonctionnelles.",
-    "vae": "oui",
-    "vae_note": "La VAE est accessible à toute personne justifiant d'un parcours professionnel d' | source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-assistant-hygiene-securite"
+    "vae": "ouverte",
+    "vae_note": "La VAE est accessible à toute personne justifiant d'un parcours professionnel d' | source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-assistant-hygiene-securite",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   },
   {
     "id": "cqp-04",
@@ -5688,7 +7033,9 @@
     "present_M1_actuel": true,
     "doublons_m1_absorbes": null,
     "note": null,
-    "vae": "oui",
-    "vae_note": "source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-mecanicienne-specialiste-automobile"
+    "vae": "ouverte",
+    "vae_note": "source: https://rcpnc.gouv.nc/certificats-de-qualification-des-branches-professionnelles/cqp-mecanicienne-specialiste-automobile",
+    "vae_regime": "NC",
+    "vae_tout_ou_rien": null
   }
 ]
