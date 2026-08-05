@@ -1044,7 +1044,7 @@ const NC_SECTEUR_MAP = {
   "etat-31": "maritime-peche",
   "etat-32": "maritime-peche",
   "etat-33": "maritime-peche",
-  "etat-34": "maintenance-industrielle",
+  "etat-34": "maritime-peche",
   "etat-35": "maritime-peche",
   "etat-36": "maritime-peche",
   "etat-37": "maritime-peche",
@@ -1524,6 +1524,28 @@ function renderCertification() {
 
   // Alerte spécifique EN
   const selectedIsEN = state.selectedCert && state.selectedCert.type === 'ÉTAT';
+  // 05/08/2026 (soir, defaut trouve par Jerome en test sur le site en ligne) —
+  // l'ecran de selection annoncait « Education nationale / Rectorat / DAVA » pour TOUTE
+  // certification de type ETAT : faux pour les 34 titres maritimes (UCEM) et les 12 diplomes
+  // agricoles (DAFE), et EN CONTRADICTION avec l'ecran de resultat qui, lui, routait juste.
+  // On reutilise ici la MEME logique que renderAssessment (EN_NC_MAP + ucem_ids) : une seule
+  // source de verite pour les deux ecrans. Ne jamais les faire diverger a nouveau.
+  const selRenvoi = (() => {
+    if (!selectedIsEN) return null;
+    const e = EN_NC_MAP[state.selectedCert.cat] || { renvoi: 'DAVA' };
+    if (!e.renvoi && e.ucem_ids && e.ucem_ids.includes(state.selectedCert.id)) return 'UCEM';
+    return e.renvoi === null ? 'DAVA' : e.renvoi;
+  })();
+  const SEL_RENVOI_TXT = {
+    DAVA: ["Diplôme de l'Éducation nationale — Point d'attention",
+           "Ce diplôme relève du <strong>Rectorat de NC</strong> et de la <strong>DAVA</strong> pour la VAE."],
+    DAFE: ["Diplôme agricole — Point d'attention",
+           "Ce diplôme relève du ministère de l'Agriculture — en Nouvelle-Calédonie, de la <strong>DAFE</strong> (dafe.gouv.nc), et non de la DAVA."],
+    UNC:  ["Diplôme universitaire — Point d'attention",
+           "Ce diplôme relève de l'<strong>UNC</strong> (Pôle Formation Continue et Alternance) pour la VAE."],
+    UCEM: ["Titre maritime national — Point d'attention",
+           "Ce titre relève du ministère chargé de la mer. La VAE passe par l'<strong>UCEM</strong> (Unité des concours et examens maritimes) — la <strong>DAM-NC</strong> y renvoie elle-même."]
+  };
 
   const certItems = filtered.slice(0, 60).map(c => {
     const badgeClass = c.type === 'NC' ? 'nc' : c.type === 'TP' ? 'tp' : c.type === 'CQP' ? 'cqp' : 'etat';
@@ -1574,12 +1596,12 @@ function renderCertification() {
     ${renderNationalBlock(state.selectedSector, query)}
     ${prcHelpBox()}
 
-    ${selectedIsEN ? `
+    ${selRenvoi ? `
     <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-top:14px;display:flex;gap:12px;align-items:flex-start;">
       <span style="font-size:22px;flex-shrink:0;">⚠️</span>
       <div>
-        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">${state.selectedCert.cat === 'Études supérieures' ? `Diplôme universitaire — Point d'attention` : `Diplôme de l'Éducation nationale — Point d'attention`}</div>
-        <div style="font-size:12px;color:var(--text);line-height:1.5;">${state.selectedCert.cat === 'Études supérieures' ? `Ce diplôme relève de l'<strong>UNC</strong> (Pôle Formation Continue et Alternance) pour la VAE.` : `Ce diplôme relève du <strong>Rectorat de NC</strong> et de la <strong>DAVA</strong> pour la VAE.`}</div>
+        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">${SEL_RENVOI_TXT[selRenvoi][0]}</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">${SEL_RENVOI_TXT[selRenvoi][1]}</div>
       </div>
     </div>` : ''}
 
@@ -1742,8 +1764,9 @@ function renderAssessment() {
         <div style="font-size:13px;color:#0a2342;line-height:1.7;">
           Pour la VAE sur un titre maritime national (capitaine, matelot, mécanicien, patron de pêche…), la recevabilité et le jury sont assurés par l'
           <strong>UCEM — Unité des concours et examens maritimes</strong>, au titre du ministère chargé de la mer. La <strong>DAM-NC</strong> vous y renvoie elle-même.<br>
-          Les certifications maritimes proprement calédoniennes relèvent, elles, du Portail (DFPC/DTEFP).
+          Les deux certifications maritimes calédoniennes — <strong>Matelot de pêche</strong> et <strong>Capitaine de navire ≤ 10 m</strong> — relèvent, elles, de la <strong>DTEFP</strong>.
         </div>
+        ${c.tor === true ? `<div style="margin-top:12px;padding:10px 14px;background:#fff8e1;border:1px solid #f9a825;border-radius:8px;font-size:12px;color:#5c3d00;line-height:1.6;"><strong>\u26a0\ufe0f Ce brevet ne se décompose pas en blocs de compétences</strong> : il s'obtient en totalité. Une validation partielle n'est pas possible, et le dossier doit couvrir l'ensemble des activités visées.</div>` : ''}
         <div style="margin-top:12px;padding:10px 14px;background:white;border-radius:8px;border:1px solid #1565c0;">
           <div style="font-size:12px;font-weight:700;color:#0d47a1;margin-bottom:4px;">🔗 Faire une demande de VAE maritime :</div>
           <div style="font-size:12px;color:#0a2342;line-height:1.7;">
@@ -2093,33 +2116,26 @@ function renderResults() {
         <div style="font-size:12px;color:var(--text);line-height:1.5;">La fiche officielle ne précise pas la voie VAE pour cette certification. Vérifiez auprès du certificateur avant d'engager une démarche VAE.</div>
       </div>
     </div>` : '';
-  // Contexte VAE (05/08/2026) : regime et validation en totalite.
-  // Meme grammaire visuelle que les trois bandeaux ci-dessus, sans animation (coherence inter-modules).
-  // Masques si la VAE est fermee : ces precisions n'ont alors aucun objet.
-  const vaeContexteBanner = (vaeStatus === 'non') ? '' : (
-    (c.reg === 'nat' ? `
+  // Contexte VAE (révisé le 05/08/2026 au soir, après test terrain de Jérôme).
+  // Ce bandeau n'est atteint QUE par les TP et les certifications AUTRE (40) : les diplômes de type
+  // ÉTAT sortent avant, par un écran de renvoi (DAVA/DAFE/UNC/UCEM). Le bandeau « tout ou rien » a
+  // été retiré d'ici et déplacé dans l'encart UCEM, seul écran que voient les brevets maritimes.
+  // Le texte n'affirme PAS où le dossier est instruit : 18 TP sur 27 sont publiés au RCP-NC, 9 non,
+  // et cette absence n'est pas un signal fiable (écarts d'intitulé). Question ouverte à la DTEFP.
+  const vaeContexteBanner = (vaeStatus === 'non' || c.reg !== 'nat') ? '' : `
     <div style="background:#eceff1;border:2px solid #b0bec5;border-radius:10px;padding:14px 16px;margin-bottom:4px;display:flex;gap:12px;align-items:flex-start;">
       <span style="font-size:22px;flex-shrink:0;">\u2139\ufe0f</span>
       <div>
         <div style="font-size:13px;font-weight:700;color:#546e7a;margin-bottom:4px;">Certification nationale</div>
-        <div style="font-size:12px;color:var(--text);line-height:1.5;">Cette certification est d\u00e9livr\u00e9e par un minist\u00e8re national. Le dossier de VAE est instruit hors de Nouvelle-Cal\u00e9donie ; un conseiller vous indiquera l'interlocuteur et les d\u00e9lais.</div>
+        <div style="font-size:12px;color:var(--text);line-height:1.5;">Cette certification est délivrée par un certificateur national. Selon qu'elle est ou non mise en \u0153uvre en Nouvelle-Calédonie, le point d'entrée de la démarche VAE diffère : <strong>rapprochez-vous de la DTEFP</strong>, qui vous dira si la validation se fait localement ou avec le certificateur national.</div>
       </div>
-    </div>` : '') +
-    (c.tor === true ? `
-    <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:10px;padding:14px 16px;margin-bottom:4px;display:flex;gap:12px;align-items:flex-start;">
-      <span style="font-size:22px;flex-shrink:0;">\u26a0\ufe0f</span>
-      <div>
-        <div style="font-size:13px;font-weight:700;color:#e65100;margin-bottom:4px;">Validation en totalit\u00e9</div>
-        <div style="font-size:12px;color:var(--text);line-height:1.5;">Cette certification ne se d\u00e9compose pas en blocs de comp\u00e9tences : elle s'obtient enti\u00e8rement ou pas du tout. Une validation partielle n'est pas possible, et le dossier doit couvrir l'ensemble des activit\u00e9s vis\u00e9es.</div>
-      </div>
-    </div>` : '')
-  );
+    </div>`;
   const oc = orientationConfig[orientation];
 
   const nextStepsConfig = {
     spot: [
       { text: '<strong>Visez le CCE — Certificat de Compétences Essentielles (niveau 1 RCP-NC)</strong> — première certification professionnelle : 12 compétences transversales (communication, calcul, numérique, savoir-être professionnel…) évaluées une à une. En cas de validation partielle, seules les compétences manquantes sont à repasser' },
-      { text: '<strong>Adressez-vous à un organisme évaluateur habilité par la DFPC</strong> — il vous accompagne pendant tout le parcours de certification, individualisé, qui peut mêler formation et activités professionnelles' },
+      { text: '<strong>Adressez-vous à un organisme évaluateur habilité par la DTEFP</strong> — il vous accompagne pendant tout le parcours de certification, individualisé, qui peut mêler formation et activités professionnelles' },
       { text: '<strong>Identifiez votre secteur cible</strong> pendant ce parcours : les conseillers vous aideront à confirmer ou affiner votre projet de certification vers ' + c.name },
       { text: '<strong>Le Portail Compétences NC vous accompagne dès cette étape</strong> — Module M1 accessible hors-ligne pour suivre votre progression, du CCE vers la certification métier visée' },
     ],
