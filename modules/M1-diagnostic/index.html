@@ -516,6 +516,29 @@
   .placeholder-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
   .placeholder-desc { font-size: 13px; color: var(--gray); line-height: 1.5; }
 
+  /* anim — bloc « diplômes nationaux » replié (11/08/2026, verdict mobile A14).
+     Skill ui-animation-css : CSS pur, opacity+transform seulement, 300 ms, une fois. */
+  .nat-bloc > summary { list-style: none; cursor: pointer; }
+  .nat-bloc > summary::-webkit-details-marker { display: none; }
+  .nat-bloc .nat-chevron::before { content: "voir la liste \25B8"; }
+  .nat-bloc[open] .nat-chevron::before { content: "masquer \25B4"; }
+  .nat-bloc[open] .nat-body {
+    animation: anim-rise 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes anim-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+  }
+  /* OBLIGATOIRE (skill ui-animation-css, regle 3) */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   /* FOOTER */
   .footer-brand {
     text-align: center; padding: 20px;
@@ -1311,13 +1334,27 @@ function renderNationalBlock(secId, query) {
       </div>
       <span style="font-size:11px;padding:3px 9px;border-radius:8px;background:#e6f1fb;color:#0c447c;white-space:nowrap;flex-shrink:0;">national · indicatif</span>
     </div>`).join('');
+  // 11/08/2026 — VERDICT MOBILE A14 (Jerome), option B de son arbitrage.
+  // Avant : liste TOUJOURS ouverte, enfermee dans `max-height:300px;overflow-y:auto`
+  // -> un ascenseur DANS une page qui defile deja (piege de defilement sur petit
+  // ecran), et le bandeau d'avertissement repousse dessous. 14 diplomes ici, mais
+  // 62 en batiment-TP : le defaut grossit avec le secteur.
+  // Desormais : <details> natif (zero JS, accessible au clavier), ascenseur interne
+  // SUPPRIME. L'information est conservee entiere, elle ne coute plus rien a qui ne
+  // la cherche pas.
+  const _pl = dips.length > 1;
   return `
-    <div style="margin-top:18px;">
-      <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;">Diplômes nationaux de ce secteur <span style="font-weight:400;color:var(--gray);">(${dips.length})</span></div>
+    <details class="nat-bloc" style="margin-top:18px;border:1px solid var(--gray-light);border-radius:10px;padding:11px 13px;">
+      <summary style="display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--navy);">
+        <span><strong>${dips.length} diplôme${_pl ? 's' : ''} national${_pl ? 'aux' : ''}</strong> de ce secteur ${_pl ? 'ne sont' : "n'est"} pas traité${_pl ? 's' : ''} ici</span>
+        <span class="nat-chevron" style="font-size:11px;font-weight:700;color:var(--teal);white-space:nowrap;flex-shrink:0;"></span>
+      </summary>
+      <div class="nat-body" style="margin-top:10px;">
       <div style="font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:8px;">${renvoiNote} Orientation <strong>indicative</strong> — pas d'auto-évaluation détaillée ici.</div>
-      <div style="border:1px solid var(--gray-light);border-radius:8px;max-height:300px;overflow-y:auto;">${items}</div>
+      <div style="border:1px solid var(--gray-light);border-radius:8px;">${items}</div>
       ${dips.length > 80 ? `<div style="font-size:12px;color:var(--gray);text-align:center;padding:6px;">Précisez votre recherche pour affiner</div>` : ''}
-    </div>`;
+      </div>
+    </details>`;
 }
 function prcHelpBox() {
   return `
@@ -1822,8 +1859,7 @@ function renderAssessment() {
       ${renvoi_html}
       ${nc_sugg_html}
       <div class="btn-row" style="margin-top:20px;">
-        <button type="button" class="btn btn-gray" onclick="goPrev()">← Retour</button>
-        <button type="button" class="btn btn-primary" onclick="state.currentStep=2; render();">🔍 Choisir une autre certification NC</button>
+        <button type="button" class="btn btn-primary" onclick="state.currentStep=2; render();">← Choisir une autre certification</button>
       </div>
     </div>`;
   }
@@ -2359,6 +2395,16 @@ function updateSearch(v) {
 }
 function selectCert(id) {
   state.selectedCert = certifications.find(c => c.id === id) || null;
+  // 11/08/2026 — VERDICT MOBILE A14 (Jerome). Une certification de type ETAT sort
+  // TOUJOURS par un ecran de renvoi (DAVA / DAFE / UNC / UCEM) : renderAssessment()
+  // remplace pour elle TOUTE l'auto-evaluation par cet ecran. Faire remplir avant
+  // cela « experience » puis « niveau d'etudes » collectait des reponses JETEES,
+  // derriere un bouton qui annoncait une auto-evaluation inexistante — 4 a 5 ecrans
+  // de defilement sur A14 pour une information connue des le clic. On va droit au
+  // renvoi. Retour possible par le bouton de l'ecran de renvoi (etape 2).
+  if (state.selectedCert && state.selectedCert.type === 'ÉTAT') {
+    state.currentStep = 4;
+  }
   render();
 }
 function updateExperience(v) {
@@ -2454,4 +2500,28 @@ loadNational();
 </script>
 
 
+
+<!-- ============================================================
+     Navigation entre modules — ajoutee le 11/08/2026 (chantier A).
+     Ecart a l'architecture R17 signale par sync-lms.py (controle C3)
+     depuis le 20/07 : un utilisateur entre dans un module ne pouvait
+     que revenir au hub. Style en ligne volontairement : les trois
+     modules n'ont pas la meme feuille de style, ce bloc doit rendre
+     a l'identique dans les trois sans dependre d'aucune classe.
+     ============================================================ -->
+<nav class="nav-modules" aria-label="Navigation entre les modules"
+     style="max-width:860px;margin:26px auto 30px;padding:16px 18px;background:#fff;
+            border:1px solid #dfe4ea;border-radius:12px;font-family:inherit;">
+  <div style="font-size:12px;font-weight:700;color:#1a2e4a;text-transform:uppercase;
+              letter-spacing:.4px;margin-bottom:4px;">Poursuivre votre parcours</div>
+  <div style="font-size:12.5px;color:#6b7a8d;line-height:1.5;margin-bottom:11px;">
+    Vous êtes dans le <strong>M1 — Diagnostic & Orientation</strong>.
+    <strong>Exportez votre dossier avant de changer de module</strong> — il se transmet par fichier, il n'est pas conservé en ligne.
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:9px;">
+      <a href="../M2-vae/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:9px;border:1px solid #1d7a8c;background:#fff;color:#1d7a8c;text-decoration:none;font-size:13px;font-weight:700;line-height:1.2;">M2 · Accompagnement VAE <span aria-hidden="true">&rarr;</span></a>
+      <a href="../M3-afest/index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:9px;border:1px solid #1d7a8c;background:#fff;color:#1d7a8c;text-decoration:none;font-size:13px;font-weight:700;line-height:1.2;">M3 · Parcours AFEST <span aria-hidden="true">&rarr;</span></a>
+      <a href="../../index.html" style="display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:9px;border:1px solid #dfe4ea;background:#f4f6f9;color:#6b7a8d;text-decoration:none;font-size:13px;font-weight:600;line-height:1.2;"><span aria-hidden="true">&#8962;</span> Accueil du portail</a>
+  </div>
+</nav>
 </body></html>
