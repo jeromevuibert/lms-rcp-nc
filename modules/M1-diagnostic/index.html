@@ -572,6 +572,14 @@
 </style>
 </head>
 <body>
+<div style="background:#4a148c;color:#fff;padding:9px 16px;font-size:12.5px;line-height:1.55;text-align:center;">
+  <strong>Démonstrateur — chantier ouvert, sans valeur officielle.</strong>
+  Ce prototype personnel ne se substitue pas à la DTEFP ni aux certificateurs.
+  Il reprend <strong>270 certifications</strong> sur les 527 fiches publiées au RCP-NC — les fiches inactives, nombreuses au répertoire
+  (28 sur 76 côté calédonien, 187 sur 397 côté État), n'y figurent pas. Parmi ces 270, <strong>86 sont détaillées compétence par
+  compétence et 184 ne le sont pas encore</strong> ; certaines orientations restent à confirmer.
+  <strong>Vérifiez toujours auprès de la DTEFP</strong> avant d'engager une démarche.
+</div>
 
 <!-- HEADER -->
 <header>
@@ -658,6 +666,18 @@
 // ============================================================
 // DATA
 // ============================================================
+// --- 31/08/2026 : correction d'orientation fausse (R49/R12) ---------------------
+// Ces certifications portent un intitule d'enseignement superieur (licence, master,
+// DEUST, BUT) mais sont rangees dans une categorie METIER. Le routage se faisant par
+// CATEGORIE, elles retombaient sur le renvoi par defaut (DAVA/Rectorat) ou sur la DAFE :
+// orientation FAUSSE. Couche de surface, la donnee source reste intacte.
+// CERTIFICATEUR ETABLI A LA SOURCE le 31/08/2026 sur rcpnc.gouv.nc, qui liste le certificateur
+// pour chaque fiche : /certifications-d-etat/ministere/67 (Universite de la Nouvelle-Caledonie)
+// et /ministere/1258 (CNAM). 31 relevent de l'UNC, 5 du CNAM-NC. Le DEUST Preparateur/technicien
+// en pharmacie (etat-146) n'est delivre localement par aucun des deux : renvoi prudent.
+const UNC_IDS = ["etat-147", "etat-148", "etat-149", "etat-150", "etat-151", "etat-152", "etat-153", "etat-154", "etat-155", "etat-156", "etat-157", "etat-158", "etat-159", "etat-160", "etat-161", "etat-162", "etat-163", "etat-164", "etat-165", "etat-166", "etat-167", "etat-168", "etat-169", "etat-170", "etat-171", "etat-172", "etat-173", "etat-174", "etat-175", "etat-176", "etat-179"];
+const CNAM_IDS = ["etat-02", "etat-03", "etat-04", "etat-05", "etat-06"];
+const SUP_IDS = ["etat-146"];
 const EN_NC_MAP = {
   "Agriculture": { renvoi: "DAFE", suggestions: [] },
   "Transport Logistique": { renvoi: null, ucem_ids: ["etat-16", "etat-17", "etat-18", "etat-19", "etat-20", "etat-21", "etat-22", "etat-23", "etat-24", "etat-25", "etat-26", "etat-27", "etat-28", "etat-29", "etat-30", "etat-31", "etat-32", "etat-33", "etat-36", "etat-37", "etat-38", "etat-39", "etat-40", "etat-41", "etat-42", "etat-43", "etat-44", "etat-45", "etat-46", "etat-47", "etat-48", "etat-49"], suggestions: [{"intitule": "Matelot de pêche", "niveau": 3, "type": "NC", "id": "nc-01"}, {"intitule": "Conducteur de transport en commun de personnes (version 2019)", "niveau": 3, "type": "NC", "id": "nc-46"}, {"intitule": "Capitaine de navire ≤ 10 m (options pêche côtière ou transport passagers)", "niveau": 4, "type": "NC", "id": "nc-47"}, {"intitule": "Conducteur de transport routier de marchandises", "niveau": 4, "type": "NC", "id": "nc-48"}, {"intitule": "TP Technicien en logistique d'entreposage", "niveau": 4, "type": "TP", "id": "tp-12"}] },
@@ -1570,6 +1590,9 @@ function renderCertification() {
   const selRenvoi = (() => {
     if (!selectedIsEN) return null;
     const e = EN_NC_MAP[state.selectedCert.cat] || { renvoi: 'DAVA' };
+    if (CNAM_IDS.includes(state.selectedCert.id)) return 'CNAM';
+    if (UNC_IDS.includes(state.selectedCert.id)) return 'UNC';
+    if (SUP_IDS.includes(state.selectedCert.id)) return 'SUP';
     if (!e.renvoi && e.ucem_ids && e.ucem_ids.includes(state.selectedCert.id)) return 'UCEM';
     return e.renvoi === null ? 'DAVA' : e.renvoi;
   })();
@@ -1580,6 +1603,10 @@ function renderCertification() {
            "Ce diplôme relève du ministère de l'Agriculture — en Nouvelle-Calédonie, de la <strong>DAFE</strong> (dafe.gouv.nc), et non de la DAVA."],
     UNC:  ["Diplôme universitaire — Point d'attention",
            "Ce diplôme relève de l'<strong>UNC</strong> (Pôle Formation Continue et Alternance) pour la VAE."],
+    CNAM: ["Diplôme CNAM — Point d'attention",
+           "Ce diplôme est délivré par le <strong>CNAM</strong>, et non par le Rectorat/DAVA ni par l'UNC. Relais local : <strong>ACESTE CNAM (Nouméa)</strong>. La VAE CNAM est réellement praticable en Nouvelle-Calédonie, jusqu'au titre d'ingénieur."],
+    SUP:  ["Diplôme délivré par l'Université de Bordeaux — Point d'attention",
+           "Ce diplôme est délivré au nom de l'État par l'<strong>Université de Bordeaux</strong> — ni le Rectorat/DAVA, ni l'UNC, ni le CNAM. La VAE se fait auprès de cette université ; la <strong>DTEFP</strong> est le point d'entrée local."],
     UCEM: ["Titre maritime national — Point d'attention",
            "Ce titre relève du ministère chargé de la mer. La VAE passe par l'<strong>UCEM</strong> (Unité des concours et examens maritimes) — la <strong>DAM-NC</strong> y renvoie elle-même."]
   };
@@ -1760,11 +1787,43 @@ function renderAssessment() {
   if (c.type === 'ÉTAT') {
     const mapEntry = EN_NC_MAP[c.cat] || { renvoi: 'DAVA', suggestions: [] };
     const renvoi = mapEntry.renvoi;
-    const effectiveRenvoi = (!renvoi && mapEntry.ucem_ids && mapEntry.ucem_ids.includes(c.id))
+    const effectiveRenvoi = CNAM_IDS.includes(c.id) ? 'CNAM'
+      : UNC_IDS.includes(c.id) ? 'UNC'
+      : SUP_IDS.includes(c.id) ? 'SUP'
+      : (!renvoi && mapEntry.ucem_ids && mapEntry.ucem_ids.includes(c.id))
       ? 'UCEM' : (renvoi === null ? 'DAVA' : renvoi);
     const suggestions = mapEntry.suggestions || [];
 
-    const renvoi_html = effectiveRenvoi === 'DAFE' ? `
+    const renvoi_html = effectiveRenvoi === 'CNAM' ? `
+      <div style="background:#e8f5e9;border:2px solid #2e7d32;border-radius:12px;padding:18px 20px;margin-top:16px;">
+        <div style="font-size:15px;font-weight:800;color:#1b5e20;margin-bottom:8px;">🎓 Ce diplôme est délivré par le CNAM — relais local ACESTE à Nouméa</div>
+        <div style="font-size:13px;color:#1b3d1f;line-height:1.7;">
+          Ni le Rectorat/DAVA, ni l'UNC : ce diplôme est délivré par le <strong>Conservatoire national des arts
+          et métiers</strong>. En Nouvelle-Calédonie, le relais est <strong>ACESTE CNAM (Nouméa)</strong>, et la VAE
+          y est réellement praticable — jusqu'au titre d'ingénieur.<br>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;background:white;border-radius:8px;border:1px solid #2e7d32;">
+          <div style="font-size:12px;font-weight:700;color:#1b5e20;margin-bottom:4px;">🔗 Où se renseigner :</div>
+          <div style="font-size:12px;color:#1b3d1f;line-height:1.7;">Conservatoire national des arts et métiers — ACESTE CNAM<br>30 rue Georges Clémenceau, Galerie Espace de Paris, 1<sup>er</sup> étage, Nouméa · Tél. 28.02.98<br><span style="color:#1d7a8c;font-weight:600;">acestecnam.nc</span> · info@acestecnam.nc</div>
+        </div>
+      </div>` : effectiveRenvoi === 'SUP' ? `
+      <div style="background:#f3e5f5;border:2px solid #6a1b9a;border-radius:12px;padding:18px 20px;margin-top:16px;">
+        <div style="font-size:15px;font-weight:800;color:#4a148c;margin-bottom:8px;">🎓 Ce diplôme est délivré par l'Université de Bordeaux</div>
+        <div style="font-size:13px;color:#3d1a4d;line-height:1.7;">
+          Ce diplôme est délivré au nom de l'État par l'<strong>Université de Bordeaux</strong> — ni le Rectorat/DAVA,
+          ni l'UNC, ni le CNAM. Le répertoire calédonien le publie sous ce certificateur (fiche RNCP35719).<br>
+          La VAE se fait auprès de l'université certificatrice ; la <strong>DTEFP</strong> est le point d'entrée local
+          pour être orienté et faire instruire la recevabilité.
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;background:white;border-radius:8px;border:1px solid #6a1b9a;">
+          <div style="font-size:12px;font-weight:700;color:#4a148c;margin-bottom:4px;">🔗 Où se renseigner :</div>
+          <div style="font-size:12px;color:#3d1a4d;line-height:1.7;">
+            DTEFP — 63 rue Fernand Forest, Immeuble Plexus 3<sup>e</sup> étage, Ducos, Nouméa · Tél. 24.66.02<br>
+            dtefp.certification@gouv.nc<br>
+            Fiche nationale du diplôme : <span style="color:#1d7a8c;font-weight:600;">francecompetences.fr</span> (consultation libre, sans compte)
+          </div>
+        </div>
+      </div>` : effectiveRenvoi === 'DAFE' ? `
       <div style="background:#fff8e1;border:2px solid #f9a825;border-radius:12px;padding:18px 20px;margin-top:16px;">
         <div style="font-size:15px;font-weight:800;color:#e65100;margin-bottom:8px;">📋 Ce diplôme agricole relève de la DAFE NC</div>
         <div style="font-size:13px;color:#5c3d00;line-height:1.7;">
@@ -1791,8 +1850,9 @@ function renderAssessment() {
         <div style="margin-top:12px;padding:10px 14px;background:white;border-radius:8px;border:1px solid #f9a825;">
           <div style="font-size:12px;font-weight:700;color:#e65100;margin-bottom:4px;">🔗 Contactez le DAVA NC pour votre démarche VAE :</div>
           <div style="font-size:12px;color:#5c3d00;line-height:1.7;">
-            Vice-Rectorat de Nouvelle-Calédonie · Service DAVA<br>
-            <span style="color:#1d7a8c;font-weight:600;">dfpc.gouv.nc/examen</span>
+            DAVA — Dispositif Académique de Validation des Acquis · Vice-Rectorat<br>
+            22 rue Jean-Baptiste Dezarnaulds, 98800 Nouméa · Tél. 26.62.13<br>
+            <span style="color:#1d7a8c;font-weight:600;">ac-noumea.nc</span> · dava@ac-noumea.nc
           </div>
         </div>
       </div>` : effectiveRenvoi === 'UCEM' ? `
